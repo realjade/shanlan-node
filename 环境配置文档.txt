@@ -1,0 +1,18 @@
+1,安装git sourcetree
+2,申请github账号  git@github.com:realjade/shanlan-node.git
+3,安装nodejs    http://www.nodejs.org/
+4,安装supervisor,百度搜索下
+
+5,安装express   http://expressjs.jser.us/guide.html
+    npm uninstall -g express
+    npm install -g express-generator
+    express
+6,安装socket.io
+可以在shanlan-node目录中执行
+node install socket.io
+
+
+部署相关
+1，grunt  http://blog.fens.me/nodejs-grunt-intro/
+a,npm install -g grunt-cli
+b,npm install -g grunt
