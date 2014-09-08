@@ -1,0 +1,40 @@
+//
+   Created by x on 14-7-30.
+div#m-header
+    div.container.clr
+        a.f-l.logo(href='/')
+            img(src='//static.jspass.com/static/images/logo.png')
+        ul.menu.f-l.clr
+            li
+                if tab == 'course'
+                    a.active(href='/course/list') 课程
+                else
+                    a(href='/course/list') 课程
+            li
+                if tab == 'question'
+                    a.active(href='/question') 问答
+                else
+                    a(href='/question') 问答
+            - var user = _user
+            if user
+                li
+                    a(href='/home/course') 我的课程
+        div.login.f-r.clr
+            if !user
+                a.login-btn(href='/login') 登录
+            else
+                a.message(href='/message') 消息
+                div.userinfo
+                    a.avatar(href='/home')
+                        img(src='//static.jspass.com/static/images/avatar.jpg')
+                    ul.menu-down
+                        li
+                            a(href='/home') #{user.name}
+                        li
+                            a(href='/note') 我的笔记
+                        li
+                            a(href='/question') 我的问题
+                        li
+                            a(href='/setting') 我的设置
+                        li
+                            a(href='/logout') 退出

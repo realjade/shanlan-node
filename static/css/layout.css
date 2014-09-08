@@ -1,0 +1,96 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 14-7-30
+  * Time: 下午2:25
+  *
+  */
+#m-header{
+    background: #2a2c2e;
+    height: 60px;
+}
+#m-header .container{
+    width: 1000px;
+    margin: 0 auto;
+}
+#m-header .logo{
+    margin-top: 10px;
+}
+#m-header .menu{
+    margin-left: 40px;
+}
+#m-header .menu li{
+    float: left;
+}
+#m-header .menu a,
+#m-header .login-btn{
+    color: #b5bdc0;
+    padding: 0px 35px;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+}
+#m-header .menu a:hover,
+#m-header .menu a.active,
+#m-header .login-btn:hover,
+#m-header .message:hover{
+    color: #fff;
+    background: #363d40;
+}
+#m-header .message{
+    color: #b5bdc0;
+    padding: 0px 25px;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    float: left;
+}
+#m-header .userinfo{
+    float: left;
+    position: relative;
+}
+#m-header .userinfo .avatar{
+    display: block;
+    padding: 8px;
+}
+#m-header .userinfo:hover .avatar{
+    color: #fff;
+    background: #363d40;
+}
+#m-header  .avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    border: 2px solid #adb0b1;
+    display: block;
+}
+#m-header .userinfo .menu-down{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 999;
+    width: 140px;
+    background: #363d40;
+    list-style: none;
+    display: none;
+}
+#m-header .userinfo:hover .menu-down{
+    display: block;
+}
+#m-header .menu-down a{
+    border-top: 1px solid #4a5153;
+    height: 39px;
+    line-height: 39px;
+    font-size: 14px;
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 0 20px;
+}
+#m-header .menu-down a:first-child{
+    border-top: 0;
+}
+#m-header .menu-down a:hover{
+    color: #fff;
+    background-color: #2a2c2e;
+}

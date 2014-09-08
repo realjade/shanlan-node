@@ -1,0 +1,74 @@
+.tagme-container {
+    cursor: default;
+    margin: 0;
+    display: inline-block;
+    min-height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 515px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.tagme-container.focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted  \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.tagme-container li {
+    list-style: none;
+}
+
+.tagme-container li.tagme-item {
+    border-radius: 15px;
+    height: 14px;
+    line-height: 14px;
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin: 2px 5px 0 0;
+    white-space: nowrap;
+}
+
+.tagme-container li.tagme-item:hover {
+    background-color: #a8b8d4;
+}
+
+.tagme-container .tagme-item {
+    background-color: #748dbb;
+    color: #fff;
+    padding: 3px 8px;
+    cursor: default;
+}
+
+.tagme-container .tagme-input:focus,
+.tagme-container .tagme-input {
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+    color: #666;
+    font-size: 12px;
+    outline: none;
+    width: 200px;
+}
+
+.tagme-inputwrap {
+    position: relative;
+    float: left;
+}

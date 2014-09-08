@@ -1,7 +1,25 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= jspass
+        meta(charset='utf-8')
+        meta(name='Keywords' content='jspass，慕课，移动开发，IT技能培训，免费编程视频，php开发教程，web前端开发，在线编程学习，html5视频教程，css教程')
+        meta(name='Description' content='jspass是学习编程最简单的免费平台。慕课网提供了丰富的移动端开发、php开发、web前端、html5教程以及css3视频教程等课程资源。')
+        link(rel='shortcut icon' type='image/x-icon' href='//static.jspass.com/static/images/favicon.ico')
+        link(rel='stylesheet', href='//static.jspass.com/static/css/reset.css')
+        link(rel='stylesheet', href='//static.jspass.com/static/css/layout.css')
+        link(rel='stylesheet', href='//static.jspass.com/static/css/module/button.css')
+        block css
+    body
+        block header
+            include share/header
+        block content
+
+        block footer
+            include share/footer
+        script(src='//static.jspass.com/static/js/libs/jquery/jquery.js')
+        script(src='//static.jspass.com/static/js/jspass.js')
+        script(src='//static.jspass.com/static/js/libs/mustache.js')
+        script(src='//static.jspass.com/static/js/libs/socket.io.js')
+        script(src='//static.jspass.com/static/js/libs/jquery/jps/jps.js')
+        block js

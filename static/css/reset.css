@@ -1,0 +1,136 @@
+html {
+    color: #333;
+    background: #fff;
+    font-family: '微软雅黑';
+    font-size: 14px;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, form, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, textarea {
+    font: 14px/1.5 "\5FAE\8F6F\96C5\9ED1", sans-serif, Arial, "\5b8b\4f53", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #5e5e5e;
+}
+a:link, a:visited {
+    color: #5e5e5e;
+}
+a:hover {
+    text-decoration: none;
+    color: #c9394a;
+}
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: none;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    *color: #fff;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+}
+
+.t-l {
+    text-align: left;
+}
+
+.t-r {
+    text-align: right;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.f-clr, .clr {
+    zoom: 1;
+}
+
+.f-clr:after, .clr:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.bf {
+    font-weight: bold;
+}
+
