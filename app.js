@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
+//self
+var staticFilter = require('./lib/staticFilter');
+
 var routes = require('./routes/index');
 var course = require('./routes/course');
 var users = require('./routes/users');
@@ -39,8 +42,6 @@ app.use(session({
     }
 }));
 
-app.use(express.static(path.join(__dirname, 'static')));
-
 //把user从session中读取出来，然后设置到res的locals中去
 app.use(function(req, res, next) {
     var session = req.session,
@@ -48,6 +49,7 @@ app.use(function(req, res, next) {
     if(user){
         res.locals._user =  user;
     }
+    res.locals.staticFilter = staticFilter.staticFilter
     next();
 });
 

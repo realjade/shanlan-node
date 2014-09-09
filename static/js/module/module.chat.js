@@ -7,7 +7,7 @@
  */
 (function(){
     var chat = {
-
+        
     };
 
     //export

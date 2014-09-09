@@ -14,5 +14,18 @@ node install socket.io
 
 部署相关
 1，grunt  http://blog.fens.me/nodejs-grunt-intro/
-a,npm install -g grunt-cli
-b,npm install -g grunt
+npm install -g grunt-cli
+npm install -g grunt
+npm install grunt-contrib-copy
+npm install grunt-contrib-concat
+npm install grunt-contrib-uglify
+npm install grunt-css
+
+js压缩合并
+1,遍历merge文件夹下的js文件，把里面的解析，然后合并压缩到min文件夹下面，名字命名成.min.js，文件夹和merge的结构一致
+
+css压缩合并
+1，遍历merge文件下下的css文件，把里面的内容的url的路径替换一下，替换规则如下：
+把url路径前加上css文件的父路径
+顾在写css的时候最好图片路径在css文件夹下面
+2，然后合并压缩到min文件夹下面，名字命名成.min.css，文件夹和merge的结构一致
