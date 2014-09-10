@@ -21,6 +21,9 @@ npm install grunt-contrib-concat
 npm install grunt-contrib-uglify
 npm install grunt-css
 
+css压缩
+npm install clean-css
+
 js压缩合并
 1,遍历merge文件夹下的js文件，把里面的解析，然后合并压缩到min文件夹下面，名字命名成.min.js，文件夹和merge的结构一致
 
