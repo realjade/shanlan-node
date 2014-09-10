@@ -20,9 +20,5 @@ html
 
         block footer
             include share/footer
-        script(src='//static.jspass.com/static/js/libs/jquery/jquery.js')
-        script(src='//static.jspass.com/static/js/jspass.js')
-        script(src='//static.jspass.com/static/js/libs/mustache.js')
-        script(src='//static.jspass.com/static/js/libs/socket.io.js')
-        script(src='//static.jspass.com/static/js/libs/jquery/jps/jps.js')
+        script(src='#{staticFilter("/static/js/min/libs.min.js")}')
         block js
