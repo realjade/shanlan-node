@@ -6,12 +6,9 @@ html
         meta(charset='utf-8')
         meta(name='Keywords' content='jspass，慕课，移动开发，IT技能培训，免费编程视频，php开发教程，web前端开发，在线编程学习，html5视频教程，css教程')
         meta(name='Description' content='jspass是学习编程最简单的免费平台。慕课网提供了丰富的移动端开发、php开发、web前端、html5教程以及css3视频教程等课程资源。')
-        link(rel='shortcut icon' type='image/x-icon' href='#{staticFilter("//static.shanlan.com/static/images/favicon.ico")}')
+        link(rel='shortcut icon' type='image/x-icon' href='//static.iyixiang.cn/static/images/favicon.ico')
         block css
-        link(rel='stylesheet', href='//static.shanlan.com/static/css/reset.css')
-        link(rel='stylesheet', href='//static.shanlan.com/static/css/layout.css')
-        link(rel='stylesheet', href='//static.shanlan.com/static/css/module/button.css')
-        block css
+        link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/libs/libs.min.css")}')
     body
         block header
             include share/header
@@ -19,5 +16,5 @@ html
 
         block footer
             include share/footer
-        script(src='//static.shanlan.com/static/js/merge/libs.min.js')
+        script(src='//static.iyixiang.cn/static/js/libs/libs.min.js')
         block js

@@ -76,7 +76,6 @@ function walk(path, floor, handleFile) {
                     }
                 })
             });
-
         }
     });
 }
