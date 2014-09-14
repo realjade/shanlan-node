@@ -19,20 +19,18 @@ walk(jsPath, 0 , function(path, floor) {
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){
-            md5Str += ',\n            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += ',\n            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn/' + path + '?' + md5.substring(0,6) + '\'';
         }else{
-            md5Str += '            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += '            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn/' + path + '?' + md5.substring(0,6) + '\'';
         }
     }
 });
-console.log(md5Str);
+
 var content = '' +
     'module.exports = {\n' +
     '    staticFilter: function(url){\n' +
     '        return {\n' + md5Str + '\n        }[url]\n    }\n}';
-content.replace('0', md5Str);
 
-console.log(content)
 fs.writeFile(staticFilterPath, content, function (err) {
     if (err) throw err;
 });
