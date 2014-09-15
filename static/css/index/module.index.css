@@ -1,0 +1,15 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 2014/9/15
+  * Time: 22:07
+  *
+  */
+.mod-index{
+    min-width: 980px;
+}
+.mod-index .header{
+    overflow: hidden;
+    min-height: 650px;
+    max-height: 900px;
+}

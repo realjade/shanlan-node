@@ -1,8 +1,47 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-
-block js
+doctype html
+html
+    head
+        title 亿像网--高质量独立摄影平台
+        meta(http-equiv='X-UA-Compatible' content="IE=edge")
+        meta(charset='utf-8')
+        meta(name='Keywords' content='亿像，摄影，婚纱，约片，约拍，互勉，写真，艺术照')
+        meta(name='Description' content='亿像网，专注于高质量的独立摄影平台，满足大众不同要求的摄影需求，给您一套私人订制的摄影服务，让您意想不到。摄影，有意思！')
+        link(rel='shortcut icon' type='image/x-icon' href='//static.iyixiang.cn/static/images/favicon.ico')
+        link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/index.merge.css")}')
+    body
+        div.mod-index
+            div.header
+                img#header-bg
+                div.logo
+                    h1.f1 LOFTER
+                    h2.f2
+                        快速
+                        span.f3 、
+                        漂亮
+                        span.f3 、
+                        有趣的记录方式
+                div.region
+                    div.tab-header
+                        a.login(data-for="tab-login") 登录
+                        a.register(data-for="tab-register") 注册
+                    div.tab-content
+                        div#tab-login.tab-content
+                            form(method="post" action="/login")
+                                div.form-error
+                                div.form-item
+                                    input(type="text" placeholder ="常用邮箱" name="username")
+                                div.form-item
+                                    input(type="password" placeholder="密码" name="password")
+                                div.form-item
+                                    button.login-btn.button.button-rounded.button-flat-primary(type="submit") 登录
+                        div#tab-register.tab-content
+                            form(method="post" action="/register")
+                                div.form-error
+                                div.form-item
+                                    input(type="text" placeholder ="常用邮箱" name="username")
+                                div.form-item
+                                    input(type="password" placeholder="设置密码" name="password")
+                                div.form-item
+                                    button.register-btn.button.button-rounded.button-flat-primary(type="submit") 注册
+    script(src='//static.iyixiang.cn/static/js/libs/libs.min.js')
     script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/index.merge.js")}')

@@ -11,7 +11,6 @@ var staticFilter = require('./lib/staticFilter');
 var config = require('./config');
 
 var routes = require('./routes/index');
-var course = require('./routes/course');
 var users = require('./routes/users');
 
 var app = express();
@@ -20,8 +19,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,12 +26,7 @@ app.use(cookieParser());
 
 // 设置 Session
 app.use(session({
-    store: new RedisStore({
-        host: "127.0.0.1",
-        port: 6379,
-        db: "0",
-        prefix: "user-"
-    }),
+    store: new RedisStore(config.redis),
     secret: 'keyboard cat',
     cookie:{
         originalMaxAge: 6000,
@@ -55,7 +47,6 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/course', course);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

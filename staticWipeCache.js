@@ -10,12 +10,24 @@ var fs = require('fs');
 var crypto = require('crypto');
 
 var staticPath = 'static';
-var jsPath = staticPath + '/js/merge';
 var staticFilterPath = 'lib/staticFilter.js';
 
 var md5Str = '';
 
+var jsPath = staticPath + '/js/merge';
 walk(jsPath, 0 , function(path, floor) {
+    if(floor > 0){
+        var md5 = getMd5(path);
+        if(md5Str){
+            md5Str += ',\n            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn/' + path + '?' + md5.substring(0,6) + '\'';
+        }else{
+            md5Str += '            \'//static.iyixiang.cn/' + path + '\'' + ': \'//static.iyixiang.cn/' + path + '?' + md5.substring(0,6) + '\'';
+        }
+    }
+});
+
+var cssPath = staticPath + '/css/merge';
+walk(cssPath, 0 , function(path, floor) {
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){

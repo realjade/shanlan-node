@@ -5,3 +5,4 @@
  * Time: 21:36
  *
  */
+document.write('<script src="//static.iyixiang.cn/static/js/apps/module.index.js"></script>')
