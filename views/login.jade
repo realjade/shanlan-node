@@ -1,0 +1,16 @@
+extends share/outerlayout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/login.merge.css")}')
+block content
+    div.mod-login
+        div.region
+            form(method="post" action="/login")
+                div.form-error
+                div.form-item
+                    input(type="text" placeholder ="常用邮箱" name="username")
+                div.form-item
+                    input(type="password" placeholder="密码" name="password")
+                div.form-item
+                    button.login-btn.button.button-rounded.button-flat-primary(type="submit") 登录
+block js
+    script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/login.merge.js")}')

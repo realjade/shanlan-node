@@ -42,7 +42,7 @@ app.use(function(req, res, next) {
         res.locals._user =  user;
     }
     res.locals.staticFilter = staticFilter.staticFilter
-
+    res.locals.title = '高质量独立摄影平台'
     next();
 });
 

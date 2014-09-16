@@ -1,10 +1,11 @@
 /**
   * @name zhangyy-g@grandsoft.com.cn 
   * @description zhangyy's code
-  * Date: 2014/9/15
-  * Time: 22:00
+  * Date: 2014/9/16
+  * Time: 20:11
   *
   */
 @import url(../common/reset.css);
+@import url(../common/common.css);
 @import url(../module/button.css);
-@import url(../index/module.index.css);
+@import url(../account/module.register.css);

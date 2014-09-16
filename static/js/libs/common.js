@@ -49,6 +49,9 @@
     //added by baoym@grandsoft.com.cn 2013.9.24
     window.App = $.extend({}, window.App, {
         common: {
+            modules:{
+
+            }
         },
         modules: {
         }

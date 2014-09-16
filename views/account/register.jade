@@ -1,0 +1,12 @@
+extends share/layout
+
+block content
+    div#tab-register.tab-content
+        form(method="post" action="/register")
+            div.form-error
+            div.form-item
+                input(type="text" placeholder ="常用邮箱" name="username")
+            div.form-item
+                input(type="password" placeholder="设置密码" name="password")
+            div.form-item
+                button.register-btn.button.button-rounded.button-flat-primary(type="submit") 注册

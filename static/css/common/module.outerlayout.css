@@ -1,0 +1,32 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 2014/9/16
+  * Time: 20:13
+  *
+  */
+.mod-header .header-bg-wrap{
+    overflow: hidden;
+    min-height: 650px;
+    max-height: 900px;
+}
+.mod-header .logo{
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    width: 400px;
+    margin-left: -200px;
+}
+.mod-header .logo .f1 {
+    height: 90px;
+    text-indent: -9999px;
+    background: url(../../images/logo.png) no-repeat -2px 0;
+}
+.mod-header .logo .f2 {
+    width: 400px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 15px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
