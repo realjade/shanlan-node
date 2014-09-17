@@ -5,3 +5,44 @@
   * Time: 20:21
   *
   */
+.mod-form {
+    padding: 20px 16px 0px;
+}
+
+.mod-form .form-title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.mod-form .form-error {
+    background: #fffdea;
+    border: 1px solid #ffcf85;
+    color: #f60;
+    padding: 5px;
+    width: 308px;
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-size: 14px;
+}
+
+.mod-form .form-item {
+    margin-bottom: 15px;
+}
+
+.mod-form .input-item {
+    outline: none;
+    border: 1px solid #ccc;
+    width: 276px;
+    padding: 3px 5px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.mod-form .button {
+    width: 287px;
+    height: 40px;
+    line-height: 40px;
+}

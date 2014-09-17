@@ -1,0 +1,24 @@
+extends ../share/outerlayout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/login.merge.css")}')
+block content
+    div.mod-login
+        div.login-bg
+        div.region
+            form.mod-form(method="post" action="/login")
+                div.form-error 请输入用户名
+                div.form-item
+                    input.input-item(type="text" placeholder ="常用邮箱" name="username" tabindex="1")
+                div.form-item
+                    input.input-item(type="password" placeholder="密码" name="password" tabindex="2")
+                div.form-item.clr
+                    label.f-l
+                        input(type="checkbox" name="remember")
+                        span &nbsp;&nbsp;一周内自动登录
+                    a.f-r(href="/forget") 忘记密码？
+                div.form-item
+                    button.login-btn.button.button-rounded.button-flat-primary(type="submit") 立即登录
+                div.form-item
+                    a.register-btn.button.button-rounded.button-flat(href="/register") 注册账号
+block js
+    script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/login.merge.js")}')

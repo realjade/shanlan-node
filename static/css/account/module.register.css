@@ -2,6 +2,37 @@
   * @name zhangyy-g@grandsoft.com.cn 
   * @description zhangyy's code
   * Date: 2014/9/16
-  * Time: 20:13
+  * Time: 20:12
   *
   */
+.mod-register{
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    margin-left: -160px;
+    width: 320px;
+    height: 345px;
+}
+.mod-register .register-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+.mod-register .region{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.mod-register label{
+    color: #fff;
+}

@@ -38,14 +38,12 @@ ul, ol {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: #5e5e5e;
+    color: #fff;
 }
-a:link, a:visited {
-    color: #5e5e5e;
-}
+
 a:hover {
     text-decoration: none;
-    color: #c9394a;
+    color: #39599d;
 }
 abbr[title], acronym[title] {
     border-bottom: 1px dotted;

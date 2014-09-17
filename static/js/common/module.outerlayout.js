@@ -54,5 +54,5 @@
         }
     }
 
-    App.common.modules.outerLayout = outerLayout;
+    App.common.modules.outerLayout = outerLayout
 })(jQuery)

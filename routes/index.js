@@ -11,8 +11,9 @@ router.get('/', function (req, res) {
 
 //登录
 router.get('/login', function (req, res) {
-    console.log('%%%%login%%%')
-    res.render('login');
+    res.render('account/login', {
+        title: '登录'
+    });
 });
 
 //注册

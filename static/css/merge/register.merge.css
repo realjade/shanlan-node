@@ -6,6 +6,7 @@
   *
   */
 @import url(../common/reset.css);
-@import url(../common/common.css);
+@import url(../common/module.common.css);
 @import url(../module/button.css);
+@import url(../common/module.outerlayout.css);
 @import url(../account/module.register.css);

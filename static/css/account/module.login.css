@@ -7,7 +7,35 @@
   */
 .mod-login{
     position: absolute;
-    top: 200px;
+    top: 260px;
     left: 50%;
-    margin-left: -200px;
+    margin-left: -160px;
+    width: 320px;
+    height: 290px;
+}
+.mod-login .login-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+.mod-login .region{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.mod-login label{
+    color: #fff;
+}
+.mod-login .register-btn{
+    width: 237px;
 }
