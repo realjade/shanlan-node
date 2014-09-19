@@ -11,7 +11,7 @@
     left: 50%;
     margin-left: -160px;
     width: 320px;
-    height: 290px;
+    height: 230px;
 }
 .mod-login .login-bg{
     position: absolute;
@@ -35,7 +35,4 @@
 }
 .mod-login label{
     color: #fff;
-}
-.mod-login .register-btn{
-    width: 237px;
 }
