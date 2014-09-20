@@ -17,11 +17,16 @@ router.get('/login', function (req, res) {
 });
 
 //注册
-router.get('/register', function (req, res) {
+router.route('/register').get(function (req, res) {
     res.render('account/register', {
         title: '注册'
+    })
+}).post(function(req, res){
+        utils.getApiData('User.register', req, function(data){
+            console.log('register:' + data)
+            res.json(200, JSON.parse(data));
+        })
     });
-});
 
 //登出
 router.get('/logout', function (req, res) {

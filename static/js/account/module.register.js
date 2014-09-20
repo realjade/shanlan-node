@@ -6,7 +6,7 @@
  *
  */
 (function($){
-    var login = {
+    var register = {
 
         __container: null,
 
@@ -24,16 +24,27 @@
             var container = self.__container
             var form = container.find('.mod-form')
             var error = container.find('.form-error')
-            var nameInput = form.find('input[name="username"]')
+            var emailInput = form.find('input[name="email"]')
+            var usernameInput = form.find('input[name="username"]')
             var psdInput = form.find('input[name="password"]')
+            var cityInput = form.find('input[name="city"]')
 
             form.submit(function(){
                 error.hide()
-                var name = $.trim(nameInput.val())
+                var email = $.trim(emailInput.val())
+                var username = $.trim(usernameInput.val())
                 var psd = $.trim(psdInput.val())
-                if(!name){
-                    error.text('请输入常用邮箱').show()
-                    nameInput.select()
+                var city = $.trim(cityInput.val())
+
+                if(!email || !App.common.modules.common.isEmail(email)){
+                    error.text('请输入常用的合法邮箱').show()
+                    emailInput.select()
+                    return false
+                }
+
+                if(!username){
+                    error.text('请输入您的用户名').show()
+                    usernameInput.select()
                     return false
                 }
 
@@ -43,12 +54,20 @@
                     return false
                 }
 
+                /*if(!city){
+                    error.text('请输入您所在的城市').show()
+                    cityInput.select()
+                    return false
+                }*/
+
+
+
             })
         }
     }
 
     $(function(){
-        login.init($('.mod-register'))
+        register.init($('.mod-register'))
     })
-    App.modules.login = login
+    App.modules.register = register
 })(jQuery)
