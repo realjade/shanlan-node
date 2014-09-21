@@ -5,6 +5,6 @@
   * Time: 22:00
   *
   */
-@import url(../common/reset.css);
-@import url(../module/button.css);
-@import url(../index/module.index.css);
+@import url('../common/reset.css');
+@import url('../module/button.css');
+@import url('../index/module.index.css');
