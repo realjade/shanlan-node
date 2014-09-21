@@ -37,13 +37,6 @@ module.exports = function (grunt) {
                 dest: 'static/js/merge'//输出到此目录下
             }
         }
-        /*options.cssmin = {
-            my_target: {
-                cwd: 'static/css/merge',//css目录下
-                src: '**/*.css',
-                dest: 'static/css/merge'
-            }
-        }*/
     }
 
     // Project configuration.
