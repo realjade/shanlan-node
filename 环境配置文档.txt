@@ -32,3 +32,6 @@ css压缩合并
 把url路径前加上css文件的父路径
 顾在写css的时候最好图片路径在css文件夹下面
 2，然后合并压缩到min文件夹下面，名字命名成.min.css，文件夹和merge的结构一致
+
+redis:
+http://www.cnblogs.com/haoxinyue/p/3620648.html

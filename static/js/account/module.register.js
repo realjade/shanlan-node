@@ -25,14 +25,14 @@
             var form = container.find('.mod-form')
             var error = container.find('.form-error')
             var emailInput = form.find('input[name="email"]')
-            var usernameInput = form.find('input[name="username"]')
+            var nickNameInput = form.find('input[name="nickName"]')
             var psdInput = form.find('input[name="password"]')
             var cityInput = form.find('input[name="city"]')
 
             form.submit(function(){
                 error.hide()
                 var email = $.trim(emailInput.val())
-                var username = $.trim(usernameInput.val())
+                var nickName = $.trim(nickNameInput.val())
                 var psd = $.trim(psdInput.val())
                 var city = $.trim(cityInput.val())
 
@@ -42,9 +42,9 @@
                     return false
                 }
 
-                if(!username){
+                if(!nickName){
                     error.text('请输入您的用户名').show()
-                    usernameInput.select()
+                    nickNameInput.select()
                     return false
                 }
 

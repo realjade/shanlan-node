@@ -23,8 +23,7 @@ router.route('/register').get(function (req, res) {
     })
 }).post(function(req, res){
         utils.getApiData('User.register', req, function(data){
-            console.log('register:' + data)
-            res.json(200, JSON.parse(data));
+            res.json(200, data);
         })
     });
 

@@ -40,13 +40,13 @@
 
             img.onload = function(){
                 imgEle.prop('src' , src)
-                imgEle.css('margin-top', (header.height() - imgEle.height())/3)
-                imgEle.css('margin-left', (header.width() - imgEle.width())/3)
+                //imgEle.css('margin-top', (header.height() - imgEle.height())/3)
+                //imgEle.css('margin-left', (header.width() - imgEle.width())/3)
             }
 
             img.src = src
             imgEle.css({
-                width: '1349px',
+                width: '100%',
                 height: 'auto',
                 'visibility': 'visible',
                 'opacity': 1
