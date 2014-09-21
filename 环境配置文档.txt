@@ -35,3 +35,8 @@ css压缩合并
 
 redis:
 http://www.cnblogs.com/haoxinyue/p/3620648.html
+
+生产环境部署：
+node staticContact.js
+grunt
+node staticWipeCache.js
