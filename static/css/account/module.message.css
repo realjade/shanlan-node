@@ -1,0 +1,44 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 2014/9/16
+  * Time: 20:12
+  *
+  */
+.mod-message{
+    position: absolute;
+    top: 260px;
+    left: 0;
+    right: 0;
+    height: 150px;
+}
+.mod-message .message-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+.mod-message .region{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    text-align: center;
+    line-height: 150px;
+    font-size: 26px;
+    color: #fff;
+}
+.mod-message .region a{
+    color: #3385ff;
+}
+.mod-message .region a:hover{
+    text-decoration: underline;
+}

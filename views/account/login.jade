@@ -6,7 +6,10 @@ block content
         div.login-bg
         div.region
             form.mod-form(method="post" action="/login")
-                div.form-error 请输入用户名
+                if error
+                    div.form-error(style="display:block;") !{error}
+                else
+                    div.form-error !{error}
                 div.form-item
                     input.input-item(type="text" placeholder ="常用邮箱/用户名" name="username" tabindex="1")
                 div.form-item

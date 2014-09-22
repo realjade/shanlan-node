@@ -6,7 +6,11 @@ block content
         div.register-bg
         div.region
             form.mod-form(method="post" action="/register")
-                div.form-error 请输入用户名
+                if error
+                    div.form-error(style="display:block;") !{error}
+                else
+                    div.form-error !{error}
+                input(type="hidden" value="true" name="isValid")
                 div.form-item
                     input.input-item(type="text" placeholder ="常用邮箱" name="email" tabindex="1")
                 div.form-item

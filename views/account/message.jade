@@ -1,0 +1,9 @@
+extends ../share/outerlayout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/account_message.merge.css")}')
+block content
+    div.mod-message
+        div.message-bg
+        div.region !{message}
+block js
+    script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/account_message.merge.js")}')

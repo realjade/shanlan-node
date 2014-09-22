@@ -21,15 +21,31 @@ router.route('/register').get(function (req, res) {
     res.render('account/register', {
         title: '注册'
     })
-}).post(function(req, res){
-        utils.getApiData('User.register', req, function(data){
-            res.json(200, data);
+}).post(function (req, res) {
+        utils.getApiData('User.register', req, function (data) {
+            if (data.code == '200') {
+                //注册成功
+                res.render('account/message', {
+                    message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
+                })
+            }else{
+                res.render('account/register', {
+                    title: '注册',
+                    error: data.message
+                })
+            }
         })
     });
 
 //登出
 router.get('/logout', function (req, res) {
     res.render('index');
+});
+
+router.get('/mock', function (req, res) {
+    res.render('account/message',{
+        message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
+    });
 });
 
 /* GET home page. */
