@@ -1,20 +1,34 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
 //self
 var utils = require('../lib/utils')
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index');
-});
+    res.render('index')
+})
 
 //登录
-router.get('/login', function (req, res) {
+router.route('/login').get(function (req, res) {
     res.render('account/login', {
         title: '登录'
-    });
-});
+    })
+}).post(function (req, res) {
+        utils.getApiData('User.login', req, function (data) {
+            if (data.code == '200') {
+                //注册成功
+                res.render('account/message', {
+                    message: '恭喜您登录成功'
+                })
+            } else {
+                res.render('account/login', {
+                    title: '登录',
+                    error: data.message
+                })
+            }
+        })
+    })
 
 //注册
 router.route('/register').get(function (req, res) {
@@ -28,7 +42,7 @@ router.route('/register').get(function (req, res) {
                 res.render('account/message', {
                     message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
                 })
-            }else{
+            } else {
                 res.render('account/register', {
                     title: '注册',
                     error: data.message
@@ -39,14 +53,14 @@ router.route('/register').get(function (req, res) {
 
 //登出
 router.get('/logout', function (req, res) {
-    res.render('index');
+    res.render('index')
 });
 
 router.get('/mock', function (req, res) {
-    res.render('account/message',{
+    res.render('account/message', {
         message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
-    });
-});
+    })
+})
 
 /* GET home page. */
 router.route('/j/*').all(function (req, res) {
@@ -54,7 +68,6 @@ router.route('/j/*').all(function (req, res) {
         console.log('end：' + data)
         res.json(200, JSON.parse(data));
     });
-
 });
 
 router.get('/la', function (req, res) {

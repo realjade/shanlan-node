@@ -1,6 +1,8 @@
-extends ../share/outerlayout
+extends ../share/layout
 block css
     link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/account_message.merge.css")}')
+block header
+    include ../share/outerheader
 block content
     div.mod-message
         div.message-bg

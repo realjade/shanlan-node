@@ -11,6 +11,7 @@ var staticFilter = require('./lib/staticFilter');
 var config = require('./config');
 
 var routes = require('./routes/index');
+var profile = require('./routes/profile');
 var users = require('./routes/users');
 
 var app = express();
@@ -47,6 +48,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', routes);
+app.use('/profile', profile);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

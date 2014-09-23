@@ -1,6 +1,8 @@
-extends ../share/outerlayout
+extends ../share/layout
 block css
     link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/register.merge.css")}')
+block header
+    include ../share/outerheader
 block content
     div.mod-register
         div.register-bg
@@ -14,7 +16,7 @@ block content
                 div.form-item
                     input.input-item(type="text" placeholder ="常用邮箱" name="email" tabindex="1")
                 div.form-item
-                    input.input-item(type="text" placeholder="用户名" name="nickName" tabindex="2")
+                    input.input-item(type="text" placeholder="用户名" name="userName" tabindex="2")
                 div.form-item
                     input.input-item(type="password" placeholder="设置密码" name="password" tabindex="3")
                 div.form-item
