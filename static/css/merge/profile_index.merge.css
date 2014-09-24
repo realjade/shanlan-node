@@ -8,4 +8,5 @@
 @import url('../common/reset.css');
 @import url('../common/module.common.css');
 @import url('../module/button.css');
+@import url('../common/module.profilelayout.css');
 @import url('../profile/module.index.css');

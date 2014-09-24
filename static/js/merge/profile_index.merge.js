@@ -6,4 +6,5 @@
  *
  */
 document.write('<script src="//static.iyixiang.cn/static/js/common/module.common.js"></script>')
+document.write('<script src="//static.iyixiang.cn/static/js/common/module.profilelayout.js"></script>')
 document.write('<script src="//static.iyixiang.cn/static/js/profile/module.index.js"></script>')
