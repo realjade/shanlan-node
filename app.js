@@ -37,8 +37,8 @@ app.use(session({
 
 //把user从session中读取出来，然后设置到res的locals中去
 app.use(function(req, res, next) {
-    var session = req.session,
-        user = session.user;
+    var session = req.session
+    var user = session ? session.user : null
     if(user){
         res.locals._user =  user;
     }
