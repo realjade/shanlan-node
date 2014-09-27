@@ -10,6 +10,7 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     'static/js/libs/jquery/jquery.js',
+                    'static/js/libs/jquery/jquery.lazyload.js',
                     'static/js/libs/backbone/underscore.js',
                     'static/js/libs/backbone/backbone.js',
                     'static/js/libs/mustache.js',

@@ -1,25 +1,63 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/login.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.iyixiang.cn/static/css/merge/profile_index.merge.css")}')
 block header
-    include ../share/profileheader
+    div.mod-profile-header-wrap
+        include ../share/header
+        include ../share/profileHeader
 block content
-    div.mod-login
-        div.login-bg
-        div.region
-            form.mod-form(method="post" action="/login")
-                if error
-                    div.form-error(style="display:block;") !{error}
-                else
-                    div.form-error !{error}
-                div.form-item
-                    input.input-item(type="text" placeholder ="常用邮箱/用户名" name="email" tabindex="1")
-                div.form-item
-                    input.input-item(type="password" placeholder="密码" name="password" tabindex="2")
-                div.form-item
-                    button.login-btn.button.button-rounded.button-flat-primary(type="submit") 立即登录
-                div.form-item.clr
-                    a.f-l(href="/forget") &lt;&lt;忘记密码
-                    a.register-btn.f-r(href="/register") 注册账号&gt;&gt;
+    div.mod-profile
+        div.photo-group
+            div.photo-item.item1
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
+            div.photo-item.item2
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
+            div.photo-item.item3
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
+            div.photo-item.item4
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
+
+        div.photo-group
+            div.photo-item.item1
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
+            div.photo-item.item2
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
+            div.photo-item.item3
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
+            div.photo-item.item4
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
+
+
+        div.photo-group
+            div.photo-item.item1
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
+            div.photo-item.item2
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
+            div.photo-item.item3
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
+            div.photo-item.item4
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
+
+        div.photo-group
+            div.photo-item.item1
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
+            div.photo-item.item2
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
+            div.photo-item.item3
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
+            div.photo-item.item4
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
+
+        div.photo-group
+            div.photo-item.item1
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
+            div.photo-item.item2
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
+            div.photo-item.item3
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
+            div.photo-item.item4
+                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
+
+
 block js
-    script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/login.merge.js")}')
+    script(src='#{staticFilter("//static.iyixiang.cn/static/js/merge/profile_index.merge.js")}')

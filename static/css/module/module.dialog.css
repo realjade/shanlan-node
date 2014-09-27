@@ -1,0 +1,107 @@
+#mod-dialog-masklayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: 1000;
+    display: none;
+    background-color: #2D2E31;
+    background: -webkit-radial-gradient(center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) 80%);
+    background: -moz-radial-gradient(center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) 80%);
+    background: radial-gradient(center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) 80%);
+    filter: alpha(opacity=70);
+    _position: absolute;
+    _width: 100%;
+    _height: expression(function() {return Math.max(document.documentElement.clientHeight, document.documentElement.scrollHeight);}());
+}
+
+.mod-dialog {
+    position: absolute;
+    z-index: 2000;
+    display: none;
+    box-shadow: 0px 0px 8px #333;
+}
+
+.mod-dialog .wrapper {
+    background: #fff;
+}
+
+.mod-dialog .wrapper .header {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.mod-dialog .header .title {
+    font-size: 16px;
+    max-width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+    _width: 350px;
+    color: #666;
+    font-weight: bold;
+}
+
+.mod-dialog .header .close {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    background: url(images/dialog/close.png) no-repeat;
+    cursor: pointer;
+}
+
+.mod-dialog .header .close:hover {
+    background: url(images/dialog/close-hover.png) no-repeat;
+}
+
+.mod-dialog .wrapper .content {
+    padding: 20px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+}
+
+.mod-dialog .wrapper .footer {
+    padding: 0 20px;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    height: 65px;
+    line-height: 65px;
+    min-width: inherit;
+    background: none;
+    position: static;
+    margin: 0;
+    width: auto;
+}
+
+.mod-dialog .wrapper .footer .cancel {
+    margin-left: 15px;
+}
+
+.mod-dialog .wrapper .footer .dialog-error {
+    background: url(images/dialog/error.png) no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.mod-dialog .wrapper .footer .error {
+    float: left;
+    color: #ff6600;
+}
+
+.mod-dialog .button-small {
+    height: 30px;
+    font-size: 14px;
+    padding: 0 8px;
+    line-height: 28px;
+}

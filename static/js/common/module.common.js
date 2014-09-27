@@ -8,10 +8,10 @@
 (function($){
     var common = {
         isEmail: function(email){
-            return true
+            return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(v)
         },
         isMobile: function(mobile){
-            return true
+            return /^\d{11}$/.test(v)
         }
     }
 

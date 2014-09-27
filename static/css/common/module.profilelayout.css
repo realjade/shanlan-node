@@ -1,0 +1,99 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 14-9-24
+  * Time: 下午10:18
+  *
+  */
+
+.mod-profile-header-wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-width: 1000px;
+}
+
+.mod-profile-header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mod-profile-header .profile-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../profile/images/bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+.mod-profile-header .user-info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    height: 100px;
+    padding: 0 80px;
+}
+
+.mod-profile-header .user-info .avatar{
+    border-radius: 5px;
+}
+
+.mod-profile-header .user-info .user-detail{
+    margin-left: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 50px;
+}
+.mod-profile-header .profile-nav{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 10px;
+}
+
+.mod-profile-header .profile-nav .avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.mod-profile-header .profile-nav li{
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 10px;
+    height: 60px;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.mod-profile-header .profile-nav a{
+    display: inline-block;
+    color: #7f7f7f;
+    color: rgba(255,255,255,0.5);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    height: 29px;
+    line-height: 29px;
+    padding: 0px 10px;
+    -webkit-transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out,color 0.15s ease-in-out;
+}
+.mod-profile-header .profile-nav a:hover,
+.mod-profile-header .profile-nav a.active{
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+}

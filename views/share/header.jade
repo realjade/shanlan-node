@@ -1,24 +1,22 @@
-//
-   Created by x on 14-7-30.
 div#m-header
     div.container.clr
         a.f-l.logo(href='/')
             img(src='//static.jspass.com/static/images/logo.png')
         ul.menu.f-l.clr
             li
-                if tab == 'course'
-                    a.active(href='/course/list') 课程
+                if tab == 'index'
+                    a.active(href='/') 首页
                 else
-                    a(href='/course/list') 课程
+                    a(href='/') 首页
             li
-                if tab == 'question'
-                    a.active(href='/question') 问答
+                if tab == 'cameraman'
+                    a.active(href='/cameraman') 摄影师
                 else
-                    a(href='/question') 问答
+                    a(href='/cameraman') 摄影师
             - var user = _user
             if user
                 li
-                    a(href='/home/course') 我的课程
+                    a(href='/profile') 个人主页
         div.login.f-r.clr
             if !user
                 a.login-btn(href='/login') 登录
@@ -26,7 +24,7 @@ div#m-header
                 a.message(href='/message') 消息
                 div.userinfo
                     a.avatar(href='/home')
-                        img(src='//static.jspass.com/static/images/avatar.jpg')
+                        img(src='//static.iyixiang.cn/static/images/avatar.jpg')
                     ul.menu-down
                         li
                             a(href='/home') #{user.name}

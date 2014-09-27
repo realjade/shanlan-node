@@ -6,15 +6,21 @@
   *
   */
 #m-header{
-    background: #2a2c2e;
-    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    height: 50px;
+    z-index: 1;
+    padding: 0 80px;
 }
 #m-header .container{
-    width: 1000px;
+    min-width: 1000px;
     margin: 0 auto;
 }
 #m-header .logo{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 #m-header .menu{
     margin-left: 40px;
@@ -26,8 +32,8 @@
 #m-header .login-btn{
     color: #b5bdc0;
     padding: 0px 35px;
-    height: 60px;
-    line-height: 60px;
+    height: 50px;
+    line-height: 50px;
     display: block;
 }
 #m-header .menu a:hover,
@@ -35,7 +41,7 @@
 #m-header .login-btn:hover,
 #m-header .message:hover{
     color: #fff;
-    background: #363d40;
+    background: #333;
 }
 #m-header .message{
     color: #b5bdc0;

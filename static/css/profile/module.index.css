@@ -5,3 +5,59 @@
   * Time: 下午9:42
   *
   */
+
+.mod-profile{
+    padding: 20px 80px;
+    min-width: 840px;
+}
+
+.mod-profile .photo-group{
+    position: relative;
+    margin-bottom: 20px;
+    height: 780px;
+}
+
+.mod-profile .photo-group div{
+    background: lightgrey;
+    cursor: pointer;
+}
+
+.mod-profile .photo-group img{
+    position: absolute;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mod-profile .photo-group .item1{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 400px;
+}
+
+.mod-profile .photo-group .item2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 250px;
+}
+
+.mod-profile .photo-group .item3{
+    position: absolute;
+    top: 265px;
+    right: 0;
+    width: 380px;
+    height: 250px;
+}
+
+.mod-profile .photo-group .item4{
+    position: absolute;
+    top: 530px;
+    right: 0;
+    width: 380px;
+    height: 250px;
+}
