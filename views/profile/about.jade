@@ -1,0 +1,14 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/profile_about.merge.css")}')
+block header
+    div.mod-profile-header-wrap
+        include ../share/header
+        include ../share/profileHeader
+block content
+    div.mod-about about
+        
+
+
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_about.merge.js")}')

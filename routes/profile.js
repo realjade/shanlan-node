@@ -11,4 +11,16 @@ router.get('/', function (req, res) {
     });
 });
 
+/* user about. */
+router.get(['/about', '/about/:id'], function (req, res) {
+    var ownerId = req.params.id || '2'
+
+    res.render('profile/about', {
+        owner:{
+            userName: 'Jade',
+            id: ownerId
+        }
+    });
+});
+
 module.exports = router;
