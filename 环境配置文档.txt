@@ -11,6 +11,9 @@
 可以在shanlan-node目录中执行
 node install socket.io
 
+其他依赖包：
+1,async
+
 
 部署相关
 1，grunt  http://blog.fens.me/nodejs-grunt-intro/
