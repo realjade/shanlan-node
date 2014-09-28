@@ -10,6 +10,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 280px;
     overflow: hidden;
     min-width: 1000px;
 }
@@ -61,13 +62,7 @@
     right: 0;
     height: 60px;
     padding: 0 10px;
-}
-
-.mod-profile-header .profile-nav .avatar{
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    vertical-align: middle;
+    z-index: 2;
 }
 
 .mod-profile-header .profile-nav li{
@@ -96,4 +91,19 @@
 .mod-profile-header .profile-nav a.active{
     color: white;
     background-color: rgba(255,255,255,0.1);
+}
+
+.mod-profile-header .profile-nav .avatar-wrap{
+    width: 30px;
+}
+.mod-profile-header .profile-nav .avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    vertical-align: middle;
+    position: absolute;
+    left: -30px;
+    top: 15px;
+    -webkit-transition: left 0.15s ease-in-out;
+    transition: left 0.15s ease-in-out;
 }

@@ -9,10 +9,23 @@ div#m-header
                 else
                     a(href='/') 首页
             li
-                if tab == 'cameraman'
-                    a.active(href='/cameraman') 摄影师
+                if tab == 'photographer'
+                    a.active(href='/photographer') 找摄影
                 else
-                    a(href='/cameraman') 摄影师
+                    a(href='/photographer') 找摄影
+
+            li
+                if tab == 'clothing'
+                    a.active(href='/clothing') 找服装
+                else
+                    a(href='/clothing') 找服装
+
+            li
+                if tab == 'dresser'
+                    a.active(href='/dresser') 找化妆
+                else
+                    a(href='/dresser') 找化妆
+
             - var user = _user
             if user
                 li

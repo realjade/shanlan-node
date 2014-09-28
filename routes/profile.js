@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* user profile. */
-router.get('/', function (req, res) {
+router.get(['/', '/:id'], function (req, res) {
+    var ownerId = req.params.id || '2'
+    
     res.render('profile/index', {
         owner:{
             userName: 'Jade',
