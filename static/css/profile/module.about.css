@@ -1,0 +1,42 @@
+/**
+  * @name Liu Peng
+  * @description
+  * Date: 14-9-29
+  * Time: 下午9:42
+  *
+  */
+
+html body{
+    background-color: #ededef;
+}
+.mod-about-main{
+    position: relative;
+    margin: 40px auto 40px;
+    width: 1024px;
+}
+
+.main-block{
+    background-color: #fff;
+    margin-bottom: 40px;
+    padding: 3px 53px 28px 53px;
+    box-shadow: 1px 1px 5px #4e4e4e;
+
+}
+
+.block-content img{
+    position: relative;
+    width: 100%;
+}
+
+.intro-portrait img{
+    width: 70%;
+    margin: 5px 0px 10px 0px;
+}
+
+.block-head {
+    font-weight: normal;
+    font-size: 25px;
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px
+}
