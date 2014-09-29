@@ -13,6 +13,24 @@
         init: function(container){
             var self = this
             self.__container = container
+
+            self.__bindEvent()
+        },
+
+        __bindEvent: function(){
+            var self = this
+            var container = self.__container
+
+            container.on('click', '.photo-group', function(){
+                self.__initImageView($(this).data('id'))
+            })
+        },
+
+        __initImageView: function(gid){
+            var self = this
+            App.common.modules.imageView.init(null, {
+                showDialog: true
+            })
         }
     }
 

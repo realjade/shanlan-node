@@ -12,7 +12,8 @@ var config = {
     //javaPort: '443', //https
 
     redis: {
-        host: "127.0.0.1",
+        host: "182.92.159.195",
+        pass: 'shanlan-redis',
         port: 6379,
         db: "0",
         prefix: "user-"

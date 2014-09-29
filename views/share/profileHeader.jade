@@ -10,6 +10,12 @@ div.mod-profile-header
             li.avatar-wrap
                 img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
             li
-                a.active(href="/profile/about/#{owner.id}") 关于
+                if subTab == 'about'
+                    a.active(href="/profile/about/#{owner.id}") 关于
+                else
+                    a(href="/profile/about/#{owner.id}") 关于
             li
-                a(href="/profile/#{owner.id}") 影集
+                if subTab == 'index'
+                    a.active(href="/profile/#{owner.id}") 影集
+                else
+                    a(href="/profile/#{owner.id}") 影集

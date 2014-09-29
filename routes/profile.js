@@ -9,7 +9,8 @@ router.get(['/', '/:id'], function (req, res) {
         owner:{
             userName: 'Jade',
             id: '1'
-        }
+        },
+        subTab: 'index'
     });
 });
 
@@ -21,7 +22,8 @@ router.get(['/about', '/about/:id'], function (req, res) {
         owner:{
             userName: 'Jade',
             id: ownerId
-        }
+        },
+        subTab: 'about'
     });
 });
 
