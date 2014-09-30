@@ -4,6 +4,8 @@ http://182.92.159.195:8080/user/login.koala;jsessionid=2E5A176819E01988C6BB7BF26
 
 http://182.92.159.195:8080/opf/services?request={"key":"app1","accessToken":"","service":"nl","formate":"json","v":"1.0","param":"{\"userName\":\"wangwu3\",\"password\":\"888888\"}","secret":"secret1","sign":"06F6DF0CE299C32C534FBBA308E5365BA4B95F0A"}
 
+http://182.92.159.195:8080/opf/services?request=%7B%22key%22:%22app1%22,%22accessToken%22:%22%22,%22service%22:%22User.register%22,%22formate%22:%22json%22,%22v%22:%221.0%22,%22param%22:%22%7B%22userName%22:%22%E5%BC%A0%E7%8E%89%E7%91%9C%22,%22password%22:%22888888%22,%22nickName%22:%22%E7%8E%8B%E4%BA%94%22,%22city%22:%22BeiJing%22,%22email%22:%221@126.com%22,%22isValid%22:true%7D%22,%22secret%22:%22secret1%22,%22sign%22:%2206F6DF0CE299C32C534FBBA308E5365BA4B95F0A%22%7D
+
 一、用户相关
 1，根据用户ID获得该用户基本信息：用户ID，用户email，用户名等
 二、个人主页API：

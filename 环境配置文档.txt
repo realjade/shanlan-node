@@ -12,7 +12,8 @@
 node install socket.io
 
 其他依赖包：
-1,async
+1,async 处理异步请求
+2,iconv-lite url编码
 
 
 部署相关

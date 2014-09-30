@@ -46,6 +46,8 @@
                     error.text('请输入您的用户名').show()
                     userNameInput.select()
                     return false
+                }else{
+                    form.find('input[name="nickName"]').val(userName)
                 }
 
                 if(!psd){

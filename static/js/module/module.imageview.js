@@ -38,8 +38,12 @@
         '   <em class="prev-btn change-icon"></em>' +
         '   <img class="image-panel" />' +
         '   <em class="next-btn change-icon"></em>' +
-        '   <div class="-panel">' +
-        '       <span class="current"></span>/<span class="total"></span>' +
+        '   <div class="thumbnail-panel">' +
+        '       <em class="t-prev-btn"></em>' +
+        '       <div class="t-wrap">' +
+        '           <div class="t-items"></div>' +
+        '        </div>' +
+        '       <em class="t-next-btn"></em>' +
         '   </div>' +
         '   <em class="close"></em>' +
         '</div>'
