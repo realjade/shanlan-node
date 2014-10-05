@@ -1,4 +1,4 @@
-div.mod-profile-header
+﻿div.mod-profile-header
     div.profile-bg
     div.user-info.clr
         div.f-l
@@ -19,3 +19,13 @@ div.mod-profile-header
                     a.active(href="/profile/#{owner.id}") 影集
                 else
                     a(href="/profile/#{owner.id}") 影集
+            li
+                if subTab == 'package'
+                    a.active(href="/profile/package/#{owner.id}") 套系预订
+                else
+                    a(href="/profile/package/#{owner.id}") 套系预订
+            li
+                if subTab == 'trade'
+                    a.active(href="/profile/trade/#{owner.id}") 合作评价
+                else
+                    a(href="/profile/trade/#{owner.id}") 合作评价

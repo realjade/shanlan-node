@@ -7,20 +7,21 @@
   */
 
 html body{
-    background-color: #ededef;
+    background-color: #f5f5f7;
 }
+
 .mod-about-main{
     position: relative;
-    margin: 40px auto 40px;
-    width: 1024px;
+    margin: 50px auto 50px;
+    width: 1180px;
 }
 
 .main-block{
     background-color: #fff;
     margin-bottom: 40px;
     padding: 3px 53px 28px 53px;
-    box-shadow: 1px 1px 5px #4e4e4e;
-
+    box-shadow: 1px 1px 5px #cbcbcb;
+    border:0px solid #c0c0c0;
 }
 
 .block-content img{
@@ -29,7 +30,7 @@ html body{
 }
 
 .intro-portrait img{
-    width: 70%;
+    width: 100%;
     margin: 5px 0px 10px 0px;
 }
 

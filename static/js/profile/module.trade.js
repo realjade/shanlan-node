@@ -1,12 +1,12 @@
 /**
- * @name zhangyy-g@grandsoft.com.cn
- * @description zhangyy's code
- * Date: 14-9-23
- * Time: 下午9:41
+ * @name Edwin
+ * @description
+ * Date: 2014/9/30
+ * Time: 13:53
  *
  */
 (function($){
-    var profileAbout = {
+    var profileTrade = {
 
         __container: null,
 
@@ -17,7 +17,7 @@
     }
 
     $(function(){
-        profileAbout.init($('.mod-about'))
+        profileTrade.init($('.mod-trade'))
         App.common.modules.profileLayout.init($('.mod-profile-header-wrap'))
     })
 

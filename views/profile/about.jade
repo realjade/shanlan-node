@@ -7,7 +7,19 @@ block header
         include ../share/profileHeader
 block content
     div.mod-about
+        div.error-info
+            if(error-title)
+                div.error-title #{error-title}
+            if(error-message)
+                div.error-message #{error-message}
         div.mod-about-main
+            each item in itemList
+                div.main-block
+                    div.block-head
+                        h2 #{item.head}
+                    div.block-content
+                        | !{item.content}
+
             div.main-block
                 div.block-head
                     h2 摄影师
@@ -30,7 +42,13 @@ block content
 
             div.main-block
                 div.block-head
-                    h2 摄影师（只用图片来显示个人信息）
+                    h2 地址
+                div.block-content
+                    img(src="//static.jspass.com/static/css/profile/images/address.png")
+
+            div.main-block
+                div.block-head
+                    h2 暖暖时光的诞生
                 div.block-content
                     img(src="//static.jspass.com/static/css/profile/images/intro1.jpg")
 

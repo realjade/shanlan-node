@@ -1,0 +1,40 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/profile_trade.merge.css")}')
+block header
+    div.mod-profile-header-wrap
+        include ../share/header
+        include ../share/profileHeader
+block content
+    div.mod-trade
+        div.error-info
+            if(error-title)
+                div.error-title #{error-title}
+            if(error-message)
+                div.error-message #{error-message}
+        div.mod-trade-main
+            each item in itemList
+                div.main-container
+                    div.main-block
+                        div.trade-user-portrait
+                            img(src= item.portraitURL)
+                        div.trade-user-name #{item.name}
+                        div.main-intro
+                            div.main-stars
+                                if(item.star == 5)
+                                    img(src="//static.jspass.com/static/css/profile/images/5stars.png")
+                            div.trade-info #{item.info}
+                        div.main-comment
+                            p #{item.comment}
+                        div.main-photo-group
+                            each photo,i in item.photosURL
+                                if (i < 7)
+                                    div.item
+                                        img(src= photo)
+                            if( item.photoNumber > 7)
+                                div.item
+                                    div.item-number +#{item.photoNumber} &nbsp
+
+
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_trade.merge.js")}')
