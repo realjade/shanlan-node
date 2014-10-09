@@ -4,11 +4,6 @@ var router = express.Router()
 //self
 var utils = require('../lib/utils')
 
-/* GET home page. */
-router.get('/', function (req, res) {
-    res.render('index')
-})
-
 //登录
 router.route('/login').get(function (req, res) {
     res.render('account/login', {

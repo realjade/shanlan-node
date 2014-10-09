@@ -11,6 +11,7 @@ var staticFilter = require('./lib/staticFilter');
 var config = require('./config');
 
 var routes = require('./routes/index');
+var main = require('./routes/main');
 var profile = require('./routes/profile');
 var users = require('./routes/users');
 
@@ -48,6 +49,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', routes);
+app.use('/', main);
 app.use('/profile', profile);
 app.use('/users', users);
 

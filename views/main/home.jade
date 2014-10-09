@@ -1,0 +1,12 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/main_home.merge.css")}')
+block header
+    include ../share/header
+    div.mod-header-gap
+block content
+    div.mod-home 请在这地方写你的代码--home
+block footer
+    include ../share/footer
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/main_home.merge.js")}')
