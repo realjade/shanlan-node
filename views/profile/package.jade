@@ -9,13 +9,13 @@ block content
     div.mod-package
         div.pack-wrap
             div.pack-type-wrap
-                div.pack-type.type-focus 生活
+                div.pack-type.type-focus 生 活
                 div.middle-line
-                div.pack-type 集体
+                div.pack-type 集 体
                 div.middle-line
-                div.pack-type 活动
+                div.pack-type 活 动
                 div.middle-line
-                div.pack-type 亲子
+                div.pack-type 亲 子
             //div.pack-type-wrap
             //    div.pack-type 婚纱摄影
             //    div.middle-line
@@ -77,11 +77,28 @@ block content
                                 span#custom-year.custom-year
                                 span 年 &nbsp
                                 span#custom-month.custom-month
-
                         div#calendar.fc-calendar-container
 
+            div.booking-box
+                div.bk-info
+                    div.bk-pack
+                        ul
+                            span.bk-tag 套系：
+                            span.bk-pack-name 高级定制团队个人写真 （12800元）
+                        ul
+                            span.bk-tag 日期：
+                            span.bk-date 2014-10-05 周日
 
-                div.schedule-info
-            div.booking-button
+                        ul
+                            span.bk-tag 备注：
+                            div.bk-note-container
+                                textarea.bk-note
+                div.bk-btn
+                    span 预 订
+
+            div.reminding-wrap
+                p.
+                    * 建议您预订前先与摄影师沟通，确认具体时间和地点。<br/>
+                    * 建议您完善基本信息并建立相册，以便摄影师更好地了解您。
 block js
     script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_package.merge.js")}')
