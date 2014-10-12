@@ -8,6 +8,31 @@
     right: 0;
 }
 
+.mod-image-view .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(images/imageview/close.png);
+    display: block;
+    width: 54px;
+    height: 46px;
+    overflow: hidden;
+    font: 24px/32px Tahoma;
+    text-align: center;
+    text-indent: 10px;
+    color: #FFF;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.mod-image-view .close:hover{
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
 .mod-image-view .image-panel-wrap {
     position: absolute;
     top: 0;
@@ -41,6 +66,14 @@
     opacity: 1;
     background-color: #999
 }
+.mod-image-view .change-icon.disabled:hover {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    background-color: transparent;
+    cursor: not-allowed;
+}
 
 .mod-image-view .prev-btn {
     background-image: url(images/imageview/left.png);
@@ -54,10 +87,17 @@
 
 .mod-image-view .image-panel {
     position: absolute;
-    top: 0;
+    top: 10px;
     bottom: 0;
     left: 80px;
     right: 80px;
+    text-align: center;
+}
+.mod-image-view .image-panel span{
+    display: inline-block;
+    margin-top: 100px;
+    font-size: 18px;
+    color: #666;
 }
 
 .mod-image-view .thumbnail-panel {
@@ -122,4 +162,39 @@
     border-left-color: #fff;
     border-width: 5px;
     margin-top: -5px;
+}
+.mod-image-view .thumbnail-panel .t-wrap{
+    position: absolute;
+    top: 14px;
+    bottom: 0;
+    left: 45px;
+    right: 45px;
+    overflow: hidden;
+}
+
+.mod-image-view .t-wrap .t-items{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    white-space:nowrap;
+    -webkit-transition: left 0.2s ease-in-out;
+    -webkit-transition: left 0.2s ease-in-out 0;
+    transition: left 0.2s ease-in-out 0;
+}
+
+.mod-image-view .t-wrap .t-item{
+    display: inline-block;
+    border: 1px solid transparent;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    -webkit-transition: border-color 0.15s ease-in-out;
+    -webkit-transition-delay: 0;
+    -webkit-transition: border-color 0.15s ease-in-out 0;
+    transition: border-color 0.15s ease-in-out 0;
+}
+.mod-image-view .t-wrap .t-item:hover,
+.mod-image-view .t-wrap .t-item.active{
+    border-color: #02adea;
 }
