@@ -15,6 +15,10 @@
             self.__container = container
 
             self.__bindEvent()
+
+            App.common.modules.imageView.init(null, {
+                showDialog: true
+            })
         },
 
         __bindEvent: function(){

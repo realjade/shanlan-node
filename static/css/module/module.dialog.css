@@ -26,6 +26,8 @@
 
 .mod-dialog .wrapper {
     background: #fff;
+    width: 100%;
+    height: 100%;
 }
 
 .mod-dialog .wrapper .header {

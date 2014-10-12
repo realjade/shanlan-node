@@ -25,6 +25,8 @@
         __initDialog: function(){
             var self = this
             var dialog = new App.common.modules.Dialog({
+                width: $(window).width() - 200,
+                height: $(window).height() -100,
                 showTitle: false,
                 isConfirm: false,
                 message: self.__tpl
@@ -35,9 +37,11 @@
 
     imageView.__tpl = '' +
         '<div class="mod-image-view">' +
-        '   <em class="prev-btn change-icon"></em>' +
-        '   <img class="image-panel" />' +
-        '   <em class="next-btn change-icon"></em>' +
+        '   <div class="image-panel-wrap">' +
+        '       <em class="prev-btn change-icon"></em>' +
+        '       <div class="image-panel"></div>' +
+        '       <em class="next-btn change-icon"></em>' +
+        '   </div>' +
         '   <div class="thumbnail-panel">' +
         '       <em class="t-prev-btn"></em>' +
         '       <div class="t-wrap">' +
