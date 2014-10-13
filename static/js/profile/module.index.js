@@ -30,6 +30,8 @@
             var self = this
             App.common.modules.imageView.init(null, {
                 showDialog: true,
+                groupTitle: '婆娑',
+                groupDescription: '来生再见',
                 imgData: [
                     {
                         id: 1,

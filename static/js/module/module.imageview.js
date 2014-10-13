@@ -34,21 +34,32 @@
 
             self.__initThumbnail()
 
+            self.__initGroup()
+
             self.__bindEvent()
         },
 
         __initDialog: function () {
             var self = this
+            self.__scrollTop = $(window).scrollTop()
             var dialog = self.__dialog = new App.common.modules.Dialog({
-                width: $(window).width() - 200,
-                height: $(window).height() - 100,
+                width: $(window).width(),
+                height: $(window).height(),
                 showTitle: false,
                 isConfirm: false,
-                message: self.__tpl,
-                isFixed: false
+                message: self.__tpl
             })
 
             self.__panel = dialog.find('.mod-image-view')
+        },
+
+        __initGroup: function(){
+            var self = this
+            var panel = self.__panel
+            var options = self.__options
+
+            panel.find('.group-title').text(options.groupTitle).prop('title', options.groupTitle)
+            panel.find('.group-desc').text(options.groupDescription).prop('title', options.groupDescription)
         },
 
         __initThumbnail: function () {
@@ -67,12 +78,12 @@
             var panel = self.__panel
 
             panel.on('click', '.prev-btn', function () {
-                if($(this).hasClass('disabled')) return false
+                if ($(this).hasClass('disabled')) return false
                 self.switchImg(self.__currentIndex - 1)
             })
 
             panel.on('click', '.next-btn', function () {
-                if($(this).hasClass('disabled')) return false
+                if ($(this).hasClass('disabled')) return false
                 self.switchImg(self.__currentIndex + 1)
             })
 
@@ -81,16 +92,16 @@
             })
 
             panel.on('click', '.t-prev-btn', function () {
-                if($(this).hasClass('disabled')) return false
+                if ($(this).hasClass('disabled')) return false
                 self.__slideLeft()
             })
 
             panel.on('click', '.t-next-btn', function () {
-                if($(this).hasClass('disabled')) return false
+                if ($(this).hasClass('disabled')) return false
                 self.__slideRight()
             })
 
-            panel.on('click', '.close', function(){
+            panel.on('click', '.close', function () {
                 self.__dialog.close()
             })
         },
@@ -197,31 +208,32 @@
             }
 
             if (typeof offsetLeft === 'undefined') {
-                var oleft = currentItem.offset().left
-                offsetLeft = -(oleft - twidth / 2 - currentItem.width())
+                var oleft = currentItem.position().left
+                offsetLeft = -(oleft - twidth / 2 + currentItem.width() / 2 + 1)
+                left = offsetLeft
+            } else {
+                left += offsetLeft
             }
 
-            left += offsetLeft
-
-            if(left >= 0){
+            if (left >= 0) {
                 left = 0
             }
 
-            if((left + fwidth) <= twidth){
+            if ((left + fwidth) <= twidth) {
                 left = -fwidth + twidth
             }
 
             itemsPanel.css('left', left)
 
-            if(left === 0){
+            if (left === 0) {
                 prevBtn.addClass('disabled')
-            }else{
+            } else {
                 prevBtn.removeClass('disabled')
             }
 
-            if(left === (twidth - fwidth)){
+            if (left === (twidth - fwidth)) {
                 nextBtn.addClass('disabled')
-            }else{
+            } else {
                 nextBtn.removeClass('disabled')
             }
         },
@@ -245,19 +257,23 @@
 
     imageView.__tpl = '' +
         '<div class="mod-image-view">' +
+        '   <div class="group-info">' +
+        '       <div>作品集：<span class="group-title"></span></div>' +
+        '       <div class="group-desc"></div>' +
+        '   </div>' +
         '   <div class="image-panel-wrap">' +
         '       <em class="prev-btn change-icon"></em>' +
         '       <div class="image-panel"></div>' +
         '       <em class="next-btn change-icon"></em>' +
         '   </div>' +
         '   <div class="thumbnail-panel">' +
-        '       <em class="t-prev-btn"></em>' +
+        '       <!--em class="t-prev-btn"></em-->' +
         '       <div class="t-wrap">' +
         '           <div class="t-items"></div>' +
         '        </div>' +
-        '       <em class="t-next-btn"></em>' +
+        '       <!--em class="t-next-btn"></em-->' +
         '   </div>' +
-        '   <em class="close">X</em>' +
+        '   <em class="close"></em>' +
         '</div>'
 
     imageView.__thumbnailTpl = '{{#img}}<img class="t-item" data-id="{{id}}" data-path="{{path}}" src="{{thumbnailPath}}" />{{/img}}'

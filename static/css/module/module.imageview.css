@@ -1,3 +1,11 @@
+.mod-dialog .wrapper{
+    background: transparent;
+}
+
+.mod-dialog .wrapper .content{
+    background: transparent;
+}
+
 .mod-image-view {
     width: 100%;
     height: 100%;
@@ -8,14 +16,34 @@
     right: 0;
 }
 
+.mod-image-view .group-info{
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    right: 50px;
+    font-size: 18px;
+}
+
+.mod-image-view .group-info .group-title{
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.mod-image-view .group-info .group-desc{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 .mod-image-view .close{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 25px;
+    top: 25px;
     background: url(images/imageview/close.png);
     display: block;
-    width: 54px;
-    height: 46px;
+    width: 62px;
+    height: 79px;
     overflow: hidden;
     font: 24px/32px Tahoma;
     text-align: center;
@@ -35,15 +63,15 @@
 
 .mod-image-view .image-panel-wrap {
     position: absolute;
-    top: 0;
+    top: 100px;
     bottom: 80px;
     left: 0;
     right: 0;
 }
 
 .mod-image-view .change-icon {
-    width: 50px;
-    height: 60px;
+    width: 80px;
+    height: 260px;
     display: inline-block;
     cursor: pointer;
     background: transparent center center no-repeat;
@@ -56,7 +84,7 @@
     transition: 0.2s ease-in-out;
     position: absolute;
     top: 50%;
-    margin-top: -30px;
+    margin-top: -130px;
 }
 
 .mod-image-view .change-icon:hover {
@@ -167,9 +195,10 @@
     position: absolute;
     top: 14px;
     bottom: 0;
-    left: 45px;
-    right: 45px;
+    width: 364px;
     overflow: hidden;
+    left: 50%;
+    margin-left: -208px;
 }
 
 .mod-image-view .t-wrap .t-items{
