@@ -83,7 +83,7 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
                     "//static.jspass.com/static/css/profile/images/trade-1-6.png",
 
                 ],
-                photoNumber:38
+                photoNum:38
             },
             {
                 portraitURL: "//static.jspass.com/static/css/profile/images/trade-portrait2.png",
@@ -101,7 +101,7 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
                     "//static.jspass.com/static/css/profile/images/trade-2-6.png",
 
                 ],
-                photoNumber:74
+                photoNum:74
             },
         ]
     });
