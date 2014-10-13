@@ -46,3 +46,15 @@
     height: 40px;
     line-height: 40px;
 }
+
+.loading{
+    background: url(../../images/loading.gif) no-repeat;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    left: 50%;
+    margin-left: -32px;
+}
