@@ -1,28 +1,43 @@
 var express = require('express');
-var router = express.Router();
 var async = require('async')
+var utils = require('../lib/utils')
+
+var router = express.Router();
 
 /* user profile. */
-router.get(['/', '/:id'], function (req, res) {
-    var ownerId = req.params.id || 'wangwu3'
+router.get(['/', '/:userName'], function (req, res) {
+    var ownerUserName = req.params.userName || 'wangwu3'
 
-    async.parallel([
-        function (callback) {
-            setTimeout(function () {
-                callback(null, 'one');
-            }, 200);
+    async.parallel({
+        owner: function (callback) {
+            utils.ajax({
+                url: 'User.getBaseInfoByUserName',
+                method: 'post',
+                data: {
+                    userName: ownerUserName
+                },
+                req: req,
+                callback: function (err, data) {
+                    callback(null, data.data);
+                }
+            })
         },
-        function (callback) {
-            setTimeout(function () {
-                callback(null, 'two');
-            }, 100);
+        group: function (callback) {
+            utils.ajax({
+                url: 'Photo.getPhotoCollections',
+                method: 'post',
+                data: {
+                    userName: ownerUserName
+                },
+                req: req,
+                callback: function (err, data) {
+                    callback(null, data.data);
+                }
+            })
         }
-    ],
-// optional callback
-        function (err, results) {
-            // the results array will equal ['one','two'] even though
-            // the second function had a shorter timeout.
-        });
+    }, function (err, results) {
+        console.log(results)
+    });
 
     res.render('profile/index', {
         owner: {
@@ -98,10 +113,10 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
                     "//static.jspass.com/static/css/profile/images/trade-1-3.png",
                     "//static.jspass.com/static/css/profile/images/trade-1-4.png",
                     "//static.jspass.com/static/css/profile/images/trade-1-5.png",
-                    "//static.jspass.com/static/css/profile/images/trade-1-6.png",
+                    "//static.jspass.com/static/css/profile/images/trade-1-6.png"
 
                 ],
-                photoNumber: 38
+                photoNum: 38
             },
             {
                 portraitURL: "//static.jspass.com/static/css/profile/images/trade-portrait2.png",
@@ -116,11 +131,11 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
                     "//static.jspass.com/static/css/profile/images/trade-2-3.png",
                     "//static.jspass.com/static/css/profile/images/trade-2-4.png",
                     "//static.jspass.com/static/css/profile/images/trade-2-5.png",
-                    "//static.jspass.com/static/css/profile/images/trade-2-6.png",
+                    "//static.jspass.com/static/css/profile/images/trade-2-6.png"
 
                 ],
-                photoNumber: 74
-            },
+                photoNum: 74
+            }
         ]
     });
 
