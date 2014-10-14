@@ -91,7 +91,7 @@
             }, '#rightArea,#nextCircle2');
 
             // Collection Events
-            container.on({
+            /*container.on({
                 mouseover: function(){
                     $(this).find('.c-bar.bar-top').css({
                         top:'0px'
@@ -108,7 +108,7 @@
                         bottom:'-80px'
                     })
                 }
-            },'.c-block')
+            },'.c-block')*/
 
         }
     }

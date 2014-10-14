@@ -37,15 +37,16 @@ router.get(['/', '/:userName'], function (req, res) {
         }
     }, function (err, results) {
         console.log(results)
+        res.render('profile/index', {
+            owner: {
+                userName: 'Jade',
+                id: '1'
+            },
+            subTab: 'index'
+        });
     });
 
-    res.render('profile/index', {
-        owner: {
-            userName: 'Jade',
-            id: '1'
-        },
-        subTab: 'index'
-    });
+
 });
 
 /* user about. */
