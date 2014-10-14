@@ -12,6 +12,7 @@ router.get(['/', '/:userName'], function (req, res) {
         function(callback){
 
             var param = utils.parseRequest(req)
+            param.method = 'post'
             param.param = {
                 userName: ownerUserName
             }
@@ -23,7 +24,7 @@ router.get(['/', '/:userName'], function (req, res) {
             })
         },
         function(callback){
-            var param = utils.parseRequest(req)
+            /*var param = utils.parseRequest(req)
             param.param = {
                 userName: ownerUserName
             }
@@ -32,7 +33,8 @@ router.get(['/', '/:userName'], function (req, res) {
                 if (data.code == '200') {
                     callback(data.data, 'owner');
                 }
-            })
+            })*/
+            callback(null, 'two')
         }
     ],
     // optional callback
