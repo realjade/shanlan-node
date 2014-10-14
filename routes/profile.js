@@ -1,9 +1,46 @@
 var express = require('express');
+var async = require('async')
+var utils = require('../lib/utils')
+
 var router = express.Router();
 
 /* user profile. */
-router.get(['/', '/:id'], function (req, res) {
-    var ownerId = req.params.id || '2'
+router.get(['/', '/:userName'], function (req, res) {
+    var ownerUserName = req.params.userName || 'wangwu3'
+
+    async.parallel([
+        function(callback){
+
+            var param = utils.parseRequest(req)
+            param.param = {
+                userName: ownerUserName
+            }
+
+            utils.getApiData('User.getBaseInfoByUserName', param, function (data) {
+                if (data.code == '200') {
+                    callback(data.data, 'owner');
+                }
+            })
+        },
+        function(callback){
+            var param = utils.parseRequest(req)
+            param.param = {
+                userName: ownerUserName
+            }
+
+            utils.getApiData('Photo.getPhotoCollections', param, function (data) {
+                if (data.code == '200') {
+                    callback(data.data, 'owner');
+                }
+            })
+        }
+    ],
+    // optional callback
+    function(err, results){
+        // the results array will equal ['one','two'] even though
+        // the second function had a shorter timeout.
+        console.log(results)
+    });
     
     res.render('profile/index', {
         owner:{

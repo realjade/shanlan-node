@@ -10,7 +10,7 @@ router.route('/login').get(function (req, res) {
         title: '登录'
     })
 }).post(function (req, res) {
-        utils.getApiData('User.login', req, function (data) {
+        utils.getApiData('User.login', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
                 //注册成功
                 res.render('account/message', {
@@ -31,7 +31,7 @@ router.route('/register').get(function (req, res) {
         title: '注册'
     })
 }).post(function (req, res) {
-        utils.getApiData('User.register', req, function (data) {
+        utils.getApiData('User.register', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
                 //注册成功
                 res.render('account/message', {
