@@ -21,7 +21,7 @@
                     {
                         id: '',
                         thumbnailPath: '',
-                        path: ''
+                        filePath: ''
                     }
                 ]
             }, options)
@@ -121,7 +121,7 @@
 
             self.__showImgLoading()
             var imgObj = new Image()
-            imgObj.src = img.path
+            imgObj.src = img.filePath
 
             imgObj.onload = function () {
                 self.__hideImgLoading()
@@ -276,7 +276,7 @@
         '   <em class="close"></em>' +
         '</div>'
 
-    imageView.__thumbnailTpl = '{{#img}}<img class="t-item" data-id="{{id}}" data-path="{{path}}" src="{{thumbnailPath}}" />{{/img}}'
+    imageView.__thumbnailTpl = '{{#img}}<img class="t-item" data-id="{{id}}" data-filepath="{{filePath}}" src="{{thumbnailPath}}" />{{/img}}'
 
     App.common.modules.imageView = imageView
 

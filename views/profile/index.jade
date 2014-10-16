@@ -7,57 +7,11 @@ block header
         include ../share/profileHeader
 block content
     div.mod-profile
-        div.photo-group
-            div.photo-item.item1
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
-            div.photo-item.item2
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
-            div.photo-item.item3
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
-            div.photo-item.item4
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
-
-        div.photo-group
-            div.photo-item.item1
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
-            div.photo-item.item2
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
-            div.photo-item.item3
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
-            div.photo-item.item4
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
-
-
-        div.photo-group
-            div.photo-item.item1
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
-            div.photo-item.item2
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
-            div.photo-item.item3
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
-            div.photo-item.item4
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
-
-        div.photo-group
-            div.photo-item.item1
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
-            div.photo-item.item2
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
-            div.photo-item.item3
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
-            div.photo-item.item4
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
-
-        div.photo-group
-            div.photo-item.item1
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/3.jpg")
-            div.photo-item.item2
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/2.jpg")
-            div.photo-item.item3
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/4.jpg")
-            div.photo-item.item4
-                img.lazy(data-original="//static.jspass.com/static/css/profile/images/1.jpg")
-
-
+        each collect, index in collects
+            if(collect.photoQuantity >= 4)
+                div.photo-group(data-id="#{collect.id}")
+                    each photo, index in collect.photoDTOList
+                        div(class="photo-item item#{index+1}")
+                            img.lazy(data-original="#{photo.filePath}")
 block js
     script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_index.merge.js")}')

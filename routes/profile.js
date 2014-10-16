@@ -12,7 +12,7 @@ router.get(['/', '/:userName'], function (req, res) {
         owner: function (callback) {
             utils.ajax({
                 url: 'User.getBaseInfoByUserName',
-                method: 'post',
+                method: 'get',
                 data: {
                     userName: ownerUserName
                 },
@@ -22,10 +22,10 @@ router.get(['/', '/:userName'], function (req, res) {
                 }
             })
         },
-        group: function (callback) {
+        collects: function (callback) {
             utils.ajax({
                 url: 'Photo.getPhotoCollections',
-                method: 'post',
+                method: 'get',
                 data: {
                     userName: ownerUserName
                 },
@@ -36,14 +36,8 @@ router.get(['/', '/:userName'], function (req, res) {
             })
         }
     }, function (err, results) {
-        console.log(results)
-        res.render('profile/index', {
-            owner: {
-                userName: 'Jade',
-                id: '1'
-            },
-            subTab: 'index'
-        });
+        results.subTab = 'index'
+        res.render('profile/index', results);
     });
 
 

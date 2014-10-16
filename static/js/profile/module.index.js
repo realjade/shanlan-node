@@ -28,115 +28,26 @@
 
         __initImageView: function (gid) {
             var self = this
-            App.common.modules.imageView.init(null, {
-                showDialog: true,
-                groupTitle: '婆娑',
-                groupDescription: '来生再见',
-                imgData: [
-                    {
-                        id: 1,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/1.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/1.jpg'
-                    },
-                    {
-                        id: 2,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/2.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/2.jpg'
-                    },
-                    {
-                        id: 3,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/3.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/3.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },
-                    {
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
-                    },{
-                        id: 4,
-                        thumbnailPath: '//static.jspass.com/static/css/module/images/imageview/4.jpg',
-                        path: '//static.jspass.com/static/css/module/images/imageview/4.jpg'
+
+            $.ajax({
+                url: '/opt',
+                type: 'get',
+                data:{
+                    service: 'Photo.getPhotos',
+                    photoCollectionId: 1
+                },
+                success: function(data){
+                    if(data.code === 200){
+                        App.common.modules.imageView.init(null, {
+                            showDialog: true,
+                            groupTitle: '婆娑',
+                            groupDescription: '来生再见',
+                            imgData: data.data
+                        })
                     }
-                ]
+                }
             })
+
         }
     }
 

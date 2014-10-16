@@ -58,21 +58,16 @@ router.get('/mock', function (req, res) {
 })
 
 /* GET home page. */
-router.route('/j/*').all(function (req, res) {
-    utils.sendRequest(req, function (data) {
-        console.log('end：' + data)
-        res.json(200, JSON.parse(data));
-    });
+router.route(['/opt', '/opf/*']).all(function (req, res) {
+    var service = req.param('service')
+
+    utils.ajax({
+        url: service,
+        req: req,
+        callback: function (err, data) {
+            res.json(data);
+        }
+    })
 });
 
-router.get('/la', function (req, res) {
-    res.json(200, {test: 'test'});
-});
-
-//注册
-router.get('/test', function (req, res) {
-    res.render('test', {
-        title: '注册'
-    });
-});
 module.exports = router;
