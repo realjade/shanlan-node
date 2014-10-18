@@ -8,7 +8,11 @@ var router = express.Router();
 router.get(['/', '/:userName'], function (req, res) {
     var me = res.locals._user
 
-    var ownerUserName = req.params.userName || me.userName
+    var ownerUserName = req.params.userName || (me && me.userName) || null
+
+    if(!ownerUserName){
+        res.redirect('/')
+    }
 
     async.parallel({
         owner: function (callback) {

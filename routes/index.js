@@ -6,21 +6,36 @@ var utils = require('../lib/utils')
 
 //登录
 router.route('/login').get(function (req, res) {
+    var me = res.locals._user
+
+    if(me){
+        res.redirect('profile')
+    }
+
     res.render('account/login', {
-        title: '登录'
+        title: '登录',
+        next: req.get('Referrer') || ''
     })
 }).post(function (req, res) {
+        var me = res.locals._user
+
+        if(me){
+            res.redirect('/profile')
+        }
         utils.getApiData('User.login', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
                 //session写入
                 var session = req.session
                 session.user = data.data
 
+                console.log(req.param('next'))
 
-                //登录成功
-                res.render('account/message', {
-                    message: '恭喜您登录成功'
-                })
+                if(req.param('next')){
+                    res.redirect(req.param('next'))
+                }else{
+                    res.redirect('/profile')
+                }
+
             } else {
                 res.render('account/login', {
                     title: '登录',
