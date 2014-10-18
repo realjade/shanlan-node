@@ -4,21 +4,35 @@
         div.f-l
             img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
         div.user-detail.f-l
-            div.user-name #{owner.userName}
+            div.user-title
+                span#user-name #{owner.userName}
+                span ·
+                span#user-city 广州
+            div.user-content
+                div.info-item
+                    span.info-key 作品集
+                    span.info-value#user-collections 45
+                div.info-item
+                    span.info-key 交易
+                    span.info-value#user-trades 138
+                div.info-item
+                    span.info-key 评价
+                    span.info-value#user-score 9.1
     div.profile-nav
         ul.nav
             li.avatar-wrap
                 img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
+                div.avatar-name #{owner.userName}
             li
                 if subTab == 'about'
-                    a.active(href="/profile/about/#{owner.id}") 关于
+                    a.active(href="/profile/about/#{owner.id}") 个人介绍
                 else
-                    a(href="/profile/about/#{owner.id}") 关于
+                    a(href="/profile/about/#{owner.id}") 个人介绍
             li
                 if subTab == 'index'
-                    a.active(href="/profile/#{owner.id}") 影集
+                    a.active(href="/profile/#{owner.id}") 作品展示
                 else
-                    a(href="/profile/#{owner.id}") 影集
+                    a(href="/profile/#{owner.id}") 作品展示
             li
                 if subTab == 'package'
                     a.active(href="/profile/package/#{owner.id}") 套系预订
@@ -26,6 +40,6 @@
                     a(href="/profile/package/#{owner.id}") 套系预订
             li
                 if subTab == 'trade'
-                    a.active(href="/profile/trade/#{owner.id}") 合作评价
+                    a.active(href="/profile/trade/#{owner.id}") 交易评价
                 else
-                    a(href="/profile/trade/#{owner.id}") 合作评价
+                    a(href="/profile/trade/#{owner.id}") 交易评价

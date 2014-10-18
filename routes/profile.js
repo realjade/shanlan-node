@@ -96,7 +96,7 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
         subTab: 'trade',
         itemList: [
             {
-                portraitURL: "//static.jspass.com/static/css/profile/images/trade-portrait1.png",
+                portraitImgURL: "//static.jspass.com/static/css/profile/images/trade-portrait1.png",
                 name: "晴天",
                 star: 5,
                 info: "( 1000元 · 胶片写真A · 2014-09-30 )",
@@ -114,7 +114,7 @@ router.get(['/trade', '/trade/:id'], function (req, res) {
                 photoNum: 38
             },
             {
-                portraitURL: "//static.jspass.com/static/css/profile/images/trade-portrait2.png",
+                portraitImgURL: "//static.jspass.com/static/css/profile/images/trade-portrait2.png",
                 name: "雨溪",
                 star: 5,
                 info: "( 1800元 · 胶片写真A · 2014-08-30 )",
@@ -142,7 +142,7 @@ router.get(['/package', '/package/:id'], function (req, res) {
 
     res.render('profile/package', {
         owner: {
-            userName: 'Jade',
+            userName: '原色空',
             id: ownerId
         },
         subTab: 'package'

@@ -16,9 +16,9 @@ block content
             each item in itemList
                 div.main-container
                     div.main-block
-                        div.trade-user-portrait
-                            img(src= item.portraitURL)
-                        div.trade-user-name #{item.name}
+                        a.trade-user-portrait
+                            img(src= item.portraitImgURL)
+                        a.trade-user-name #{item.name}
                         div.main-intro
                             div.main-stars
                                 if(item.star == 5)
@@ -29,11 +29,11 @@ block content
                         div.main-photo-group
                             each photo,i in item.photosURL
                                 if (i < 7)
-                                    div.item
+                                    a.item(id=i)
                                         img(src= photo)
                             if( item.photoNum > 7)
-                                div.item
-                                    div.item-number +#{item.photoNum} &nbsp
+                                a.item#item-number
+                                    span +#{item.photoNum-7} &nbsp
 
 
 block js

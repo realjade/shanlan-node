@@ -25,7 +25,8 @@
             container = self.__container
 
             var nav = container.find('.profile-nav')
-            var navAvatar = container.find('.profile-nav .avatar')
+            var navAvatar = container.find('.profile-nav .avatar-wrap')
+            var avatar = container.find('.user-info .avatar')
 
             $(window).resize(function(){
                 container.height($(window).height() + 60)
@@ -40,17 +41,30 @@
                         position: 'fixed',
                         top: 0,
                         bottom: 'auto',
-                        'background-color': 'rgba(0,0,0,0.8)'
+                        'background-color': 'rgba(0,0,0,0.9)'
+                    }),
+                    navAvatar.css({
+                        left: '15px',
+                        opacity:'1'
+                    }),
+                    avatar.css({
+                        opacity:'0'
                     })
-                    navAvatar.css('left', '15px')
+
                 }else{
                     nav.css({
                         position: 'absolute',
                         bottom: 0,
                         top: 'auto',
-                        'background-color': 'transparent'
+                        'background': 'rgba(0,0,0,0.65)'
                     })
-                    navAvatar.css('left', '-30px')
+                    navAvatar.css({
+                        left:'-30px',
+                        opacity:'0'
+                    }),
+                    avatar.css({
+                        opacity:'1'
+                    })
                 }
             })
 
