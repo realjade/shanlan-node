@@ -17,6 +17,8 @@
 
             container.height($(window).height() + 60)
 
+            App.common.modules.common.scrollTo($('.user-info .avatar').offset().top - 30)
+
             self.__bindEvent()
         },
 

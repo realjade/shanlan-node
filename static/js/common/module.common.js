@@ -12,6 +12,14 @@
         },
         isMobile: function(mobile){
             return /^\d{11}$/.test(mobile)
+        },
+        scrollTo: function(top, callback){
+            top = top || 0
+            $(document.body).animate({
+                scrollTop: top
+            },'fast', function(){
+                callback && callback()
+            })
         }
     }
 
