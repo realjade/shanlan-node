@@ -53,7 +53,9 @@ router.route('/register').get(function (req, res) {
 
 //登出
 router.get('/logout', function (req, res) {
-    res.render('index')
+    var session = req.session
+    session.user = null
+    res.redirect('/')
 });
 
 router.get('/mock', function (req, res) {
