@@ -5,7 +5,7 @@
             img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
         div.user-detail.f-l
             div.user-title
-                span#user-name #{owner.userName}
+                span#user-name #{owner.nickName}
                 span ·
                 span#user-city 广州
             div.user-content
@@ -22,7 +22,7 @@
         ul.nav
             li.avatar-wrap
                 img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
-                div.avatar-name #{owner.userName}
+                div.avatar-name #{owner.nickName}
             li
                 if subTab == 'about'
                     a.active(href="/profile/about/#{owner.id}") 个人介绍

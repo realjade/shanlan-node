@@ -24,16 +24,16 @@
             var container = self.__container
             var form = container.find('.mod-form')
             var error = container.find('.form-error')
-            var emailInput = form.find('input[name="email"]')
+            var userNameInput = form.find('input[name="userName"]')
             var psdInput = form.find('input[name="password"]')
 
             form.submit(function(){
                 error.hide()
-                var email = $.trim(emailInput.val())
+                var userName = $.trim(userNameInput.val())
                 var psd = $.trim(psdInput.val())
-                if(!email){
-                    error.text('请输入常用邮箱').show()
-                    emailInput.select()
+                if(!userName){
+                    error.text('请输入常用邮箱/用户名').show()
+                    userNameInput.select()
                     return false
                 }
 

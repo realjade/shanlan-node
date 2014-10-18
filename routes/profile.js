@@ -6,7 +6,9 @@ var router = express.Router();
 
 /* user profile. */
 router.get(['/', '/:userName'], function (req, res) {
-    var ownerUserName = req.params.userName || 'wangwu3'
+    var me = res.locals._user
+
+    var ownerUserName = req.params.userName || me.userName
 
     async.parallel({
         owner: function (callback) {
@@ -36,6 +38,7 @@ router.get(['/', '/:userName'], function (req, res) {
             })
         }
     }, function (err, results) {
+        results.me = me
         results.subTab = 'index'
         res.render('profile/index', results);
     });

@@ -24,7 +24,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('keyboard cat'));
 
 // 设置 Session
 app.use(session({
@@ -32,16 +32,20 @@ app.use(session({
     secret: 'keyboard cat',
     cookie:{
         originalMaxAge: 6000,
-        maxAge: 6000
+        maxAge: 1000 * 60 * 60 * 24
     }
 }));
 
 //把user从session中读取出来，然后设置到res的locals中去
 app.use(function(req, res, next) {
     var session = req.session
+
     var user = session ? session.user : null
+
     if(user){
         res.locals._user =  user;
+    }else{
+        res.locals._user = null
     }
     res.locals.staticFilter = staticFilter.staticFilter
     res.locals.title = '高质量独立摄影平台'

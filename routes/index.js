@@ -12,7 +12,12 @@ router.route('/login').get(function (req, res) {
 }).post(function (req, res) {
         utils.getApiData('User.login', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
-                //注册成功
+                //session写入
+                var session = req.session
+                session.user = data.data
+
+
+                //登录成功
                 res.render('account/message', {
                     message: '恭喜您登录成功'
                 })
