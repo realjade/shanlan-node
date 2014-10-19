@@ -6,7 +6,75 @@ block header
         include ../share/header
         include ../share/personalHeader
 block content
-    div.mod-personal
+    div.mod-personal-setting
+        div.block-title#personal-info-setting 资料设置
+        div.personal-setting-block
+            ul.info-wrap.wrap-type1
+                li.info-line
+                    div.info-key 名称：
+                    div.info-block
+                        input.info-text-input#nick-name(value='')
+                li.info-line
+                    div.info-key 性别：
+                    div.info-block
+                        select.info-select-box#gender
+                            option(value='0') 不愿透露
+                            option(value='1') 男士
+                            option(value='2') 女生
+                li.info-line
+                    div.info-key 生日：
+                    div.info-block
+                        select.info-select-box#birth-year
+                            option(value='0') 年
+                        select.info-select-box#birth-month
+                            option(value='0') 月
+                        select.info-select-box#birth-day
+                            option(value='0') 日
+                li.info-line
+                    div.info-key 所在地：
+                    div.info-block
+                        select.info-select-box#country
+                            option(value='0') 国家
+                        select.info-select-box#province
+                            option(value='0') 省份
+                        select.info-select-box#city
+                            option(value='0') 城市
+                li.info-line
+                    div.info-key 手机号：
+                    div.info-block
+                        input.info-text-input#mobile-phone(value='')
+                li.info-line
+                    div.info-key 邮箱：
+                    div.info-block
+                        input.info-text-input#email(value='')
+            div.portrait-wrap
+                img(src="//static.jspass.com/static/css/personal/images/avatar.jpg")
+                button.upload-btn(value='上传') 上 &nbsp 传
+                p *请使用2M以内的.jpg, jpeg, .png图片
+            button.save-btn(value='保存') 保 &nbsp 存
+
+        div.block-title#personal-pwd-setting 密码设置
+        div.personal-setting-block
+            ul.info-wrap.wrap-type2
+                li.info-line
+                    div.info-key 当前密码：
+                    div.info-block
+                        input.info-text-input#current-pwd(type='password')
+                li.info-line
+                    div.info-key 新密码：
+                    div.info-block
+                        input.info-text-input#new-pwd(type='password')
+                    div.info-pwd-note
+                        div.pwd-strong-bar
+                            div.percent
+                li.info-line
+                    div.info-key 确认密码：
+                    div.info-block
+                        input.info-text-input#new-pwd-check(type='password')
+                    div.info-pwd-note
+                        p *密码长度为6~32个字符；支持字母，数字，标点。<br/> *新密码不应于原密码相同。
+            button.save-btn(value='保存') 保 &nbsp 存
+
 
 block js
     script(src='#{staticFilter("//static.jspass.com/static/js/merge/personal_setting.merge.js")}')

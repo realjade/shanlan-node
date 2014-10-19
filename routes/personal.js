@@ -21,3 +21,15 @@ router.get('/setting', function (req, res) {
     });
 });
 module.exports = router;
+
+
+/* user order. */
+router.get('/order', function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+
+    res.render('personal/order', {
+        subTab: 'order'
+    });
+});
+module.exports = router;

@@ -1,0 +1,44 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personal_order.merge.css")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalHeader
+block content
+    div.mod-personal-order
+        table.order-table
+            thead
+                tr
+                    th 交易编号
+                    th 摄影师
+                    th 预订套系
+                    th 预定时间
+                    th 已支付金额
+                    th 状态
+                    th 照片下载
+            tbody
+                tr
+                    td.order-no P1234567890
+                    td
+                        a(href='') 摄影师小五
+                    td 高级定制团队个人写真
+                    td 2014-10-19
+                    td 全额：12800元
+                    td 交易完成
+                    td
+                        a.download-enabled
+                tr
+                    td.order-no P1234567890
+                    td
+                        a(href='') 小六
+                    td 个人写真
+                    td 2014-10-19
+                    td 预订：1280元
+                    td 等待拍摄
+                    td
+                        a
+
+
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personal_order.merge.js")}')
