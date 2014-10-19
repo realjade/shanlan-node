@@ -28,8 +28,6 @@ router.route('/login').get(function (req, res) {
                 var session = req.session
                 session.user = data.data
 
-                console.log(req.param('next'))
-
                 if(req.param('next')){
                     res.redirect(req.param('next'))
                 }else{
@@ -70,7 +68,7 @@ router.route('/register').get(function (req, res) {
 router.get('/logout', function (req, res) {
     var session = req.session
     session.user = null
-    res.redirect('/')
+    utils.goIndex(res)
 });
 
 router.get('/mock', function (req, res) {
@@ -91,5 +89,10 @@ router.route(['/opt', '/opf/*']).all(function (req, res) {
         }
     })
 });
+
+//error page
+router.get('/error', function (req, res) {
+    res.render('error')
+})
 
 module.exports = router;

@@ -11,7 +11,7 @@ router.get(['/', '/:userName'], function (req, res) {
     var ownerUserName = req.params.userName || (me && me.userName) || null
 
     if(!ownerUserName){
-        res.redirect('/')
+        utils.goIndex(res)
     }
 
     async.parallel({
@@ -42,12 +42,14 @@ router.get(['/', '/:userName'], function (req, res) {
             })
         }
     }, function (err, results) {
-        results.me = me
-        results.subTab = 'index'
-        res.render('profile/index', results);
+        if(!results.owner){
+            utils.goError(res, '对不起，找不到该用户')
+        }else{
+            results.me = me
+            results.subTab = 'index'
+            res.render('profile/index', results);
+        }
     });
-
-
 });
 
 /* user about. */

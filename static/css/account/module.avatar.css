@@ -1,0 +1,167 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 2014/9/16
+  * Time: 20:12
+  *
+  */
+
+/* upload avatar widget start */
+
+.uploadhead-widget .main-view {
+    position: relative;
+}
+
+.uploadhead-widget .image-panel {
+    background-color: #f2f4f9;
+    float: left;
+    height: 410px;
+    padding: 10px;
+    position: relative;
+    width: 425px;
+}
+
+.uploadhead-widget .image-panel .upload-btn {
+    border: 1px solid #959595;
+    cursor: pointer;
+}
+
+.uploadhead-widget .image-panel .upload-loading {
+    display: none;
+    background: url('../../images/load.gif') no-repeat;
+    width: 128px;
+    height: 15px;
+}
+
+.uploadhead-widget .image-panel .upload-area {
+    position: absolute;
+    top: 165px;
+    left: 175px;
+    width: 160px;
+    overflow: hidden;
+}
+
+.uploadhead-widget .image-panel .upload-ctrl {
+    height: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.uploadhead-widget .image-thumn {
+    float: right;
+}
+
+.uploadhead-widget .image-thumn p {
+    color: #888888;
+}
+
+.uploadhead-widget .image-thumn span {
+    display: block;
+    background-color: #F0F0F0;
+    overflow: hidden;
+}
+
+.uploadhead-widget .image-thumn img {
+    outline: none;
+    border: 0;
+    display: none;
+}
+
+.uploadhead-widget .image-thumn .normal span {
+    width: 200px;
+    height: 200px;
+    background: url("../../images/default_avatar_200.gif")
+}
+
+.uploadhead-widget .image-thumn .tiny span {
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
+    background: url("../../images/default_avatar_120.gif")
+}
+
+.uploadhead-widget .image-thumn .mini span {
+    width: 32px;
+    height: 32px;
+    margin-top: 15px;
+    background: url("../../images/default_avatar_32.gif")
+}
+
+.uploadhead-widget .image-thumn .sizedesc {
+    color: #888888;
+    margin-top: 5px;
+}
+
+.uploadhead-widget .standard {
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    top: 225px;
+    width: 425px;
+    color: #666;
+}
+
+.uploadhead-widget .upload-btn {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.uploadhead-widget .save-file {
+    position: absolute;
+    left: 90px;
+    bottom: -50px;
+}
+
+.uploadhead-widget .save-btn {
+    display: none;
+}
+
+.upload-again {
+    float: left;
+    width: 80px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none;
+    margin: 20px 0 0 0;
+}
+
+.upload-again input {
+    margin-left: 0;
+}
+
+.upload-again .upload-btn {
+    color: #666666;
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    font-size: 12px;
+    width: 80px;
+    height: 30px;
+    zoom: 1;
+    text-align: left;
+}
+
+.upload-again .upload-ctrl {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.upload-loading {
+    margin-left: 150px;
+    margin-top: 175px;
+}
+
+.async-upload {
+    display: none;
+}
+
