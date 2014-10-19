@@ -7,16 +7,11 @@ block header
         include ../share/profileHeader
 block content
     div.mod-about
-        div.error-info
-            if(error-title)
-                div.error-title #{error-title}
-            if(error-message)
-                div.error-message #{error-message}
         div.mod-about-main
-            each item in itemList
+            each item, index in introductions
                 div.main-block
                     div.block-head
-                        h2 #{item.head}
+                        h2 #{item.title}
                     div.block-content
                         | !{item.content}
 

@@ -7,33 +7,28 @@ block header
         include ../share/profileHeader
 block content
     div.mod-trade
-        div.error-info
-            if(error-title)
-                div.error-title #{error-title}
-            if(error-message)
-                div.error-message #{error-message}
         div.mod-trade-main
-            each item in itemList
+            each item in comments
                 div.main-container
                     div.main-block
                         a.trade-user-portrait
-                            img(src= item.portraitImgURL)
-                        a.trade-user-name #{item.name}
+                            img(src= item.photoPath)
+                        a.trade-user-name #{item.nickName}
                         div.main-intro
                             div.main-stars
-                                if(item.star == 5)
+                                if(item.score == 4.5)
                                     img(src="//static.jspass.com/static/css/profile/images/5stars.png")
-                            div.trade-info #{item.info}
+                            div.trade-info (#{item.createAt} · #{item.packageName} · #{item.price}元)
                         div.main-comment
-                            p #{item.comment}
+                            p #{item.content}
                         div.main-photo-group
-                            each photo,i in item.photosURL
+                            each photo,i in item.photos
                                 if (i < 7)
                                     a.item(id=i)
-                                        img(src= photo)
+                                        img(src= filePath)
                             if( item.photoNum > 7)
                                 a.item#item-number
-                                    span +#{item.photoNum-7} &nbsp
+                                    span +#{item.photoCount-7} &nbsp
 
 
 block js

@@ -25,8 +25,20 @@ block content
             //    div.middle-line
             //    div.pack-type 商业合作
             div.pack-list
+                each item, index in packages
+                    div.pack-block
+                        div.pack-no #{index}
+                        div.pack-head-wrap
+                            div.pack-name #{item.name}
+                            div.pack-photo-num #{item.photoCount}张
+                            div.pack-time #{item.days}天
+                        div.pack-price #{item.price}
+                        div.pack-detail
+                            | !{item.description}
+                        div.pack-select-btn 选择
+
                 div.pack-block
-                    div.pack-no 01
+                    div.pack-no 1
                     div.pack-head-wrap
                         div.pack-name 高级定制团队个人写真
                         div.pack-photo-num 100张
@@ -48,7 +60,7 @@ block content
                             6. 书尺寸A5 （15x20cm)<br/>
                     div.pack-select-btn 选择
                 div.pack-block
-                    div.pack-no 02
+                    div.pack-no 2
                     div.pack-head-wrap
                         div.pack-name 资深团队个人/情侣写真
                         div.pack-photo-num 100张
