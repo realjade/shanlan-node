@@ -61,9 +61,6 @@
                     cityInput.select()
                     return false
                 }*/
-
-
-
             })
         }
     }
