@@ -1,16 +1,14 @@
 /**
   * @name Edwin
   * @description 
-  * Date: 2014/10/1
-  * Time: 23:00
+  * Date: 2014/10/19
+  * Time: 23:15
   *
   */
-
 @import url('../common/reset.css');
 @import url('../common/module.common.css');
 @import url('../common/module.layout.css');
 @import url('../module/button.css');
 @import url('../module/module.dialog.css');
-@import url('../../js/libs/jquery/calendario/css/calendar.css');
-@import url('../common/module.profilelayout.css');
-@import url('../profile/module.package.css');
+@import url('../common/module.personallayout.css');
+@import url('../personal/module.order.css');

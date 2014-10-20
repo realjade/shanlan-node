@@ -1,0 +1,56 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/19
+  * Time: 23:16
+  *
+  */
+
+.mod-personal-order{
+    box-sizing: border-box;
+    width:1000px;
+    padding: 0 50px 100px 50px;
+    margin:0 auto;
+    overflow: hidden;
+    color:#333;
+}
+.order-table{
+    width:100%;
+    margin:20px 0;
+    border-bottom: 2px solid #bbb;
+    font-size: 12px;
+}
+.order-table a{
+    color:#333;
+}
+.order-table thead tr{
+    height:55px;
+    border:none;
+    background-color: #bbb;
+    color:#fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+}
+.order-table tbody tr{
+    height:55px;
+    border-bottom: 1px dotted #bbb;
+}
+.order-table tbody td{
+    padding:0 5px;
+    text-align: center;
+}
+.order-table .order-no{
+    font-size: 10px;
+}
+.order-table .download-enabled{
+    display: block;
+    height:30px;
+    width:30px;
+    margin:0 auto;
+    background: url('./images/download.png') no-repeat;
+}
+.order-table .download-enabled:hover{
+    background: url('./images/download-active.png') no-repeat;
+}

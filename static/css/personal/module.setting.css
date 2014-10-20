@@ -6,3 +6,170 @@
   *
   */
 
+.mod-personal-setting{
+     box-sizing: border-box;
+     width:1000px;
+     padding: 0 50px 100px 50px;
+     margin:0 auto;
+     overflow: hidden;
+     color:#333;
+ }
+.mod-personal-setting .personal-setting-block{
+    position: relative;
+    display: block;
+    overflow:hidden;
+    padding:0px 10px 80px 10px;
+}
+.mod-personal-setting .personal-setting-block+.block-title{
+    border-top:1px dotted #ccc;
+}
+.mod-personal-setting .block-title{
+    position: relative;
+    left:-10px;
+    height:40px;
+    line-height: 40px;
+    padding:20px 0 0 55px;
+    margin-right:-20px;
+    font-size:15px;
+    color:#333;
+}
+#personal-info-setting{
+    background:url("./images/setting.png") no-repeat 0px 20px;
+    background-size:40px 40px;
+}
+#personal-pwd-setting{
+    background:url("./images/pwd.png") no-repeat 0px 20px;
+    background-size:40px 40px;
+}
+.mod-personal-setting .portrait-wrap{
+    float:left;
+    width:330px;
+    height:400px;
+}
+.mod-personal-setting .portrait-wrap img{
+    display: block;
+    height:250px;
+    width:250px;
+    margin:40px auto 15px auto;
+    border: 1px solid #ccc;
+    padding:7px;
+}
+.mod-personal-setting .info-wrap{
+    box-sizing: border-box;
+    float:left;
+    padding: 10px 0;
+}
+.mod-personal-setting .wrap-type1{
+    width:550px;
+}
+
+.mod-personal-setting .wrap-type2{
+    width:100%;
+}
+.mod-personal-setting .info-wrap .info-line{
+    height:60px;
+    padding:5px 0px;
+    margin:0 auto;
+    line-height: 60px;
+    overflow: hidden;
+
+}
+.mod-personal-setting .info-wrap .info-key{
+    float: left;
+    width: 75px;
+    text-align: left;
+    margin:0  15px 0 10px;
+}
+.mod-personal-setting .info-wrap .info-block{
+    float: left;
+    width:400px;
+}
+.mod-personal-setting .info-wrap .info-text-input{
+    box-sizing: border-box;
+    width:100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 3px;
+    background: #fff;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    color: #222;
+}
+.mod-personal-setting .info-wrap .info-select-box{
+    box-sizing: border-box;
+    width:120px;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 3px;
+    background: #fff;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #222;
+    text-align: center;
+}
+.mod-personal-setting .info-wrap .info-select-box+.info-select-box{
+    margin:0 0 0 20px;
+}
+.mod-personal-setting button{
+    width:200px;
+    height:45px;
+    background-color: #CFCFCF;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    color:#fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.mod-personal-setting button:hover{
+    background-color: #b7b7b7;
+    cursor:pointer;
+}
+.mod-personal-setting .save-btn{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:30px;
+    display: block;
+    margin:0 auto;
+}
+
+.mod-personal-setting .upload-btn{
+    display: block;
+    margin:0 auto;
+    width:100px;
+    height:35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.mod-personal-setting .portrait-wrap p{
+    width:240px;
+    margin:20px auto 0 auto;
+    color:#777;
+    font-size:12px;
+    text-align: center;
+}
+
+.personal-setting-block .info-line .info-pwd-note{
+    float:left;
+    margin:0 0 0 35px;
+    color:#777;
+    font-size:12px;
+    vertical-align: top;
+}
+.personal-setting-block .info-line .info-pwd-note p{
+    height:80px;
+    width:330px;
+    position: relative;
+    top: -10px;
+    line-height: 20px;
+}
+.personal-setting-block .info-line .pwd-strong-bar{
+    width:170px;
+    height:15px;
+    margin:20px 0 0 0;
+    border: 1px solid #ccc;
+}

@@ -173,7 +173,7 @@ router.get(['/package', '/package/:userName'], function (req, res) {
                 method: 'get',
                 data: {
                     userName: ownerUserName,
-                    type:'all'
+                    type:'亲子家庭'
                 },
                 req: req,
                 callback: function (err, data) {
