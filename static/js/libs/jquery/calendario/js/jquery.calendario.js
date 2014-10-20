@@ -1,5 +1,5 @@
 /**
- * jquery.calendario.js v1.0.0
+ * jquery.calendario.js v2.0.0
  * http://www.codrops.com
  *
  * Licensed under the MIT license.
@@ -7,6 +7,7 @@
  * 
  * Copyright 2012, Codrops
  * http://www.codrops.com
+ * Updated by : Bozi Dabel
  */
 ;( function( $, window, undefined ) {
 	
@@ -34,10 +35,10 @@
 			...
 		}
 		*/
-		weeks : [ '星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ],
-		weekabbrs : [ '日', '一', '二', '三', '四', '五', '六' ],
-		months : [ '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月' ],
-		monthabbrs : [ '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+		weeks : [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ],
+		weekabbrs : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+		months : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
+		monthabbrs : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
 		// choose between values in options.weeks or options.weekabbrs
 		displayWeekAbbr : false,
 		// choose between values in options.months or options.monthabbrs
@@ -45,11 +46,11 @@
 		// left most day in the calendar
 		// 0 - Sunday, 1 - Monday, ... , 6 - Saturday
 		startIn : 1,
-		onDayClick : function( $el, $content, dateProperties ) { return false; }
+		onDayClick : function( $el, $content, dateProperties ) { return false; },
+		onDayHover : function( $el, $content, dateProperties ) { return false; }
 	};
 
 	$.Calendario.prototype = {
-
 		_init : function( options ) {
 			
 			// options
@@ -78,11 +79,31 @@
 						monthname : self.options.displayMonthAbbr ? self.options.monthabbrs[ self.month ] : self.options.months[ self.month ],
 						year : self.year,
 						weekday : idx + self.options.startIn,
-						weekdayname : self.options.weeks[ idx + self.options.startIn ]
+						weekdayname : self.options.weeks[ (idx==6?0:idx + self.options.startIn) ]
 					};
 
 				if( dateProp.day ) {
 					self.options.onDayClick( $cell, $content, dateProp );
+				}
+
+			} );
+			
+			this.$el.on( 'mouseenter.calendario', 'div.fc-row > div', function() {
+
+				var $cell = $( this ),
+					idx = $cell.index(),
+					$content = $cell.children( 'div' ),
+					dateProp = {
+						day : $cell.children( 'span.fc-date' ).text(),
+						month : self.month + 1,
+						monthname : self.options.displayMonthAbbr ? self.options.monthabbrs[ self.month ] : self.options.months[ self.month ],
+						year : self.year,
+						weekday : idx + self.options.startIn,
+						weekdayname : self.options.weeks[ (idx==6?0:idx + self.options.startIn) ]
+					};
+				
+				if( dateProp.day ) {
+					self.options.onDayHover( $cell, $content, dateProp );
 				}
 
 			} );
@@ -152,8 +173,9 @@
 						p = pos < 0 ? 6 + pos + 1 : pos,
 						inner = '',
 						today = this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day === this.today.getDate(),
+						past = this.year < this.today.getFullYear() || this.month < this.today.getMonth() && this.year === this.today.getFullYear() || this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day < this.today.getDate(),
 						content = '';
-					
+					    
 					if ( day <= monthLength && ( i > 0 || j >= p ) ) {
 
 						inner += '<span class="fc-date">' + day + '</span><span class="fc-weekday">' + this.options.weekabbrs[ j + this.options.startIn > 6 ? j + this.options.startIn - 6 - 1 : j + this.options.startIn ] + '</span>';
@@ -161,9 +183,81 @@
 						// this day is:
 						var strdate = ( this.month + 1 < 10 ? '0' + ( this.month + 1 ) : this.month + 1 ) + '-' + ( day < 10 ? '0' + day : day ) + '-' + this.year,
 							dayData = this.caldata[ strdate ];
-
+						var strdateyear = ( this.month + 1 < 10 ? '0' + ( this.month + 1 ) : this.month + 1 ) + '-' + ( day < 10 ? '0' + day : day ) + '-' + 'YYYY',
+							dayDataYear = this.caldata[ strdateyear ];
+						var strdatemonth = 'MM' + '-' + ( day < 10 ? '0' + day : day ) + '-' + this.year,
+							dayDataMonth = this.caldata[ strdatemonth ];
+						var strdatemonthyear = 'MM' + '-' + ( day < 10 ? '0' + day : day ) + '-' + 'YYYY',
+							dayDataMonthYear = this.caldata[ strdatemonthyear ];
+						var strdatemonthlyyear = ( this.month + 1 < 10 ? '0' + ( this.month + 1 ) : this.month + 1 ) + '-' + 'DD' + '-' + this.year,
+							dayDataMonthlyYear = this.caldata[ strdatemonthlyyear ];
+						var strdatemonthly = ( this.month + 1 < 10 ? '0' + ( this.month + 1 ) : this.month + 1 ) + '-' + 'DD' + '-' + 'YYYY',
+							dayDataMonthly = this.caldata[ strdatemonthly ];
+						
+						if( today ) {
+							var dayDataToday = this.caldata[ "TODAY" ];
+							if( dayDataToday )
+								content += dayDataToday;
+						}
 						if( dayData ) {
-							content = dayData;
+							content += dayData;
+						}
+						if( dayDataMonth ) {
+							content += dayDataMonth;
+						}
+						if( dayDataMonthlyYear ) {
+							if( dayDataMonthlyYear['start'] && dayDataMonthlyYear['end'] )
+							{
+								if( (day >= dayDataMonthlyYear['start']) && (day <= dayDataMonthlyYear['end']) )
+									content += dayDataMonthlyYear['content'];
+							}
+							else if( dayDataMonthlyYear['start'] > 1 )
+							{
+								if( day >= dayDataMonthlyYear['start'] )
+									content += dayDataMonthlyYear['content'];
+							}
+							else if( dayDataMonthlyYear['end'] > 0 )
+							{
+								if( day <= dayDataMonthlyYear['end'] )
+									content += dayDataMonthlyYear['content'];
+							}
+							else
+							{
+								if( dayDataMonthlyYear['content'] )
+									content += dayDataMonthlyYear['content'];
+								else
+									content += dayDataMonthlyYear;
+							}
+						}
+						if( dayDataMonthly ) {
+							if( dayDataMonthly['start'] && dayDataMonthly['end'] )
+							{
+								if( (day >= dayDataMonthly['start']) && (day <= dayDataMonthly['end']) )
+									content += dayDataMonthly['content'];
+							}
+							else if( dayDataMonthly['start'] > 1 )
+							{
+								if( day >= dayDataMonthly['start'] )
+									content += dayDataMonthly['content'];
+							}
+							else if( dayDataMonthly['end'] > 0 )
+							{
+								if(day <= dayDataMonthly['end'])
+									content += dayDataMonthly['content'];
+							}
+							else
+							{
+								if( dayDataMonthly['content'] )
+									content += dayDataMonthly['content'];
+								else
+									content += dayDataMonthly;
+							}
+						}
+						if( dayDataMonthYear ) {
+							content += dayDataMonthYear;
+						}
+						if( dayDataYear ) {
+							content += dayDataYear;
 						}
 
 						if( content !== '' ) {
@@ -178,6 +272,9 @@
 					}
 
 					var cellClasses = today ? 'fc-today ' : '';
+					if ( past ) {
+		              cellClasses += 'fc-past ';
+		            }
 					if( content !== '' ) {
 						cellClasses += 'fc-content';
 					}
@@ -300,9 +397,9 @@
 
 		},
 		// goes to month/year
-		goto : function( month, year, callback ) {
+		gotoMonth : function( month, year, callback ) {
 
-			this.month = month;
+			this.month = month - 1;
 			this.year = year;
 			this._generateTemplate( callback );
 
