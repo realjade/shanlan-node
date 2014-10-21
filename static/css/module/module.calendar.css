@@ -202,9 +202,8 @@
 }
 
 .fc-calendar .fc-row > div.fc-today {
-    background: #ef4f69;
+    background: #1a0dab;
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
-    border-radius: 26px;
 }
 
 .fc-calendar .fc-row > div.fc-past{
@@ -212,10 +211,16 @@
     background: #eee;
 }
 .fc-calendar .fc-row > div.fc-selected{
-
+    background: #ef4f69 !important;
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
+    cursor: not-allowed;
+}
+.fc-calendar .fc-row > div.fc-checked{
+    background: url(images/calendario/ok.png) no-repeat 26px 28px;
 }
 
-.fc-calendar .fc-row > div.fc-today > span.fc-date {
+.fc-calendar .fc-row > div.fc-today > span.fc-date,
+.fc-calendar .fc-row > div.fc-selected > span.fc-date{
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
@@ -233,7 +238,8 @@
     bottom: 3px;
 }
 
-.fc-calendar .fc-row > div.fc-today.fc-content:after {
+.fc-calendar .fc-row > div.fc-today.fc-content:after,
+.fc-calendar .fc-row > div.fc-selected.fc-content:after{
     color: #b02c42;
 }
 
@@ -241,7 +247,8 @@
     color: #ef4f69;
 }
 
-.fc-calendar .fc-row > div.fc-today.fc-content:hover:after{
+.fc-calendar .fc-row > div.fc-today.fc-content:hover:after,
+.fc-calendar .fc-row > div.fc-selected.fc-content:hover:after{
     color: #fff;
 }
 
