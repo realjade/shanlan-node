@@ -12,6 +12,7 @@ router.get(['/', '/:userName'], function (req, res) {
 
     if(!ownerUserName){
         utils.goIndex(res)
+        return false
     }
 
     async.parallel({
