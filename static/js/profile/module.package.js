@@ -14,6 +14,16 @@
         init: function(container){
             var self = this
             self.__container = container
+
+            var calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
+                onDayClick: function(){
+
+                }
+            })
+        },
+
+        __calendarClick: function(){
+
         }
     }
 
@@ -21,7 +31,7 @@
         profilePackage.init($('.mod-package'))
         App.common.modules.profileLayout.init($('.mod-profile-header-wrap'))
         /* Calendar */
-        var transEndEventNames, $wrapper, $calendar, cal, $month, $year;
+        /*var transEndEventNames, $wrapper, $calendar, cal, $month, $year;
         transEndEventNames = {
             'WebkitTransition': 'webkitTransitionEnd',
             'MozTransition': 'transitionend',
@@ -82,7 +92,7 @@
 
             }
 
-        }
+        }*/
 })
 
 
