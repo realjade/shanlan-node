@@ -204,6 +204,15 @@
 .fc-calendar .fc-row > div.fc-today {
     background: #ef4f69;
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
+    border-radius: 26px;
+}
+
+.fc-calendar .fc-row > div.fc-past{
+    cursor: not-allowed;
+    background: #eee;
+}
+.fc-calendar .fc-row > div.fc-selected{
+
 }
 
 .fc-calendar .fc-row > div.fc-today > span.fc-date {
