@@ -8,56 +8,61 @@
 
 .mod-profile{
     padding: 20px 80px;
-    min-width: 840px;
+    width: 1100px;
+    margin:0 auto;
 }
 
 .mod-profile .photo-group{
+    height:550px;
+    overflow:hidden;
+    position:relative;
+    margin-bottom:23px;
+}
+.photo-item{
+    background-position: 50% 50%;
     position: relative;
-    margin-bottom: 20px;
-    height: 780px;
-}
-
-.mod-profile .photo-group div{
-    background: lightgrey;
-    cursor: pointer;
-}
-
-.mod-profile .photo-group img{
-    position: absolute;
-    border-radius: 5px;
-    display: block;
+    -webkit-backface-visibility: hidden;
+    display: inline-block;
+    line-height: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border-radius: 3px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
-
-.mod-profile .photo-group .item1{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 400px;
+.photo-item img{
+    width:100%;
+    min-height:100%;
+    margin:auto;
 }
-
-.mod-profile .photo-group .item2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 380px;
-    height: 250px;
+.item1{
+    float: left;
+    width: 825px;
+    border-right: 1px solid #fff;
+    border-radius: 3px 0 0 3px;
 }
-
-.mod-profile .photo-group .item3{
-    position: absolute;
-    top: 265px;
-    right: 0;
-    width: 380px;
-    height: 250px;
+.item2{
+    float: left;
+    width: 274px;
+    height: 183px;
+    border-bottom: 1px solid #fff;
+    border-radius: 0 3px 0 0;
 }
-
-.mod-profile .photo-group .item4{
-    position: absolute;
-    top: 530px;
-    right: 0;
-    width: 380px;
-    height: 250px;
+.item3{
+    float: left;
+    width: 274px;
+    height: 183px;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+}
+.item4{
+    float: left;
+    width: 274px;
+    height: 184px;
+    border-radius: 0 0 3px 0;
 }

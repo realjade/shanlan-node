@@ -8,7 +8,7 @@ block header
 block content
     div.mod-profile
         each collect, index in collects
-            if(collect.photoQuantity >= 4)
+            if(collect.photoCount >= 4)
                 div.photo-group(data-id="#{collect.id}")
                     each photo, index in collect.photoDTOList
                         div(class="photo-item item#{index+1}")

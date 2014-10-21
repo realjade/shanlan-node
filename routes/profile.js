@@ -127,8 +127,8 @@ router.get(['/trade', '/trade/:userName'], function (req, res) {
                 method: 'get',
                 data: {
                     userName: ownerUserName,
-                    currentPage:0,
-                    pageSize:10
+                    currentPage:'1',
+                    pageSize:'10'
                 },
                 req: req,
                 callback: function (err, data) {

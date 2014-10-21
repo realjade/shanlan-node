@@ -32,8 +32,8 @@
                 url: '/opt',
                 type: 'get',
                 data:{
-                    service: 'Photo.getTradePhotos',
-                    photoCollectionId: 1
+                    service: 'Photo.listTradePhotos',
+                    tradePhotoCollectionId: 1
                 },
                 success: function(data){
                     if(data.code === 200){

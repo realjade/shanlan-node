@@ -8,7 +8,7 @@ block header
 block content
     div.mod-trade
         div.mod-trade-main
-            each item in comments
+            each item in comments.data
                 div.main-container
                     div.main-block
                         a.trade-user-portrait
@@ -25,7 +25,7 @@ block content
                             each photo,i in item.photos
                                 if (i < 7)
                                     a.item(id=i)
-                                        img(src= filePath)
+                                        img(src= photo.filePath)
                             if( item.photoNum > 7)
                                 a.item#item-number
                                     span +#{item.photoCount-7} &nbsp
