@@ -25,7 +25,7 @@ router.get(['/', '/:userName'], function (req, res) {
                 },
                 req: req,
                 callback: function (err, data) {
-                    callback(null, data.data);
+                    callback(null, data.data)
                 }
             })
         },
@@ -38,7 +38,7 @@ router.get(['/', '/:userName'], function (req, res) {
                 },
                 req: req,
                 callback: function (err, data) {
-                    callback(null, data.data);
+                    callback(null, data.data)
                 }
             })
         }
@@ -48,7 +48,7 @@ router.get(['/', '/:userName'], function (req, res) {
         }else{
             results.me = me
             results.subTab = 'index'
-            res.render('profile/index', results);
+            res.render('profile/index', results)
         }
     });
 });

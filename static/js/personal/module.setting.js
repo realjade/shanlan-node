@@ -22,11 +22,24 @@
             var self = this
             var container = self.__container
 
+            container.on('click', '.upload-btn', function(){
+                var dialog = self.__avatarDialog = new App.common.modules.Dialog({
+                    width: 750,
+                    height: 600,
+                    showTitle: false,
+                    isConfirm: false,
+                    message: '<div class="mod-avatar-dialog"></div>'
+                })
+
+                dialog.find('.mod-avatar-dialog').avatar({
+
+                })
+            })
         }
     }
 
     $(function () {
-        personalSetting.init($('.mod-personal'))
+        personalSetting.init($('.mod-personal-setting'))
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 

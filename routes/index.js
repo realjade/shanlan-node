@@ -10,6 +10,7 @@ router.route('/login').get(function (req, res) {
 
     if(me){
         res.redirect('profile')
+        return false
     }
 
     res.render('account/login', {
@@ -21,6 +22,7 @@ router.route('/login').get(function (req, res) {
 
         if(me){
             res.redirect('/profile')
+            return false
         }
         utils.getApiData('User.login', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
@@ -69,7 +71,7 @@ router.get('/logout', function (req, res) {
     var session = req.session
     session.user = null
     utils.goIndex(res)
-});
+})
 
 router.get('/mock', function (req, res) {
     res.render('account/message', {
