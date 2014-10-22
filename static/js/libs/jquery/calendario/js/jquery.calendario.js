@@ -48,10 +48,14 @@
         // 0 - Sunday, 1 - Monday, ... , 6 - Saturday
         startIn: 1,
         selectedDay: {},
+        checkedDay: {},
         onDayClick: function ($el, $content, dateProperties) {
             return false;
         },
         onDayHover: function ($el, $content, dateProperties) {
+            return false;
+        },
+        onDayOut: function(){
             return false;
         }
     };
@@ -114,6 +118,10 @@
 
             });
 
+            this.$el.on('mouseout.calendario', 'div.fc-row > div', function () {
+                self.options.onDayOut();
+            });
+
         },
         // Calendar logic based on http://jszen.blogspot.pt/2007/03/how-to-build-simple-calendar-with.html
         _generateTemplate: function (callback) {
@@ -174,6 +182,7 @@
             this.startingDay = firstDay.getDay();
 
             var selectedDay = this.options.selectedDay
+            var checkedDay = this.options.checkedDay
 
             var html = '<div class="fc-body"><div class="fc-row">',
             // fill in the days
@@ -191,6 +200,7 @@
                         today = this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day === this.today.getDate(),
                         past = this.year < this.today.getFullYear() || this.month < this.today.getMonth() && this.year === this.today.getFullYear() || this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day < this.today.getDate(),
                         selected = !!selectedDay[new Date(this.year, this.month, day).getTime()],
+                        checked = !!checkedDay[new Date(this.year, this.month, day).getTime()],
                         content = '';
 
                     if (day <= monthLength && ( i > 0 || j >= p )) {
@@ -287,6 +297,10 @@
 
                     if(selected){
                         cellClasses += 'fc-selected ';
+                    }
+
+                    if(checked){
+                        cellClasses += 'fc-checked ';
                     }
                     if (content !== '') {
                         cellClasses += 'fc-content';
@@ -401,6 +415,11 @@
             this._generateTemplate();
 
         },
+
+        setOptions: function(options){
+            $.extend(this.options, options);
+        },
+
         // goes to today's month/year
         gotoNow: function (callback) {
 

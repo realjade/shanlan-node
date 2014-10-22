@@ -17,12 +17,22 @@
 
             var calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
                 selectedDay: {
-                    1413907200000: true
+                    1413993600000: true,
+                    1414080000000: true
                 }
             })
+
+            self.__bindEvent()
         },
 
-        __calendarClick: function () {
+        __bindEvent: function(){
+            var self = this
+            var container = self.__container
+            var calendar = App.common.modules.calendar
+
+            container.on('click', '.bk-btn', function(){
+                console.log(calendar.getCheckedTime())
+            })
 
         }
     }

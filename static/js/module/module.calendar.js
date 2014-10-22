@@ -24,16 +24,35 @@
                 onDayHover: function($el, $content, dateProperties){
                     self.__dayHover($el, $content, dateProperties)
                 },
+                onDayOut: function(){
+                    self.__dayOut()
+                },
                 caldata: '',
                 displayWeekAbbr: true,
-                selectedDay: {}
+                selectedDay: {},
+                checkedDay: {}
             }, options)
 
-            var cal = self.__calendar = container.find('#calendar').calendario(self.__options);
+            self.__checkedDay = {}
+
+            self.__tip = $('<div class="calendar-tip arrow_box">提示信息</div>').appendTo($(document.body))
+
+            var cal = self.__calendar = container.find('#calendar').calendario(self.__options)
 
             self.__initHeader()
 
             return cal
+        },
+
+        getCheckedTime: function(){
+            var self = this
+            var result = null
+
+            for(var key in self.__checkedDay){
+                result = key
+            }
+
+            return result
         },
 
         __initHeader: function () {
@@ -58,13 +77,58 @@
         },
 
         __dayClick: function($el, $content, dateProperties){
-            if(!$el.hasClass('fc-past') && !$el.hasClass(' fc-selected')){
-                $el.toggleClass('fc-checked')
+            var self = this
+            var container = self.__container
+
+            var time = new Date(dateProperties.year, dateProperties.month - 1, dateProperties.day).getTime()
+
+            if(!$el.hasClass('fc-past') && !$el.hasClass('fc-selected')){
+                container.find('.fc-checked').removeClass('fc-checked')
+
+                $el.addClass('fc-checked')
+
+                self.__checkedDay = {}
+
+                self.__checkedDay[time] = true
+
+                /*if($el.hasClass('fc-checked')){
+                    self.__checkedDay[time] = true
+                }else{
+                    delete self.__checkedDay[time]
+                }*/
+
+                self.__calendar.setOptions({
+                    checkedDay: self.__checkedDay
+                })
             }
         },
 
         __dayHover: function($el, $content, dateProperties){
+            var self = this
+            var tip = self.__tip
+            var offset = $el.offset()
 
+            tip.text('点击今天，即可预订哟')
+
+            if($el.hasClass('fc-past')){
+                //过去的时间
+                tip.text('过往时间，不能预订哟')
+            }
+
+            if($el.hasClass('fc-selected')){
+                //过去的时间
+                tip.text('今天被预订喽')
+            }
+
+            tip.show().css({
+                top: offset.top + $el.height() + 8,
+                left: offset.left + $el.width()/2 - tip.width()/2
+            })
+        },
+
+        __dayOut: function(){
+            var self = this
+            self.__tip.hide()
         }
     }
 

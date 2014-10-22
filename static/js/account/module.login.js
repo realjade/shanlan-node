@@ -24,7 +24,7 @@
             var container = self.__container
             var form = container.find('.mod-form')
             var error = container.find('.form-error')
-            var userNameInput = form.find('input[name="userName"]')
+            var userNameInput = form.find('input[name="userAccount"]')
             var psdInput = form.find('input[name="password"]')
 
             form.submit(function(){
