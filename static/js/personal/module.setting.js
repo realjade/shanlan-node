@@ -28,11 +28,14 @@
                     height: 600,
                     showTitle: false,
                     isConfirm: false,
-                    message: '<div class="mod-avatar-dialog"></div>'
+                    message: '<div class="mod-avatar-dialog-wrap"><div class="mod-avatar-dialog"></div><div class="close"></div></div>'
                 })
 
                 dialog.find('.mod-avatar-dialog').avatar({
-
+                    actionUrl: '/server/user/uploadHeaderPicTmp.koala'
+                })
+                dialog.find('.close').click(function(){
+                    dialog.close()
                 })
             })
         }

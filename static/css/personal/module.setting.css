@@ -145,6 +145,22 @@
     font-size: 15px;
     font-weight: normal;
 }
+
+.mod-avatar-dialog-wrap{
+    position: relative;
+}
+.mod-avatar-dialog-wrap .close{
+    position: absolute;
+    background: url(images/close.png) no-repeat;
+    width: 15px;
+    height: 15px;
+    top: -17px;
+    right: -17px;
+    cursor: pointer;
+}
+.mod-avatar-dialog-wrap .close:hover{
+    background-image: url(images/close-hover.png);
+}
 .mod-personal-setting .portrait-wrap p{
     width:240px;
     margin:20px auto 0 auto;

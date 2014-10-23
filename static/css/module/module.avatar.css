@@ -28,7 +28,7 @@
 
 .uploadhead-widget .image-panel .upload-loading {
     display: none;
-    background: url('../../images/load.gif') no-repeat;
+    background: url('images/avatar/load.gif') no-repeat;
     width: 128px;
     height: 15px;
 }
@@ -75,21 +75,21 @@
 .uploadhead-widget .image-thumn .normal span {
     width: 200px;
     height: 200px;
-    background: url("../../images/default_avatar_200.gif")
+    background: url(images/avatar/default_avatar_200.gif)
 }
 
 .uploadhead-widget .image-thumn .tiny span {
     width: 120px;
     height: 120px;
     margin-top: 15px;
-    background: url("../../images/default_avatar_120.gif")
+    background: url(images/avatar/default_avatar_120.gif)
 }
 
 .uploadhead-widget .image-thumn .mini span {
     width: 32px;
     height: 32px;
     margin-top: 15px;
-    background: url("../../images/default_avatar_32.gif")
+    background: url(images/avatar/default_avatar_32.gif)
 }
 
 .uploadhead-widget .image-thumn .sizedesc {
