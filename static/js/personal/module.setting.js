@@ -32,7 +32,7 @@
                 })
 
                 dialog.find('.mod-avatar-dialog').avatar({
-                    actionUrl: '/server/user/uploadHeaderPicTmp.koala'
+                    actionUrl: '/server/user/uploadAvatar.koala'
                 })
                 dialog.find('.close').click(function(){
                     dialog.close()
