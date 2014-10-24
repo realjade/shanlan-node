@@ -7,6 +7,6 @@
   */
 @import url('../common/reset.css');
 @import url('../common/module.common.css');
-@import url('../common/module.layout.css');
+@import url('../common/module.mainlayout.css');
 @import url('../module/button.css');
 @import url('../main/module.home.css');
