@@ -98,3 +98,39 @@
     font-size:14px;
     color:#777;
 }
+.mod-header-wrap .header-user .menu-down{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 999;
+    width: 140px;
+    background: #363d40;
+    list-style: none;
+    display: none;
+}
+.mod-header-wrap .header-user:hover .menu-down{
+    display: block;
+}
+
+.mob-header-wrap .header-user .menu-down a{
+    border-top: 1px solid #4a5153;
+    height: 39px;
+    line-height: 39px;
+    font-size: 14px;
+    display: block;
+    color: #fff;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.mob-header-wrap .header-user .menu-down a:first-child{
+    border-top: 0;
+}
+#m-header .menu-down a:hover{
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
+.mod-header-gap{
+    height: 0px;
+}
