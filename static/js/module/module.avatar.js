@@ -247,9 +247,9 @@ $(function () {
                     var res = $.parseJSON(frame.document.body.innerHTML);
                     if (res) {
                         success();
-                        if (res.code == 0) {
-                            var src = (res.previewUrl || self.options.previewUrl) + '?t=' + new Date().getTime();
-                            previewUrl = res.previewUrl || self.options.previewUrl;
+                        if (res.code == 200) {
+                            var src = self.options.previewUrl + res.data + '?t=' + new Date().getTime();
+                            //previewUrl = res.previewUrl || self.options.previewUrl;
                             createCropper(src);
                             frame.document.body.innerHTML = '';
                         }

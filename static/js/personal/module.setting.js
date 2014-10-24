@@ -32,7 +32,8 @@
                 })
 
                 dialog.find('.mod-avatar-dialog').avatar({
-                    actionUrl: '/opf/upload/uploadAvatar'
+                    actionUrl: '/opf/upload/uploadAvatar',
+                    previewUrl: '/img/'
                 })
                 dialog.find('.close').click(function(){
                     dialog.close()
