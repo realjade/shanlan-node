@@ -1,0 +1,100 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/24
+  * Time: 0:22
+  *
+  */
+
+.mod-header-wrap {
+    position: relative;
+    margin: 20px auto 15px auto;
+    width: 1100px;
+    height:50px;
+    overflow: hidden;
+}
+.mod-header-wrap .header-logo{
+    float:left;
+    height:50px;
+    width:170px;
+    margin:0 0 0 1px;
+    padding:0 5px 0 0;
+    border-right:1px solid #ccc;
+    background: url("//static.jspass.com/static/css/main/images/home-logo-2.png") no-repeat;
+    background-size: contain;
+    -ms-background-position-y: 50%;
+    background-position-y: 50%;
+
+}
+.mod-header-wrap .header-search-btn{
+    float:left;
+    margin:0 10px 0 25px;
+    width:63px;
+    height:46px;
+    background: url("//static.jspass.com/static/css/main/images/search-icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.mod-header-wrap ul{
+    float:left;
+    vertical-align: bottom;
+}
+.mod-header-wrap li{
+    float:left;
+    font-size:18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.mod-header-wrap li a{
+    box-sizing: border-box;
+    display: inline-block;
+    width:80px;
+    padding:15px 0 0 0;
+    text-align: center;
+    color: #777;
+}
+.mod-header-wrap .login-btn{
+    display: block;
+    float:right;
+    height:46px;
+    width:100px;
+    padding:1px 10px 0 25px;
+    border-left:1px solid #ccc;
+    background:url("//static.jspass.com/static/css/main/images/login.png") no-repeat;
+    background-origin: content-box;
+
+
+}
+.mod-header-wrap .header-user{
+    box-sizing: border-box;
+    float:right;
+    max-width:260px;
+    height:50px;
+    padding:0 15px 0 25px;
+    border-left:1px solid #ccc;
+    margin:0 5px 0 0 ;
+    overflow: hidden;
+}
+.mod-header-wrap .header-user img{
+    float: left;
+    height:44px;
+    width:44px;
+    margin:1px;
+    border-radius:50%;
+    border:2px solid #5fbffa;
+    box-shadow:0px 0px 2px #5fbffa;
+}
+.mod-header-wrap .header-user div{
+    margin:0 0 0 60px;
+}
+.mod-header-wrap .header-user .user-type{
+    margin:7px 0 0 54px;
+    width:9px;
+    height:9px;
+    background-color: #5fbffa;
+    border-radius: 50%;
+}
+.mod-header-wrap .header-user .user-name{
+    margin:8px 0 0 58px;
+    font-size:14px;
+    color:#777;
+}
