@@ -1,48 +1,57 @@
-div#m-header
-    div.container.clr
-        a.f-l.logo(href='/')
-            img(src='//static.jspass.com/static/images/logo.png')
-        ul.menu.f-l.clr
-            li
-                if tab == 'index'
-                    a.active(href='/') 首页
-                else
-                    a(href='/') 首页
-            li
-                if tab == 'photographer'
-                    a.active(href='/photographer') 找摄影
-                else
-                    a(href='/photographer') 找摄影
-
-            li
-                if tab == 'clothing'
-                    a.active(href='/clothing') 找服装
-                else
-                    a(href='/clothing') 找服装
-
-            li
-                if tab == 'dresser'
-                    a.active(href='/dresser') 找化妆
-                else
-                    a(href='/dresser') 找化妆
-
-            - var user = _user
-            if user
-                li
-                    a(href='/profile') 个人主页
-        div.login.f-r.clr
-            if !user
-                a.login-btn(href='/login') 登录
+div.mod-header-wrap
+    a.header-logo
+    a.header-search-btn
+    ul.header-nav
+        li
+            if tab == 'travel'
+                a.active#header-travel(href='') 旅行
             else
-                div.userinfo
-                    a.avatar(href='/profile')
-                        img(src='//static.jspass.com/static/images/avatar.jpg')
-                    ul.menu-down
-                        li
-                            a(href='/profile') #{user.nickName}
-                        li
-                            a(href='/personal/order') 我的订单
-                        li
-                            a(href='/personal/setting') 个人设置
-                        li
-                            a(href='/logout') 退出
+                a#header-travel(href='') 旅行
+        li
+            if tab == 'wedding'
+                a.active#header-wedding(href='') 婚纱
+            else
+                a#header-wedding(href='') 婚纱
+        li
+            if tab == 'portrait'
+                a.active#header-portrait(href='') 写真
+            else
+                a#header-portrait(href='') 写真
+        li
+            if tab == 'couple'
+                a.active#header-couple(href='') 情侣
+            else
+                a#header-couple(href='') 情侣
+        li
+            if tab == 'activity'
+                a.active#header-activity(href='') 活动
+            else
+                a#header-activity(href='') 活动
+        li
+            if tab == 'free'
+                a.active#header-free(href='') 互免
+            else
+                a#header-free(href='') 互免
+        li
+            if tab== 'clothes'
+                a.active#header-clothes(href='') 镁装
+            else
+                a#header-clothes(href='') 镁装
+
+    - var user = _user
+    if !user
+        a.login-btn(href='/login')
+    else
+        div.header-user
+            img(src="//static.jspass.com/static/css/main/images/user-avatar.png")
+            div.user-type
+            div.user-name 我是用户名
+            ul.menu-down
+                li
+                    a(href='/profile') 我的主页
+                li
+                    a(href='/personal/order') 我的订单
+                li
+                    a(href='/personal/setting') 个人设置
+                li
+                    a(href='/logout') 退出
