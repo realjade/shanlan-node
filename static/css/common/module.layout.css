@@ -38,7 +38,7 @@
     padding: 0px 35px;
     height: 50px;
     line-height: 50px;
-    display: block;
+    display: inline-block;
 }
 #m-header .menu a:hover,
 #m-header .menu a.active,

@@ -42,8 +42,16 @@
                     return false
                 }
 
-                if(!userName){
-                    error.text('请输入您的用户名').show()
+                if(!userName || userName.length < 6 || userName.length > 32){
+                    error.text('请输入您的用户名（6-32位）').show()
+                    userNameInput.select()
+                    return false
+                }else{
+                    form.find('input[name="nickName"]').val(userName)
+                }
+
+                if(!/[a-z A-Z 0-9]+/g.test(userName)){
+                    error.text('用户名只能是字母和数字').show()
                     userNameInput.select()
                     return false
                 }else{
