@@ -254,7 +254,7 @@ $(function () {
                             frame.document.body.innerHTML = '';
                         }
                         else {
-                            error(res.msg);
+                            error(res.message);
                             self.find('.image-panel .upload-info').show();
                         }
                     }

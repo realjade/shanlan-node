@@ -26,19 +26,27 @@ block content
                     div.info-block
                         select.info-select-box#birth-year
                             option(value='0') 年
+                            -var now = new Date().getYear()
+                            -var year = now - 70
+
+                            while year <= now
+                                option(value='#{1900 + year}') #{1900 + year}
+                                -year++
                         select.info-select-box#birth-month
                             option(value='0') 月
+                            -var month = 1
+                            while month <= 12
+                                option(value='#{month}') #{month}
+                                -month++
                         select.info-select-box#birth-day
                             option(value='0') 日
                 li.info-line
                     div.info-key 所在地：
-                    div.info-block
-                        select.info-select-box#country
-                            option(value='0') 国家
-                        select.info-select-box#province
-                            option(value='0') 省份
-                        select.info-select-box#city
-                            option(value='0') 城市
+                    div.info-block.clr
+                        div.f-l
+                            select.info-select-box#country
+                                option(value='0') 国家
+                        div.province-panel.f-l
                 li.info-line
                     div.info-key 手机号：
                     div.info-block

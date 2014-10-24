@@ -15,7 +15,17 @@
             var self = this
             self.__container = container
 
+            self.__initProvince()
+
             self.__bindEvent()
+        },
+
+        __initProvince: function(){
+            var self = this
+            var container = self.__container
+            self.__province = container.find('.province-panel').province({
+                nocounty: true
+            })
         },
 
         __bindEvent: function () {
