@@ -15,9 +15,14 @@
             var self = this
             self.__container = container
 
+            self.__initBirthday()
             self.__initProvince()
 
             self.__bindEvent()
+        },
+
+        __initBirthday: function(){
+
         },
 
         __initProvince: function(){

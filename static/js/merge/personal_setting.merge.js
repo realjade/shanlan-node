@@ -7,6 +7,7 @@
  */
 document.write('<script src="//static.jspass.com/static/js/common/module.common.js"></script>')
 document.write("<script src='//static.jspass.com/static/js/libs/jquery/jcrop/js/jquery.Jcrop.js'></script>")
+document.write("<script src='//static.jspass.com/static/js/libs/jquery/jqueryui/jquery.ui.datepicker.js'></script>")
 document.write("<script src='//static.jspass.com/static/js/libs/province/provincedata.js'></script>")
 document.write("<script src='//static.jspass.com/static/js/libs/province/province.js'></script>")
 document.write('<script src="//static.jspass.com/static/js/common/module.personallayout.js"></script>')
