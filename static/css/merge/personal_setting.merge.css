@@ -7,6 +7,7 @@
   */
 @import url('../common/reset.css');
 @import url('../common/module.common.css');
+@import url("../../js/libs/jquery/jqueryui/css/smoothness/jquery-ui-1.9.2.custom.min.css");
 @import url("../../js/libs/jquery/jcrop/css/jquery.Jcrop.min.css");
 @import url('../common/module.layout.css');
 @import url('../module/button.css');
