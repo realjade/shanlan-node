@@ -10,42 +10,85 @@
     height: 50px;
 }
 #m-header{
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.4);
     height: 50px;
-    z-index: 1;
-    padding: 0 80px;
+    width: 100%;
+    z-index: 1000;
+    background-color: #222222;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    font-size: 14px;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: auto;
+    transition: background-color 0.1s ease-out;
+    -webkit-transition: background-color 0.1s ease-out;
+    -ms-transition: background-color 0.1s ease-out;
+    -moz-transition: background-color 0.1s ease-out;
+    -o-transition: background-color 0.1s ease-out;
 }
-#m-header .container{
-    min-width: 1000px;
-    margin: 0 auto;
+#m-header .header-logo{
+    float:left;
+    height:50px;
+    width:100px;
+    background: url("//static.jspass.com/static/css/common/images/logo-bw.png") no-repeat;
+    background-size: contain;
 }
-#m-header .logo{
-    margin-top: 5px;
-}
-#m-header .menu{
-    margin-left: 40px;
-}
-#m-header .menu li{
+#m-header .header-nav{
+    position: relative;
     float: left;
+    display: block;
+    top: 0;
+    font-size: 0;
+    transition: top 0.1s ease-out,opacity 0.1s ease-out;
+    -webkit-transition: top 0.1s ease-out,opacity 0.1s ease-out;
+    -ms-transition: top 0.1s ease-out,opacity 0.1s ease-out;
+    -moz-transition: top 0.1s ease-out,opacity 0.1s ease-out;
+    -o-transition: top 0.1s ease-out,opacity 0.1s ease-out;
 }
-#m-header .menu a,
-#m-header .login-btn{
-    color: #fff;
-    padding: 0px 35px;
-    height: 50px;
-    line-height: 50px;
+#m-header .header-nav li{
     display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    line-height: 50px;
+    font-size: 14px;
+    -webkit-transition-duration: 0;
+    -webkit-transition-timing: ease-out;
+    -o-transition-duration: 0;
+    -o-transition-timing: ease-out;
+    -moz-transition-duration: 0;
+    -moz-transition-timing: ease-out;
+    -ms-transition-duration: 0;
+    -ms-transition-timing: ease-out;
+    -webkit-transition-duration: 0;
+    transition-duration: 0;
+    transition-timing: ease-out;
 }
-#m-header .menu a:hover,
-#m-header .menu a.active,
-#m-header .login-btn:hover,
-#m-header .message:hover{
+
+#m-header .header-nav a{
+    display: block;
+    height: 100%;
+    padding: 0 15px;
+    color: #b9c1c7;
+    font-weight: normal;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+    -webkit-transition-duration: 0;
+    -webkit-transition-timing: ease-out;
+    -o-transition-duration: 0;
+    -o-transition-timing: ease-out;
+    -moz-transition-duration: 0;
+    -moz-transition-timing: ease-out;
+    -ms-transition-duration: 0;
+    -ms-transition-timing: ease-out;
+    -webkit-transition-duration: 0;
+    transition-duration: 0;
+    transition-timing: ease-out;
+}
+#m-header .header-nav a:hover,
+#m-header .header-nav a.active{
     color: #fff;
-    background: rgba(102,102,102,0.4);
+    background-color: #333333;
 }
 #m-header .message{
     color: #b5bdc0;
@@ -74,7 +117,7 @@
     border: 2px solid #adb0b1;
     display: block;
 }
-#m-header .userinfo .menu-down{
+#m-header .userinfo .header-nav-down{
     position: absolute;
     top: 50px;
     right: 0;
@@ -84,10 +127,10 @@
     list-style: none;
     display: none;
 }
-#m-header .userinfo:hover .menu-down{
+#m-header .userinfo:hover .header-nav-down{
     display: block;
 }
-#m-header .menu-down a{
+#m-header .header-nav-down a{
     border-top: 1px solid #4a5153;
     height: 39px;
     line-height: 39px;
@@ -97,10 +140,10 @@
     text-align: left;
     padding: 0 20px;
 }
-#m-header .menu-down a:first-child{
+#m-header .header-nav-down a:first-child{
     border-top: 0;
 }
-#m-header .menu-down a:hover{
+#m-header .header-nav-down a:hover{
     color: #fff;
     background-color: #2a2c2e;
 }
