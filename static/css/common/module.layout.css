@@ -8,6 +8,7 @@
 
 .mod-header-wrap{
     height: 50px;
+    padding:0 80px;
 }
 #m-header{
     position: relative;
@@ -29,10 +30,24 @@
 }
 #m-header .header-logo{
     float:left;
-    height:50px;
+    height:47px;
     width:100px;
+    padding:0 0 3px 0;
     background: url("//static.jspass.com/static/css/common/images/logo-bw.png") no-repeat;
     background-size: contain;
+    background-origin: content-box;
+}
+#m-header .header-search-btn{
+    float:left;
+    height:50px;
+    width:50px;
+    padding:0 0 0 10px;
+    background: url("//static.jspass.com/static/css/common/images/search-bw.png") no-repeat 50% 50%;
+    background-origin: content-box;
+}
+#m-header .header-search-btn:hover{
+    background: url("//static.jspass.com/static/css/common/images/search-bw-hover.png") no-repeat 50% 50%;
+    background-origin: content-box;
 }
 #m-header .header-nav{
     position: relative;
@@ -68,10 +83,11 @@
 #m-header .header-nav a{
     display: block;
     height: 100%;
-    padding: 0 15px;
-    color: #b9c1c7;
+    padding: 0 25px;
+    color: #bbbbbb;
+    font-size: 14px;
     font-weight: normal;
-    letter-spacing: 0.025em;
+    letter-spacing: 3px;
     white-space: nowrap;
     -webkit-transition-duration: 0;
     -webkit-transition-timing: ease-out;
@@ -90,6 +106,30 @@
     color: #fff;
     background-color: #333333;
 }
+
+#m-header .login-btn {
+    position:relative;
+    right:0;
+    display: block;
+    line-height: 50px;
+    width:70px;
+    color:#ccc;
+}
+#m-header .login-btn:hover{
+    position: relative;
+    color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 #m-header .message{
     color: #b5bdc0;
     padding: 0px 25px;
