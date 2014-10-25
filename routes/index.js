@@ -69,7 +69,9 @@ router.route('/register').get(function (req, res) {
 //登出
 router.get('/logout', function (req, res) {
     var session = req.session
-    session.user = null
+    if(session){
+        session.user = null
+    }
     utils.goIndex(res)
 })
 
