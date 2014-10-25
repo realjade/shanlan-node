@@ -1,3 +1,4 @@
+zhangyuyu
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -40,14 +41,15 @@ app.use(session({
 //把user从session中读取出来，然后设置到res的locals中去
 app.use(function(req, res, next) {
     var session = req.session
-
+    console.log('******1')
     var user = session ? session.user : null
-
+    console.log('******2')
     if(user){
         res.locals._user =  user;
     }else{
         res.locals._user = null
     }
+    console.log('******3')
     res.locals.staticFilter = staticFilter.staticFilter
     res.locals.title = '高质量独立摄影平台'
     next();
