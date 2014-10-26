@@ -5,19 +5,19 @@
   * Time: 下午2:25
   *
   */
-.mod-header-wrap{
+.mod-header-wrap {
     height: 50px;
-    padding:0 80px;
+    padding: 0 80px;
 }
-#m-header{
+
+#m-header {
     position: relative;
     top: 0;
     height: 50px;
-    width: 100%;
     z-index: 1000;
-    background-color: #222222;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    background-color: #333;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     font-size: 14px;
     -webkit-font-smoothing: initial;
     -moz-osx-font-smoothing: auto;
@@ -27,40 +27,46 @@
     -moz-transition: background-color 0.1s ease-out;
     -o-transition: background-color 0.1s ease-out;
 }
-#m-header .header-logo{
-    float:left;
-    height:47px;
-    width:100px;
-    padding:0 0 3px 0;
+
+#m-header .header-logo {
+    float: left;
+    height: 47px;
+    width: 100px;
+    padding: 0 0 3px 0;
     background: url("//static.jspass.com/static/css/common/images/logo-bw.png") no-repeat;
     background-size: contain;
     background-origin: content-box;
 }
-#m-header .header-search-btn{
-    float:left;
-    height:50px;
-    width:50px;
-    padding:0 0 0 10px;
+
+#m-header .header-search-btn {
+    float: left;
+    height: 50px;
+    width: 60px;
+    padding: 0 10px;
     background: url("//static.jspass.com/static/css/common/images/search-bw.png") no-repeat 50% 50%;
     background-origin: content-box;
 }
-#m-header .header-search-btn:hover{
+
+#m-header .header-search-btn:hover {
     background: url("//static.jspass.com/static/css/common/images/search-bw-hover.png") no-repeat 50% 50%;
     background-origin: content-box;
+    background-color: #2a2c2e;
 }
-#m-header .header-nav{
+
+#m-header .header-nav {
     position: relative;
     float: left;
     display: block;
     top: 0;
     font-size: 0;
-    transition: top 0.1s ease-out,opacity 0.1s ease-out;
-    -webkit-transition: top 0.1s ease-out,opacity 0.1s ease-out;
-    -ms-transition: top 0.1s ease-out,opacity 0.1s ease-out;
-    -moz-transition: top 0.1s ease-out,opacity 0.1s ease-out;
-    -o-transition: top 0.1s ease-out,opacity 0.1s ease-out;
+    transition: top 0.1s ease-out, opacity 0.1s ease-out;
+    -webkit-transition: top 0.1s ease-out, opacity 0.1s ease-out;
+    -ms-transition: top 0.1s ease-out, opacity 0.1s ease-out;
+    -moz-transition: top 0.1s ease-out, opacity 0.1s ease-out;
+    -o-transition: top 0.1s ease-out, opacity 0.1s ease-out;
 }
-#m-header .header-nav li{
+
+#m-header .header-nav li {
     display: inline-block;
     vertical-align: top;
     height: 100%;
@@ -79,7 +85,7 @@
     transition-timing: ease-out;
 }
 
-#m-header .header-nav a{
+#m-header .header-nav a {
     display: block;
     height: 100%;
     padding: 0 25px;
@@ -100,93 +106,130 @@
     transition-duration: 0;
     transition-timing: ease-out;
 }
+
 #m-header .header-nav a:hover,
-#m-header .header-nav a.active{
-    color: #fff;
-    background-color: #333333;
-}
-
-#m-header .login-btn {
-    position:relative;
-    right:0;
-    display: block;
-    line-height: 50px;
-    width:70px;
-    color:#ccc;
-}
-#m-header .login-btn:hover{
-    position: relative;
-    color:#fff;
-}
-
-
-
-
-
-
-
-
-
-
-
-#m-header .message{
-    color: #b5bdc0;
-    padding: 0px 25px;
-    height: 60px;
-    line-height: 60px;
-    display: block;
-    float: left;
-}
-#m-header .userinfo{
-    float: left;
-    position: relative;
-}
-#m-header .userinfo .avatar{
-    display: block;
-    padding: 3px;
-}
-#m-header .userinfo:hover .avatar{
-    color: #fff;
-    background: #363d40;
-}
-#m-header  .avatar img{
-    width: 40px;
-    height: 40px;
-    border-radius: 22px;
-    border: 2px solid #adb0b1;
-    display: block;
-}
-#m-header .userinfo .header-nav-down{
-    position: absolute;
-    top: 50px;
-    right: 0;
-    z-index: 999;
-    width: 140px;
-    background: #363d40;
-    list-style: none;
-    display: none;
-}
-#m-header .userinfo:hover .header-nav-down{
-    display: block;
-}
-#m-header .header-nav-down a{
-    border-top: 1px solid #4a5153;
-    height: 39px;
-    line-height: 39px;
-    font-size: 14px;
-    display: block;
-    color: #fff;
-    text-align: left;
-    padding: 0 20px;
-}
-#m-header .header-nav-down a:first-child{
-    border-top: 0;
-}
-#m-header .header-nav-down a:hover{
+#m-header .header-nav a.active {
     color: #fff;
     background-color: #2a2c2e;
 }
 
-.mod-header-gap{
+#m-header .login-btn {
+    position: relative;
+    right: 0;
+    display: block;
+    line-height: 50px;
+    width: 70px;
+    color: #ccc;
+}
+
+#m-header .login-btn:hover {
+    position: relative;
+    color: #fff;
+}
+
+.mod-header-wrap .header-user {
+    position: absolute;
+    right: 80px;
+    top: 0;
+    box-sizing: border-box;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.mod-header-wrap .header-user:hover {
+    background-color: #2a2c2e;
+}
+
+.mod-header-wrap .header-user img {
+    float: left;
+    height: 32px;
+    width: 32px;
+    margin: 9px 12px;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+}
+
+.mod-header-wrap .header-user div {
+    margin: 0 0 0 60px;
+}
+
+.mod-header-wrap .header-user .user-type {
+}
+
+.mod-header-wrap .header-user .user-name {
+    padding: 0 5px 0 0;
+    height: 50px;
+    font-size: 14px;
+    color: #bbb;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mod-header-wrap .header-user:hover .user-name {
+    color: #fff;
+}
+
+#m-header .header-user .menu-down {
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    background: #363d40;
+    list-style: none;
+    display: none;
+}
+
+#m-header .header-user:hover .menu-down {
+    display: block;
+}
+
+#m-header .menu-down a {
+    border-top: 1px solid #4a5153;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    display: block;
+    color: #bbb;
+    text-align: left;
+    padding: 0 5px 0 60px;
+}
+
+#m-header .menu-down a:hover {
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
+#m-header #link-order {
+    background: url("//static.jspass.com/static/css/common/images/order.png") no-repeat;
+    background-position: 4px 0;
+}
+
+#m-header #link-order:hover {
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
+#m-header #link-setting {
+    background: url("//static.jspass.com/static/css/common/images/setting.png") no-repeat;
+    background-position: 5px 0;
+}
+
+#m-header #link-setting:hover {
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
+#m-header #link-logout {
+    background: url("//static.jspass.com/static/css/common/images/logout.png") no-repeat;
+    background-position: 5px 0;
+}
+
+#m-header #link-logout:hover {
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
+.mod-header-gap {
     height: 60px;
 }

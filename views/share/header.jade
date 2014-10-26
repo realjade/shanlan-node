@@ -1,5 +1,5 @@
 div.mod-header-wrap#m-header
-    a.header-logo
+    a.header-logo(href="/")
     a.header-search-btn
     ul.header-nav
         li
@@ -46,13 +46,11 @@ div.mod-header-wrap#m-header
         div.header-user
             img(src="//static.jspass.com/static/css/main/images/user-avatar.png")
             div.user-type
-            div.user-name 我是用户名
+            div.user-name #{user.nickName}
             ul.menu-down
                 li
-                    a(href='/profile') 我的主页
+                    a#link-order(href='/personal/order') 我的订单
                 li
-                    a(href='/personal/order') 我的订单
+                    a#link-setting(href='/personal/setting') 个人设置
                 li
-                    a(href='/personal/setting') 个人设置
-                li
-                    a(href='/logout') 退出
+                    a#link-logout(href='/logout') 退出
