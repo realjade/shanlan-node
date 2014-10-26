@@ -1,0 +1,23 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/26
+  * Time: 14:29
+  *
+  */
+
+.mod-search-box-wrap{
+    position:absolute;
+    top:80px;
+    left:0;
+    right:0;
+    height:550px;
+    z-index:99;
+    display: none;
+}
+.search-form{
+    width:1100px;
+    height:550px;
+    margin:0 auto;
+    background-color: #1b8c34;
+}

@@ -20,7 +20,7 @@
     margin: 0 0 0 1px;
     padding: 0 5px 0 0;
     border-right: 1px solid #ccc;
-    background: url("//static.jspass.com/static/css/main/images/home-logo-2.png") no-repeat;
+    background: url("//static.jspass.com/static/css/common/images/home-logo-2.png") no-repeat;
     background-size: contain;
     -ms-background-position-y: 50%;
     background-position-y: 50%;
@@ -32,7 +32,7 @@
     margin: 0 10px 0 25px;
     width: 63px;
     height: 46px;
-    background: url("//static.jspass.com/static/css/main/images/search-icon.png") no-repeat;
+    background: url("//static.jspass.com/static/css/common/images/search-icon.png") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -64,7 +64,7 @@
     width: 100px;
     padding: 1px 10px 0 25px;
     border-left: 1px solid #ccc;
-    background: url("//static.jspass.com/static/css/main/images/login.png") no-repeat;
+    background: url("//static.jspass.com/static/css/common/images/login.png") no-repeat;
     background-origin: content-box;
 }
 
