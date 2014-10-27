@@ -56,6 +56,18 @@
             infoForm.submit(function(){
                 var nickNameInput = infoForm.find('#nickname')
                 var genderInput = infoForm.find('#gender')
+                var birthdayInput = infoForm.find('.birthday')
+                var mobileInput = infoForm.find('#mobile')
+                var emailInput = infoForm.find('#email')
+                var nickName = $.trim(nickNameInput.val())
+                var email = $.trim(emailInput.val())
+                var mobile = $.trim(mobileInput.val())
+                var gender = genderInput.val()
+                var birthday = birthdayInput.val()
+
+                if(!nickName){
+
+                }
 
                 return false
             })
@@ -73,7 +85,10 @@
                 dialog.find('.mod-avatar-dialog').avatar({
                     actionUrl: '/opf/upload/uploadAvatar',
                     previewUrl: '/img/',
-                    cutUrl:'/s?service=User.cutAvatar'
+                    cutUrl:'/s?service=User.cutAvatar',
+                    errorCallback: function(txt){
+                        alert(txt)
+                    }
                 })
                 dialog.find('.close').click(function(){
                     dialog.close()

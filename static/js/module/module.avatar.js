@@ -36,7 +36,7 @@ $(function () {
         '      </div>' +
         '      <div class="mini">' +
         '        <span><img alt="mini" /></span>' +
-        '        <div class="sizedesc">32 * 32 像素</div>' +
+        '        <div class="sizedesc">30 * 30 像素</div>' +
         '      </div>' +
         '    </div>' +
         '    <iframe name="{{target}}" src="" class="async-upload"></iframe>' +
@@ -69,7 +69,8 @@ $(function () {
                 callback: $.noop,
                 clickCallback: function () {
                     return true;
-                }
+                },
+                errorCallback: $.noop
             };
             $.extend(self.options, o);
             show();

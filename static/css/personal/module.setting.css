@@ -76,6 +76,18 @@
     width: 100%;
 }
 
+.mod-personal-setting .info-wrap .info-line .error{
+    background: #fffdea;
+    border: 1px solid #ffcf85;
+    color: #f60;
+    padding: 5px;
+    width: 388px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    display: none;
+}
+
 .mod-personal-setting .info-wrap .info-line {
     height: 60px;
     padding: 5px 0px;
@@ -83,6 +95,10 @@
     line-height: 60px;
     overflow: hidden;
 
+}
+
+.mod-personal-setting .info-wrap em{
+    color: red;
 }
 
 .mod-personal-setting .info-wrap .info-key {
