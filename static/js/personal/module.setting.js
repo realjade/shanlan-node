@@ -72,7 +72,8 @@
 
                 dialog.find('.mod-avatar-dialog').avatar({
                     actionUrl: '/opf/upload/uploadAvatar',
-                    previewUrl: '/img/'
+                    previewUrl: '/img/',
+                    cutUrl:'/s?service=User.cutAvatar'
                 })
                 dialog.find('.close').click(function(){
                     dialog.close()

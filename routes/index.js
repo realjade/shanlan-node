@@ -82,7 +82,7 @@ router.get('/mock', function (req, res) {
 })
 
 /* GET home page. */
-router.route(['/opt', '/opf/*']).all(function (req, res) {
+router.route(['/s', '/s/*']).all(function (req, res) {
     var service = req.param('service')
 
     utils.ajax({
