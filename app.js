@@ -9,6 +9,7 @@ var RedisStore = require('connect-redis')(session);
 //self
 var staticFilter = require('./lib/staticFilter');
 var filter = require('./lib/filter');
+var utils = require('./lib/utils')
 var config = require('./config');
 
 var routes = require('./routes/index');
@@ -43,7 +44,7 @@ app.use(function(req, res, next) {
     var session = req.session
     var user = session ? session.user : null
     if(user){
-        res.locals._user =  filter.wrapUser(user);
+        res.locals._user =  filter.wrapUser(utils.extend({},user));
     }else{
         res.locals._user = null
     }
