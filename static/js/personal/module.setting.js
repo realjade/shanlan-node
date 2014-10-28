@@ -179,12 +179,19 @@
 
                 dialog.find('.mod-avatar-dialog').avatar({
                     actionUrl: '/opf/upload/uploadAvatar',
-                    previewUrl: '/img/' + options.me.avatar['200'],
+                    previewUrl: options.me.avatar['200'],
                     cutUrl:'/s?service=User.cutAvatar',
                     errorCallback: function(txt){
                         App.common.modules.smallnote(txt,{
                             pattern: 'error'
                         })
+                    },
+                    callback: function(ok, res){
+                        if(res.code == 200){
+                            dialog.close()
+                            App.common.modules.smallnote('上传头像成功')
+                            $('.avatar-img').prop('src', res.data.replace('X_X', '200'))
+                        }
                     }
                 })
                 dialog.find('.close').click(function(){

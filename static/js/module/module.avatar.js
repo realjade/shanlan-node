@@ -189,7 +189,7 @@ $(function () {
                     //console.log('正在处理，请稍等...');
                 },
                 success: function (res) {
-                    if (res && res.code == 0) {
+                    if (res && res.code == 200) {
                         self.options.callback.call(self, true, res);
                     } else {
                         self.options.callback.call(self, false, res);
@@ -249,8 +249,8 @@ $(function () {
                     if (res) {
                         success();
                         if (res.code == 200) {
-                            var src = (res.data || self.options.previewUrl) + '?t=' + new Date().getTime();
-                            previewUrl = res.data || self.options.previewUrl;
+                            var src= (res.data ? '/img/' + res.data : self.options.previewUrl) + '?t=' + new Date().getTime();
+                            previewUrl = src;
                             createCropper(src);
                             frame.document.body.innerHTML = '';
                         }

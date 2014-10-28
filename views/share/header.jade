@@ -45,7 +45,7 @@ div.mod-header-wrap#m-header
     else
         div.header-user
             a(href="/profile")
-                img(src="//static.jspass.com/static/css/main/images/user-avatar.png")
+                img.avatar-img(src="#{user.avatar['30']}")
             div.user-type
             a.user-name(href="/profile") #{user.nickName}
             ul.menu-down
