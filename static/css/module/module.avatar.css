@@ -86,8 +86,8 @@
 }
 
 .uploadhead-widget .image-thumn .mini span {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     margin-top: 15px;
     background: url(images/avatar/default_avatar_32.gif)
 }

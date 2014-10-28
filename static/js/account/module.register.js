@@ -58,8 +58,8 @@
                     form.find('input[name="nickName"]').val(userName)
                 }
 
-                if(!psd){
-                    error.text('请输入密码').show()
+                if(!psd || psd.length < 6 || psd.length > 32){
+                    error.text('请输入6-32位密码').show()
                     psdInput.select()
                     return false
                 }

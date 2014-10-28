@@ -26,7 +26,7 @@ block content
             //    div.pack-type 商业合作
             div.pack-list
                 each item, index in packages
-                    div.pack-block
+                    div.pack-block(data-id="#{item.id}")
                         div.pack-no #{index + 1}
                         div.pack-head-wrap
                             div.pack-name #{item.name}
@@ -35,48 +35,7 @@ block content
                         div.pack-price #{item.price}
                         div.pack-detail
                             | !{item.description}
-                        div.pack-select-btn 选择
-
-                div.pack-block
-                    div.pack-no 1
-                    div.pack-head-wrap
-                        div.pack-name 高级定制团队个人写真
-                        div.pack-photo-num 100张
-                        div.pack-time 1天
-                    div.pack-price 12,800
-                    div.pack-detail
-                        p.
-                            1 暖暖帮你拍摄，和你一起策划主题；<br/>
-                            2. 跟拍一天，约六小时，服装造型自理，拍摄500张+，底片全送，当天选择入书照片。另送拍立得拍摄10张。<br/>
-                            3. 共40页，收入照片40张+，可增加页数（30元/页）。<br/>
-                            4. 特别收录：<br/>
-                               a. CD一辑（1张照片CD + 1张音乐CD+封套设计）<br/>
-                               b. 日式小画册一本<br/>
-                            5. 随书收录（4选2）：<br/>
-                               a. 宝丽来卡一组（5张 + 护封）<br/>
-                               b. 书签一组（10张 + 护封）<br/>
-                               c. 黑白卡片一组（5张 + 护封）<br/>
-                               d. 彩色卡片一组（5张 + 护封）<br/>
-                            6. 书尺寸A5 （15x20cm)<br/>
-                    div.pack-select-btn 选择
-                div.pack-block
-                    div.pack-no 2
-                    div.pack-head-wrap
-                        div.pack-name 资深团队个人/情侣写真
-                        div.pack-photo-num 100张
-                        div.pack-time 1天
-                    div.pack-price 2,680
-                    div.pack-detail
-                    div.pack-select-btn.btn-focus 选择
-                div.pack-block
-                    div.pack-head-wrap
-                        div.pack-name < 补充说明 >
-                    div.pack-detail
-                        img(src="//static.jspass.com/static/css/profile/images/package-info.png")
-                        p.
-                            <br/>
-                            * 展示的写真客片均为胶片拍摄，胶片套系出片是电子版照片。不需要先洗成纸质照片。<br/>
-                            * 所有照片在拍摄15天后网络发给你。
+                        div.pack-select-btn.button.button-primary.button-rounded 选择
         div.order-wrap
             div.calendar-main
                 include ../module/calendar

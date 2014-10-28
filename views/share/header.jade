@@ -44,9 +44,10 @@ div.mod-header-wrap#m-header
             span 登 录 >
     else
         div.header-user
-            img(src="//static.jspass.com/static/css/main/images/user-avatar.png")
+            a(href="/profile")
+                img(src="//static.jspass.com/static/css/main/images/user-avatar.png")
             div.user-type
-            div.user-name #{user.nickName}
+            a.user-name(href="/profile") #{user.nickName}
             ul.menu-down
                 li
                     a#link-order(href='/personal/order') 我的订单

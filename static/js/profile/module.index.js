@@ -30,7 +30,7 @@
             var self = this
 
             $.ajax({
-                url: '/opt',
+                url: '/s',
                 type: 'get',
                 data:{
                     service: 'Photo.getPhotos',
