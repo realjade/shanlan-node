@@ -249,7 +249,7 @@ $(function () {
                     if (res) {
                         success();
                         if (res.code == 200) {
-                            var src= (res.data ? res.data : self.options.previewUrl) + '?t=' + new Date().getTime();
+                            var src= (res.data || self.options.previewUrl) + '?t=' + new Date().getTime();
                             previewUrl = src;
                             createCropper(src);
                             frame.document.body.innerHTML = '';
