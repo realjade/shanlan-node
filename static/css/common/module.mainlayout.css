@@ -111,6 +111,7 @@
     margin: 0 0 0 70px;
     font-size: 14px;
     color: #777;
+    display: block;
 }
 
 .mod-header-wrap .header-user:hover {

@@ -6,6 +6,7 @@
  *
  */
 (function ($) {
+    alert('index')
     var home = {
         __container: null,
 
