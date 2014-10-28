@@ -27,8 +27,8 @@ router.route('/login').get(function (req, res) {
         utils.getApiData('User.login', utils.parseRequest(req), function (data) {
             if (data.code == '200') {
                 //session写入
-                var session = req.session
-                session.user = data.data
+                /*var session = req.session
+                session.user = data.data*/
 
                 if(req.param('next')){
                     res.redirect(req.param('next'))
