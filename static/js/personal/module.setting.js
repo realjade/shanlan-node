@@ -11,9 +11,10 @@
 
         __container: null,
 
-        init: function (container) {
+        init: function (container, options) {
             var self = this
             self.__container = container
+            self.__options = options
 
             self.__initInfo()
             self.__initBirthday()
@@ -51,6 +52,7 @@
         __bindEvent: function () {
             var self = this
             var container = self.__container
+            var options = self.__options
             var infoForm = container.find('.info-setting')
             //提交基本信息
             infoForm.submit(function(){
@@ -84,21 +86,24 @@
 
                 dialog.find('.mod-avatar-dialog').avatar({
                     actionUrl: '/opf/upload/uploadAvatar',
-                    previewUrl: '/img/',
+                    previewUrl: '/img/' + options.me.avatar[200],
                     cutUrl:'/s?service=User.cutAvatar',
                     errorCallback: function(txt){
-                        alert(txt)
+                        App.common.modules.smallnote(txt,{
+                            pattern: 'error'
+                        })
                     }
                 })
                 dialog.find('.close').click(function(){
                     dialog.close()
                 })
             })
+            $('.upload-btn').trigger('click')
         }
     }
 
     $(function () {
-        personalSetting.init($('.mod-personal-setting'))
+        personalSetting.init($('.mod-personal-setting'), pageConfig)
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 

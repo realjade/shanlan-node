@@ -249,8 +249,8 @@ $(function () {
                     if (res) {
                         success();
                         if (res.code == 200) {
-                            var src = self.options.previewUrl + res.data + '?t=' + new Date().getTime();
-                            //previewUrl = res.previewUrl || self.options.previewUrl;
+                            var src = (res.data || self.options.previewUrl) + '?t=' + new Date().getTime();
+                            previewUrl = res.data || self.options.previewUrl;
                             createCropper(src);
                             frame.document.body.innerHTML = '';
                         }

@@ -14,4 +14,9 @@ html
             div.content
         block footer
         script(src='//static.jspass.com/static/js/libs/libs.min.js')
+        -var user = JSON.stringify(_user)
+        script.
+            window.pageConfig = {
+                me: !{user}
+            }
         block js
