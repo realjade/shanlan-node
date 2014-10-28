@@ -190,7 +190,7 @@
                         if(res.code == 200){
                             dialog.close()
                             App.common.modules.smallnote('上传头像成功')
-                            $('.avatar-img').prop('src', '/img/' + res.data.replace('X_X', '200_200'))
+                            $('.avatar-img').prop('src', res.data.replace('X_X', '200_200'))
                         }
                     }
                 })
