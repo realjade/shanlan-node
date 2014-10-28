@@ -43,20 +43,17 @@ block content
             div.booking-box
                 div.bk-info
                     div.bk-pack
-                        ul
+                        ul.package-selected
                             span.bk-tag 套系：
-                            span.bk-pack-name 高级定制团队个人写真 （12800元）
-                        ul
+                            span.bk-pack-name 请在左边面板选择一个套系
+                        ul.date-selected
                             span.bk-tag 日期：
-                            span.bk-date 2014-10-05 周日
-
+                            span.bk-date 请在上面和摄影师约定拍摄日期
                         ul
                             span.bk-tag 备注：
                             div.bk-note-container
-                                textarea.bk-note
-                div.bk-btn
-                    span 预 订
-
+                                textarea.bk-note(placeholder="请写点什么")
+                div.bk-btn.button.button-action.button-rounded 预 订
             div.reminding-wrap
                 p.
                     * 建议您预订前先与摄影师沟通，确认具体时间和地点。<br/>

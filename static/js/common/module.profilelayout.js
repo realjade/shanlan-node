@@ -17,7 +17,7 @@
 
             container.height($(window).height() + 60)
 
-            App.common.modules.common.scrollTo($('.user-info .avatar').offset().top - 30)
+            App.common.modules.common.scrollTo($('.user-info .avatar-img').offset().top - 30)
 
             self.__bindEvent()
         },
@@ -28,7 +28,7 @@
 
             var nav = container.find('.profile-nav')
             var navAvatar = container.find('.profile-nav .avatar-wrap')
-            var avatar = container.find('.user-info .avatar')
+            var avatar = container.find('.user-info .avatar-img')
 
             $(window).resize(function(){
                 container.height($(window).height() + 60)
