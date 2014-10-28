@@ -26,7 +26,7 @@ block content
             //    div.pack-type 商业合作
             div.pack-list
                 each item, index in packages
-                    div.pack-block(data-id="#{item.id}")
+                    div.pack-block(data-id="#{item.id}" data-name="#{item.name}" data-price="#{item.price}")
                         div.pack-no #{index + 1}
                         div.pack-head-wrap
                             div.pack-name #{item.name}
