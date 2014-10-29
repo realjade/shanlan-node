@@ -8,7 +8,7 @@ var utils = require('../lib/utils')
 router.route('/login').get(function (req, res) {
     var me = res.locals._user
 
-    if(me){
+    if (me) {
         res.redirect('profile')
         return false
     }
@@ -18,21 +18,24 @@ router.route('/login').get(function (req, res) {
         next: req.get('Referrer') || ''
     })
 }).post(function (req, res) {
-        var me = res.locals._user
+    var me = res.locals._user
 
-        if(me){
-            res.redirect('/profile')
-            return false
-        }
-        utils.getApiData('User.login', utils.parseRequest(req), function (data) {
+    if (me) {
+        res.redirect('/profile')
+        return false
+    }
+    utils.ajax({
+        url: 'User.login',
+        req: req,
+        callback: function (err, data) {
             if (data.code == '200') {
                 //session写入
                 var session = req.session
                 session.user = data.data
 
-                if(req.param('next')){
+                if (req.param('next')) {
                     res.redirect(req.param('next'))
-                }else{
+                } else {
                     res.redirect('/profile')
                 }
 
@@ -42,8 +45,9 @@ router.route('/login').get(function (req, res) {
                     error: data.message
                 })
             }
-        })
+        }
     })
+})
 
 //注册
 router.route('/register').get(function (req, res) {
@@ -51,7 +55,10 @@ router.route('/register').get(function (req, res) {
         title: '注册'
     })
 }).post(function (req, res) {
-        utils.getApiData('User.register', utils.parseRequest(req), function (data) {
+    utils.ajax({
+        url: 'User.register',
+        req: req,
+        callback: function (err, data) {
             if (data.code == '200') {
                 //注册成功
                 res.render('account/message', {
@@ -63,13 +70,14 @@ router.route('/register').get(function (req, res) {
                     error: data.message
                 })
             }
-        })
-    });
+        }
+    })
+});
 
 //登出
 router.get('/logout', function (req, res) {
     var session = req.session
-    if(session){
+    if (session) {
         session.user = null
     }
     utils.goIndex(res)
