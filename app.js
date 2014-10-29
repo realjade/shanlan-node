@@ -44,12 +44,13 @@ app.use(function(req, res, next) {
     var session = req.session
     var user = session ? session.user : null
     if(user){
-        res.locals._user =  filter.wrapUser(utils.extend({},user));
+        res.locals._user =  utils.wrapUser(utils.extend({},user));
     }else{
         res.locals._user = null
     }
     res.locals.staticFilter = staticFilter.staticFilter
     res.locals.title = '高质量独立摄影平台'
+    filter.isMobile(req)
     next();
 });
 

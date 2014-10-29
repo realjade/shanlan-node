@@ -3,6 +3,7 @@ var router = express.Router()
 
 //self
 var utils = require('../lib/utils')
+var filter = require('../lib/filter')
 
 //登录
 router.route('/login').get(function (req, res) {
@@ -97,6 +98,7 @@ router.route(['/s', '/s/*']).all(function (req, res) {
         url: service,
         req: req,
         callback: function (err, data) {
+            filter.optEnd(service, data, req)
             res.json(data);
         }
     })
