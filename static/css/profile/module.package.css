@@ -194,13 +194,10 @@ html body{
     font-size:12px;
 }
 .bk-btn{
-    height:80px;
-    border-bottom: 5px solid #ef4f69;
-    border-top: 1px solid #cbcbcb;
-    position:relative;
-    text-align: center;
-    font-size:22px;
-    padding-top:20px;
+    height: 40px;
+    line-height: 40px;
+    width: 370px;
+    margin-top: 10px;
 }
 .bk-btn >span{
     letter-spacing: 20px;

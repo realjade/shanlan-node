@@ -19,6 +19,9 @@
                 selectedDay: {
                     1413993600000: true,
                     1414080000000: true
+                },
+                clickCallback: function(date){
+                    $('.date-selected .bk-date', container).text(date.year + '-' + date.month + '-' + date.day + '（' + date.weekdayname + '）')
                 }
             })
 
@@ -29,6 +32,19 @@
             var self = this
             var container = self.__container
             var calendar = App.common.modules.calendar
+
+            //选择套系
+            container.on('click', '.pack-select-btn', function(){
+                var item = $(this).parents('.pack-block')
+                var id = item.data('id')
+                var name = item.data('name')
+                var price = item.data('price')
+
+                var packageSelected = $('.package-selected', container)
+                packageSelected.data('id', id)
+                packageSelected.find('.bk-pack-name').text(name + '（' + price +  '）')
+
+            })
 
             container.on('click', '.bk-btn', function(){
                 console.log(calendar.getCheckedTime())
