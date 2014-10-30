@@ -1,0 +1,22 @@
+doctype html
+html
+   head
+      title 镁光城 | #{title}
+      meta(http-equiv='X-UA-Compatible' content="IE=edge")
+      meta(charset='utf-8')
+      meta(name='Keywords' content='镁光城，摄影，婚纱，约片，约拍，互勉，写真，艺术照')
+      meta(name='Description' content='镁光城，专注于高质量的独立摄影平台，满足大众不同要求的摄影需求，给您一套私人订制的摄影服务，让您意想不到。摄影，有意思！')
+      link(rel='shortcut icon' type='image/x-icon' href='//static.jspass.com/static/images/favicon.ico')
+      block css
+   body
+      block header
+      block content
+         div.content
+      block footer
+      script(src='//static.jspass.com/static/mobile/js/libs/libs.min.js')
+      -var user = JSON.stringify(_user)
+      script.
+         window.pageConfig = {
+            me: !{user}
+         }
+      block js

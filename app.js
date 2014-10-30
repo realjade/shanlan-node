@@ -17,6 +17,7 @@ var main = require('./routes/main');
 var profile = require('./routes/profile');
 var users = require('./routes/users');
 var personal = require('./routes/personal');
+var mobile = require('./routes/mobile')
 
 var app = express();
 
@@ -50,7 +51,10 @@ app.use(function(req, res, next) {
     }
     res.locals.staticFilter = staticFilter.staticFilter
     res.locals.title = '高质量独立摄影平台'
-    filter.isMobile(req)
+    /*if(filter.isMobile(req)){
+        res.redirect('/m')
+        return false
+    }*/
     next();
 });
 
@@ -59,6 +63,7 @@ app.use('/', main);
 app.use('/profile', profile);
 app.use('/users', users);
 app.use('/personal',personal);
+app.use('/m', mobile)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

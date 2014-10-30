@@ -18,6 +18,20 @@ module.exports = function (grunt) {
                 ],
                 dest: 'static/js/libs/libs.js'
             }
+        },
+        concat1:{
+            options:{
+                separator: ';'
+            },
+            dist: {
+                src: [
+                    'static/mobile/js/libs/zepto.min.js',
+                    'static/mobile/js/libs/underscore-min.js',
+                    'static/mobile/js/libs/backbone-min.js',
+                    'static/mobile/js/libs/bootstrap/js/bootstrap.min.js'
+                ],
+                dest: 'static/mobile/js/libs/libs.min.js'
+            }
         }
     };
 
@@ -52,5 +66,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-css');
 
     //执行压缩合并Lib任务
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['concat', 'concat1', 'uglify']);
 };
