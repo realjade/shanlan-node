@@ -51,10 +51,10 @@ app.use(function(req, res, next) {
     }
     res.locals.staticFilter = staticFilter.staticFilter
     res.locals.title = '高质量独立摄影平台'
-    /*if(filter.isMobile(req)){
-        res.redirect('/m')
+    if(filter.isMobile(req) && req.path.indexOf('/m/') !== 0){
+        res.redirect('/m/')
         return false
-    }*/
+    }
     next();
 });
 
