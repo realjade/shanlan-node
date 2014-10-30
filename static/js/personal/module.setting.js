@@ -179,7 +179,7 @@
 
                 dialog.find('.mod-avatar-dialog').avatar({
                     actionUrl: '/opf/upload/uploadAvatar',
-                    previewUrl: options.me.avatar['200'],
+                    //previewUrl: options.me.avatar['200'],
                     cutUrl:'/s?service=User.cutAvatar',
                     errorCallback: function(txt){
                         App.common.modules.smallnote(txt,{

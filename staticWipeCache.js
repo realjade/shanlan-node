@@ -15,7 +15,12 @@ var staticFilterPath = 'lib/staticFilter.js';
 var md5Str = '';
 
 var jsPath = staticPath + '/js/merge';
-walk(jsPath, 0 , function(path, floor) {
+walk(jsPath, 0 , jsWipeCache);
+
+jsPath = staticPath + '/mobile/js/merge';
+walk(jsPath, 0 , jsWipeCache);
+
+function jsWipeCache(path, floor){
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){
@@ -24,10 +29,14 @@ walk(jsPath, 0 , function(path, floor) {
             md5Str += '            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
         }
     }
-});
+}
 
 var cssPath = staticPath + '/css/merge';
-walk(cssPath, 0 , function(path, floor) {
+walk(cssPath, 0 , cssWipeCache);
+cssPath = staticPath + '/mobile/css/merge';
+walk(cssPath, 0 , cssWipeCache);
+
+function cssWipeCache(path, floor) {
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){
@@ -36,7 +45,7 @@ walk(cssPath, 0 , function(path, floor) {
             md5Str += '            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
         }
     }
-});
+}
 
 var content = '' +
     'module.exports = {\n' +
