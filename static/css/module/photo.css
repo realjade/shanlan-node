@@ -1,0 +1,37 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/29
+  * Time: 13:02
+  *
+  */
+
+/* photo-group display */
+.main-photo-group{
+    position:relative;
+    height:140px;
+    padding-top:15px;
+}
+.main-photo-group .item{
+    box-sizing: border-box;
+    float:left;
+    width: 140px;
+    height: 140px;
+    margin: 0 1px 0px 0;
+    background-color: #7cdfff;
+}
+.main-photo-group a:hover{
+    background-color: #64d3ff;
+}
+.main-photo-group img{
+    width:100%;
+}
+
+#item-number{
+    color:#ffffff;
+    font-size:32px;
+    font-weight:lighter;
+    font-family: "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-align: center;
+    padding:47px 0 0 0;
+}
