@@ -1,0 +1,290 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/28
+  * Time: 12:14
+  *
+  */
+html body{
+    background-color: #f5f5f7;
+}
+a{
+    color:#666;
+}
+.mod-result{
+}
+.mod-result .search-items-wrap{
+    position: relative;
+    left:0;
+    right:0;
+    display: block;
+    height:80px;
+    margin:0 0 20px 0;
+    background-color: #eeeff2;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.mod-result .result-rule-bar{
+    display:table;
+    box-sizing: border-box;
+    width:1000px;
+    height:32px;
+    margin:30px auto;
+    padding:0 15px;
+    background-color: #fff;
+    box-shadow:0 2px 3px #cbcbcb;
+}
+.mod-result .result-rule-bar .cell-space{
+    display:table-cell;
+    box-sizing: border-box;
+    float:left;
+    width:150px;
+    height:38px;
+    line-height: 32px;
+    padding:3px 10px;
+    vertical-align: middle;
+    text-align: center;
+    color:#495468;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+.mod-result .result-rule-bar .cell-space a{
+
+}
+
+.mod-result .result-rule-bar .rule-desc{
+    color:#aaa;
+    width:120px;
+}
+.mod-result .result-rule-bar .rule-item:hover,
+.mod-result .result-rule-bar .rule-item:hover a{
+    background-color: #eee;
+}
+.mod-result .result-rule-bar #rule-item-active
+{
+    border-bottom:3px solid #ef4f69;
+    padding-bottom:0;
+}
+
+.mod-result .result-rule-bar .rule-item a{
+    color:#666;
+    width:100%;
+    height:100%;
+}
+
+.mod-result .result-item-box{
+    display: block;
+    position:relative;
+    box-sizing:border-box;
+    width:1000px;
+    min-height: 290px;
+    max-height:872px;
+    margin:0 auto 35px auto;
+    padding: 30px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px #cbcbcb;
+    overflow: hidden;
+}
+.mod-result .result-item-box:first-child{
+    border:none;
+}
+.mod-result .result-item-box .item-info-wrap{
+    position: relative;
+    width:940px;
+    height:158px;
+    border-bottom:1px solid #ef4f69;
+    color:#666;
+}
+.mod-result .result-item-box .item-avatar{
+    position: relative;
+    top:1px;
+    float:left;
+    width:140px;
+    height:140px;
+    margin:0 20px 0 0;
+    padding:0 5px 15px 5px;
+    border-bottom: 3px solid #ef4f69;
+    z-index: 1;
+}
+.mod-result .result-item-box .item-avatar img{
+    width:140px;
+    height:140px;
+    border-radius: 50% 50%;
+}
+.mod-result .result-item-box .item-name{
+    float:left;
+    max-width:400px;
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+.mod-result .result-item-box .item-city{
+    float:left;
+    margin:22px 0 0 15px;
+    padding:0 0 0 22px;
+    background: url('//static.jspass.com/static/css/common/images/location.png') no-repeat 3px;
+    background-size:13px 15px;
+    background-origin: border-box;
+    font-size: 13px;
+}
+.mod-result .result-item-box .item-score{
+    position: absolute;
+    top:55px;
+    left:170px;
+}
+.mod-result .result-item-box .item-score img{
+    float:left;
+    height:25px;
+}
+.mod-result .result-item-box .item-score div{
+    float:left;
+    padding:1px 0 5px 10px;
+}
+.mod-result .result-item-box .item-collections{
+    position: absolute;
+    top:55px;
+    left:350px;
+}
+.mod-result .result-item-box .item-trades{
+    position: absolute;
+    top:55px;
+    left:440px;
+}
+
+.mod-result .result-item-box .item-tags{
+    position:absolute;
+    display: block;
+    top:90px;
+    left:170px;
+    overflow: hidden;
+}
+.mod-result .result-item-box .item-tags .tag{
+    float:left;
+    padding:2px 5px 2px 7px;
+    margin:0 10px 0 0;
+    color:#fff;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: #bbb;
+}
+
+.mod-result .result-item-box .item-description{
+    position: absolute;
+    top:125px;
+    left:170px;
+    width:760px;
+    max-height: 40px;
+    display: block;
+    overflow: hidden;
+}
+.mod-result .result-item-box .item-description .quote-left-icon{
+    float:left;
+    width:20px;
+    height:20px;
+    background: url('//static.jspass.com/static/css/common/images/quote-left.png')no-repeat 1px 3px;
+    background-size: 15px 15px;
+
+}
+
+.mod-result .result-item-box .item-description .quote-right-icon{
+    float:left;
+    width:20px;
+    height:20px;
+    background: url('//static.jspass.com/static/css/common/images/quote-right.png')no-repeat 1px 3px;
+    background-size: 15px 15px;
+
+}
+.mod-result .result-item-box .item-description .detail{
+    float:left;
+    padding: 0 5px;
+    max-width:700px;
+    height:20px;
+    overflow: hidden;
+}
+.mod-result .result-item-box .item-packages-wrap{
+    position: absolute;
+    top:25px;
+    right:40px;
+    width:330px;
+    padding:5px 20px;
+}
+.mod-result .result-item-box .item-package{
+    position: relative;
+    display: block;
+    height: 40px;
+    padding: 0 5px;
+    border-bottom: 1px solid #ccc;
+}
+.mod-result .result-item-box .item-package div{
+    display: inline-block;
+}
+.mod-result .result-item-box .item-package .pack-name{
+    position: absolute;
+    top:3px;
+    left:5px;
+    min-width:100px;
+    height:40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+.mod-result .result-item-box .item-package .pack-photo-num{
+    position: absolute;
+    top:3px;
+    right:140px;
+    width: 50px;
+    background: url('//static.jspass.com/static/css/profile/images/photo.png') no-repeat 0 10px;
+    background-size: 22px 20px;
+    padding: 0 0 0 31px;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+.mod-result .result-item-box .item-package .pack-time{
+    position: absolute;
+    top:3px;
+    right:72px;
+    width:40px;
+    background: url('//static.jspass.com/static/css/profile/images/time.png') no-repeat 0 10px;
+    background-size: 24px 22px;
+    padding: 0 0 0 30px;
+    line-height: 40px;
+    font-size:12px;
+}
+
+.mod-result .result-item-box .item-package .pack-price{
+    position: absolute;
+    top:2px;
+    right:5px;
+    background: url('//static.jspass.com/static/css/profile/images/RMB.png') no-repeat 2px 12px;
+    padding: 0 0 0 20px;
+    line-height: 40px;
+    font-size: 18px;
+}
+.groups-list-a{
+    padding:0 0 0 20px;
+}
+
+.groups-list-a .g-block-a.first {
+    margin-left: 0px;
+    clear: left;
+}
+
+.groups-list-a .g-block-a{
+    width: 290px;
+    height: 290px;
+    margin: 15px 0 0 15px;
+    display: block;
+    float: left;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.groups-list-a .g-block-a img{
+    width:100%;
+    height:100%;
+}
+

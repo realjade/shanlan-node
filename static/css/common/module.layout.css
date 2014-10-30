@@ -114,8 +114,8 @@
 }
 
 #m-header .login-btn {
-    position: relative;
-    right: 0;
+    position: absolute;
+    right: 80px;
     display: block;
     line-height: 50px;
     width: 70px;
@@ -123,7 +123,6 @@
 }
 
 #m-header .login-btn:hover {
-    position: relative;
     color: #fff;
 }
 
