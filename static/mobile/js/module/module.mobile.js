@@ -5,12 +5,21 @@
  * Time: 下午4:16
  *
  */
-(function($){
+(function ($) {
     var mobile = {
-        init: function(){
+        init: function (container, options) {
 
         }
     }
 
+    mobile.__tpl = '' +
+    '<section class="mod-mobile">' +
+    '   <header class="mobile-header"></header>' +
+    '   <section class="mobile-content"></section>' +
+    '   <footer></footer>' +
+    '</section>'
+
+    //export
+    App.modules.mobile = mobile
 
 })(jQuery)
