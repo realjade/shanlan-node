@@ -12,6 +12,9 @@
         }
     }
 
+    index.__tpl = '' +
+        '<div class="mod-index"></div>'
+
     //export
     App.modules.index = index
 })(jQuery)
