@@ -92,3 +92,20 @@
     background: #51a6ff;
     color: #fff;
 }
+
+.ui-roundbutton{
+    -webkit-box-shadow: inset 0px 1px 0px #fff;
+    box-shadow: inset 0px 1px 0px #fff;
+    display: inline-block;
+    margin: 0;
+    padding:0 14px 1px 14px;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #d7d7d9;
+    background: #eeeff2;
+    color: #444;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor:pointer;
+    border-radius:50% 50%;
+}

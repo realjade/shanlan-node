@@ -7,14 +7,18 @@ block content
     div.mod-result
         div.search-items-wrap
             form.search-items-form(method="post" action="")
+                div.search-item-block#search-display
+                    div.search-item-desc 查询内容：
+                    button.ui-twistbutton.ui-tb-left.ui-tb-active#search-person 摄影师
+                    button.ui-twistbutton.ui-tb-right#search-service  服务
                 div.search-item-block
-                    div.search-item-desc 类型：
+                    div.search-item-desc 摄影类型：
                     select.ui-select#select-type
                         option(value='0') 旅拍
                         option(value='1') 婚纱
                         option(value='2') 婚礼跟拍
                 div.search-item-block
-                    div.search-item-desc 风格：
+                    div.search-item-desc 摄影风格：
                     select.ui-select#select-style
                         option(value='0') 胶片
                 div.search-item-block
@@ -28,10 +32,9 @@ block content
                     input.ui-input#input-price-1
                     span &nbsp~&nbsp
                     input.ui-input#input-price-2
-                div.search-item-block#search-submit-block
-                    div.search-item-desc 查询：
-                    button.ui-twistbutton.ui-tb-left.ui-tb-active#search-person( value='摄影师') 摄影师
-                    button.ui-twistbutton.ui-tb-right#search-service( value='服务') 服务
+                div.search-item-block
+                    button.ui-roundbutton.ui-rb-search(type="submit" value='提交')
+
 
         div.result-rule-bar
             div.cell-space.rule-desc 显示顺序 >
