@@ -6,9 +6,37 @@ block header
 block content
     div.mod-result
         div.search-items-wrap
-            label.ui-select-label
-                select.ui-select
-                    option 旅拍
+            form.search-items-form(method="post" action="")
+                div.search-item-block#search-display
+                    div.search-item-desc 查询内容：
+                    button.ui-twistbutton.ui-tb-left.ui-tb-active#search-person 摄影师
+                    button.ui-twistbutton.ui-tb-right#search-service  服务
+                div.search-item-block
+                    div.search-item-desc 摄影类型：
+                    select.ui-select#select-type
+                        option(value='0') 旅拍
+                        option(value='1') 婚纱
+                        option(value='2') 婚礼跟拍
+                div.search-item-block
+                    div.search-item-desc 摄影风格：
+                    select.ui-select#select-style
+                        option(value='0') 胶片
+                div.search-item-block
+                    div.search-item-desc 拍摄地：
+                    select.ui-select#select-province
+                        option(value='0') 省份
+                    select.ui-select#select-city
+                        option(value='0') 城市
+                div.search-item-block
+                    div.search-item-desc 价格区间 (元)：
+                    input.ui-input#input-price-1
+                    span &nbsp~&nbsp
+                    input.ui-input#input-price-2
+                div.search-item-block#search-submit
+                    div.ui-button-wrap
+                        button.ui-roundbutton.ui-rb-search.submit-btn(type="submit" value='提交')
+
+
         div.result-rule-bar
             div.cell-space.rule-desc 显示顺序 >
             div.cell-space.rule-item
@@ -22,7 +50,7 @@ block content
             div.cell-space.rule-item
                 a#photo-rule 作品量
 
-        div.result-item-box
+        div.result-item-box.result-item-box-person
             div.item-info-wrap
                 div.item-avatar
                     img(src='//static.jspass.com/static/css/profile/images/avatar.jpg')
@@ -62,30 +90,32 @@ block content
                     a.g-block-a
                         img(src='//static.jspass.com/static/css/profile/images/trade-2-3.png')
 
-        div.result-item-box
-            div.item-info-wrap
-                div.item-avatar
-                    img(src='//static.jspass.com/static/css/profile/images/avatar.jpg')
-                div.item-name 王五
-                div.item-city 重庆
-                div.item-score
-                    img(src="//static.jspass.com/static/css/profile/images/5stars.png")
-                    div (9.1)
-                div.item-collections 作品集: 41
-                div.item-trades 交易数: 135
-                div.item-description
-                    span.detail 多年以后翻开照片，看到的不止是年轻时候的美丽，也可以看到当时的真情流露。真实与美丽，一样都不能舍弃。
-            ul.item-packages-wrap
-                li.item-package
-                    div.pack-name 套系A:
-                    div.pack-photo-num 255张
-                    div.pack-time 1天
-                    div.pack-price 12800
-                li.item-package
-                    div.pack-name 套系B:
-                    div.pack-photo-num 255张
-                    div.pack-time 1天
-                    div.pack-price 12800
+        div.result-item-box.result-item-box-service
+            div.item-package-wrap
+                ul
+                    li#pack-main-info
+                        div.pack-name
+                        div.pack-photo-num
+                        div.pack-time
+                        div.pack-price
+                    li#pack-addiontal-info
+                        dic.pack-ps
+                        div.pack-book
+                        div.pack-makeup
+                        div.pack-costume
+                    li#pack-tags
+                        div.item-tags
+                            div.tag 婚纱
+                            div.tag 婚礼跟拍
+                            div.tag 写真
+                            div.tag 商业
+                    li#pack-trade
+
+            ul.item-person-wrap
+                div.person-avatar
+                div.person-name
+                div.person-city
+
             div.item-groups-wrap
                 div.main-item-group
                     a.item
@@ -102,36 +132,7 @@ block content
                         img(src='//static.jspass.com/static/css/profile/images/trade-1-6.png')
                     a.item
                         img(src='//static.jspass.com/static/css/profile/images/trade-1-0.png')
-                div.main-item-group
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-1.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-2.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-3.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-4.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-5.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-6.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-0.png')
-                div.main-item-group
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-1.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-2.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-3.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-4.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-5.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-6.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-2-0.png')
+
 
 
 

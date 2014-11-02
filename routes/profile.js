@@ -38,6 +38,11 @@ router.get(['/', '/:userName'], function (req, res) {
                 },
                 req: req,
                 callback: function (err, data) {
+                    for(var i=0; i < data.data.length; i++){
+                        for(var j=0; j< data.data[i].photoDTOList.length;j++){
+                                data.data[i].photoDTOList[j].filePath = data.data[i].photoDTOList[j].filePath.replace('_X_X',utils.pathSpec.COMPRESS)
+                        }
+                    }
                     callback(null, data.data)
                 }
             })
