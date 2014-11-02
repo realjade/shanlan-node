@@ -124,17 +124,20 @@ a{
     box-shadow: 0 2px 3px #cbcbcb;
     overflow: hidden;
 }
-.mod-result .result-item-box:first-child{
+.mod-result .result-item-box-person{
+
+}
+.mod-result .result-item-box-person:first-child{
     border:none;
 }
-.mod-result .result-item-box .item-info-wrap{
+.mod-result .result-item-box-person .item-info-wrap{
     position: relative;
     width:940px;
     height:158px;
     border-bottom:1px solid #ef4f69;
     color:#444;
 }
-.mod-result .result-item-box .item-avatar{
+.mod-result .result-item-box-person .item-avatar{
     position: relative;
     top:1px;
     float:left;
@@ -145,18 +148,18 @@ a{
     border-bottom: 3px solid #ef4f69;
     z-index: 1;
 }
-.mod-result .result-item-box .item-avatar img{
+.mod-result .result-item-box-person .item-avatar img{
     width:140px;
     height:140px;
     border-radius: 50% 50%;
 }
-.mod-result .result-item-box .item-name{
+.mod-result .result-item-box-person .item-name{
     float:left;
     max-width:400px;
     font-size: 32px;
     letter-spacing: 5px;
 }
-.mod-result .result-item-box .item-city{
+.mod-result .result-item-box-person .item-city{
     float:left;
     margin:22px 0 0 15px;
     padding:0 0 0 22px;
@@ -165,38 +168,38 @@ a{
     background-origin: border-box;
     font-size: 13px;
 }
-.mod-result .result-item-box .item-score{
+.mod-result .result-item-box-person .item-score{
     position: absolute;
     top:55px;
     left:170px;
 }
-.mod-result .result-item-box .item-score img{
+.mod-result .result-item-box-person .item-score img{
     float:left;
     height:25px;
 }
-.mod-result .result-item-box .item-score div{
+.mod-result .result-item-box-person .item-score div{
     float:left;
     padding:1px 0 5px 10px;
 }
-.mod-result .result-item-box .item-collections{
+.mod-result .result-item-box-person .item-collections{
     position: absolute;
     top:55px;
     left:350px;
 }
-.mod-result .result-item-box .item-trades{
+.mod-result .result-item-box-person .item-trades{
     position: absolute;
     top:55px;
     left:440px;
 }
 
-.mod-result .result-item-box .item-tags{
+.mod-result .result-item-box-person .item-tags{
     position:absolute;
     display: block;
     top:90px;
     left:170px;
     overflow: hidden;
 }
-.mod-result .result-item-box .item-tags .tag{
+.mod-result .result-item-box-person .item-tags .tag{
     float:left;
     padding:2px 5px 2px 7px;
     margin:0 10px 0 0;
@@ -207,7 +210,7 @@ a{
     background-color: #bbb;
 }
 
-.mod-result .result-item-box .item-description{
+.mod-result .result-item-box-person .item-description{
     position: absolute;
     top:125px;
     left:170px;
@@ -216,7 +219,7 @@ a{
     display: block;
     overflow: hidden;
 }
-.mod-result .result-item-box .item-description .quote-left-icon{
+.mod-result .result-item-box-person .item-description .quote-left-icon{
     float:left;
     width:20px;
     height:20px;
@@ -225,7 +228,7 @@ a{
 
 }
 
-.mod-result .result-item-box .item-description .quote-right-icon{
+.mod-result .result-item-box-person .item-description .quote-right-icon{
     float:left;
     width:20px;
     height:20px;
@@ -233,31 +236,31 @@ a{
     background-size: 15px 15px;
 
 }
-.mod-result .result-item-box .item-description .detail{
+.mod-result .result-item-box-person .item-description .detail{
     float:left;
     padding: 0 5px;
     max-width:700px;
     height:20px;
     overflow: hidden;
 }
-.mod-result .result-item-box .item-packages-wrap{
+.mod-result .result-item-box-person .item-packages-wrap{
     position: absolute;
     top:25px;
     right:40px;
     width:330px;
     padding:5px 20px;
 }
-.mod-result .result-item-box .item-package{
+.mod-result .result-item-box-person .item-package{
     position: relative;
     display: block;
     height: 40px;
     padding: 0 5px;
     border-bottom: 1px solid #ccc;
 }
-.mod-result .result-item-box .item-package div{
+.mod-result .result-item-box-person .item-package div{
     display: inline-block;
 }
-.mod-result .result-item-box .item-package .pack-name{
+.mod-result .result-item-box-person .item-package .pack-name{
     position: absolute;
     top:3px;
     left:5px;
@@ -268,7 +271,7 @@ a{
     text-align: center;
     overflow: hidden;
 }
-.mod-result .result-item-box .item-package .pack-photo-num{
+.mod-result .result-item-box-person .item-package .pack-photo-num{
     position: absolute;
     top:3px;
     right:140px;
@@ -280,7 +283,7 @@ a{
     font-size: 12px;
 }
 
-.mod-result .result-item-box .item-package .pack-time{
+.mod-result .result-item-box-person .item-package .pack-time{
     position: absolute;
     top:3px;
     right:72px;
@@ -292,7 +295,7 @@ a{
     font-size:12px;
 }
 
-.mod-result .result-item-box .item-package .pack-price{
+.mod-result .result-item-box-person .item-package .pack-price{
     position: absolute;
     top:2px;
     right:5px;
@@ -327,3 +330,8 @@ a{
     height:100%;
 }
 
+
+.mod-result #search-submit{
+    position: relative;
+    top:3px;
+}
