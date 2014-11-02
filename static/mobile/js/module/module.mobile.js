@@ -16,7 +16,7 @@
     '<section class="mod-mobile">' +
     '   <header class="mobile-header"></header>' +
     '   <section class="mobile-content"></section>' +
-    '   <footer></footer>' +
+    '   <footer class="mobile-footer"></footer>' +
     '</section>'
 
     //export
