@@ -52,6 +52,7 @@ router.get(['/', '/:userName'], function (req, res) {
             utils.goError(res, '对不起，找不到该用户')
         }else{
             results.me = me
+            results.owner = utils.wrapUser(utils.extend({},results.owner));
             results.subTab = 'index'
             res.render('profile/index', results)
         }

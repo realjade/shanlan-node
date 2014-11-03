@@ -2,7 +2,7 @@
     div.profile-bg
     div.user-info.clr
         div.f-l
-            img.avatar-img(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
+            img.avatar-img(src="#{owner.avatar['200']}")
         div.user-detail.f-l
             div.user-title
                 span#user-name #{owner.nickName}
@@ -21,7 +21,7 @@
     div.profile-nav
         ul.nav
             li.avatar-wrap
-                img.avatar(src="//static.jspass.com/static/css/profile/images/avatar.jpg")
+                img.avatar(src="#{owner.avatar['30']}")
                 div.avatar-name #{owner.nickName}
             li
                 if subTab == 'about'

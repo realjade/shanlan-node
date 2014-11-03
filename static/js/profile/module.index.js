@@ -34,15 +34,20 @@
                 type: 'get',
                 data:{
                     service: 'Photo.getPhotos',
-                    photoCollectionId: 1
+                    photoCollectionId: gid
                 },
                 success: function(data){
                     if(data.code === 200){
+                        var data = data.data
+                        $.each(data, function(idx, item){
+                            item.thumbnailPath = item.filePath.replace('_X_X', '_THUMBNAIL_100_100')
+                            item.filePath = item.filePath.replace('_X_X', '_COMPRESS_')
+                        })
                         App.common.modules.imageView.init(null, {
                             showDialog: true,
                             groupTitle: '婆娑',
                             groupDescription: '来生再见',
-                            imgData: data.data
+                            imgData: data
                         })
                     }
                 }

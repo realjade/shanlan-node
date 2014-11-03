@@ -17,6 +17,7 @@
     overflow:hidden;
     position:relative;
     margin-bottom:23px;
+    cursor: pointer;
 }
 .photo-item{
     background-position: 50% 50%;
