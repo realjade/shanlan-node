@@ -52,7 +52,7 @@ router.get(['/', '/:userName'], function (req, res) {
             utils.goError(res, '对不起，找不到该用户')
         }else{
             results.me = me
-            results.owner = utils.wrapUser(utils.extend({},results.owner));
+            results.owner = utils.wrapUser(utils.extend({},results.owner))
             results.subTab = 'index'
             res.render('profile/index', results)
         }
@@ -98,6 +98,7 @@ router.get(['/about', '/about/:userName'], function (req, res) {
         }
     }, function (err, results) {
         results.me = me
+        results.owner = utils.wrapUser(utils.extend({},results.owner))
         results.subTab = 'about'
         res.render('profile/about', results);
     });
@@ -145,6 +146,7 @@ router.get(['/trade', '/trade/:userName'], function (req, res) {
         }
     }, function (err, results) {
         results.me = me
+        results.owner = utils.wrapUser(utils.extend({},results.owner))
         results.subTab = 'trade'
         res.render('profile/trade', results);
     });
@@ -190,6 +192,7 @@ router.get(['/package', '/package/:userName'], function (req, res) {
         }
     }, function (err, results) {
         results.me = me
+        results.owner = utils.wrapUser(utils.extend({},results.owner))
         results.subTab = 'package'
         res.render('profile/package', results);
     });
