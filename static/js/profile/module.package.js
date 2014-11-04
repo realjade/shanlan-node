@@ -64,7 +64,21 @@
                         pattern: 'error',
                         top: ($(window).height() - 60) / 2
                     })
+                    return false
                 }
+                $.ajax({
+                    url: '/s',
+                    type: 'post',
+                    data:{
+                        service: 'Photo.getPhotos',
+                        photoCollectionId: gid
+                    },
+                    success: function(data){
+                        if(data.code === 200){
+                            App.common.modules.smallnote('恭喜您，预订成功！')
+                        }
+                    }
+                })
             })
 
         }
