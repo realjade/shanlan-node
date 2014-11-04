@@ -116,6 +116,9 @@
             if (index > imgs.length - 1) return false
             var img = imgs[index]
 
+            //设置查看原图的href
+            $('.realpath-btn', panel).prop('href', img.realPath)
+
             var imgPanel = panel.find('.image-panel')
             var thumbnailPanel = panel.find('.thumbnail-panel')
 
@@ -147,8 +150,6 @@
                         height: 'auto'
                     })
                 }
-
-
             }
 
             imgObj.onerror = function () {
@@ -265,6 +266,7 @@
         '       <em class="prev-btn change-icon"></em>' +
         '       <div class="image-panel"></div>' +
         '       <em class="next-btn change-icon"></em>' +
+        '       <a class="realpath-btn" target="_blank">查看原图</a>' +
         '   </div>' +
         '   <div class="thumbnail-panel">' +
         '       <!--em class="t-prev-btn"></em-->' +
@@ -276,7 +278,7 @@
         '   <em class="close"></em>' +
         '</div>'
 
-    imageView.__thumbnailTpl = '{{#img}}<img class="t-item" data-id="{{id}}" data-filepath="{{filePath}}" src="{{thumbnailPath}}" />{{/img}}'
+    imageView.__thumbnailTpl = '{{#img}}<img class="t-item" data-id="{{id}}" data-filepath="{{filePath}}" data-realpath="{{realPath}}" src="{{thumbnailPath}}" />{{/img}}'
 
     App.common.modules.imageView = imageView
 

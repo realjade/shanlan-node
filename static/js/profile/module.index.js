@@ -6,6 +6,7 @@
  *
  */
 (function ($) {
+    'use strict'
     var profileIndex = {
 
         __container: null,
@@ -40,8 +41,10 @@
                     if(data.code === 200){
                         var data = data.data
                         $.each(data, function(idx, item){
-                            item.thumbnailPath = item.filePath.replace('_X_X', '_THUMBNAIL_100_100')
-                            item.filePath = item.filePath.replace('_X_X', '_COMPRESS_')
+                            var wrapPath = App.common.modules.common.wrapPhotoPath(item.filePath)
+                            item.thumbnailPath = wrapPath.thumbnall_100
+                            item.filePath = wrapPath.compress
+                            item.realPath = wrapPath.realPath
                         })
                         App.common.modules.imageView.init(null, {
                             showDialog: true,
@@ -59,7 +62,6 @@
     $(function () {
         profileIndex.init($('.mod-profile'))
         App.common.modules.profileLayout.init($('.mod-profile-header-wrap'))
-        $("img.lazy").lazyload();
     })
 
 

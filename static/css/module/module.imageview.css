@@ -68,7 +68,23 @@
     left: 0;
     right: 0;
 }
-
+.mod-image-view .realpath-btn{
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    display: inline-block;
+    height: 36px;
+    padding-left: 45px;
+    padding-right: 5px;
+    line-height: 36px;
+    background-image: url(images/imageview/pic.png);
+    background-repeat: no-repeat;
+    background-color: #333;
+    background-position: 5px 3px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-size: 16px;
+}
 .mod-image-view .change-icon {
     width: 80px;
     height: 260px;
