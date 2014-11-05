@@ -6,6 +6,7 @@
  *
  */
 (function ($) {
+    'use strict'
     var profileIndex = {
 
         __container: null,
@@ -34,15 +35,22 @@
                 type: 'get',
                 data:{
                     service: 'Photo.getPhotos',
-                    photoCollectionId: 1
+                    photoCollectionId: gid
                 },
                 success: function(data){
                     if(data.code === 200){
+                        var data = data.data
+                        $.each(data, function(idx, item){
+                            var wrapPath = App.common.modules.common.wrapPhotoPath(item.filePath)
+                            item.thumbnailPath = wrapPath.thumbnall_100
+                            item.filePath = wrapPath.compress
+                            item.realPath = wrapPath.realPath
+                        })
                         App.common.modules.imageView.init(null, {
                             showDialog: true,
                             groupTitle: '婆娑',
                             groupDescription: '来生再见',
-                            imgData: data.data
+                            imgData: data
                         })
                     }
                 }
@@ -54,7 +62,6 @@
     $(function () {
         profileIndex.init($('.mod-profile'))
         App.common.modules.profileLayout.init($('.mod-profile-header-wrap'))
-        $("img.lazy").lazyload();
     })
 
 
