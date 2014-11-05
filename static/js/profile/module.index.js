@@ -23,11 +23,11 @@
             var container = self.__container
 
             container.on('click', '.photo-group', function () {
-                self.__initImageView($(this).data('id'))
+                self.__initImageView($(this).data('id'), $(this).data('name'))
             })
         },
 
-        __initImageView: function (gid) {
+        __initImageView: function (gid, name) {
             var self = this
 
             $.ajax({
@@ -48,8 +48,8 @@
                         })
                         App.common.modules.imageView.init(null, {
                             showDialog: true,
-                            groupTitle: '婆娑',
-                            groupDescription: '来生再见',
+                            groupTitle: name,
+                            //groupDescription: '来生再见',
                             imgData: data
                         })
                     }

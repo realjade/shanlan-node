@@ -13,6 +13,7 @@ module.exports = function (grunt) {
                     'static/js/libs/backbone/underscore.js',
                     'static/js/libs/backbone/backbone.js',
                     'static/js/libs/mustache.js',
+                    'static/js/module/module.smallnote.js',
                     'static/js/libs/common.js'
                 ],
                 dest: 'static/js/libs/libs.js'
