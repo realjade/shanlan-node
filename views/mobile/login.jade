@@ -1,0 +1,16 @@
+extends layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/mobile/css/merge/login.merge.css")}')
+block content
+    div#login
+        form(class="form-horizontal" role="form" action="" method="post")
+            div.form-group.form-group-lg
+                div.col-sm-10
+                    input.form-control(type="text" id="formGroupInputLarge" placeholder="用户名/邮箱")
+            div.form-group.form-group-lg
+                div.col-sm-10
+                    input.form-control(type="text" id="formGroupInputSmall" placeholder="Small input")
+            div.form-group.form-group-lg
+                button.button.button-primary.button-rounded(type="submit" value="登录")
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/mobile/js/merge/login.merge.js")}')
