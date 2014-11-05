@@ -1,0 +1,30 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_package.merge.css")}')
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_package.merge.js")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalphotographerheader
+block content
+    div.mod-personal-package
+        div.pack-type-wrap
+            a.type-item.type-level-1#type-item-focus 所有
+            a.type-item.type-level-1 婚纱摄影类
+            a.type-item.type-level-1 写真类
+            a.type-item.type-level-2 - 个人写真
+            a.type-item.type-level-2 - 情侣写真
+            a.type-item.type-level-2 - 好友写真
+            a.type-item.type-level-2 - 亲子家庭
+            a.type-item.type-level-1 活动类
+            a.type-item.type-level-2 - 婚礼纪实
+            a.type-item.type-level-2 - 旅行拍摄
+            a.type-item.type-level-2 - 聚会庆生
+            a.type-item.type-level-2 - 毕业留念
+            a.type-item.type-level-1 其他
+            a.type-item.type-level-2 - 产品静物
+            a.type-item.type-level-2 - 宠物
+            a.type-item.type-level-2 - 其他
+        div.pack-list-wrap
+            div.pack-box

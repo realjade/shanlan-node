@@ -1,0 +1,56 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/11/5
+  * Time: 11:59
+  *
+  */
+
+.mod-personal-package{
+    width:1000px;
+    overflow: hidden;
+    margin:0 auto;
+}
+
+.mod-personal-package .pack-type-wrap{
+    float: left;
+    width: 170px;
+    margin:15px 0 0 50px;
+    background-color: #f7f8fa;
+    border: 1px solid #eeeff2;
+    -webkit-transition: opacity 0.2s 0.2s ease-in-out;
+    transition: opacity 0.2s 0.2s ease-in-out;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.mod-personal-package .pack-type-wrap .type-item{
+    display: block;
+    line-height: 35px;
+    color: #71767a;
+}
+
+.mod-personal-package .pack-type-wrap #type-item-focus{
+    position: relative;
+    left: -1px;
+    width: 172px;
+    border-left: 3px solid #77B9FD;
+    border-top: none;
+    color: #333;
+    background-color: #fff;
+}
+
+.mod-personal-package .pack-type-wrap .type-item:hover{
+    background-color: #e9eaec;
+}
+.mod-personal-package .pack-type-wrap .type-item.type-level-1{
+    border-top: 1px solid #eeeff2;;
+    padding:5px 30px;
+}
+
+.mod-personal-package .pack-type-wrap .type-item.type-level-1:first-child{
+    border-top: none;
+}
+.mod-personal-package .pack-type-wrap .type-item.type-level-2{
+    padding:0 0 0 45px;
+    font-size: 14px;
+}

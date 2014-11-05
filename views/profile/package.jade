@@ -25,17 +25,18 @@ block content
             //    div.middle-line
             //    div.pack-type 商业合作
             div.pack-list
-                each item, index in packages
-                    div.pack-block(data-id="#{item.id}" data-name="#{item.name}" data-price="#{item.price}")
-                        div.pack-no #{index + 1}
-                        div.pack-head-wrap
-                            div.pack-name #{item.name}
-                            div.pack-photo-num #{item.photoCount}张
-                            div.pack-time #{item.days}天
-                        div.pack-price #{item.price}
-                        div.pack-detail
-                            | !{item.description}
-                        div.pack-select-btn.button.button-primary.button-rounded 选择
+                if (packages != undefined)
+                    each item, index in packages
+                        div.pack-block(data-id="#{item.id}" data-name="#{item.name}" data-price="#{item.price}")
+                            div.pack-no #{index + 1}
+                            div.pack-head-wrap
+                                div.pack-name #{item.name}
+                                div.pack-photo-num #{item.photoCount}张
+                                div.pack-time #{item.days}天
+                            div.pack-price #{item.price}
+                            div.pack-detail
+                                | !{item.description}
+                            div.pack-select-btn.button.button-primary.button-rounded 选择
         div.order-wrap
             div.calendar-main
                 include ../module/calendar

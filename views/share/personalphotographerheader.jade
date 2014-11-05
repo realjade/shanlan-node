@@ -1,0 +1,31 @@
+div.mod-personal-header
+    div.personal-bg
+    div.personal-nav
+        ul.nav
+            li
+                if subTab == 'person'
+                    a.active(href="/personalphotographer/person") 个人信息
+                else
+                    a(href="/personalphotographer/person") 个人信息
+            li
+                if subTab == 'photo'
+                    a.active(href="/personalphotographer/photo") 照片管理
+                else
+                    a(href="/personalphotographer/photo") 照片管理
+            li
+                if subTab == 'package'
+                    a.active(href="/personalphotographer/package") 套系管理
+                else
+                    a(href="/personalphotographer/package") 套系管理
+            li
+                if subTab == 'order'
+                    a.active(href="/personalphotographer/order") 订单管理
+                else
+                    a(href="/personalphotographer/order") 订单管理
+            li
+                if subTab == 'account'
+                    a.active(href="/personalphotographer/account") 账号设置
+                else
+                    a(href="/personalphotographer/account") 账号设置
+
+

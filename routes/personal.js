@@ -32,4 +32,15 @@ router.get('/order', filter.login, function (req, res) {
         subTab: 'order'
     })
 })
+
+/* photographer package */
+router.get('/package', filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+
+    res.render('personalphotographer/package', {
+        subTab: 'package'
+    })
+})
+
 module.exports = router
