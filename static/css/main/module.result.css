@@ -59,6 +59,11 @@ a{
 .mod-result .search-items-form #search-submit-block{
 }
 
+.mod-result #search-submit{
+    position: relative;
+    top:3px;
+}
+
 
 
 /* reuslt-rule */
@@ -111,6 +116,8 @@ a{
     height:100%;
 }
 
+
+/* result-item-box-person */
 .mod-result .result-item-box{
     display: block;
     position:relative;
@@ -304,6 +311,7 @@ a{
     line-height: 40px;
     font-size: 18px;
 }
+
 .groups-list-a{
     padding:0 0 0 20px;
 }
@@ -331,7 +339,298 @@ a{
 }
 
 
-.mod-result #search-submit{
+/* result-item-box-service */
+.mod-result .result-item-box-service{
+
+}
+
+.mod-result .result-item-box-service .item-package-wrap{
     position: relative;
-    top:3px;
+    display: block;
+    padding:3px 0 10px 0px;
+    overflow: hidden;
+}
+
+.mod-result .result-item-box-service .item-package-wrap ul li{
+    overflow: hidden;
+}
+.mod-result .result-item-box-service .item-package-wrap ul li div{
+    float: left;
+}
+
+.mod-result .result-item-box-service .pack-type{
+
+}
+.mod-result .result-item-box-service .pack-name{
+    max-width: 400px;
+    padding: 0 0 0 20px;
+    font-size:26px;
+    overflow: hidden;
+}
+.mod-result .result-item-box-service .pack-tags{
+    padding:13px 0 0 13px;
+}
+.mod-result .result-item-box-service .pack-tags .tag{
+    float:left;
+    padding:2px 9px 2px 11px;
+    margin:0 10px 0 0;
+    color:#333;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 2px;
+    border:1px solid #2ba6fd;
+    border-radius: 12px;
+}
+.mod-result .result-item-box-service #pack-main-info{
+    position: relative;
+    width:570px;
+    padding: 3px 0;
+}
+.mod-result .result-item-box-service .pack-price{
+    position: absolute;
+    top:-2px;
+    right:40px;
+    background: url('//static.jspass.com/static/css/common/images/RMB.png') no-repeat 2px 12px;
+    padding: 0 0 0 20px;
+    line-height: 50px;
+    font-size: 32px;
+}
+.mod-result .result-item-box-service .pack-price .pack-price-unit{
+    padding: 0 0 0 5px;
+    font-size:14px;
+}
+.mod-result .result-item-box-service #pack-overview{
+    width:575px;
+    padding: 13px 13px 17px 13px;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #666;
+}
+
+.mod-result .result-item-box-service #pack-detail{
+    font-size: 16px;
+}
+
+.mod-result .result-item-box-service #pack-detail div{
+    display: inline-block;
+    float: left
+}
+
+.mod-result .result-item-box-service .item-package-wrap .pack-icon{
+    height:30px;
+    line-height: 30px;
+    padding: 0 0 0 40px;
+    margin: 0 0 0 10px;
+    color: #333;
+    font-size:14px;
+    background-size: 30px;
+}
+
+.mod-result .result-item-box-service .item-package-wrap .pack-icon-words{
+    padding:0 8px 0 40px;
+}
+.mod-result .result-item-box-service .pack-location{
+    background: url('//static.jspass.com/static/css/common/images/p-location-blue.png') no-repeat ;
+}
+.mod-result .result-item-box-service .pack-time{
+    background: url('//static.jspass.com/static/css/common/images/p-time-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-photo-num{
+    background: url('//static.jspass.com/static/css/common/images/p-photo-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-ps-yes{
+    background: url('//static.jspass.com/static/css/common/images/p-ps-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-ps-no{
+    background: url('//static.jspass.com/static/css/common/images/p-ps-grey.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-print-yes{
+    background: url('//static.jspass.com/static/css/common/images/p-print-blue.png') no-repeat ;
+}
+.mod-result .result-item-box-service .pack-print-no{
+    background: url('//static.jspass.com/static/css/common/images/p-print-grey.png') no-repeat ;
+}
+.mod-result .result-item-box-service .pack-album-yes{
+    background: url('//static.jspass.com/static/css/common/images/p-album-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-album-no{
+    background: url('//static.jspass.com/static/css/common/images/p-album-grey.png') no-repeat ;
+
+}
+
+.mod-result .result-item-box-service .pack-makeup-yes{
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-makeup-no{
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-grey.png') no-repeat ;
+
+}
+
+.mod-result .result-item-box-service .pack-costume-yes{
+    background: url('//static.jspass.com/static/css/common/images/p-costume-blue.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .pack-costume-no{
+    background: url('//static.jspass.com/static/css/common/images/p-costume-grey.png') no-repeat ;
+}
+
+.mod-result .result-item-box-service .item-person-wrap{
+    position: absolute;
+    top:35px;
+    right:63px;
+    width:260px;
+    height:88px;
+    background-color: #f4f4f4;
+}
+.mod-result .result-item-box-service .item-person-wrap .person-avatar{
+
+    float: left;
+    width:88px;
+    height:88px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-avatar img{
+    width:100%;
+    height:100%;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-name{
+    float:left;
+    max-width: 110px;
+    padding: 7px 5px 0 16px;
+    font-size: 17px;
+    overflow: hidden;
+    letter-spacing: 4px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-city{
+    float:left;
+    padding:13px 0 0 0;
+    font-size:12px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-collections{
+    position: absolute;
+    top:61px;
+    left: 101px;
+    font-size:12px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-trade{
+    position: absolute;
+    top:61px;
+    left: 171px;
+    font-size:12px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-score{
+    position: absolute;
+    top:37px;
+    left: 100px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-score img{
+    float:left;
+    width:90px;
+}
+
+.mod-result .result-item-box-service .item-person-wrap .person-score div{
+    float:left;
+    padding:0 0 0 5px;
+    font-size:12px;
+}
+.mod-result .result-item-box-service .item-groups-wrap{
+    width: 940px;
+}
+
+.mod-result .result-item-box-service .main-item-group{
+    position:relative;
+    width:920px;
+    height:130px;
+    margin:0 auto;
+}
+.mod-result .result-item-box-service .main-item-group .item{
+    box-sizing: border-box;
+    float:left;
+    width: 130px;
+    height: 130px;
+    margin: 0 1px 0px 0;
+    background-color: #7cdfff;
+}
+
+.mod-result .result-item-box-service .main-item-group:hover .item{
+    background-color: #64d3ff;
+}
+.mod-result .result-item-box-service .main-item-group .item img{
+    width:100%;
+}
+
+#item-number{
+    color:#ffffff;
+    font-size:32px;
+    font-weight:lighter;
+    font-family: "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-align: center;
+    padding:41px 0 0 0;
+}
+
+.mod-result .page-index-wrap{
+    max-width: 580px;
+    overflow: hidden;
+    margin:0 auto;
+}
+.mod-result .page-index-wrap div,
+.mod-result .page-index-wrap a{
+    float: left;
+    color: #999;
+}
+.mod-result .page-index-wrap .page-arrow-left{
+    height:60px;
+    width:60px;
+    background: url("//static.jspass.com/static/css/common/images/page-arrow-left.png") no-repeat;
+}
+.mod-result .page-index-wrap .page-arrow-left:hover{
+    background: url("//static.jspass.com/static/css/common/images/page-arrow-left-blue.png") no-repeat;
+}
+
+.mod-result .page-index-wrap .page-arrow-right{
+    height:60px;
+    width:60px;
+    background: url("//static.jspass.com/static/css/common/images/page-arrow-right.png") no-repeat;
+}
+.mod-result .page-index-wrap .page-arrow-right:hover{
+    background: url("//static.jspass.com/static/css/common/images/page-arrow-right-blue.png") no-repeat;
+}
+.mod-result .page-index-wrap .page-index{
+    height:30px;
+    width:30px;
+    background-color: #fff;
+    margin: 15px 10px;
+    box-shadow: 0 2px 3px #cbcbcb;
+    line-height: 30px;
+    text-align: center;
+}
+
+.mod-result .page-index-wrap .page-index:hover{
+    color: #fff;
+    background-color: #77B9FD;
+}
+
+.mod-result .page-index-wrap .page-dots{
+    height:30px;
+    width:30px;
+    margin: 15px 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.mod-result .page-index-wrap #current-page-index{
+    color: #fff;
+    background-color: #77B9FD;
+    box-shadow: inset 0px 2px 2px #54A1CF;
 }

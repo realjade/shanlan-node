@@ -44,6 +44,10 @@
     background: #edeef0;
 }
 
+.ui-sl-long{
+    width: 170px;
+}
+
 .ui-input{
     position: relative;
     display: inline-block;

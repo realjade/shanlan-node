@@ -19,14 +19,12 @@ block content
                         option(value='2') 婚礼跟拍
                 div.search-item-block
                     div.search-item-desc 摄影风格：
-                    select.ui-select#select-style
+                    select.ui-select.ui-sl-long#select-style
                         option(value='0') 胶片
                 div.search-item-block
                     div.search-item-desc 拍摄地：
-                    select.ui-select#select-province
-                        option(value='0') 省份
-                    select.ui-select#select-city
-                        option(value='0') 城市
+                    select.ui-select.ui-sl-long#select-location
+                        option(value='0') 省份 - 城市
                 div.search-item-block
                     div.search-item-desc 价格区间 (元)：
                     input.ui-input#input-price-1
@@ -58,7 +56,7 @@ block content
                 div.item-city 重庆
                 div.item-score
                     img(src="//static.jspass.com/static/css/profile/images/5stars.png")
-                    div (9.1)
+                    div (4.9)
                 div.item-collections 作品集: 41
                 div.item-trades 交易数: 135
                 div.item-tags
@@ -94,30 +92,41 @@ block content
             div.item-package-wrap
                 ul
                     li#pack-main-info
-                        div.pack-name
-                        div.pack-photo-num
-                        div.pack-time
-                        div.pack-price
-                    li#pack-addiontal-info
-                        dic.pack-ps
-                        div.pack-book
-                        div.pack-makeup
-                        div.pack-costume
-                    li#pack-tags
-                        div.item-tags
-                            div.tag 婚纱
-                            div.tag 婚礼跟拍
+                        div.pack-name 高级定制团队写真
+                        div.pack-tags
                             div.tag 写真
-                            div.tag 商业
-                    li#pack-trade
+                            div.tag 胶片
+                        div.pack-price
+                            span 2000
+                            span.pack-price-unit 元
+                    li#pack-overview
+                        div.pack-icon.pack-icon-words.pack-location 广州
+                        div.pack-icon.pack-icon-words.pack-time 1天
+                        div.pack-icon.pack-icon-words.pack-photo-num 500张
+                        div.pack-icon.pack-icon-words.pack-ps-yes 20张
+                        div.pack-icon.pack-print-yes
+                        div.pack-icon.pack-album-yes
+                        div.pack-icon.pack-costume-yes
+                        div.pack-icon.pack-makeup-yes
+                    li#pack-detail
 
-            ul.item-person-wrap
+
+            div.item-person-wrap
                 div.person-avatar
-                div.person-name
-                div.person-city
+                    img(src='//static.jspass.com/static/css/profile/images/avatar.jpg')
+                div.person-name 叶树
+                div.person-city (广州)
+                div.person-collections 作品集:41
+                div.person-trade 交易数:135
+                div.person-score
+                    img(src="//static.jspass.com/static/css/profile/images/5stars.png")
+                    div (4.9)
+
 
             div.item-groups-wrap
                 div.main-item-group
+                    a.item
+                        img(src='//static.jspass.com/static/css/profile/images/trade-1-0.png')
                     a.item
                         img(src='//static.jspass.com/static/css/profile/images/trade-1-1.png')
                     a.item
@@ -130,9 +139,20 @@ block content
                         img(src='//static.jspass.com/static/css/profile/images/trade-1-5.png')
                     a.item
                         img(src='//static.jspass.com/static/css/profile/images/trade-1-6.png')
-                    a.item
-                        img(src='//static.jspass.com/static/css/profile/images/trade-1-0.png')
 
+
+        div.page-index-wrap
+            a.page-arrow-left
+            a.page-index 1
+            div.page-dots ...
+            a.page-index 11
+            a.page-index 12
+            a.page-index#current-page-index 13
+            a.page-index 14
+            a.page-index 15
+            div.page-dots ...
+            a.page-index 30
+            a.page-arrow-right
 
 
 
