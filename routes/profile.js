@@ -182,11 +182,13 @@ router.get(['/package', '/package/:userName'], function (req, res) {
                 method: 'get',
                 data: {
                     userName: ownerUserName,
-                    type:'亲子家庭'
+                    type:'亲子家庭',
+                    currentPage:'1',
+                    pageSize:'10'
                 },
                 req: req,
                 callback: function (err, data) {
-                    callback(null, data.data);
+                    callback(null, data.data.data);
                 }
             })
         }
