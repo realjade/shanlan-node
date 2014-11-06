@@ -43,4 +43,14 @@ router.get('/package', filter.login, function (req, res) {
     })
 })
 
+/* photographer create/modify package */
+router.get('/packagesetting', filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+
+    res.render('personalphotographer/packagesetting', {
+        subTab: 'package'
+    })
+})
+
 module.exports = router

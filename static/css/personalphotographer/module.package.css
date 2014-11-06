@@ -6,16 +6,18 @@
   *
   */
 
-.mod-personal-package{
-    width:1000px;
+.mod-personal-package {
+    display: block;
+    position: relative;
+    width: 1000px;
     overflow: hidden;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.mod-personal-package .pack-type-wrap{
+.mod-personal-package .pack-type-wrap {
     float: left;
     width: 170px;
-    margin:15px 0 0 50px;
+    margin: 15px 0 0 50px;
     background-color: #f7f8fa;
     border: 1px solid #eeeff2;
     -webkit-transition: opacity 0.2s 0.2s ease-in-out;
@@ -23,34 +25,268 @@
     font-size: 15px;
     letter-spacing: 1px;
 }
-.mod-personal-package .pack-type-wrap .type-item{
+
+.mod-personal-package .pack-type-wrap .type-item {
     display: block;
     line-height: 35px;
     color: #71767a;
 }
 
-.mod-personal-package .pack-type-wrap #type-item-focus{
+.mod-personal-package .pack-type-wrap #type-item-focus {
     position: relative;
     left: -1px;
-    width: 172px;
+    width: 111px;
     border-left: 3px solid #77B9FD;
     border-top: none;
     color: #333;
     background-color: #fff;
 }
 
-.mod-personal-package .pack-type-wrap .type-item:hover{
+.mod-personal-package .pack-type-wrap .type-item:hover {
     background-color: #e9eaec;
 }
-.mod-personal-package .pack-type-wrap .type-item.type-level-1{
+
+.mod-personal-package .pack-type-wrap .type-item.type-level-1 {
     border-top: 1px solid #eeeff2;;
-    padding:5px 30px;
+    padding: 5px 30px;
 }
 
-.mod-personal-package .pack-type-wrap .type-item.type-level-1:first-child{
+.mod-personal-package .pack-type-wrap .type-item.type-level-1:first-child {
     border-top: none;
 }
-.mod-personal-package .pack-type-wrap .type-item.type-level-2{
-    padding:0 0 0 45px;
+
+.mod-personal-package .pack-type-wrap .type-item.type-level-2 {
+    padding: 0 0 0 45px;
     font-size: 14px;
+}
+
+.mod-personal-package .pack-create-btn {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+.mod-personal-package .pack-list-wrap {
+    float: left;
+    position: relative;
+    width: 678px;
+    margin: 75px 0 0 50px;
+    overflow: hidden;
+}
+
+.mod-personal-package .pack-list-wrap .pack-wrap {
+    border: 1px solid #eeeff2;
+    border-top: 4px solid #77B9FD;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #f7f8fa;
+    border-bottom: 1px solid #eeeff2;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar .pack-name {
+    float: left;
+    width: 100%;
+    line-height: 50px;
+    box-sizing: border-box;
+    padding: 0 130px;
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    overflow: hidden;
+
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar .pack-type {
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #666;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar .pack-manage-btn {
+    height: 28px;
+    width: 50px;
+    line-height: 28px;
+    border: 1px solid #cbcbcb;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    box-shadow: 0 0 1px #c6c6c6;
+    -webkit-transition-property: background, color;
+    -moz-transition-property: background, color;
+    -o-transition-property: background, color;
+    transition-property: background, color;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar .pack-manage-btn:hover {
+    background: #00b5e5;
+    color: white;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar #delete-pack {
+    position: absolute;
+    top: 12px;
+    left: 70px;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar #modify-pack {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+.mod-personal-package .pack-list-wrap .pack-title-bar .pack-price {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 16px;
+    background: url('//static.jspass.com/static/css/common/images/RMB.png') no-repeat 0px 3px;
+    padding: 0 0 0 20px;
+}
+
+.mod-personal-package .pack-list-wrap .pack-body-wrap {
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-top: none;
+    overflow: hidden;
+    color: #666;
+}
+
+.mod-personal-package .pack-list-wrap li {
+    padding: 10px;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.mod-personal-package .pack-list-wrap .line-desc {
+    float: left;
+    width: 70px;
+    padding: 0 0 0 15px;
+    font-size: 12px;
+}
+
+.mod-personal-package .pack-list-wrap .line-content {
+    display: inline-block;
+    float: left;
+    width: 560px;
+    overflow: hidden;
+    padding: 0 0 0 5px;
+    font-size: 12px;
+}
+
+.mod-personal-package .pack-list-wrap .pack-create-time {
+
+}
+
+.mod-personal-package .pack-list-wrap .pack-detail {
+
+}
+
+.mod-personal-package .pack-list-wrap .pack-photo-group {
+
+}
+
+.mod-personal-package .pack-list-wrap .pack-photo-group .item {
+    box-sizing: border-box;
+    float: left;
+    width: 77px;
+    height: 77px;
+    margin: 0 1px 0px 0;
+    background-color: #7cdfff;
+}
+
+.mod-personal-package .pack-list-wrap .pack-photo-group .item img {
+    width: 100%;
+    height: 100%;
+}
+
+.mod-personal-package .pack-list-wrap .pack-icon {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 40px;
+    margin: 0 10px 0 0;
+    color: #333;
+    font-size: 14px;
+    background-size: 30px;
+}
+
+.mod-personal-package .pack-list-wrap .pack-icon-words {
+    padding: 0 8px 0 40px;
+}
+
+.mod-personal-package .pack-location {
+    background: url('//static.jspass.com/static/css/common/images/p-location-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-time {
+    background: url('//static.jspass.com/static/css/common/images/p-time-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-photo-num {
+    background: url('//static.jspass.com/static/css/common/images/p-photo-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-ps-yes {
+    background: url('//static.jspass.com/static/css/common/images/p-ps-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-ps-no {
+    background: url('//static.jspass.com/static/css/common/images/p-ps-grey.png') no-repeat;
+}
+
+.mod-personal-package .pack-print-yes {
+    background: url('//static.jspass.com/static/css/common/images/p-print-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-print-no {
+    background: url('//static.jspass.com/static/css/common/images/p-print-grey.png') no-repeat;
+}
+
+.mod-personal-package .pack-album-yes {
+    background: url('//static.jspass.com/static/css/common/images/p-album-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-album-no {
+    background: url('//static.jspass.com/static/css/common/images/p-album-grey.png') no-repeat;
+
+}
+
+.mod-personal-package .pack-makeup-yes {
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-makeup-no {
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-grey.png') no-repeat;
+
+}
+
+.mod-personal-package .pack-costume-yes {
+    background: url('//static.jspass.com/static/css/common/images/p-costume-blue.png') no-repeat;
+}
+
+.mod-personal-package .pack-costume-no {
+    background: url('//static.jspass.com/static/css/common/images/p-costume-grey.png') no-repeat;
 }

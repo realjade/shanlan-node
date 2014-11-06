@@ -1,8 +1,6 @@
 extends ../share/layout
 block css
     link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_package.merge.css")}')
-block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_package.merge.js")}')
 block header
     div.mod-personal-header-wrap
         include ../share/header
@@ -10,15 +8,15 @@ block header
 block content
     div.mod-personal-package
         div.pack-type-wrap
-            a.type-item.type-level-1#type-item-focus 所有
-            a.type-item.type-level-1 婚纱摄影类
-            a.type-item.type-level-1 写真类
+            a.type-item.type-level-1#type-item-focus 所有 (5)
+            a.type-item.type-level-1 婚纱摄影类 (2)
+            a.type-item.type-level-1 写真类 (2)
             a.type-item.type-level-2 - 个人写真
             a.type-item.type-level-2 - 情侣写真
             a.type-item.type-level-2 - 好友写真
             a.type-item.type-level-2 - 亲子家庭
-            a.type-item.type-level-1 活动类
-            a.type-item.type-level-2 - 婚礼纪实
+            a.type-item.type-level-1 活动类 (1)
+            a.type-item.type-level-2 - 婚礼纪实 (1)
             a.type-item.type-level-2 - 旅行拍摄
             a.type-item.type-level-2 - 聚会庆生
             a.type-item.type-level-2 - 毕业留念
@@ -26,5 +24,61 @@ block content
             a.type-item.type-level-2 - 产品静物
             a.type-item.type-level-2 - 宠物
             a.type-item.type-level-2 - 其他
+        a.pack-create-btn.button.button-flat-primary#add-pack(href='/personal/packagesetting/') 新建套系
         div.pack-list-wrap
-            div.pack-box
+            div.pack-wrap
+                div.pack-title-bar
+                    div.pack-name 高级定制团队写真
+                    a.pack-manage-btn#modify-pack 修改
+                    a.pack-manage-btn#delete-pack 删除
+                    div.pack-price 1280元
+                ul.pack-body-wrap
+                    li.pack-overview-line
+                        div.line-desc 条目：
+                        div.line-content
+                            div.pack-icon.pack-icon-words.pack-location 广州
+                            div.pack-icon.pack-icon-words.pack-time 1天
+                            div.pack-icon.pack-icon-words.pack-photo-num 500张
+                            div.pack-icon.pack-icon-words.pack-ps-yes 20张
+                            div.pack-icon.pack-print-yes
+                            div.pack-icon.pack-album-yes
+                            div.pack-icon.pack-costume-yes
+                            div.pack-icon.pack-makeup-yes
+                    li.pack-type-line
+                        div.line-desc 摄影类型：
+                        div.line-content.pack-type 写真类
+                    li.pack-style-line
+                        div.line-desc 摄影风格：
+                        div.line-content.pack-style 胶片
+                    li.pack-detail-line
+                        div.line-desc 详细说明：
+                        div.line-content.pack-tetail
+                            | <p>
+                            | 1 暖暖帮你拍摄，和你一起策划主题；
+                            | </p>
+                            | <p>
+                            |     2. 跟拍一天，约六小时，服装造型自理，拍摄500张+，底片全送，当天选择入书照片。另送拍立得拍摄10张。
+                            | </p>
+                            | <p>
+                            |    3. 共40页，收入照片40张+，可增加页数（30元/页）。
+                    li.pack-photos-line
+                        div.line-desc 展示照片：
+                        div.line-content.pack-photo-group
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-0.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-1.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-2.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-3.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-4.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-5.png')
+                            a.item
+                                img(src='//static.jspass.com/static/css/profile/images/trade-1-6.png')
+
+
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_package.merge.js")}')

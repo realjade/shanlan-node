@@ -1,0 +1,11 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_package.merge.css")}')
+block js
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_package.merge.js")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalphotographerheader
+block content
+    div.mod-personal-setting-package

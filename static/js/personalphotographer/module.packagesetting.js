@@ -7,7 +7,7 @@
  */
 
 (function($){
-    var personalPackage = {
+    var personalPackageSetting = {
         __container: null,
 
         init: function(container){
@@ -23,9 +23,8 @@
 
         }
     }
-
     $(function () {
-        personalPackage.init($('.mod-personal-package'))
+        personalPackageSetting.init($('.mod-personal-package-setting'))
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 })(jQuery)
