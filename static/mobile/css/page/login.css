@@ -5,3 +5,13 @@
   * Time: 下午5:40
   *
   */
+#login{
+    width: 90%;
+    margin: 0 auto;
+}
+#login .logo{
+    background: url(../../../images/logo.png) no-repeat;
+    width: 166px;
+    height: 55px;
+    margin: 40px auto;
+}
