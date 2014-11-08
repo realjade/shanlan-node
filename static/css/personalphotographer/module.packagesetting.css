@@ -30,6 +30,13 @@
     padding:20px;
 }
 
+.mod-personal-package-setting .pack-type-unit-block{
+    margin-right: 10px;
+}
+.mod-personal-package-setting .pack-type-unit-block input{
+    margin-right: 5px;
+}
+
 .mod-personal-package-setting .box-body-wrap li{
     padding:10px 0;
     display: block;
@@ -40,14 +47,9 @@
     float: left;
 }
 
-.mod-personal-package-setting .box-body-wrap li input{
-    float: left;
-}
 .mod-personal-package-setting .box-body-wrap .line-desc{
     float: left;
     width: 70px;
-    height:36px;
-    line-height: 36px;
     padding: 0 15px;
     font-size: 12px;
 }
