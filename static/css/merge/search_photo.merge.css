@@ -11,5 +11,6 @@
 @import url('../module/button.css');
 @import url('../module/component.css');
 @import url('../module/module.dialog.css');
-@import url('../module/module.searchbox.css');
-@import url('../main/module.result.css');
+@import url('../module/module.page.css');
+@import url('../search/module.photosearch.css');
+@import url('../search/module.photo.css');

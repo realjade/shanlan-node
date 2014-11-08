@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* main page. */
+/* search result page. */
 router.get('/', function (req, res) {
 
-    res.render('main/home', {
-
-    });
+    res.render('search/photo', {});
 });
 module.exports = router;

@@ -12,11 +12,7 @@
         init: function(container){
             var self = this
             self.__container = container
-            self.__initSearchBox()
             self.__bindEvent()
-        },
-        __initSearchBox: function(){
-            App.common.modules.searchBox.init()
         },
         __bindEvent: function(){
             var self = this
