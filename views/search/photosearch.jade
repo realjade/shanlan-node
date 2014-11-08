@@ -1,28 +1,29 @@
-div.search-items-wrap
+div.mod-photo-search.search-items-wrap
    form.search-items-form(method="get" action="")
       div.search-item-block#search-display
          div.search-item-desc 查询内容：
-         button.ui-twistbutton.ui-tb-left.ui-tb-active#search-person 摄影师
-         button.ui-twistbutton.ui-tb-right#search-service  服务
+         button.ui-twistbutton.ui-tb-left.ui-tb-active(type="button" data-type="photographer") 摄影师
+         button.ui-twistbutton.ui-tb-right(type="button" data-type="service") 服务
       div.search-item-block
          div.search-item-desc 摄影类型：
-         select.ui-select#select-type
+         select.ui-select#select-type(name="type")
             option(value='0') 旅拍
             option(value='1') 婚纱
             option(value='2') 婚礼跟拍
       div.search-item-block
          div.search-item-desc 摄影风格：
-         select.ui-select.ui-sl-long#select-style
+         select.ui-select.ui-sl-long#select-style(name="style")
             option(value='0') 胶片
       div.search-item-block
          div.search-item-desc 拍摄地：
-         select.ui-select.ui-sl-long#select-location
+         select.ui-select.ui-sl-long#select-location(name="province_city")
             option(value='0') 省份 - 城市
+            option(value='')
       div.search-item-block
          div.search-item-desc 价格区间 (元)：
-         input.ui-input#input-price-1
+         input.ui-input#input-price-1(name="minPrice")
          span &nbsp~&nbsp
-         input.ui-input#input-price-2
+         input.ui-input#input-price-2(name="maxPrice")
       div.search-item-block#search-submit
          div.ui-button-wrap
             button.ui-roundbutton.ui-rb-search.submit-btn(type="submit" value='提交')

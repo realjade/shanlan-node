@@ -7,7 +7,7 @@
   */
 
 /* search-items */
-.mod-result .search-items-wrap{
+.mod-photo-search{
     position: relative;
     left:0;
     right:0;
@@ -18,7 +18,7 @@
     border-bottom: 1px solid #D2D2D2;
     box-shadow: 0px 0px 5px #cbcbcb;
 }
-.mod-result .search-items-form{
+.mod-photo-search .search-items-form{
     width:1100px;
     height:50px;
     margin:0 auto;
@@ -26,31 +26,35 @@
     overflow: hidden;
 }
 
-.mod-result .search-items-form .search-item-block{
+.mod-photo-search .search-items-form .search-item-block{
     display: block;
     float:left;
     margin:0 0 0 42px;
 }
-.mod-result .search-items-form .search-item-block:first-child{
+.mod-photo-search .search-items-form .search-item-block:first-child{
     margin:0;
 }
-.mod-result .search-items-form .search-item-desc{
+.mod-photo-search .search-items-form .search-item-desc{
     margin:0 0 7px 15px;
     font-size: 12px;
     color: #888;
 }
-.mod-result .search-items-form select{
+.mod-photo-search .search-items-form select{
     margin:0 10px 0 0;
+    outline: 0;
 }
-
-.mod-result .search-items-form input{
+.mod-photo-search .search-items-form button{
+    outline: 0;
+}
+.mod-photo-search .search-items-form input{
     width:75px;
+    outline: 0;
 }
 
-.mod-result .search-items-form #search-submit-block{
+.mod-photo-search .search-items-form #search-submit-block{
 }
 
-.mod-result #search-submit{
+.mod-photo-search #search-submit{
     position: relative;
     top:3px;
 }

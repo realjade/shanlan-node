@@ -16,7 +16,7 @@
         COLLC:5
     }
 
-    var result = {
+    var photo = {
         __container: null,
         __searchType: 0,
         __sequence:sequence.COMPR,
@@ -24,25 +24,15 @@
         init: function(container){
             var self = this
             self.__container = container
+
+            App.modules.photoSearch.init($('.mod-photo-search'))
             self.__bindEvent()
         },
 
         __bindEvent: function(){
             var self = this
             //search event
-            var searchForm = container.find('.search-item-form')
 
-            container.on('click','#search-person',function(){
-                self.__searchType = 0
-                searchForm.submit(self.__submitFormFunc())
-            })
-            container.on('click','#search-service',function(){
-                self.__searchType = 1
-                searchForm.submit(self.__submitFormFunc())
-            })
-            container.on('click','.rule-item'),function(){
-                
-            }
         },
 
         __submitFormFunc: function(){
@@ -85,7 +75,7 @@
     }
 
     $(function(){
-        result.init('.mod-result')
+        photo.init('.mod-photo')
     })
 
 })(jQuery)

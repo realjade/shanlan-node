@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* search result page. */
-router.get(['/', '/photographer'], function (req, res) {
+router.get('/', function (req, res) {
 
-    res.render('search/photographer', {});
+    res.render('search/photo', {});
 });
 module.exports = router;

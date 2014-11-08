@@ -1,11 +1,11 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/main_result.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/search_photo.merge.css")}')
 block header
     include ../share/header
 block content
-    div.mod-result
-        include ../module/searchbox
+    div.mod-photo
+        include photosearch
 
         div.result-rule-bar
             div.cell-space.rule-desc 显示顺序 >
@@ -114,9 +114,7 @@ block content
 
     include ../module/page
 
-
-
 block footer
     include ../share/footer
 block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/main_home.merge.js")}')
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/search_photo.merge.js")}')
