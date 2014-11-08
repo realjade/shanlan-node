@@ -21,6 +21,23 @@
             var self = this
             var container = self.__container
 
+            container.on('click','.pack-photo-group-block',function(){
+                var dialog = self.__associateDialog = new App.common.modules.Dialog({
+                    width:1000,
+                    height:700,
+                    showTitle: false,
+                    isConfirm: false,
+                    message: '<div class="mod-associate-wrap"></div>'
+                })
+                dialog.find('.mod-associate-wrap').groupselector({})
+                dialog.find('.mod-associate-wrap .cancel').click(function(){
+                    dialog.close();
+                })
+                dialog.find('.mod-associate-wrap .confirm').click(function(){ 
+                    dialog.close();
+                })
+            })
+
         }
     }
     $(function () {

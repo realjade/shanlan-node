@@ -11,7 +11,9 @@
 @import url("../../js/libs/jquery/jcrop/css/jquery.Jcrop.min.css");
 @import url('../common/module.layout.css');
 @import url('../module/button.css');
+@import url('../module/component.css');
 @import url('../module/module.dialog.css');
 @import url('../module/module.smallnote.css');
+@import url('../module/module.groupselector.css');
 @import url('../common/module.personallayout.css');
 @import url('../personalphotographer/module.packagesetting.css');

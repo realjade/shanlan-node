@@ -6,3 +6,203 @@
   *
   */
 
+.mod-personal-package-setting{
+    width:900px;
+    margin:30px auto;
+    border:1px solid #88C3FF;
+    overflow: hidden;
+}
+
+.mod-personal-package-setting .box-title-bar{
+    height:50px;
+    line-height: 50px;
+    width:100%;
+    background: #f7f8fa;
+    border-top:3px solid #77B9FD;
+    border-bottom: 1px solid #eeeff2;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.mod-personal-package-setting .box-body-wrap{
+    padding:20px;
+}
+
+.mod-personal-package-setting .box-body-wrap li{
+    padding:10px 0;
+    display: block;
+    overflow: hidden;
+}
+
+.mod-personal-package-setting .box-body-wrap li div{
+    float: left;
+}
+
+.mod-personal-package-setting .box-body-wrap li input{
+    float: left;
+}
+.mod-personal-package-setting .box-body-wrap .line-desc{
+    float: left;
+    width: 70px;
+    height:36px;
+    line-height: 36px;
+    padding: 0 15px;
+    font-size: 12px;
+}
+
+.mod-personal-package-setting .box-body-wrap .service-line-desc{
+    height:200px;
+}
+
+.mod-personal-package-setting .box-body-wrap .line-note{
+    padding: 9px 0 9px 25px;
+    font-size: 12px;
+    color: #999;
+}
+.mod-personal-package-setting .box-body-wrap .pack-unit-label{
+    height:36px;
+    line-height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #999;
+}
+.mod-personal-package-setting .box-body-wrap #pack-name{
+    width:500px;
+    text-align: left;
+}
+
+.mod-personal-package-setting .box-body-wrap .ui-input-minimal
+{
+    width:120px;
+    font-weight: bold;
+    text-align: right;
+}
+.mod-personal-package-setting .box-body-wrap #pack-price{
+    width:120px;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-items-line{
+    margin: 10px 0 0 0;
+}
+.mod-personal-package-setting .box-body-wrap .pack-item-block{
+    width:180px;
+    padding:0 0 0 50px;
+    margin: 0 0 25px 15px;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-item-block .pack-item-desc{
+    width:170px;
+    padding: 1px 0 5px 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-location-block {
+    background: url('//static.jspass.com/static/css/common/images/p-location-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-items-line .ui-select-minimal{
+    display: inline;
+    width: 140px;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-time-block {
+    background: url('//static.jspass.com/static/css/common/images/p-time-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap #pack-time{
+    width: 80px;
+    margin:0 5px 0 0;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-time-unit-block{
+    padding: 10px 10px 0 0;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-time-unit-block span{
+    padding: 0 0 0 3px;
+    font-size: 12px;
+    color: #999;
+}
+.mod-personal-package-setting .box-body-wrap .pack-photo-block {
+    background: url('//static.jspass.com/static/css/common/images/p-photo-blue.png') no-repeat;
+}
+
+
+.mod-personal-package-setting .box-body-wrap .pack-ps-block {
+    background: url('//static.jspass.com/static/css/common/images/p-ps-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-ps-no {
+    background: url('//static.jspass.com/static/css/common/images/p-ps-grey.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-print-block {
+    background: url('//static.jspass.com/static/css/common/images/p-print-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-print-no {
+    background: url('//static.jspass.com/static/css/common/images/p-print-grey.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-album-block {
+    background: url('//static.jspass.com/static/css/common/images/p-album-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-album-no {
+    background: url('//static.jspass.com/static/css/common/images/p-album-grey.png') no-repeat;
+
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-makeup-block {
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-makeup-no {
+    background: url('//static.jspass.com/static/css/common/images/p-makeup-grey.png') no-repeat;
+
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-scene-block {
+    background: url('//static.jspass.com/static/css/common/images/p-scene-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-costume-block {
+    background: url('//static.jspass.com/static/css/common/images/p-costume-blue.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-costume-no {
+    background: url('//static.jspass.com/static/css/common/images/p-costume-grey.png') no-repeat;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-detail-line .pack-detail{
+    width:740px;
+}
+.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .pack-photo-group-block{
+    width:730px;
+    height:100px;
+    line-height: 100px;
+    color:#dddff2;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 5px;
+    border:5px dotted #dddff2;
+    cursor: pointer;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .pack-photo-group-block:hover{
+    background-color: #f2f3f6;
+    color: #fff;
+}
+
+.mod-personal-package-setting .box-body-wrap .pack-submit-line{
+    width:335px;
+    margin: 0 auto;
+}
+.mod-personal-package-setting .box-body-wrap .pack-submit-line button{
+    float:right;
+    margin: 20px;
+    letter-spacing: 1px;
+}
