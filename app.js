@@ -17,6 +17,7 @@ var main = require('./routes/main');
 var profile = require('./routes/profile');
 var users = require('./routes/users');
 var personal = require('./routes/personal');
+var search = require('./routes/search')
 var mobile = require('./routes/mobile')
 
 var app = express();
@@ -63,6 +64,7 @@ app.use('/', main);
 app.use('/profile', profile);
 app.use('/users', users);
 app.use('/personal',personal);
+app.use('/search', search)
 app.use('/m', mobile)
 
 // catch 404 and forward to error handler

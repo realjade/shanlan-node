@@ -15,57 +15,6 @@ a{
 .mod-result{
 }
 
-/* search-items */
-.mod-result .search-items-wrap{
-    position: relative;
-    left:0;
-    right:0;
-    display: block;
-    height:95px;
-    margin:0 0 20px 0;
-    background-color: #eeeff2;
-    border-bottom: 1px solid #D2D2D2;
-    box-shadow: 0px 0px 5px #cbcbcb;
-}
-.mod-result .search-items-form{
-    width:1100px;
-    height:50px;
-    margin:0 auto;
-    padding:15px 0;
-    overflow: hidden;
-}
-
-.mod-result .search-items-form .search-item-block{
-    display: block;
-    float:left;
-    margin:0 0 0 42px;
-}
-.mod-result .search-items-form .search-item-block:first-child{
-    margin:0;
-}
-.mod-result .search-items-form .search-item-desc{
-    margin:0 0 7px 15px;
-    font-size: 12px;
-    color: #888;
-}
-.mod-result .search-items-form select{
-    margin:0 10px 0 0;
-}
-
-.mod-result .search-items-form input{
-    width:75px;
-}
-
-.mod-result .search-items-form #search-submit-block{
-}
-
-.mod-result #search-submit{
-    position: relative;
-    top:3px;
-}
-
-
-
 /* reuslt-rule */
 
 .mod-result .result-rule-bar{
@@ -577,60 +526,4 @@ a{
     font-family: "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif;
     text-align: center;
     padding:41px 0 0 0;
-}
-
-.mod-result .page-index-wrap{
-    max-width: 580px;
-    overflow: hidden;
-    margin:0 auto;
-}
-.mod-result .page-index-wrap div,
-.mod-result .page-index-wrap a{
-    float: left;
-    color: #999;
-}
-.mod-result .page-index-wrap .page-arrow-left{
-    height:60px;
-    width:60px;
-    background: url("//static.jspass.com/static/css/common/images/page-arrow-left.png") no-repeat;
-}
-.mod-result .page-index-wrap .page-arrow-left:hover{
-    background: url("//static.jspass.com/static/css/common/images/page-arrow-left-blue.png") no-repeat;
-}
-
-.mod-result .page-index-wrap .page-arrow-right{
-    height:60px;
-    width:60px;
-    background: url("//static.jspass.com/static/css/common/images/page-arrow-right.png") no-repeat;
-}
-.mod-result .page-index-wrap .page-arrow-right:hover{
-    background: url("//static.jspass.com/static/css/common/images/page-arrow-right-blue.png") no-repeat;
-}
-.mod-result .page-index-wrap .page-index{
-    height:30px;
-    width:30px;
-    background-color: #fff;
-    margin: 15px 10px;
-    box-shadow: 0 2px 3px #cbcbcb;
-    line-height: 30px;
-    text-align: center;
-}
-
-.mod-result .page-index-wrap .page-index:hover{
-    color: #fff;
-    background-color: #77B9FD;
-}
-
-.mod-result .page-index-wrap .page-dots{
-    height:30px;
-    width:30px;
-    margin: 15px 10px;
-    line-height: 30px;
-    text-align: center;
-}
-
-.mod-result .page-index-wrap #current-page-index{
-    color: #fff;
-    background-color: #77B9FD;
-    box-shadow: inset 0px 2px 2px #54A1CF;
 }

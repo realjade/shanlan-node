@@ -1,0 +1,28 @@
+div.search-items-wrap
+   form.search-items-form(method="get" action="")
+      div.search-item-block#search-display
+         div.search-item-desc 查询内容：
+         button.ui-twistbutton.ui-tb-left.ui-tb-active#search-person 摄影师
+         button.ui-twistbutton.ui-tb-right#search-service  服务
+      div.search-item-block
+         div.search-item-desc 摄影类型：
+         select.ui-select#select-type
+            option(value='0') 旅拍
+            option(value='1') 婚纱
+            option(value='2') 婚礼跟拍
+      div.search-item-block
+         div.search-item-desc 摄影风格：
+         select.ui-select.ui-sl-long#select-style
+            option(value='0') 胶片
+      div.search-item-block
+         div.search-item-desc 拍摄地：
+         select.ui-select.ui-sl-long#select-location
+            option(value='0') 省份 - 城市
+      div.search-item-block
+         div.search-item-desc 价格区间 (元)：
+         input.ui-input#input-price-1
+         span &nbsp~&nbsp
+         input.ui-input#input-price-2
+      div.search-item-block#search-submit
+         div.ui-button-wrap
+            button.ui-roundbutton.ui-rb-search.submit-btn(type="submit" value='提交')

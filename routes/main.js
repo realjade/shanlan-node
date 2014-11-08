@@ -8,12 +8,4 @@ router.get('/', function (req, res) {
 
     });
 });
-
-/* search result page. */
-router.get('/result', function (req, res) {
-
-    res.render('main/result', {
-
-    });
-});
 module.exports = router;
