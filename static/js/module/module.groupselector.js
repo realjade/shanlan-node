@@ -19,10 +19,6 @@ $(function(){
         '       <input type="checkbox" class="group-checkbox"/>'+
         '   </div>'+
         '</div>'+
-        '<div class="operation-wrap">'+
-        '   <button class="cancel button button-flat"> 取消 </button>'+
-        '   <button class="confirm button button-flat button-flat-primary"> 确认 </button>'+
-        ''+
         ''+
         ''+
         '</div>'
