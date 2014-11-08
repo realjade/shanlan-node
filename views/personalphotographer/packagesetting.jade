@@ -1,11 +1,104 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_package.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_packagesetting.merge.css")}')
 block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_package.merge.js")}')
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_packagesetting.merge.js")}')
 block header
     div.mod-personal-header-wrap
         include ../share/header
         include ../share/personalphotographerheader
 block content
-    div.mod-personal-setting-package
+    div.mod-personal-package-setting
+        div.box-title-bar 新建套系
+        form.personal-package-setting-form
+            ul.box-body-wrap
+                li.pack-name-line
+                    div.line-desc 套系名称：
+                    input.ui-input-minimal#pack-name
+                    div.line-note *为了显示效果，建议名称在10个字以内
+                li.pack-price-line
+                    div.line-desc 套系价格：
+                    input.ui-input-minimal#pack-price
+                    div.pack-unit-label 元
+                li.pack-items-line
+                    div.line-desc.service-line-desc 服务条目：
+                    div.pack-item-block.pack-location-block
+                        div.pack-item-desc 拍摄地
+                        select.ui-select-minimal#pack-location
+                            option(value='0') 省份 - 城市
+                    div.pack-item-block.pack-time-block
+                        div.pack-item-desc 拍摄时长
+                        input.ui-input-minimal#pack-time
+                        div.pack-time-unit-block
+                            input.pack-unit-radio(type='radio', name='pack-time-unit', value='day', checked)
+                            span 天
+                        div.pack-time-unit-block
+                            input.pack-unit-radio(type='radio', name='pack-time-unit', value='hour')
+                            span 小时
+                    div.pack-item-block.pack-photo-block
+                        div.pack-item-desc 拍摄张数
+                        input.ui-input-minimal#pack-photo
+                        div.pack-unit-label 张
+                    div.pack-item-block.pack-ps-block
+                        div.pack-item-desc 精修张数
+                        input.ui-input-minimal#pack-ps
+                        div.pack-unit-label 张
+                    div.pack-item-block.pack-print-block
+                        div.pack-item-desc 冲洗张数
+                        input.ui-input-minimal#pack-print
+                        div.pack-unit-label 张
+                    div.pack-item-block.pack-album-block
+                        div.pack-item-desc 实体相册
+                        input.ui-input-minimal#pack-album
+                        div.pack-unit-label 本
+                    div.pack-item-block.pack-scene-block
+                        div.pack-item-desc 场景
+                        input.ui-input-minimal#pack-scene
+                        div.pack-unit-label 套
+                    div.pack-item-block.pack-costume-block
+                        div.pack-item-desc 提供服装
+                        input.ui-input-minimal#pack-costume
+                        div.pack-unit-label 套
+                    div.pack-item-block.pack-makeup-block
+                        div.pack-item-desc 化妆
+                        select.ui-select-minimal#pack-makeup
+                            option(value='0') 不包含
+                            option(value='1') 包含
+
+                li.pack-type-line
+                    div.line-desc 摄影类型：
+                    div.pack-type-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-type-unit', value='10')
+                        span 婚纱摄影
+                    div.pack-type-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-type-unit', value='20')
+                        span 写真类
+                    div.pack-type-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-type-unit', value='21')
+                        span 个人写真
+                    div.pack-type-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-type-unit', value='22')
+                        span 情侣写真
+                li.pack-style-line
+                    div.line-desc 摄影风格：
+                    div.pack-style-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-style-unit', value='10')
+                        span 清新
+                    div.pack-style-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-style-unit', value='20')
+                        span 复古
+                    div.pack-style-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-style-unit', value='21')
+                        span 胶片
+                    div.pack-style-unit-block
+                        input.pack-unit-checkbox(type='checkbox', name='pack-style-unit', value='22')
+                        span 黑白
+                li.pack-detail-line
+                    div.line-desc 详细说明：
+                    textarea.pack-detail
+                li.pack-photo-group-line
+                    div.line-desc 样片展示：
+                    div.pack-photo-group-block 关联作品集
+                li.pack-submit-line
+                    button.btn-submit.button.button-flat.button-flat-primary 确定并发布
+                    button.btn-back.button.button-flat 取消并返回

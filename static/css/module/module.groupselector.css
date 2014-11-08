@@ -1,0 +1,65 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/11/8
+  * Time: 10:41
+  *
+  */
+.mod-associate-wrap{
+    overflow: hidden;
+}
+
+.mod-associate-wrap .photogroup-wrap{
+    display: block;
+    position: relative;
+    width:900px;
+    height:580px;
+    margin:0 auto;
+    overflow-y: auto;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box{
+    float:left;
+    position: relative;
+    width:220px;
+    height: 250px;
+    margin:10px;
+    border:1px solid #eeeff2;
+    overflow: hidden;
+}
+
+
+.mod-associate-wrap .photogroup-wrap .group-item-box .group-cover{
+    width:200px;
+    height:200px;
+    margin:10px;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box .group-cover img{
+    width:100%;
+    height:100%;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box .group-name{
+    float: left;
+    height:30px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box .group-checkbox{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.mod-associate-wrap .operation-wrap{
+    width:800px;
+    height:35px;
+    margin: 15px auto 0 auto;
+    padding: 15px 0 0 0;
+    text-align: center;
+    border-top: 1px solid #eeeff2;
+}
+.mod-associate-wrap .operation-wrap button{
+    margin: 0 20px;
+}
