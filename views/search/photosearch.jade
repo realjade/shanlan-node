@@ -3,13 +3,23 @@ div.mod-photo-search.search-items-wrap
       div.search-item-block#search-display
          div.search-item-desc 查询内容：
          button.ui-twistbutton.ui-tb-left.ui-tb-active(type="button" data-type="photographer") 摄影师
-         button.ui-twistbutton.ui-tb-right(type="button" data-type="service") 服务
+         button.ui-twistbutton.ui-tb-right(type="button" data-type="service")
+         input(type="hidden" name="searchtype")
       div.search-item-block
          div.search-item-desc 摄影类型：
          select.ui-select#select-type(name="type")
-            option(value='0') 旅拍
-            option(value='1') 婚纱
-            option(value='2') 婚礼跟拍
+            option(value='婚纱摄影') 婚纱摄影
+            option(value='婚礼纪实') 婚礼纪实
+            option(value='个人写真') 个人写真
+            option(value='情侣写真') 情侣写真
+            option(value='好友写真') 好友写真
+            option(value='亲子家庭') 亲子家庭
+            option(value='旅行拍摄') 旅行拍摄
+            option(value='聚会庆生') 聚会庆生
+            option(value='毕业留念') 毕业留念
+            option(value='宠物') 宠物
+            option(value='产品静物') 产品静物
+            option(value='其他') 其他
       div.search-item-block
          div.search-item-desc 摄影风格：
          select.ui-select.ui-sl-long#select-style(name="style")
