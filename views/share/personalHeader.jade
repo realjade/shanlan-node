@@ -8,14 +8,24 @@ div.mod-personal-header
                 else
                     a(href="/personal/photo") 照片管理
             li
-                if subTab == 'order'
-                    a.active(href="/personal/order") 我的订单
+                if subTab == 'package'
+                    a.active(href="/personal/package") 套系管理
                 else
-                    a(href="/personal/order") 我的订单
+                    a(href="/personal/package") 套系管理
+            li
+                if subTab == 'order'
+                    a.active(href="/personal/order") 订单管理
+                else
+                    a(href="/personal/order") 订单管理
             li
                 if subTab == 'setting'
                     a.active(href="/personal/setting") 个人设置
                 else
                     a(href="/personal/setting") 个人设置
+            li
+                if subTab == 'account'
+                    a.active(href="/personal/account") 账号设置
+                else
+                    a(href="/personal/account") 账号设置
 
 

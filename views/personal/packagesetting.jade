@@ -1,12 +1,12 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personalphotographer_packagesetting.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/personal_packagesetting.merge.css")}')
 block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personalphotographer_packagesetting.merge.js")}')
+    script(src='#{staticFilter("//static.jspass.com/static/js/merge/personal_packagesetting.merge.js")}')
 block header
     div.mod-personal-header-wrap
         include ../share/header
-        include ../share/personalphotographerheader
+        include ../share/personalHeader
 block content
     div.mod-personal-package-setting
         div.box-title-bar 新建套系
@@ -98,7 +98,8 @@ block content
                     textarea.pack-detail
                 li.pack-photo-group-line
                     div.line-desc 样片展示：
-                    div.pack-photo-group-block 关联作品集
+                    div#group-id(style='none')
+                    div.blank-group-block#group-block 关联作品集
                 li.pack-submit-line
                     button.btn-submit.button.button-flat.button-flat-primary 确定并发布
                     button.btn-back.button.button-flat 取消并返回

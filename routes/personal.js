@@ -38,7 +38,7 @@ router.get('/package', filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
-    res.render('personalphotographer/package', {
+    res.render('personal/package', {
         subTab: 'package'
     })
 })
@@ -48,7 +48,7 @@ router.get('/packagesetting', filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
-    res.render('personalphotographer/packagesetting', {
+    res.render('personal/packagesetting', {
         subTab: 'package'
     })
 })

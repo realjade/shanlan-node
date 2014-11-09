@@ -15,4 +15,4 @@ document.write('<script src="//static.jspass.com/static/js/common/module.persona
 document.write('<script src="//static.jspass.com/static/js/module/module.dialog.js"></script>')
 document.write('<script src="//static.jspass.com/static/js/module/module.smallnote.js"></script>')
 document.write('<script src="//static.jspass.com/static/js/module/module.groupselector.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/personalphotographer/module.packagesetting.js"></script>')
+document.write('<script src="//static.jspass.com/static/js/personal/module.packagesetting.js"></script>')

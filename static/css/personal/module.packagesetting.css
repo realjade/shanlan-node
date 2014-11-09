@@ -44,7 +44,7 @@
 }
 
 .mod-personal-package-setting .box-body-wrap li div{
-    float: left;
+    display: inline-block;
 }
 
 .mod-personal-package-setting .box-body-wrap .line-desc{
@@ -181,11 +181,12 @@
 
 .mod-personal-package-setting .box-body-wrap .pack-detail-line .pack-detail{
     width:740px;
+    height: 100px;
 }
-.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .pack-photo-group-block{
+.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .blank-group-block{
     width:730px;
-    height:100px;
-    line-height: 100px;
+    height:95px;
+    line-height: 95px;
     color:#dddff2;
     text-align: center;
     font-size: 32px;
@@ -194,11 +195,22 @@
     cursor: pointer;
 }
 
-.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .pack-photo-group-block:hover{
+.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .blank-group-block:hover{
     background-color: #f2f3f6;
     color: #fff;
 }
 
+.mod-personal-package-setting .box-body-wrap .pack-photo-group-line .group-block{
+    width:745px;
+    height:105px;
+    cursor: pointer;
+}
+.mod-personal-package-setting #group-block img{
+    display: inline-block;
+    width:105px;
+    height:105px;
+    margin-right:1px;
+}
 .mod-personal-package-setting .box-body-wrap .pack-submit-line{
     width:335px;
     margin: 0 auto;

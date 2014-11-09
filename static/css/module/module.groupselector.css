@@ -13,25 +13,37 @@
     display: block;
     position: relative;
     width:900px;
-    height:580px;
+    height:480px;
     margin:0 auto;
     overflow-y: auto;
 }
 
 .mod-associate-wrap .photogroup-wrap .group-item-box{
-    float:left;
+    display: inline-block;
     position: relative;
-    width:220px;
-    height: 250px;
-    margin:10px;
+    width:200px;
+    height: 230px;
+    margin:11px;
     border:1px solid #eeeff2;
     overflow: hidden;
+    cursor: pointer;
 }
 
+.mod-associate-wrap .photogroup-wrap #active{
+    background-color: #d6d7da;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box:hover{
+    background-color: #eeeff2;
+}
+
+.mod-associate-wrap .photogroup-wrap .group-item-box:active{
+    border:1px solid #999;
+}
 
 .mod-associate-wrap .photogroup-wrap .group-item-box .group-cover{
-    width:200px;
-    height:200px;
+    width:180px;
+    height:180px;
     margin:10px;
 }
 
@@ -47,10 +59,11 @@
     overflow: hidden;
 }
 
-.mod-associate-wrap .photogroup-wrap .group-item-box .group-checkbox{
+.mod-associate-wrap .photogroup-wrap .group-item-box input{
     position: absolute;
     right: 10px;
     bottom: 10px;
+    opacity: 0;
 }
 .mod-associate-wrap .operation-wrap{
     width:800px;
