@@ -1,8 +1,8 @@
 div.mod-photo-search.search-items-wrap
    form.search-items-form(method="get" action="")
-      input(type="hidden" name="orderType" value="0")
+      input(type="hidden" name="orderType" value="2")
       input(type="hidden" name="pageSize" value="10")
-      input(type="hidden" name="currentPage" value="1")
+      input(type="hidden" name="pageIndex" value="1")
       div.search-item-block#search-display
          div.search-item-desc 查询内容：
          button.ui-twistbutton.ui-tb-left.ui-tb-active(type="button" data-type="photographer") 摄影师
@@ -27,12 +27,14 @@ div.mod-photo-search.search-items-wrap
          div.search-item-desc 摄影风格：
          select.ui-select.ui-sl-long#select-style(name="style")
             option(value='胶片') 胶片
+            option(value='温暖时光') 温暖时光
       div.search-item-block
          div.search-item-desc 拍摄地：
          select.ui-select.ui-sl-long#select-location(name="address")
             option(value='0') 省份 - 城市
             option(value='北京-北京') 北京-北京
             option(value='上海-上海') 上海-上海
+            option(value='湖南-长沙') 湖南-长沙
       div.search-item-block
          div.search-item-desc 价格区间 (元)：
          input.ui-input#input-price-1(name="minPrice")

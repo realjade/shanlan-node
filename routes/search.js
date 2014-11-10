@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
     address = address.split('-')
     var url = 'Trade.pagePackagesSearch'
     var searchType = req.param('searchType')
-    if(searchType == 'photographer'){
+    if (searchType == 'photographer') {
         url = 'User.pagePhotographersSearch'
     }
     utils.ajax({
@@ -22,14 +22,19 @@ router.get('/', function (req, res) {
         },
         req: req,
         callback: function (err, data) {
-            if(data.code == 200){
-                res.render('search/photo', data.data)
-            }else{
+            if (data.code == 200) {
+                res.render('search/photo', {
+                        data: data.data,
+                        searchType: req.param('searchType')
+                    }
+                )
+            } else {
                 res.render('search/photo', {
                     error: '没有找到搜索到数据'
                 })
             }
         }
     })
-});
+})
+;
 module.exports = router;
