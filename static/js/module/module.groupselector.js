@@ -7,43 +7,60 @@
  */
 
 $(function(){
-    var _template = ''+
-        '<div class="photogroup-wrap">'+
-        '   <div class="group-item-box">'+
-        '       <div class="group-cover">'+
-        '           <img class="group-cover-img" src="//static.jspass.com/static/css/profile/images/trade-1-0.png">'+
-        '           </img>'+
-        '       </div>'+
-        '       <div class="group-name"> 作品集名称'+
-        '       </div>'+
-        '       <input type="checkbox" class="group-checkbox"/>'+
-        '   </div>'+
+    var _templateItem = '<div class="photogroup-wrap">'+
+        '{{#data}}'+
+        '<div class="group-item-box">'+
+        '    <div class="group-cover">'+
+        '        <img class="group-cover-img" src="{{coverImg}}">'+
+        '        </img>'+
+        '    </div>'+
+        '    <div class="group-name"> {{name}}'+
+        '    </div>'+
+        '    <input type="radio" name="group" value="{{id}}"/>'+
         '</div>'+
-        ''+
-        ''+
+        '{{/data}}'+
         '</div>'
+
 
     $.fn.groupselector = function(o){
         var self = $(this)
         init()
+
         function init(){
             self.options = {
 
             }
             $.extend(self.options,o)
-            show()
-        }
 
-        function show(){
-            self.html($.trim(Mustache.render(_template,{})))
-            self.show()
+            $.ajax({
+                url: '/s',
+                type: 'get',
+                data:{
+                    service: 'Photo.getPhotoCollections',
+                    userName: self.options.userName
+                },
+                success: function(data){
+                    if(data.code === 200){
+                        $.each(data.data,function(idx,item){
+                            item.coverImg = App.common.modules.common.wrapPhotoPath(item.photoDTOList[0].filePath).thumbnall_100
+                        })
+                        self.html($.trim(Mustache.render(_templateItem,data)))
+                        self.show()
+                    }
+                }
+            })
+
             bindEvent()
+
+
         }
 
         function bindEvent(){
-            self.find('.cancel').click(function(){
-            })
-            self.find('.confirm').click(function(){
+            self.on('click','.group-item-box',function(){
+                $('.photogroup-wrap #active').removeAttr('id');
+                $('input[type=radio]').attr('checked',false)
+                $(this).attr('id','active')
+                $(this).find('input[type=radio]').attr('checked',true)
             })
         }
     }
