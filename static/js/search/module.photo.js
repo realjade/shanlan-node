@@ -25,50 +25,18 @@
             var self = this
             self.__container = container
 
-            App.modules.photoSearch.init($('.mod-photo-search'))
+            App.modules.photoSearch.init($('.mod-photo-search'), container)
+            App.common.modules.page.init($('.page-wrap'), container, {
+                callback: function(index){
+
+                }
+            })
             self.__bindEvent()
         },
 
         __bindEvent: function(){
             var self = this
             //search event
-
-        },
-
-        __submitFormFunc: function(){
-            var self = this
-            var typeInput = container.find('#select-type')
-            var styleInput = container.find('#select-style')
-            var provinceInput = container.find('#select-province')
-            var cityInput = container.find('#select-city')
-            var price1Input = container.find('#input-price-1')
-            var price2Input = container.find('#input-price-2')
-            var pType = typeInput.val()
-            var pStyle = styleInput.val()
-            var pProvince = provinceInput.val()
-            var pCity = cityInput.val()
-            var pPrice1 = price1Input.val()
-            var pPrice2 = price2Input.val()
-
-            $.ajax({
-                url:'/s',
-                type:'post',
-                data:{
-                    service:'',
-                    type:pType,
-                    style:pStyle,
-                    province:pProvince,
-                    city:pCity,
-                    price1:pPrice1,
-                    price2:pPrice2,
-                    searchType:self.__searchType,
-                    sequence:self.__sequence
-                },
-                success: function(data){
-
-                }
-
-            })
 
         }
 

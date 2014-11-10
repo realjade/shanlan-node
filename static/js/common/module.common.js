@@ -50,6 +50,26 @@ $(function(){
                 compress: filePath.replace('_X_X', '_COMPRESS_'),
                 realPath: filePath.replace('_X_X', '')
             }
+        },
+        paramOfUrl: function (url) {
+            url = url || location.href;
+            var paramSuit = url.substring(url.indexOf('?') + 1).split("&");
+            var paramObj = {};
+            for (var i = 0; i < paramSuit.length; i++) {
+                var param = paramSuit[i].split('=');
+                if (param.length == 2) {
+                    var key = decodeURIComponent(param[0]);
+                    var val = decodeURIComponent(param[1]);
+                    if (paramObj.hasOwnProperty(key)) {
+                        paramObj[key] = jQuery.makeArray(paramObj[key]);
+                        paramObj[key].push(val);
+                    }
+                    else {
+                        paramObj[key] = val;
+                    }
+                }
+            }
+            return paramObj;
         }
     }
 

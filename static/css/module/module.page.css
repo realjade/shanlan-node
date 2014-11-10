@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-.page-index-wrap #current-page-index{
+.page-index-wrap .current-page-index{
     color: #fff;
     background-color: #77B9FD;
     box-shadow: inset 0px 2px 2px #54A1CF;

@@ -7,6 +7,9 @@
   */
 
 /* search-items */
+.ui-sl-long {
+    width: 120px;
+}
 .mod-photo-search{
     position: relative;
     left:0;
