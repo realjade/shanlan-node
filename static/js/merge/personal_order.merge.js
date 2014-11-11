@@ -6,7 +6,7 @@
  *
  */
 
-document.write('<script src="//static.jspass.com/static/js/common/module.common.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/common/module.personallayout.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/module/module.dialog.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/personal/module.order.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/common/module.common.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/common/module.personallayout.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/module/module.dialog.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/personal/module.order.js"></script>')

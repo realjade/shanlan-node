@@ -21,16 +21,21 @@
         __searchType: 0,
         __sequence:sequence.COMPR,
 
-        init: function(container){
+        init: function(container, options){
             var self = this
             self.__container = container
+            self.__optioins = options
 
             App.modules.photoSearch.init($('.mod-photo-search'), container)
-            App.common.modules.page.init($('.page-wrap'), container, {
-                callback: function(index){
 
-                }
-            })
+            if(options.page){
+                App.common.modules.page.init($('.page-wrap'), container, {
+                    callback: function(index){
+
+                    }
+                })
+            }
+
             self.__bindEvent()
         },
 
@@ -43,7 +48,7 @@
     }
 
     $(function(){
-        photo.init('.mod-photo')
+        photo.init('.mod-photo', pageConfig)
     })
 
 })(jQuery)

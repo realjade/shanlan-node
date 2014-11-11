@@ -37,7 +37,7 @@
             var img = new Image()
             var imgEle = container.find('#header-bg')
             var height = 0
-            var src = '//static.jspass.com/static/css/index/images/bg.jpg'
+            var src = '//static.mgcheng.com/static/css/index/images/bg.jpg'
 
             img.onload = function(){
                 imgEle.prop('src' , src)

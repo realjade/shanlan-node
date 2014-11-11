@@ -33,7 +33,7 @@
     height: 47px;
     width: 100px;
     padding: 0 0 3px 0;
-    background: url("//static.jspass.com/static/css/common/images/logo-bw.png") no-repeat;
+    background: url("//static.mgcheng.com/static/css/common/images/logo-bw.png") no-repeat;
     background-size: contain;
     background-origin: content-box;
 }
@@ -43,12 +43,12 @@
     height: 50px;
     width: 60px;
     padding: 0 10px;
-    background: url("//static.jspass.com/static/css/common/images/search-bw.png") no-repeat 50% 50%;
+    background: url("//static.mgcheng.com/static/css/common/images/search-bw.png") no-repeat 50% 50%;
     background-origin: content-box;
 }
 
 #m-header .header-search-btn:hover {
-    background: url("//static.jspass.com/static/css/common/images/search-bw-hover.png") no-repeat 50% 50%;
+    background: url("//static.mgcheng.com/static/css/common/images/search-bw-hover.png") no-repeat 50% 50%;
     background-origin: content-box;
     background-color: #2a2c2e;
 }
@@ -200,7 +200,7 @@
 }
 
 #m-header #link-order {
-    background: url("//static.jspass.com/static/css/common/images/order.png") no-repeat;
+    background: url("//static.mgcheng.com/static/css/common/images/order.png") no-repeat;
     background-position: 4px 0;
 }
 
@@ -210,7 +210,7 @@
 }
 
 #m-header #link-setting {
-    background: url("//static.jspass.com/static/css/common/images/setting.png") no-repeat;
+    background: url("//static.mgcheng.com/static/css/common/images/setting.png") no-repeat;
     background-position: 5px 0;
 }
 
@@ -220,7 +220,7 @@
 }
 
 #m-header #link-logout {
-    background: url("//static.jspass.com/static/css/common/images/logout.png") no-repeat;
+    background: url("//static.mgcheng.com/static/css/common/images/logout.png") no-repeat;
     background-position: 5px 0;
 }
 

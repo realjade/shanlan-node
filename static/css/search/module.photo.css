@@ -119,7 +119,7 @@ a{
     float:left;
     margin:22px 0 0 15px;
     padding:0 0 0 22px;
-    background: url('//static.jspass.com/static/css/common/images/location.png') no-repeat 3px;
+    background: url('//static.mgcheng.com/static/css/common/images/location.png') no-repeat 3px;
     background-size:13px 15px;
     background-origin: border-box;
     font-size: 13px;
@@ -179,7 +179,7 @@ a{
     float:left;
     width:20px;
     height:20px;
-    background: url('//static.jspass.com/static/css/common/images/quote-left.png')no-repeat 1px 3px;
+    background: url('//static.mgcheng.com/static/css/common/images/quote-left.png')no-repeat 1px 3px;
     background-size: 15px 15px;
 
 }
@@ -188,7 +188,7 @@ a{
     float:left;
     width:20px;
     height:20px;
-    background: url('//static.jspass.com/static/css/common/images/quote-right.png')no-repeat 1px 3px;
+    background: url('//static.mgcheng.com/static/css/common/images/quote-right.png')no-repeat 1px 3px;
     background-size: 15px 15px;
 
 }
@@ -232,7 +232,7 @@ a{
     top:3px;
     right:140px;
     width: 50px;
-    background: url('//static.jspass.com/static/css/profile/images/photo.png') no-repeat 0 10px;
+    background: url('//static.mgcheng.com/static/css/profile/images/photo.png') no-repeat 0 10px;
     background-size: 22px 20px;
     padding: 0 0 0 31px;
     line-height: 40px;
@@ -244,7 +244,7 @@ a{
     top:3px;
     right:72px;
     width:40px;
-    background: url('//static.jspass.com/static/css/profile/images/time.png') no-repeat 0 10px;
+    background: url('//static.mgcheng.com/static/css/profile/images/time.png') no-repeat 0 10px;
     background-size: 24px 22px;
     padding: 0 0 0 30px;
     line-height: 40px;
@@ -255,7 +255,7 @@ a{
     position: absolute;
     top:2px;
     right:5px;
-    background: url('//static.jspass.com/static/css/profile/images/RMB.png') no-repeat 2px 12px;
+    background: url('//static.mgcheng.com/static/css/profile/images/RMB.png') no-repeat 2px 12px;
     padding: 0 0 0 20px;
     line-height: 40px;
     font-size: 18px;
@@ -339,7 +339,7 @@ a{
     position: absolute;
     top:-2px;
     right:40px;
-    background: url('//static.jspass.com/static/css/common/images/RMB.png') no-repeat 2px 12px;
+    background: url('//static.mgcheng.com/static/css/common/images/RMB.png') no-repeat 2px 12px;
     padding: 0 0 0 20px;
     line-height: 50px;
     font-size: 32px;
@@ -378,54 +378,54 @@ a{
     padding:0 8px 0 40px;
 }
 .mod-photo .result-item-box-service .pack-location{
-    background: url('//static.jspass.com/static/css/common/images/p-location-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-location-blue.png') no-repeat ;
 }
 .mod-photo .result-item-box-service .pack-time{
-    background: url('//static.jspass.com/static/css/common/images/p-time-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-time-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-photo-num{
-    background: url('//static.jspass.com/static/css/common/images/p-photo-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-photo-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-ps-yes{
-    background: url('//static.jspass.com/static/css/common/images/p-ps-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-ps-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-ps-no{
-    background: url('//static.jspass.com/static/css/common/images/p-ps-grey.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-ps-grey.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-print-yes{
-    background: url('//static.jspass.com/static/css/common/images/p-print-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-print-blue.png') no-repeat ;
 }
 .mod-photo .result-item-box-service .pack-print-no{
-    background: url('//static.jspass.com/static/css/common/images/p-print-grey.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-print-grey.png') no-repeat ;
 }
 .mod-photo .result-item-box-service .pack-album-yes{
-    background: url('//static.jspass.com/static/css/common/images/p-album-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-album-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-album-no{
-    background: url('//static.jspass.com/static/css/common/images/p-album-grey.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-album-grey.png') no-repeat ;
 
 }
 
 .mod-photo .result-item-box-service .pack-makeup-yes{
-    background: url('//static.jspass.com/static/css/common/images/p-makeup-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-makeup-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-makeup-no{
-    background: url('//static.jspass.com/static/css/common/images/p-makeup-grey.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-makeup-grey.png') no-repeat ;
 
 }
 
 .mod-photo .result-item-box-service .pack-costume-yes{
-    background: url('//static.jspass.com/static/css/common/images/p-costume-blue.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-costume-blue.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .pack-costume-no{
-    background: url('//static.jspass.com/static/css/common/images/p-costume-grey.png') no-repeat ;
+    background: url('//static.mgcheng.com/static/css/common/images/p-costume-grey.png') no-repeat ;
 }
 
 .mod-photo .result-item-box-service .item-person-wrap{

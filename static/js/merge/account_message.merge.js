@@ -5,6 +5,6 @@
  * Time: 下午8:46
  *
  */
-document.write('<script src="//static.jspass.com/static/js/common/module.common.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/common/module.outerlayout.js"></script>')
-document.write('<script src="//static.jspass.com/static/js/account/module.message.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/common/module.common.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/common/module.outerlayout.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/account/module.message.js"></script>')

@@ -5,4 +5,4 @@
  * Time: 下午4:33
  *
  */
-document.write('<script src="//static.jspass.com/static/mobile/js/page/login.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/mobile/js/page/login.js"></script>')

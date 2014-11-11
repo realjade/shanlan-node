@@ -1,6 +1,6 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/profile_index.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/profile_index.merge.css")}')
 block header
     div.mod-profile-header-wrap
         include ../share/header
@@ -13,4 +13,4 @@ block content
                     each photo, index in collect.photoDTOList
                         div(class="photo-item item#{index+1}" style="background-image:url(#{photo.filePath})")
 block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_index.merge.js")}')
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/profile_index.merge.js")}')

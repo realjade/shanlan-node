@@ -1,6 +1,6 @@
 extends ../share/layout
 block css
-    link(rel='stylesheet', href='#{staticFilter("//static.jspass.com/static/css/merge/profile_trade.merge.css")}')
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/profile_trade.merge.css")}')
 block header
     div.mod-profile-header-wrap
         include ../share/header
@@ -17,7 +17,7 @@ block content
                         div.main-intro
                             div.main-stars
                                 if(item.score == 4.5)
-                                    img(src="//static.jspass.com/static/css/profile/images/5stars.png")
+                                    img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
                             div.trade-info (#{item.createAt} · #{item.packageName} · #{item.price}元)
                         div.main-comment
                             p #{item.content}
@@ -32,4 +32,4 @@ block content
 
 
 block js
-    script(src='#{staticFilter("//static.jspass.com/static/js/merge/profile_trade.merge.js")}')
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/profile_trade.merge.js")}')

@@ -75,19 +75,19 @@
 
             container.on({
                 mouseover: function () {
-                    $('#preCircle2').css('background-image', 'url(//static.jspass.com/static/css/main/images/circle_right_arrow1.png)');
+                    $('#preCircle2').css('background-image', 'url(//static.mgcheng.com/static/css/main/images/circle_right_arrow1.png)');
                 },
                 mouseout: function () {
-                    $('#preCircle2').css('background-image', 'url(//static.jspass.com/static/css/main/images/normal_right.png)');
+                    $('#preCircle2').css('background-image', 'url(//static.mgcheng.com/static/css/main/images/normal_right.png)');
                 }
             }, '#leftArea,#preCircle2');
 
             container.on({
                 mouseover: function () {
-                    $('#nextCircle2').css('background-image', 'url(//static.jspass.com/static/css/main/images/circle_left_arrow1.png)');
+                    $('#nextCircle2').css('background-image', 'url(//static.mgcheng.com/static/css/main/images/circle_left_arrow1.png)');
                 },
                 mouseout: function () {
-                    $('#nextCircle2').css('background-image', 'url(//static.jspass.com/static/css/main/images/normal_left.png)');
+                    $('#nextCircle2').css('background-image', 'url(//static.mgcheng.com/static/css/main/images/normal_left.png)');
                 }
             }, '#rightArea,#nextCircle2');
 

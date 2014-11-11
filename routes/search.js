@@ -30,7 +30,8 @@ router.get('/', function (req, res) {
                 )
             } else {
                 res.render('search/photo', {
-                    error: '没有找到搜索到数据'
+                    data: {
+                    }
                 })
             }
         }

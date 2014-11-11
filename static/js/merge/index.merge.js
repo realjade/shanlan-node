@@ -5,4 +5,4 @@
  * Time: 21:36
  *
  */
-document.write('<script src="//static.jspass.com/static/js/apps/module.index.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/apps/module.index.js"></script>')

@@ -24,9 +24,9 @@ function jsWipeCache(path, floor){
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){
-            md5Str += ',\n            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += ',\n            \'//static.mgcheng.com/' + path + '\'' + ': \'//static.mgcheng.com/' + path + '?' + md5.substring(0,6) + '\'';
         }else{
-            md5Str += '            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += '            \'//static.mgcheng.com/' + path + '\'' + ': \'//static.mgcheng.com/' + path + '?' + md5.substring(0,6) + '\'';
         }
     }
 }
@@ -40,9 +40,9 @@ function cssWipeCache(path, floor) {
     if(floor > 0){
         var md5 = getMd5(path);
         if(md5Str){
-            md5Str += ',\n            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += ',\n            \'//static.mgcheng.com/' + path + '\'' + ': \'//static.mgcheng.com/' + path + '?' + md5.substring(0,6) + '\'';
         }else{
-            md5Str += '            \'//static.jspass.com/' + path + '\'' + ': \'//static.jspass.com/' + path + '?' + md5.substring(0,6) + '\'';
+            md5Str += '            \'//static.mgcheng.com/' + path + '\'' + ': \'//static.mgcheng.com/' + path + '?' + md5.substring(0,6) + '\'';
         }
     }
 }
