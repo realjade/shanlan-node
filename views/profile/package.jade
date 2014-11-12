@@ -60,4 +60,8 @@ block content
                     * 建议您预订前先与摄影师沟通，确认具体时间和地点。<br/>
                     * 建议您完善基本信息并建立相册，以便摄影师更好地了解您。
 block js
+    -var ownerJson = JSON.stringify(owner)
+    script.
+        window.pageConfig.owner = !{ownerJson}
+
     script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/profile_package.merge.js")}')

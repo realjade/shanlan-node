@@ -11,11 +11,12 @@
 
         __container: null,
 
-        init: function (container) {
+        init: function (container, options) {
             var self = this
             self.__container = container
+            self.__options = options
 
-            var calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
+            self.__calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
                 selectedDay: {
                     1413993600000: true,
                     1414080000000: true
@@ -25,7 +26,28 @@
                 }
             })
 
+            self.__initBookedDate()
+
             self.__bindEvent()
+        },
+
+        __initBookedDate: function () {
+            var self = this
+            var container = self.__container
+            var options = self.__options
+            $.ajax({
+                url: '/s',
+                type: 'get',
+                data: {
+                    service: 'User.listPhotographerBookedDates',
+                    photographerName: options.owner.userName
+                },
+                success: function (data) {
+                    if (data.code === 200) {
+
+                    }
+                }
+            })
         },
 
         __bindEvent: function () {
@@ -59,7 +81,7 @@
                     return false
                 }
 
-                if(!packageId){
+                if (!packageId) {
                     App.common.modules.smallnote('请在左边套系列表中选择一个您喜欢的套系', {
                         pattern: 'error',
                         top: ($(window).height() - 60) / 2
@@ -69,12 +91,14 @@
                 $.ajax({
                     url: '/s',
                     type: 'post',
-                    data:{
-                        service: 'Photo.getPhotos',
-                        photoCollectionId: gid
+                    data: {
+                        service: 'Trade.addBookedPackageOrder',
+                        packageId: packageId,
+                        bookDateInMill: bookTime,
+                        bookQuantity: 1
                     },
-                    success: function(data){
-                        if(data.code === 200){
+                    success: function (data) {
+                        if (data.code === 200) {
                             App.common.modules.smallnote('恭喜您，预订成功！')
                         }
                     }
@@ -85,7 +109,7 @@
     }
 
     $(function () {
-        profilePackage.init($('.mod-package'))
+        profilePackage.init($('.mod-package'), pageConfig)
         App.common.modules.profileLayout.init($('.mod-profile-header-wrap'))
     })
 

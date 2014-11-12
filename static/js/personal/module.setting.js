@@ -135,7 +135,7 @@
                     currentInput.val(current)
                 }
 
-                if(!current || current.length < 6 || current.length > 32){
+                if(!newPwd || newPwd.length < 6 || newPwd.length > 32){
                     error.html('请输入6-32位新密码').show()
                     newInput.select()
                     return false
@@ -154,7 +154,8 @@
                     type: 'post',
                     data:{
                         service: 'User.updatePassword',
-                        password: current,
+                        userName: options.me.userName,
+                        oldPassword: current,
                         newPassword: newPwd
                     },
                     success: function(data){
