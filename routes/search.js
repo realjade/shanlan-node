@@ -7,10 +7,10 @@ var utils = require('../lib/utils')
 router.get('/', function (req, res) {
     var address = req.param('address') || ''
     address = address.split('-')
-    var url = 'Trade.pagePackagesSearch'
+    var url = 'Trade.pageSearchPhotoPackages'
     var searchType = req.param('searchType')
     if (searchType == 'photographer') {
-        url = 'User.pagePhotographersSearch'
+        url = 'Trade.pageSearchPhotographers'
     }
     utils.ajax({
         url: url,

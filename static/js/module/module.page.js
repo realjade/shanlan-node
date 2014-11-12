@@ -15,36 +15,51 @@
                 callback: $.noop
             }, options)
 
+            if (options.page.pageCount <= 1) return;
+
             self.__panel = $(self.__tpl).appendTo(container)
 
             self.__initPage()
+
+            self.__bindEvent()
         },
 
-        __initPage: function(){
+        __initPage: function () {
             var self = this
             var panel = self.__panel
+            var options = self.__options
+            var page = options.page
+            var pages = []
+            for (var i = 0; i < page.pageCount; i++) {
+                pages.push({
+                    index: i + 1,
+                    isCurrent: i == page.pageIndex
+                })
+            }
+
+            $(Mustache.render(self.__itemTpl, {page: pages})).appendTo(panel.find('.pages'))
         },
 
-        __bindEvent: function(){
+        __bindEvent: function () {
             var self = this
             var options = self.__options
             var panel = self.__panel
 
-            panel.on('click', '.page-index', function(){
+            panel.on('click', '.page-index', function () {
                 options.callback($(this).data('index'))
             })
 
-            panel.on('click', '.page-arrow-left', function(){
+            panel.on('click', '.page-arrow-left', function () {
                 var index = options.page.currentPage - 1
-                if(index < 1){
+                if (index < 1) {
                     return false
                 }
                 options.callback(index)
             })
 
-            panel.on('click', '.page-arrow-right', function(){
+            panel.on('click', '.page-arrow-right', function () {
                 var index = options.page.currentPage + 1
-                if(index > options.page.totalPage){
+                if (index > options.page.totalPage) {
                     return false
                 }
                 options.callback(index)
@@ -59,7 +74,7 @@
     '   <a class="page-arrow-right"></a>' +
     '</div>'
 
-    page.__itemTpl = '{{#page}}<a class="page-index {{#isCurrent}}current-page-index{{/isCurrent}}" data-index="index">{{index}}</a>{{/page}}'
+    page.__itemTpl = '{{#page}}<a class="page-index {{#isCurrent}}current-page-index{{/isCurrent}}" data-index={{index}}>{{index}}</a>{{/page}}'
 
     App.common.modules.page = page
 })(jQuery)

@@ -33,6 +33,7 @@
             if(param.searchType == 'service'){
                 $('.ui-twistbutton', container).removeClass('ui-tb-active')
                 $('.ui-tb-right', container).addClass('ui-tb-active')
+                $('input[name="searchType"]').val('service')
             }
 
             if(param.type){
@@ -82,6 +83,7 @@
             var container = self.__container
 
             container.find('input[name="' + name + '"]').val(value)
+            container.find('.search-items-form').submit()
         }
     }
 
