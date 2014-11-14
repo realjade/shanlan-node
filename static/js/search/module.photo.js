@@ -7,19 +7,9 @@
  */
 
 (function ($) {
-    var sequence = {
-        COMPR: 0,
-        SCORE: 1,
-        PRICE_DOWN: 2,
-        PRICE_UP: 3,
-        TRADE: 4,
-        COLLC: 5
-    }
-
     var photo = {
         __container: null,
         __searchType: 0,
-        __sequence: sequence.COMPR,
 
         init: function (container, options) {
             var self = this
@@ -42,6 +32,11 @@
 
         __bindEvent: function () {
             var self = this
+            var container = self.__container
+
+            container.on('click', '.rule-item', function(){
+                App.modules.photoSearch.setValue('orderType', $(this).data('order'))
+            })
             //search event
 
         }
@@ -49,7 +44,7 @@
     }
 
     $(function () {
-        photo.init('.mod-photo', pageConfig)
+        photo.init($('.mod-photo'), pageConfig)
     })
 
 })(jQuery)

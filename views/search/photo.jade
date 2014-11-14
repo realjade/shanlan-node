@@ -9,15 +9,15 @@ block content
 
         div.result-rule-bar
             div.cell-space.rule-desc 显示顺序 >
-            div.cell-space.rule-item
-                a#compr-rule 综合排序
-            div.cell-space.rule-item#rule-item-active
+            div.cell-space.rule-item#rule-item-active(data-order="2")
                 a#score-rule 用户评价
-            div.cell-space.rule-item
+            div.cell-space.rule-item(data-order="1")
+                a#compr-rule 综合排序
+            div.cell-space.rule-item(data-order="3")
                 a#price-rule 服务价格
-            div.cell-space.rule-item
+            div.cell-space.rule-item(data-order="5")
                 a#trade-rule 交易次数
-            div.cell-space.rule-item
+            div.cell-space.rule-item(data-order="6")
                 a#photo-rule 作品量
         if !searchType || searchType == 'photographer'
             if !data.data || data.data.length == 0

@@ -12,13 +12,19 @@ router.get('/', function (req, res) {
     if (searchType == 'photographer') {
         url = 'Trade.pageSearchPhotographers'
     }
+    var pageSize = req.param('pageSize') || '1'
+    var pageIndex = req.param('pageIndex') || '0'
+    var orderType = req.param('orderType') || '2'
     utils.ajax({
         url: url,
         method: 'get',
         data: {
             province: address[0],
             city: address.length > 1 ? address[1] : '',
-            country: '中国'
+            country: '中国',
+            pageSize: pageSize,
+            pageIndex: pageIndex,
+            //orderType: orderType
         },
         req: req,
         callback: function (err, data) {
