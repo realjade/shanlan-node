@@ -45,7 +45,7 @@ $(function(){
         },
         wrapPhotoPath: function(filePath){
             return {
-                thumbnall_100: filePath.replace('_X_X', '_THUMBNAIL_100_100'),
+                thumbnall_200: filePath.replace('_X_X', '_THUMBNAIL_200_200'),
                 thumbnall_600: filePath.replace('_X_X', '_THUMBNAIL_600_600'),
                 compress: filePath.replace('_X_X', '_COMPRESS_'),
                 realPath: filePath.replace('_X_X', '')
