@@ -1,0 +1,29 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_photo.merge.css")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalHeader
+block content
+    div.mod-personal-photo
+        div.header
+            button.tag#album 作品集
+            button.tag.active#photo 照片库
+            button#uploadphoto-btn.button.button-flat-primary 上传照片
+            button#newalbum-btn.button.button-flat.button-flat-primary 新建作品集
+        div.body
+            div.block-p
+                div.title 2014-11
+                - var i=0
+                while i++ < 20
+                    a.photo-wrap(href="")
+                        img(src="//static.mgcheng.com//static/css/profile/images/trade-2-0.png")
+                        div.bar
+                            div.name 名字
+                            div.delete
+
+
+block js
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_photo.merge.js")}')
+

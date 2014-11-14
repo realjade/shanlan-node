@@ -54,3 +54,17 @@ router.get('/packagesetting', filter.login, function (req, res) {
 })
 
 module.exports = router
+
+
+
+/* photographer photo/album manage */
+router.get('/photo', filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+
+    res.render('personal/photo', {
+        subTab: 'photo'
+    })
+})
+
+module.exports = router
