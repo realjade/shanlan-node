@@ -514,15 +514,15 @@ a {
 .mod-photo .result-item-box-service .main-item-group {
     position: relative;
     width: 920px;
-    height: 100px;
+    height: 180px;
     margin: 0 auto;
 }
 
 .mod-photo .result-item-box-service .main-item-group .item {
     box-sizing: border-box;
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     margin: 0 1px 0px 0;
     background-color: #7cdfff;
 }
