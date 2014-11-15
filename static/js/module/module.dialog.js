@@ -50,7 +50,7 @@
             //设置最大高度
             if (this.options.limitHeight) {
                 this.find('.content').css({
-                    'max-height': $(document).height() * 0.6,
+                    'max-height': $(document).height() * 0.8,
                     'overflow-y': 'auto',
                     'overflow-x': 'hidden'
                 });
