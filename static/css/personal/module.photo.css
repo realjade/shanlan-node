@@ -155,7 +155,8 @@
     width:180px;
     height:180px;
 }
-.mod-personal-photo .block-g .name{
+.mod-personal-photo .block-g a.name{
+    display: block;
     width:100%;
     height:40px;
     line-height: 40px;
@@ -163,4 +164,97 @@
     color: #666;
     margin:10px 0 0 0;
     padding: 0 0 0 15px;
+}
+
+/*group view window */
+.group-view-wrap li{
+    display: block;
+    margin:10px 0;
+    overflow: hidden;
+}
+.group-view-wrap .key{
+    float: left;
+    width:70px;
+    height:30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 0 0 10px
+}
+
+.group-view-wrap .name{
+    display: inline-block;
+    width:350px;
+}
+
+.group-view-wrap .detail{
+    display: inline-block;
+    width:850px;
+    height:100px;
+    margin: 0 0 5px 0;
+    border:1px solid #ccc;
+    overflow: auto;
+}
+.group-view-wrap .photo-wrap{
+    position: relative;
+    display: inline-block;
+}
+.group-view-wrap .photo-wrap button{
+    width: 106px;
+    font-size: 13px;
+}
+.group-view-wrap .photo-wrap .count{
+    position: absolute;
+    top:10px;
+    right:5px;
+}
+.group-view-wrap .photo-wrap .box{
+    position: relative;
+    width:850px;
+    height: 215px;
+    border:1px solid #ccc;
+    margin: 5px 0 0 0;
+    overflow: hidden;
+}
+
+.group-view-wrap .photo-wrap .box .wrap{
+    width:100%;
+    height:100%;
+    overflow: auto;
+    padding: 5px;
+}
+
+.group-view-wrap .photo-wrap .box .item{
+    position: relative;
+    display: inline-block;
+    width:99px;
+    height: 99px;
+    margin:0 1px 1px 0;
+}
+
+.group-view-wrap .photo-wrap .box .item img{
+    width:100%;
+    height:100%;
+}
+
+.group-view-wrap .box .item .delete-btn{
+    position: absolute;
+    top:-30px;
+    right:3px;
+    width:20px;
+    height:20px;
+    background:url(images/close-hover.png) no-repeat;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    cursor:pointer;
+}
+.group-view-wrap .box .item:hover .delete-btn{
+    top:5px;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
 }
