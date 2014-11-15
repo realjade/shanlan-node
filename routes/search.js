@@ -9,8 +9,8 @@ router.get('/', function (req, res) {
     address = address.split('-')
     var url = 'Trade.pageSearchPhotoPackages'
     var searchType = req.param('searchType')
-    if (searchType == 'photographer') {
-        url = 'Trade.pageSearchPhotographers'
+    if (!searchType || searchType == 'photographer') {
+        url = 'User.pageSearchPhotographers'
     }
     var pageSize = req.param('pageSize') || '1'
     var pageIndex = req.param('pageIndex') || '0'
@@ -24,7 +24,7 @@ router.get('/', function (req, res) {
             country: '中国',
             pageSize: pageSize,
             pageIndex: pageIndex,
-            //orderType: orderType
+            orderType: orderType
         },
         req: req,
         callback: function (err, data) {

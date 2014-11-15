@@ -154,7 +154,6 @@
                     type: 'post',
                     data:{
                         service: 'User.updatePassword',
-                        userName: options.me.userName,
                         oldPassword: current,
                         newPassword: newPwd
                     },

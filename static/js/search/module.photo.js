@@ -22,7 +22,7 @@
                 App.common.modules.page.init($('.page-wrap', container), {
                     page: options.page,
                     callback: function (index) {
-                        App.modules.photoSearch.setValue('pageIndex', index - 1)
+                        App.modules.photoSearch.setValue('pageIndex', index)
                     }
                 })
             }

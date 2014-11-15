@@ -46,20 +46,20 @@
             var panel = self.__panel
 
             panel.on('click', '.page-index', function () {
-                options.callback($(this).data('index'))
+                options.callback($(this).data('index') - 1)
             })
 
             panel.on('click', '.page-arrow-left', function () {
-                var index = options.page.currentPage - 1
-                if (index < 1) {
+                var index = options.page.pageIndex - 1
+                if (index < 0) {
                     return false
                 }
                 options.callback(index)
             })
 
             panel.on('click', '.page-arrow-right', function () {
-                var index = options.page.currentPage + 1
-                if (index > options.page.totalPage) {
+                var index = options.page.pageIndex + 1
+                if (index >= options.page.pageCount) {
                     return false
                 }
                 options.callback(index)

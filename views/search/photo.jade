@@ -21,7 +21,7 @@ block content
                 a#photo-rule 作品量
         if !searchType || searchType == 'photographer'
             if !data.data || data.data.length == 0
-                div 没有找到数据
+                div 亲，没有您要的摄影师。我们会尽快安排摄影师入驻的。感谢支持
             else
                 each item, index in data.data
                     div.result-item-box.result-item-box-person
@@ -57,7 +57,7 @@ block content
                                             img(src="#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}")
         else
             if !data.data || data.data.length == 0
-                div 没有找到数据
+                div 很遗憾，没有找到您需要的服务套系。请试试其他搜索条件
             else
             each item, index in data.data
                 div.result-item-box.result-item-box-service
