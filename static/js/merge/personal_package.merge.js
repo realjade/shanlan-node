@@ -14,4 +14,4 @@ document.write("<script src='//static.mgcheng.com/static/js/libs/province/provin
 document.write('<script src="//static.mgcheng.com/static/js/common/module.personallayout.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.dialog.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.smallnote.js"></script>')
-document.write('<script src="//static.mgcheng.com/static/js/personalphotographer/module.package.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/personal/module.package.js"></script>')
