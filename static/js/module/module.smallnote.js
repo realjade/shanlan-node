@@ -22,6 +22,8 @@ $(function(){
         if(SmallNote.present) {
             SmallNote.present.__remove();
         }
+
+        //remove:true，直接删掉
         if(!this.options.remove){
             SmallNote.present = this;
             $(document.body).append(element);
