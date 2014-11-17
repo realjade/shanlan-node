@@ -1,0 +1,82 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_orderdetail.merge.css")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalHeader
+block content
+    div.mod-personal-orderdetail
+        a(href="/personal/order") << 返回订单列表
+        div.box#order-info
+            div.title 订单详细信息
+            div.no No. P1234567890
+            table.body
+                tr
+                    td
+                        div.desc 预订日期:
+                        div 2014年11月11日
+                    td
+                        div.desc 拍摄日期:
+                        div 2014年12月12日
+                tr
+                    td
+                        div.desc 摄影师:
+                        a 小五
+                    td
+                        div.desc 联系方式:
+                        ul
+                            li Tel: 12345678909
+                            li QQ: 1234567890
+                            li 微信: odine023
+                tr
+                    td
+                        div.desc 预订套系:
+                        div
+                            a 《高级定制团队个人写真	》
+                            div
+                    td
+                        div.desc 备注:
+                        div 管饭
+                tr
+                    td(colspan=2)
+                        div.desc 订单状态:
+                        div
+                tr
+                    td
+                        div.desc 总价格:
+                        div.price 1000 元
+                    td
+                        div.desc 已付金额:
+                        div.price 300 元
+        div.box#order-photo
+            div.title 照片
+            div.body
+                div.photo-box
+                    img(src="//static.mgcheng.com/static/css/profile/images/trade-1-1.png")
+                div.bar
+                    div.desc 打包下载:
+                    a.download-enabled
+                    button.delete-btn.ui-pillbutton.ui-pb-caution 全部删除
+        div.box#order-comments
+            div.title 您的评价
+            div.body
+                ul
+                    li
+                        div.desc 满意度:
+                        div.star-line(clicked="false")
+                            div.star#score-1
+                            div.star#score-2
+                            div.star#score-3
+                            div.star#score-4
+                            div.star#score-5
+                            div.score
+                    li
+                        div.desc 评论:
+                        textarea
+                div.bar
+                    button.button.button-flat-primary 确定
+        a.button.button-flat.back-btn(href="/personal/order") 返回订单列表
+
+block js
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_orderdetail.merge.js")}')

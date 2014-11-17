@@ -10,13 +10,14 @@ block content
         table.order-table
             thead
                 tr
-                    th 交易编号
+                    th 订单编号
                     th 摄影师
                     th 预订套系
-                    th 预定时间
+                    th 拍摄日期
                     th 已支付金额
                     th 状态
                     th 照片下载
+                    th 详情
             tbody
                 tr
                     td.order-no P1234567890
@@ -28,6 +29,8 @@ block content
                     td 交易完成
                     td
                         a.download-enabled
+                    td
+                        a(href="/personal/orderdetail/P1234567890") 详情>
                 tr
                     td.order-no P1234567890
                     td
@@ -38,6 +41,8 @@ block content
                     td 等待拍摄
                     td
                         a
+                    td
+                        a(href="/personal/orderdetail/P1234567890") 详情>
 
 
 block js
