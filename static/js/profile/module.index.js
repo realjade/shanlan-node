@@ -42,7 +42,7 @@
                         var data = data.data
                         $.each(data, function(idx, item){
                             var wrapPath = App.common.modules.common.wrapPhotoPath(item.filePath)
-                            item.thumbnailPath = wrapPath.thumbnall_200
+                            item.thumbnailPath = wrapPath.thumbnall_100
                             item.filePath = wrapPath.compress
                             item.realPath = wrapPath.realPath
                         })
