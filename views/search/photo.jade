@@ -26,18 +26,20 @@ block content
                 each item, index in data.data
                     div.result-item-box.result-item-box-person
                         div.item-info-wrap
-                            div.item-avatar
+                            a.item-avatar(href="/profile/#{item.photographer.userName}")
                                 img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
-                            div.item-name #{item.photographer.nickName}
-                            div.item-city #{item.photographer.city}
-                            div.item-score
+                            a.item-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
+                            div.item-city #{item.photographer.addressBean.city}
+                            // -div.item-score
                                 img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
                                 div (4.9)
-                            div.item-collections 作品集: 41
-                            div.item-trades 交易数: 135
+                            div.item-collections 作品集: #{item.photographer.collectionCount}
+                            //- div.item-trades 交易数: 135
                             div.item-tags
-                                div.tag #{item.photoType[0]}
-                                div.tag #{item.photoStyle[0]}
+                                if item.photoType[0]
+                                    div.tag #{item.photoType[0]}
+                                if item.photoStyle[0]
+                                    div.tag #{item.photoStyle[0]}
                             div.item-description
                                 div.quote-left-icon
                                 span.detail(title="#{item.photographer.signature}") #{item.photographer.signature}
@@ -66,8 +68,10 @@ block content
                             li#pack-main-info
                                 div.pack-name #{item.photoPackage.name}
                                 div.pack-tags
-                                    div.tag #{item.photoType[0]}
-                                    div.tag #{item.photoStyle[0]}
+                                    if item.photoType[0]
+                                        div.tag #{item.photoType[0]}
+                                    if item.photoStyle[0]
+                                        div.tag #{item.photoStyle[0]}
                                 div.pack-price
                                     span #{item.photoPackage.price}
                                     span.pack-price-unit 元
@@ -85,13 +89,13 @@ block content
                                 if item.photoPackage.isMakeup > 0
                                     div.pack-icon.pack-makeup-yes
                     div.item-person-wrap
-                        div.person-avatar
+                        a.person-avatar(href="/profile/#{item.photographer.userName}")
                             img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
-                        div.person-name #{item.photographer.nickName}
+                        a.person-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
                         div.person-city (广州)
-                        div.person-collections 作品集:41
-                        div.person-trade 交易数:135
-                        div.person-score
+                        div.person-collections 作品集:#{item.photographer.collectionCount}
+                        //- div.person-trade 交易数:135
+                        //- div.person-score
                             img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
                             div (4.9)
                     div.item-groups-wrap
