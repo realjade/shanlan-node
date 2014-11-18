@@ -21,12 +21,11 @@
         __bindEvent: function () {
             var self = this
             var container = self.__container
-
         }
     }
 
     $(function () {
-        personalOrder.init($('.mod-personal'))
+        personalOrder.init($('.mod-personal-order'))
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 

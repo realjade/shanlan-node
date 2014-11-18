@@ -33,6 +33,18 @@ router.get('/order', filter.login, function (req, res) {
     })
 })
 
+/* user order detail. */
+router.get('/orderdetail/:orderId', filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+    var orderId = req.params.orderId
+
+
+    res.render('personal/orderdetail', {
+        subTab: 'order'
+    })
+})
+
 /* photographer package */
 router.get('/package', filter.login, function (req, res) {
     var me = res.locals._user

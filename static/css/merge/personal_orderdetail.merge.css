@@ -1,0 +1,15 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/11/16
+  * Time: 23:15
+  *
+  */
+@import url('../common/reset.css');
+@import url('../common/module.common.css');
+@import url('../common/module.layout.css');
+@import url('../module/button.css');
+@import url('../module/component.css');
+@import url('../module/module.dialog.css');
+@import url('../common/module.personallayout.css');
+@import url('../personal/module.orderdetail.css');

@@ -1,0 +1,169 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/11/16
+  * Time: 13:53
+  *
+  */
+.mod-personal-orderdetail{
+    width:900px;
+    margin:15px auto 50px auto;
+    color: #666;
+    overflow: hidden;
+}
+.mod-personal-orderdetail a{
+    color: #666;
+}
+.mod-personal-orderdetail a:hover{
+    color: #218EFF;
+}
+.mod-personal-orderdetail .box{
+    position: relative;
+    margin:10px 0 20px 0;
+    width: 100%;
+    border-top: none;
+    overflow: hidden;
+}
+.mod-personal-orderdetail .title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #77B9FD;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+.mod-personal-orderdetail #order-info .no{
+    position: absolute;
+    top: 11px;
+    right: 40px;
+    color: #fff;
+    font-size: 12px;
+}
+.mod-personal-orderdetail .body{
+    width: 850px;
+    margin:0 25px;
+    border: 1px solid #eeeff2;
+    background-color: #F9F9FC;
+}
+.mod-personal-orderdetail tr{
+    border-bottom: 1px solid #fff;
+}
+
+.mod-personal-orderdetail tr:last-child{
+    border-bottom: none;
+}
+.mod-personal-orderdetail td{
+    width: 50%;
+    padding: 15px 0 15px 30px;
+    vertical-align: top;
+}
+.mod-personal-orderdetail ul{
+    display: inline-block;
+}
+.mod-personal-orderdetail li{
+    padding: 3px 0;
+}
+.mod-personal-orderdetail .desc{
+    display: inline-block;
+    float: left;
+    width:80px;
+    font-size: 12px;
+}
+
+.mod-personal-orderdetail div{
+    display: inline-block;
+}
+
+.mod-personal-orderdetail #order-photo{
+    margin:5px;
+}
+.mod-personal-orderdetail #order-photo .photo-box{
+    max-height:600px;
+    overflow: auto;
+    margin: 10px 10px 0 10px;
+}
+.mod-personal-orderdetail #order-photo img{
+    display: inline-block;
+    width:100px;
+    height:100px;
+    margin:5px;
+}
+.mod-personal-orderdetail #order-photo .bar,
+.mod-personal-orderdetail #order-comments .bar{
+    height:50px;
+    display: block;
+    padding: 5px 0 5px 570px;
+    border-top:1px solid #fff
+}
+
+.mod-personal-orderdetail #order-photo .bar .desc{
+    width:70px;
+    height:50px;
+    line-height: 50px;
+    padding:0;
+    margin:0;
+}
+.mod-personal-orderdetail #order-photo .bar .download-enabled{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 2px auto;
+    background: url('./images/download.png') no-repeat 0 10px;
+}
+
+.mod-personal-orderdetail #order-photo .bar .download-enabled:hover{
+    background: url('./images/download-active.png') no-repeat 0 10px;
+}
+.mod-personal-orderdetail #order-photo .delete-btn{
+    display: inline-block;
+    position: relative;
+    top:-23px;
+    left:50px;
+    width:75px;
+}
+.mod-personal-orderdetail #order-comments .body{
+    padding: 15px 0 0 0;
+}
+.mod-personal-orderdetail #order-comments li{
+    padding: 5px 30px;
+}
+.mod-personal-orderdetail #order-comments textarea{
+    margin: 10px 0 0 0;
+    width: 687px;
+    height: 120px;
+    overflow: auto;
+}
+.mod-personal-orderdetail #order-comments button{
+    position: relative;
+    top:7px;
+    left:150px;
+}
+.mod-personal-orderdetail #order-comments .star-line{
+    background:url('images/star-0.png') no-repeat;
+}
+.mod-personal-orderdetail #order-comments .star{
+    display: inline-block;
+    height:40px;
+    width: 40px;
+    cursor: pointer;
+}
+.mod-personal-orderdetail #order-comments .score{
+    position: relative;
+    top:-11px;
+    left:15px;
+    height:20px;
+    width:50px;
+    font-size: 18px;
+}
+
+.mod-personal-orderdetail #order-comments .desc{
+    height:40px;
+    line-height: 40px;
+}
+
+.mod-personal-orderdetail .back-btn{
+    float: right;
+    margin: 0 50px 0 0;
+}
