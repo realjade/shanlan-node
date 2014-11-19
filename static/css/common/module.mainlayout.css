@@ -189,3 +189,9 @@
 .mod-header-gap {
     height: 0px;
 }
+.mod-footer{
+    height: 50px;
+    line-height: 50px;
+    color: #a6a6a6;
+    text-align: center;
+}

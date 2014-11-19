@@ -109,6 +109,13 @@
     float:left;
     width:110px;
 }
+.mod-profile-header .user-info .info-signature{
+    width: 340px;
+    padding: 0 20px;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+}
 .mod-profile-header .user-info .info-key{
     margin:0 10px 0 0;
     font-size:14px;
