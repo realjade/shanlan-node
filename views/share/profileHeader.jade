@@ -7,17 +7,18 @@
             div.user-title
                 span#user-name #{owner.nickName}
                 span ·
-                span#user-city 广州
+                span#user-city #{owner.addressBean.city}
             div.user-content
                 div.info-item
                     span.info-key 作品集
-                    span.info-value#user-collections 45
-                div.info-item
+                    span.info-value#user-collections #{owner.collectionCount}
+                //- div.info-item
                     span.info-key 交易
                     span.info-value#user-trades 138
-                div.info-item
+                //- div.info-item
                     span.info-key 评价
                     span.info-value#user-score 9.1
+            div.info-signature #{owner.signature}
     div.profile-nav
         ul.nav
             li.avatar-wrap
@@ -38,7 +39,7 @@
                     a.active(href="/profile/package/#{owner.userName}") 套系预订
                 else
                     a(href="/profile/package/#{owner.userName}") 套系预订
-            li
+            //- li
                 if subTab == 'trade'
                     a.active(href="/profile/trade/#{owner.userName}") 交易评价
                 else

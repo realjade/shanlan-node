@@ -16,19 +16,7 @@
             self.__container = container
             self.__options = options
 
-            self.__calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
-                selectedDay: {
-                    1413993600000: true,
-                    1414080000000: true
-                },
-                clickCallback: function (date) {
-                    $('.date-selected .bk-date', container).text(date.year + '-' + date.month + '-' + date.day + '（' + date.weekdayname + '）')
-                }
-            })
-
             self.__initBookedDate()
-
-            self.__bindEvent()
         },
 
         __initBookedDate: function () {
@@ -44,7 +32,19 @@
                 },
                 success: function (data) {
                     if (data.code === 200) {
+                        var data = data.data
+                        var timeObj = {}
+                        _.each(data, function(item, index){
+                            timeObj[item] = true
+                        })
+                        self.__calendar = App.common.modules.calendar.init($('.custom-calendar-wrap', container), {
+                            selectedDay: timeObj,
+                            clickCallback: function (date) {
+                                $('.date-selected .bk-date', container).text(date.year + '-' + date.month + '-' + date.day + '（' + date.weekdayname + '）')
+                            }
+                        })
 
+                        self.__bindEvent()
                     }
                 }
             })

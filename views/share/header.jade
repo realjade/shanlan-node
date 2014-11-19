@@ -4,35 +4,35 @@ div.mod-header-wrap#m-header
     ul.header-nav
         li
             if tab == 'travel'
-                a.active#header-travel(href='') 旅拍
+                a.active#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
             else
-                a#header-travel(href='') 旅拍
+                a#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
         li
             if tab == 'wedding'
-                a.active#header-wedding(href='') 婚纱
+                a.active#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
             else
-                a#header-wedding(href='') 婚纱
+                a#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
         li
             if tab == 'portrait'
-                a.active#header-portrait(href='') 写真
+                a.active#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
             else
-                a#header-portrait(href='') 写真
-        li
+                a#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
+        //- li
             if tab == 'couple'
                 a.active#header-couple(href='') 情侣
             else
                 a#header-couple(href='') 情侣
         li
             if tab == 'activity'
-                a.active#header-activity(href='') 活动
+                a.active#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
             else
-                a#header-activity(href='') 活动
-        li
+                a#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
+        //- li
             if tab == 'free'
                 a.active#header-free(href='') 互免
             else
                 a#header-free(href='') 互免
-        li
+        //- li
             if tab== 'clothes'
                 a.active#header-clothes(href='') 镁装
             else

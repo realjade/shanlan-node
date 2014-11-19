@@ -6,148 +6,166 @@
   *
   */
 
-html body{
+html body {
     background-color: #f5f5f7;
 }
 
-.mod-package{
+.mod-package {
     position: relative;
     margin: 50px auto 50px;
     width: 1180px;
 }
 
-.pack-wrap{
-    float:left;
+.pack-wrap {
+    float: left;
     width: 700px;
-    padding:0 50px 0 0;
+    padding: 0 50px 0 0;
     border-right: 1px solid #cbcbcb;
 }
-.order-wrap{
-    float:left;
+
+.order-wrap {
+    float: left;
     width: 370px;
-    padding:0 0 0 50px;
+    padding: 0 0 0 50px;
 }
-.pack-type-wrap{
-    position:relative;
-    display:table;
-    height:60px;
+
+.pack-type-wrap {
+    position: relative;
+    display: table;
+    height: 60px;
     background-color: #ffffff;
     box-shadow: 1px 1px 5px #cbcbcb;
-    margin:0 0 1px 0;
+    margin: 0 0 1px 0;
 }
-.pack-type{
-    display:table-cell;
+
+.pack-type {
+    display: table-cell;
     vertical-align: middle;
     text-align: center;
-    height:65px;
-    width:175px;
+    height: 65px;
+    width: 175px;
     color: #495468;
     font-weight: 300;
     font-size: 20px;
     border-top: 5px solid #ffffff;
     border-bottom: 5px solid #ffffff;
 }
-.middle-line{
-    display:table-cell;
-    width:1px;
-    height:100%;
-    background-color:  #E0E0E0;
+
+.middle-line {
+    display: table-cell;
+    width: 1px;
+    height: 100%;
+    background-color: #E0E0E0;
 }
-.type-focus{
+
+.type-focus {
     border-top: 5px solid #ef4f69;
 }
-.pack-list{
-    margin:30px 0 70px 0;
+
+.pack-list {
+    margin: -20px 0 70px 0;
 }
-.pack-block{
-    position:relative;
+
+.pack-block {
+    position: relative;
     background-color: #ffffff;
-    margin:20px 0 30px 0;
-    width:555px;
+    margin: 20px 0 30px 0;
+    width: 555px;
     box-shadow: 1px 1px 5px #cbcbcb;
-    padding:25px 60px 30px 85px;
-    overflow:hidden;
+    padding: 25px 60px 30px 85px;
+    overflow: hidden;
 }
-.pack-focus{
+
+.pack-focus {
     background-color: #0099ff;
-    color:#ffffff;
+    color: #ffffff;
 }
-.pack-no{
-    position:absolute;
+
+.pack-no {
+    position: absolute;
     left: 0px;
-    border:2px solid #ef4f69;
-    border-radius:50%;
-    margin:6px 14px 14px 18px;
-    width:30px;
-    height:30px;
-    padding:5px;
+    border: 2px solid #ef4f69;
+    border-radius: 50%;
+    margin: 6px 14px 14px 18px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
     text-align: center;
-    color:#ef4f69;
-    font-size:20px;
+    color: #ef4f69;
+    font-size: 20px;
 }
-.pack-head-wrap{
-    float:left;
-    position:relative;
-    width:430px;
-    padding:0px 0px 10px 0px;
+
+.pack-head-wrap {
+    float: left;
+    position: relative;
+    width: 430px;
+    padding: 0px 0px 10px 0px;
 }
-.pack-name{
-    font-size:22px;
+
+.pack-name {
+    font-size: 22px;
 }
-.pack-price{
-    float:left;
-    position:relative;
-    font-size:28px;
-    padding:10px 0px 30px 20px;
-    width:90px;
+
+.pack-price {
+    float: left;
+    position: relative;
+    font-size: 28px;
+    padding: 10px 0px 30px 20px;
+    width: 90px;
     background: url(./images/RMB.png) no-repeat 3px 15px;
 }
-.pack-photo-num{
-    float:left;
-    position:relative;
-    padding:12px 40px 0 35px;
-    height:30px;
-    background:url(./images/photo.png) no-repeat 0 14px;
+
+.pack-photo-num {
+    float: left;
+    position: relative;
+    padding: 12px 40px 0 35px;
+    height: 30px;
+    background: url(./images/photo.png) no-repeat 0 14px;
     font-size: 18px;
 }
-.pack-time{
-    float:left;
-    position:relative;
-    padding:12px 0 0 35px;
-    height:30px;
-    background:url(./images/time.png) no-repeat 0 13px;
+
+.pack-time {
+    float: left;
+    position: relative;
+    padding: 12px 0 0 35px;
+    height: 30px;
+    background: url(./images/time.png) no-repeat 0 13px;
     font-size: 18px;
 }
-.pack-detail{
-    float:left;
-    position:relative;
-    left:-20px;
-    width:100%;
+
+.pack-detail {
+    float: left;
+    position: relative;
+    left: -20px;
+    width: 100%;
     border-top: 1px solid #333;
     margin: 5px 0 0px 0px;
-    padding:5px 0px 0 20px;
+    padding: 5px 0px 0 20px;
 }
-.pack-detail img{
-    width:100%;
+
+.pack-detail img {
+    width: 100%;
 }
-.pack-select-btn{
-    float:right;
-    position:relative;
+
+.pack-select-btn {
+    float: right;
+    position: relative;
     background-color: #b6b6b6;
-    letter-spacing:25px;
-    width:120px;
-    height:28px;
-    padding:5px 5px 5px 25px;
-    margin:10px 10px 0 0;
+    letter-spacing: 25px;
+    width: 120px;
+    height: 28px;
+    padding: 5px 5px 5px 25px;
+    margin: 10px 10px 0 0;
     text-align: center;
-    color:#ffffff;
-    font-size:18px;
+    color: #ffffff;
+    font-size: 18px;
 }
-.btn-focus{
+
+.btn-focus {
     background-color: #989898;
 }
 
-.booking-box{
+.booking-box {
     position: relative;
     display: table;
     background-color: #ffffff;
@@ -156,57 +174,67 @@ html body{
     width: 100%;
     overflow: hidden;
 }
-.bk-title-wrap{
+
+.bk-title-wrap {
     height: 40px;
     color: #495468;
     font-size: 18px;
-    border-bottom:1px solid #cbcbcb;
-    padding:8px 0 0 22px;
+    border-bottom: 1px solid #cbcbcb;
+    padding: 8px 0 0 22px;
 }
-.bk-info{
-    padding:20px 0 0 5px;
+
+.bk-info {
+    padding: 20px 0 0 5px;
 }
-.bk-pack > ul{
+
+.bk-pack > ul {
     padding: 0px 10px 5px 10px;
-    font-size:14px;
+    font-size: 14px;
     overflow: hidden;
 }
-.bk-pack-name{
-    float:left;
-    width:250px;
+
+.bk-pack-name {
+    float: left;
+    width: 250px;
 }
-.bk-tag{
-    font-size:14px;
-    padding:0 10px 0 10px;
-    float:left;
+
+.bk-tag {
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    float: left;
 }
-.bk-note-container{
-    float:left;
-    width:258px;
-    height:40px;
-    border-left:1px solid #cbcbcb;
-    margin:5px 0 10px 0;
+
+.bk-note-container {
+    float: left;
+    width: 258px;
+    height: 40px;
+    border-left: 1px solid #cbcbcb;
+    margin: 5px 0 10px 0;
 }
-.bk-note{
-    border:0;
-    width:100%;
-    height:100%;
-    font-size:12px;
+
+.bk-note {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
 }
-.bk-btn{
+
+.bk-btn {
     height: 40px;
     line-height: 40px;
     width: 370px;
     margin-top: 10px;
 }
-.bk-btn >span{
+
+.bk-btn > span {
     letter-spacing: 20px;
-    padding-left:20px;
+    padding-left: 20px;
 }
+
 .reminding-wrap {
-    margin:25px 0 0 0;
-    padding:5px;
-    font-size:12px;
+    margin: 25px 0 0 0;
+    padding: 5px;
+    font-size: 12px;
 }
 
 /* Calendar Instance */
@@ -216,6 +244,7 @@ html body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 .calendar-main {
     width: 100%;
     margin: 0 auto;
