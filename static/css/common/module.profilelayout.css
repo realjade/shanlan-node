@@ -29,7 +29,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: url(../profile/images/bg.jpg);
+    background-image: url(../profile/images/bg.jpg);
+    -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat
