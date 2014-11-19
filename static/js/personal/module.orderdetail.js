@@ -14,8 +14,50 @@
         init: function (container) {
             var self = this
             self.__container = container
-
+            self.__initScore()
             self.__bindEvent()
+        },
+
+        __initScore: function(){
+            var self = this
+            var container = self.__container
+            var bg = container.find('.star-line')
+            var score = bg.attr('score')
+            var scoreTxt = container.find('.score')
+            if(bg.attr('clicked') == 'true' && score){
+                switch(score){
+                    case '1':
+                        bg.css({
+                            background:'url("//static.mgcheng.com/static/css/personal/images/star-1.png") no-repeat'
+                        })
+                        scoreTxt.text('1分')
+                        break
+                    case '2':
+                        bg.css({
+                            background:'url("//static.mgcheng.com/static/css/personal/images/star-2.png") no-repeat'
+                        })
+                        scoreTxt.text('2分')
+                        break
+                    case '3':
+                        bg.css({
+                            background:'url("//static.mgcheng.com/static/css/personal/images/star-3.png") no-repeat'
+                        })
+                        scoreTxt.text('3分')
+                        break
+                    case '4':
+                        bg.css({
+                            background:'url("//static.mgcheng.com/static/css/personal/images/star-4.png") no-repeat'
+                        })
+                        scoreTxt.text('4分')
+                        break
+                    case '5':
+                        bg.css({
+                            background:'url("//static.mgcheng.com/static/css/personal/images/star-5.png") no-repeat'
+                        })
+                        scoreTxt.text('5分')
+                        break
+                }
+            }
         },
 
         __bindEvent: function () {

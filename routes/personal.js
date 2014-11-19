@@ -39,9 +39,22 @@ router.get('/orderdetail/:orderId', filter.login, function (req, res) {
     var ownerUserName = (me && me.userName) || null
     var orderId = req.params.orderId
 
-
-    res.render('personal/orderdetail', {
-        subTab: 'order'
+    utils.ajax({
+        url: 'Trade.getTradeOrderDetailInfo',
+        method: 'get',
+        data: {
+            tradeOrderId: orderId
+        },
+        req: req,
+        callback: function (err, data) {
+            if(data.code == 200){
+                data.data.subTab = 'order'
+                res.render('personal/orderdetail',data.data)
+            }
+            else{
+                res.render('personal/order', {subTab: 'order'})
+            }
+        }
     })
 })
 

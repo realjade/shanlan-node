@@ -10,50 +10,48 @@ block content
         a(href="/personal/order") << 返回订单列表
         div.box#order-info
             div.title 订单详细信息
-            div.no No. P1234567890
-            table.body
-                tr
-                    td
-                        div.desc 预订日期:
-                        div 2014年11月11日
-                    td
-                        div.desc 拍摄日期:
-                        div 2014年12月12日
-                tr
-                    td
-                        div.desc 摄影师:
-                        a 小五
-                    td
-                        div.desc 联系方式:
-                        ul
-                            li Tel: 12345678909
-                            li QQ: 1234567890
-                            li 微信: odine023
-                tr
-                    td
-                        div.desc 预订套系:
-                        div
-                            a 《高级定制团队个人写真	》
+            if tradeOrder
+                div.no No. #{tradeOrder.number}
+                table.body
+                    tr
+                        td
+                            div.desc 摄影师:
+                            a #{tradeOrder.seller}
+                        td
+                            div.desc 预订套系:
                             div
-                    td
-                        div.desc 备注:
-                        div 管饭
-                tr
-                    td(colspan=2)
-                        div.desc 订单状态:
-                        div
-                tr
-                    td
-                        div.desc 总价格:
-                        div.price 1000 元
-                    td
-                        div.desc 已付金额:
-                        div.price 300 元
+                                if tradeOrderItems.length > 0
+                                    a(href='/profile/package/#{tradeOrder.seller}') 《#{tradeOrderItems[0].tradeOrderItem.goodsName}》
+                    tr
+                        td
+                            div.desc 预订日期:
+                            div #{tradeOrder.createdAt}
+                        td
+                            div.desc 拍摄日期:
+                            div #{tradeOrder.validDate}
+                    tr
+                        td
+                            div.desc 备注:
+                            div 管饭
+                        td
+                    tr
+                        td(colspan=2)
+                            div.desc 订单状态:
+                            div #{tradeOrder.status}
+                    tr
+                        td
+                            div.desc 总价格:
+                            div.price #{totalAmount} 元
+                        td
+                            div.desc 已付金额:
+                            div.price #{payedAmount} 元
         div.box#order-photo
             div.title 照片
             div.body
                 div.photo-box
-                    img(src="//static.mgcheng.com/static/css/profile/images/trade-1-1.png")
+                    if tradeOrderItems.length > 0
+                        each item in tradeOrderItems[0].photos
+                            img(src="#{item.photoPath.replace('_X_X', '_THUMBNAIL_100_100')}")
                 div.bar
                     div.desc 打包下载:
                     a.download-enabled
@@ -64,16 +62,28 @@ block content
                 ul
                     li
                         div.desc 满意度:
-                        div.star-line(clicked="false")
-                            div.star#score-1
-                            div.star#score-2
-                            div.star#score-3
-                            div.star#score-4
-                            div.star#score-5
-                            div.score
+                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                            div.star-line(clicked="true" score="#{tradeOrderItems[0].tradeComments[0].score}")
+                                div.star#score-1
+                                div.star#score-2
+                                div.star#score-3
+                                div.star#score-4
+                                div.star#score-5
+                                div.score
+                        else
+                            div.star-line(clicked="false" )
+                                div.star#score-1
+                                div.star#score-2
+                                div.star#score-3
+                                div.star#score-4
+                                div.star#score-5
+                                div.score
                     li
                         div.desc 评论:
-                        textarea
+                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                            textarea #{tradeOrderItems[0].tradeComments[0].content}
+                        else
+                            textarea
                 div.bar
                     button.button.button-flat-primary 确定
         a.button.button-flat.back-btn(href="/personal/order") 返回订单列表

@@ -12,10 +12,10 @@
     overflow: hidden;
 }
 .mod-personal-orderdetail a{
-    color: #666;
+    color: #218EFF;
 }
 .mod-personal-orderdetail a:hover{
-    color: #218EFF;
+    color: #77B9FD;
 }
 .mod-personal-orderdetail .box{
     position: relative;
