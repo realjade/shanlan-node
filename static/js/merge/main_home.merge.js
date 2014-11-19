@@ -9,6 +9,5 @@ document.write('<script src="//static.mgcheng.com/static/js/common/module.common
 document.write('<script src="//static.mgcheng.com/static/js/common/module.layout.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/common/module.photo.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.dialog.js"></script>')
-document.write('<script src="//static.mgcheng.com/static/js/module/module.searchbox.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/libs/jquery/jcarousel/js/jquery.jcarousel.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/main/module.home.js"></script>')
