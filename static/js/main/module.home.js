@@ -91,26 +91,6 @@
                 }
             }, '#rightArea,#nextCircle2');
 
-            // Collection Events
-            /*container.on({
-             mouseover: function(){
-             $(this).find('.c-bar.bar-top').css({
-             top:'0px'
-             });
-             $(this).find('.c-bar.bar-bottom').css({
-             bottom:'0px'
-             })
-             },
-             mouseout: function(){
-             $(this).find('.c-bar.bar-top').css({
-             top:'-80px'
-             });
-             $(this).find('.c-bar.bar-bottom').css({
-             bottom:'-80px'
-             })
-             }
-             },'.c-block')*/
-
         }
     }
 

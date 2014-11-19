@@ -195,15 +195,14 @@
     -ms-transition: .3s;
     transition: .3s;
 }
-.ui-pg1{
+.ui-pg1,
+.ui-pg1-static{
     position: relative;
     width:90%;
     cursor: pointer;
 }
-.ui-pg1 img{
-    position: absolute;
-    top:1px;
-    left:2px;
+.ui-pg1 img,
+.ui-pg1-static img{
     width: 100%;
     height:100%
 }
@@ -216,7 +215,8 @@
     transform: rotate(-1deg);
 }
 
-.ui-pg1 .ui-bor{
+.ui-pg1 .ui-bor,
+.ui-pg1-static .ui-bor{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -224,11 +224,13 @@
     background: #fff;
     opacity: 1;
     filter: alpha(opacity=100);
+    z-index:-10;
 }
 
-.ui-pg1 .ui-bor:first-child{
-    left: 8px;
-    top: 8px;
+.ui-pg1 .ui-bor:first-child,
+.ui-pg1-static .ui-bor:first-child{
+    left: 7px;
+    top: 7px;
 }
 
 .ui-pg1:hover .ui-bor:first-child{
@@ -238,9 +240,10 @@
     -ms-transform: rotate(5deg);
     transform: rotate(5deg);
 }
-.ui-pg1 .ui-bor:nth-child(2){
-    left: 6px;
-    top: 6px;
+.ui-pg1 .ui-bor:nth-child(2),
+.ui-pg1-static .ui-bor:nth-child(2){
+    left: 5px;
+    top: 5px;
 }
 
 .ui-pg1:hover .ui-bor:nth-child(2){
@@ -252,9 +255,10 @@
 }
 
 
-.ui-pg1 .ui-bor:nth-child(3){
-    left: 4px;
-    top: 4px;
+.ui-pg1 .ui-bor:nth-child(3),
+.ui-pg1-static .ui-bor:nth-child(3){
+    left: 3px;
+    top: 3px;
 }
 
 .ui-pg1:hover .ui-bor:nth-child(3){
@@ -265,9 +269,10 @@
     transform: rotate(-1deg);
 }
 
-.ui-pg1 .ui-bor:nth-child(4){
-    left: 2px;
-    top: 2px;
+.ui-pg1 .ui-bor:nth-child(4),
+.ui-pg1-static .ui-bor:nth-child(4){
+    left: 1px;
+    top: 1px;
 }
 
 .ui-pg1:hover .ui-bor:nth-child(4){
