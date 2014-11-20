@@ -9,18 +9,19 @@
 .mod-personal-order{
     box-sizing: border-box;
     width:1000px;
+    min-height:500px;
     padding: 0 50px 100px 50px;
     margin:0 auto;
     overflow: hidden;
     color:#333;
 }
 .mod-personal-order a:hover{
-    color: #77B9FD;
+    color: #30ACFF;
 }
 .order-table{
     width:100%;
     margin:20px 0;
-    border-bottom: 2px solid #77B9FD;
+    border-bottom: 2px solid #30ACFF;
     font-size: 12px;
 }
 .order-table a{
@@ -29,7 +30,7 @@
 .order-table thead tr{
     height:55px;
     border:none;
-    background-color: #77B9FD;
+    background-color: #30ACFF;
     color:#fff;
     font-size: 14px;
     text-align: center;
@@ -38,7 +39,7 @@
 }
 .order-table tbody tr{
     height:55px;
-    border-bottom: 1px dotted #77B9FD;
+    border-bottom: 1px dotted #30ACFF;
 }
 .order-table tbody td{
     padding:0 5px;

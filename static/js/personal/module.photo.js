@@ -13,8 +13,8 @@
         '{{#data}}' +
         '   <div class="item" >' +
         '       <div class="photo-wrap ui-pg1" id="{{id}}">' +
-        '           <img src="{{coverImg}}"/>' +
         '           <span class="ui-bor"/><span class="ui-bor"/><span class="ui-bor"/><span class="ui-bor"/>' +
+        '           <img src="{{coverImg}}"/>' +
         '       </div>' +
         '       <a class="name" id="{{id}}">《{{name}}》</a>' +
         '   </div>' +

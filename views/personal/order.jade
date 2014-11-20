@@ -7,43 +7,52 @@ block header
         include ../share/personalHeader
 block content
     div.mod-personal-order
-        table.order-table
-            thead
-                tr
-                    th 订单编号
-                    th 摄影师
-                    th 预订套系
-                    th 拍摄日期
-                    th 已支付金额
-                    th 状态
-                    th 照片下载
-                    th 详情
-            tbody
-                tr
-                    td.order-no P1234567890
-                    td
-                        a(href='') 摄影师小五
-                    td 高级定制团队个人写真
-                    td 2014-10-19
-                    td 全额：12800元
-                    td 交易完成
-                    td
-                        a.download-enabled
-                    td
-                        a(href="/personal/orderdetail/1") 详情>
-                tr
-                    td.order-no P1234567890
-                    td
-                        a(href='') 小六
-                    td 个人写真
-                    td 2014-10-19
-                    td 预订：1280元
-                    td 等待拍摄
-                    td
-                        a
-                    td
-                        a(href="/personal/orderdetail/P1234567890") 详情>
+        if !data || data.length == 0
+            div 您还没有预定过服务，现在就去
+            a(hre="/search") 搜索一下
+        else
+            table.order-table
+                thead
+                    tr
+                        th 拍摄日期
+                        th 摄影师
+                        th 预订套系
+                        th 已支付金额
+                        th 状态
+                        th 照片下载
+                        th 详情
+                tbody
+                    each item,index in data
+                        tr(id="#{item.tradeOrder.number}")
+                            td #{item.tradeOrder.validDate}
+                            td
+                                a(href="") #{item.tradeOrder.seller}
+                            if item.tradeOrderItems.length > 0
+                                td
+                                    a(href="/profile/package/#{item.tradeOrder.seller}") #{item.tradeOrderItems[0].goodsName} (#{item.totalAmount}元)
+                            td #{item.payedAmount}元
+                            td #{item.tradeOrder.status}
+                            td
+                                if item.tradeOrder.status == FINISHED
+                                    a.download-enabled
+                            td
+                                if item.tradeOrder.status == FINISHED
+                                    a(href="/personal/orderdetail/#{item.tradeOrder.number}") 查看详情并评价>
+                                else
+                                    a(href="/personal/orderdetail/#{item.tradeOrder.number}") 查看详情>
 
+            div.page-wrap.page-wrap-thin
 
+block footer
+    include ../share/footer
 block js
+    if !!pageCount
+        script.
+            window.pageConfig.page = {
+                pageCount: #{pageCount},
+                pageIndex: #{pageIndex},
+                pageSize: #{pageSize},
+                resultCount: #{resultCount},
+                start: #{start}
+            }
     script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_order.merge.js")}')
