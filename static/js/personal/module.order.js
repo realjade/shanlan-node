@@ -11,10 +11,17 @@
 
         __container: null,
 
-        init: function (container) {
+        init: function (container,options) {
             var self = this
             self.__container = container
-
+            if (options.page) {
+                App.common.modules.page.init($('.page-wrap', container), {
+                    page: options.page,
+                    callback: function (index) {
+                        location.href = '/personal/order?index='+index
+                    }
+                })
+            }
             self.__bindEvent()
         },
 
@@ -25,7 +32,7 @@
     }
 
     $(function () {
-        personalOrder.init($('.mod-personal-order'))
+        personalOrder.init($('.mod-personal-order'),pageConfig)
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 

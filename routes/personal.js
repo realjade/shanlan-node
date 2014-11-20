@@ -23,27 +23,43 @@ router.get('/setting', filter.login, function (req, res) {
 })
 
 
-/* user order. */
-router.get('/order', filter.login, function (req, res) {
+/* user order list. */
+router.get(['/order','/order?index=:index'], filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
+    var index = req.params.index || '0'
 
-    res.render('personal/order', {
-        subTab: 'order'
+    utils.ajax({
+        url: 'Trade.pageTradeOrders',
+        method: 'get',
+        data: {
+            pageIndex: index,
+            pageSize:'10'
+        },
+        req: req,
+        callback: function (err, data) {
+            if(data.code == 200){
+                data.data.subTab = 'order'
+                res.render('personal/order',data.data)
+            }
+            else{
+                res.render('personal/order', {subTab: 'order'})
+            }
+        }
     })
 })
 
 /* user order detail. */
-router.get('/orderdetail/:orderId', filter.login, function (req, res) {
+router.get('/orderdetail/:orderNum', filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
-    var orderId = req.params.orderId
+    var orderNum = req.params.orderNum
 
     utils.ajax({
         url: 'Trade.getTradeOrderDetailInfo',
         method: 'get',
         data: {
-            tradeOrderId: orderId
+            tradeOrderNumber: orderNum
         },
         req: req,
         callback: function (err, data) {

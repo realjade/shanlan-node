@@ -15,7 +15,7 @@
                 callback: $.noop
             }, options)
 
-            if (options.page.pageCount <= 1) return;
+//            if (options.page.pageCount <= 1) return;
 
             self.__panel = $(self.__tpl).appendTo(container)
 

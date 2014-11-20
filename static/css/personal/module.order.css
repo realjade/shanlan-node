@@ -9,6 +9,7 @@
 .mod-personal-order{
     box-sizing: border-box;
     width:1000px;
+    min-height:500px;
     padding: 0 50px 100px 50px;
     margin:0 auto;
     overflow: hidden;

@@ -1,0 +1,67 @@
+/**
+  * @name zhangyy-g@grandsoft.com.cn 
+  * @description zhangyy's code
+  * Date: 14/11/7
+  * Time: 下午2:47
+  *
+  */
+.page-index-wrap{
+    max-width: 900px;
+    padding-left:670px;
+    overflow: hidden;
+    margin:0 auto;
+}
+.page-index-wrap div,
+.page-index-wrap a{
+    float: left;
+    color: #999;
+}
+.page-index-wrap .page-arrow-left{
+    height:0px;
+    width:0px;
+    margin-right:5px;
+    border:15px solid #000;
+    border-color: transparent #BBE4FF transparent transparent;
+}
+.page-index-wrap .page-arrow-left:hover{
+    border-color: transparent #30ACFF transparent transparent;
+}
+
+.page-index-wrap .page-arrow-right{
+    height:0px;
+    width:0px;
+    margin-left:5px;
+    border:15px solid #000;
+    border-color: transparent transparent transparent #BBE4FF;
+}
+.page-index-wrap .page-arrow-right:hover{
+    border-color: transparent transparent transparent #30ACFF;
+}
+.page-index-wrap .page-index{
+    height:15px;
+    width:15px;
+    margin: 3px 5px;
+    padding:3px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.page-index-wrap .page-dots{
+    height:30px;
+    width:30px;
+    margin: 15px 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.page-index-wrap .page-index:hover{
+    color: #fff;
+    background-color: #30ACFF;
+    border-radius: 50%;
+}
+.page-index-wrap .current-page-index{
+    color: #fff;
+    background-color: #B8DCF4;
+    border-radius: 50%;
+}
