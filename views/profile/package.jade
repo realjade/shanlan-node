@@ -36,7 +36,7 @@ block content
                             div.pack-price #{item.price}
                             div.pack-detail
                                 | !{item.description}
-                            div.pack-select-btn.button.button-primary.button-rounded 选择
+                            div.pack-select-btn.button.button-flat-primary.button-rounded 选择
         div.order-wrap
             div.calendar-main
                 include ../module/calendar
@@ -54,7 +54,10 @@ block content
                             span.bk-tag 备注：
                             div.bk-note-container
                                 textarea.bk-note(placeholder="请写点什么")
-                div.bk-btn.button.button-action.button-rounded 预 订
+                        ul.date-selected
+                            span.bk-tag 联系方式：
+                            span #{owner.mobile}&nbsp;#{owner.email}
+                div.bk-btn.button.button-flat-action.button-rounded 预 订
             div.reminding-wrap
                 p.
                     * 建议您预订前先与摄影师沟通，确认具体时间和地点。<br/>
