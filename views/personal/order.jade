@@ -8,8 +8,9 @@ block header
 block content
     div.mod-personal-order
         if !data || data.length == 0
-            div 您还没有预定过服务，现在就去
-            a(hre="/search") 搜索一下
+            div.no-info
+                div 您还没有预定过服务，现在就去
+                a(href="/search") 搜索一下
         else
             table.order-table
                 thead

@@ -22,7 +22,7 @@
             var self = this
             var container = self.__container
             var bg = container.find('.star-line')
-            var score = bg.attr('score')
+            var score = bg.attr('value')
             var scoreTxt = container.find('.score')
             if(bg.attr('clicked') == 'true' && score){
                 switch(score){
@@ -63,6 +63,9 @@
         __bindEvent: function () {
             var self = this
             var container = self.__container
+
+            $('#submit-comments').click(function(){
+            })
 
             container.on('mouseover','.star',function(){
                 var bg = container.find('.star-line')
@@ -139,21 +142,27 @@
                 container.find('.star-line').attr('clicked','true')
                 var scoreTxt = container.find('.score')
                 var scoreId = $(this).attr('id')
+                var bg = container.find('.star-line')
                 switch(scoreId){
                     case 'score-1':
                         scoreTxt.text('1分')
+                        bg.attr('value','1')
                         break
                     case 'score-2':
                         scoreTxt.text('2分')
+                        bg.attr('value','2')
                         break
                     case 'score-3':
                         scoreTxt.text('3分')
+                        bg.attr('value','3')
                         break
                     case 'score-4':
                         scoreTxt.text('4分')
+                        bg.attr('value','4')
                         break
                     case 'score-5':
                         scoreTxt.text('5分')
+                        bg.attr('value','5')
                         break
                 }
             })

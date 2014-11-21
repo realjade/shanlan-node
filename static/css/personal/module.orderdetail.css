@@ -76,9 +76,53 @@
     display: inline-block;
 }
 
+.mod-personal-orderdetail #order-info .status{
+    float: left;
+    width:500px;
+    height:40px;
+}
+.mod-personal-orderdetail #order-info #TOPREPAY{
+    background: url(images/status/toprepay.png);
+}
+
+.mod-personal-orderdetail #order-info #TOCONFIRM{
+    background: url(images/status/toconfirm.png);
+}
+.mod-personal-orderdetail #order-info #TODEAL{
+    background: url(images/status/todeal.png);
+}
+
+.mod-personal-orderdetail #order-info #TOPAY{
+    background: url(images/status/topay.png);
+}
+
+.mod-personal-orderdetail #order-info #FINISHED{
+    background: url(images/status/finished.png);
+}
+
+.mod-personal-orderdetail #order-info .bar button{
+    position: relative;
+    left:320px;
+    width: 170px;
+}
+
+.mod-personal-orderdetail #order-info .bar a:hover{
+    color:#30Acff;
+}
+.mod-personal-orderdetail #order-info .bar a{
+    position: relative;
+    left:570px;
+    height:40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #999;
+}
+
+
 .mod-personal-orderdetail #order-photo{
 }
 .mod-personal-orderdetail #order-photo .photo-box{
+    min-height: 50px;
     max-height:600px;
     overflow: auto;
     margin: 10px 10px 0 10px;
@@ -93,27 +137,55 @@
 .mod-personal-orderdetail #order-comments .bar{
     height:50px;
     display: block;
-    padding: 5px 0 5px 570px;
+    padding: 5px 0;
     border-top:1px solid #fff
 }
 
+.mod-personal-orderdetail #order-photo .bar .icons{
+    min-width:300px;
+    max-width:600px;
+    float: right;
+}
 .mod-personal-orderdetail #order-photo .bar .desc{
-    width:70px;
+    width:60px;
     height:50px;
     line-height: 50px;
     padding:0;
     margin:0;
 }
-.mod-personal-orderdetail #order-photo .bar .download-enabled{
+.mod-personal-orderdetail #order-photo .bar .icon{
     display: inline-block;
+    float: left;
     height: 50px;
-    width: 50px;
-    margin: 2px auto;
-    background: url('./images/download.png') no-repeat 0 10px;
+    width: 80px;
+}
+.mod-personal-orderdetail #order-photo .bar .delete{
+    background: url('./images/delete-gray.png') no-repeat 0 9px;
 }
 
-.mod-personal-orderdetail #order-photo .bar .download-enabled:hover{
-    background: url('./images/download-active.png') no-repeat 0 10px;
+.mod-personal-orderdetail #order-photo .bar .delete:hover{
+    background: url('./images/delete-blue.png') no-repeat 0 9px;
+}
+.mod-personal-orderdetail #order-photo .bar .upload{
+    background: url('./images/upload-gray.png') no-repeat 0 10px;
+}
+
+.mod-personal-orderdetail #order-photo .bar .upload:hover{
+    background: url('./images/upload-blue.png') no-repeat 0 10px;
+}
+.mod-personal-orderdetail #order-photo .bar .uploadall{
+    background: url('./images/uploadall-gray.png') no-repeat 0 11px;
+}
+
+.mod-personal-orderdetail #order-photo .bar .uploadall:hover{
+    background: url('./images/uploadall-blue.png') no-repeat 0 11px;
+}
+.mod-personal-orderdetail #order-photo .bar .download{
+    background: url('./images/download-gray.png') no-repeat 0 12px;
+}
+
+.mod-personal-orderdetail #order-photo .bar .download:hover{
+    background: url('./images/download-blue.png') no-repeat 0 12px;
 }
 .mod-personal-orderdetail #order-photo .delete-btn{
     display: inline-block;
@@ -137,7 +209,7 @@
 .mod-personal-orderdetail #order-comments button{
     position: relative;
     top:7px;
-    left:150px;
+    left:700px;
 }
 .mod-personal-orderdetail #order-comments .star-line{
     background:url('images/star-0.png') no-repeat;

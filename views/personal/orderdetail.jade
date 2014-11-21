@@ -15,13 +15,11 @@ block content
                 table.body
                     tr
                         td
+                            div.desc 预订人:
+                            a #{tradeOrder.buyer}
+                        td
                             div.desc 摄影师:
                             a #{tradeOrder.seller}
-                        td
-                            div.desc 预订套系:
-                            div
-                                if tradeOrderItems.length > 0
-                                    a(href='/profile/package/#{tradeOrder.seller}') 《#{tradeOrderItems[0].tradeOrderItem.goodsName}》
                     tr
                         td
                             div.desc 预订日期:
@@ -31,13 +29,14 @@ block content
                             div #{tradeOrder.validDate}
                     tr
                         td
+                            div.desc 预订套系:
+                            div
+                                if tradeOrderItems.length > 0
+                                    a(href='/profile/package/#{tradeOrder.seller}') 《#{tradeOrderItems[0].tradeOrderItem.goodsName}》
+                        td
                             div.desc 备注:
                             div #{tradeOrder.notes}
-                        td
-                    tr
-                        td(colspan=2)
-                            div.desc 订单状态:
-                            div #{tradeOrder.status}
+
                     tr
                         td
                             div.desc 总价格:
@@ -45,6 +44,33 @@ block content
                         td
                             div.desc 已付金额:
                             div.price #{payedAmount} 元
+                    tr
+                        td(colspan=2)
+                            div.desc 订单状态:
+                            div.status(id="#{tradeOrder.status}")
+                    tr
+                        td(colspan=2).bar
+                            a(href='') 不熟悉交易流程？去看看详细解释吧 >>
+                            - var userType = _user.type
+                            case tradeOrder.status
+                                when 'TOPREPAY'
+                                    if userType == 'PHOTOGRAPHER'
+                                        button.button.button-flat-primary.comfirm-btn 确认订单
+                                    else if userType = 'USER'
+                                        button.button.button-flat-primary.comfirm-btn 支付定金
+                                when 'TOCONFIRM'
+                                    if userType == 'PHOTOGRAPHER'
+                                        button.button.button-flat-primary.comfirm-btn 确认订单
+                                when 'TODEAL'
+                                    if userType == 'PHOTOGRAPHER'
+                                        button.button.button-flat-primary.comfirm-btn 完成拍摄
+                                when 'TOPAY'
+                                    if userType == 'PHOTOGRAPHER'
+                                        button.button.button-flat-primary.comfirm-btn 对方已支付
+                                    else if userType = 'USER'
+                                        button.button.button-flat-primary.comfirm-btn 支付全款
+
+
         div.box#order-photo
             div.title 照片
             div.body
@@ -53,17 +79,25 @@ block content
                         each item in tradeOrderItems[0].photos
                             img(src="#{item.photoPath.replace('_X_X', '_THUMBNAIL_100_100')}")
                 div.bar
-                    div.desc 打包下载:
-                    a.download-enabled
-                    button.delete-btn.ui-pillbutton.ui-pb-caution 全部删除
+                    div.icons
+                        dis.desc 单张上传:
+                        a.icon.upload
+                        dis.desc 批量上传:
+                        a.icon.uploadall
+                        div.desc 打包下载:
+                        a.icon.download
+                        div.desc 全部删除:
+                        a.icon.delete
+
+        //- if tradeOrder.status == 'FINISHED'
         div.box#order-comments
             div.title 您的评价
-            div.body
+            form.body(method="post" action="")
                 ul
                     li
                         div.desc 满意度:
                         if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                            div.star-line(clicked="true" score="#{tradeOrderItems[0].tradeComments[0].score}")
+                            div.star-line(clicked="true" value="#{tradeOrderItems[0].tradeComments[0].score}")
                                 div.star#score-1
                                 div.star#score-2
                                 div.star#score-3
@@ -85,7 +119,8 @@ block content
                         else
                             textarea
                 div.bar
-                    button.button.button-flat-primary 确定
+                    button.button.button-flat-primary(type="submit" value="提交") 提交
+
         a.button.button-flat.back-btn(href="/personal/order") 返回订单列表
 
 block js
