@@ -12,6 +12,12 @@
                 div.info-item
                     span.info-key 作品集
                     span.info-value#user-collections #{owner.collectionCount}
+                //- if owner.mobile
+                    div.info-item
+                        span.info-value #{owner.mobile}
+                //- else if owner.email
+                    div.info-item
+                        span.info-value #{owner.email}
                 //- div.info-item
                     span.info-key 交易
                     span.info-value#user-trades 138

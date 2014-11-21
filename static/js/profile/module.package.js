@@ -71,7 +71,7 @@
             container.on('click', '.bk-btn', function () {
                 var bookTime = calendar.getCheckedTime()
                 var packageId = $('.package-selected', container).data('id')
-                var desc = $('.bk-tag', container).val()
+                var desc = $('.bk-note', container).val()
 
                 if (!bookTime) {
                     App.common.modules.smallnote('请在上面日历处选择预订的时间', {
@@ -95,7 +95,8 @@
                         service: 'Trade.addBookedPackageOrder',
                         packageId: packageId,
                         bookDateInMill: bookTime,
-                        bookQuantity: 1
+                        bookQuantity: 1,
+                        notes: desc
                     },
                     success: function (data) {
                         if (data.code === 200) {
