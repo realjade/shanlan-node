@@ -9,7 +9,7 @@
 .mod-personal-order{
     box-sizing: border-box;
     width:1000px;
-    min-height:500px;
+    min-height:600px;
     padding: 0 50px 100px 50px;
     margin:0 auto;
     overflow: hidden;
@@ -22,7 +22,7 @@
     width:100%;
     margin:20px 0;
     border-bottom: 2px solid #30ACFF;
-    font-size: 12px;
+    font-size: 14px;
 }
 .order-table a{
     color:#333;
@@ -54,8 +54,24 @@
     height:30px;
     width:30px;
     margin:0 auto;
-    background: url('./images/download.png') no-repeat;
+    background: url('./images/download-gray.png') no-repeat;
 }
 .order-table .download-enabled:hover{
-    background: url('./images/download-active.png') no-repeat;
+    background: url('./images/download-blue.png') no-repeat;
+}
+
+.mod-personal-order .no-info{
+    display: block;
+    width:300px;
+    margin:100px auto;
+}
+
+.mod-personal-order .no-info div,
+.mod-personal-order .no-info a{
+    display: inline-block;
+}
+.mod-personal-order .no-info a{
+    color:#30ACFF;
+    padding:0 5px;
+    font-size: 16px;
 }
