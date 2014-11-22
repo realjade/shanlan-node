@@ -101,6 +101,7 @@
                     success: function (data) {
                         if (data.code === 200) {
                             App.common.modules.smallnote('恭喜您，预订成功！')
+                            window.location.href = '/personal/order'
                         }
                     }
                 })

@@ -17,6 +17,11 @@ a {
 .mod-photo {
 }
 
+.mod-photo .noitem{
+    margin: 100px 0;
+    text-align: center;
+}
+
 /* reuslt-rule */
 
 .mod-photo .result-rule-bar {
