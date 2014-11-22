@@ -1,0 +1,36 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_account.merge.css")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalHeader
+block content
+    div.mod-personal-account
+        div.block-title#personal-pwd-setting 密码设置
+        div.personal-setting-block
+            form.pwd-form(method="post" action="")
+                ul.info-wrap.wrap-type2
+                    li.info-line
+                        div.info-key 当前密码：
+                        div.info-block
+                            input.info-text-input#current-pwd(type='password' maxlength="32")
+                    li.info-line
+                        div.info-key 新密码：
+                        div.info-block
+                            input.info-text-input#new-pwd(type='password' maxlength="32")
+                        div.info-pwd-note
+                            //-div.pwd-strong-bar
+                                div.percent
+                    li.info-line
+                        div.info-key 确认密码：
+                        div.info-block
+                            input.info-text-input#new-pwd-check(type='password' maxlength="32")
+                        div.info-pwd-note
+                            p *密码长度为6~32个字符；支持字母，数字，标点。<br/> *新密码不应于原密码相同。
+                    li.info-line
+                        div.info-key &nbsp;
+                        div.info-block.error 出错啦
+                button.save-btn.button.button-flat-primary(type="submit" value='保存') 保 &nbsp 存
+block js
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_account.merge.js")}')
