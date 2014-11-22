@@ -224,7 +224,6 @@
     background: #fff;
     opacity: 1;
     filter: alpha(opacity=100);
-    z-index:-10;
 }
 
 .ui-pg1 .ui-bor:first-child,

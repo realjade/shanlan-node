@@ -65,6 +65,33 @@
             var container = self.__container
 
             $('#submit-comments').click(function(){
+                var tradeOrderId = $('#tradeOrder').attr('tradeorderid')
+                var tradeOrderItemId = $('#tradeOrderItem').attr('tradeorderitemid')
+                var score = $('.star-line').attr('value')
+                var content = $('#comment-content').val()
+                var rater = $('#buyer').text()
+                var ratee = $('#seller').text()
+                if(!score) score=''
+
+                $.ajax({
+                    url:'/s',
+                    type:'post',
+                    data:{
+                        service:'Trade.addTradeComment',
+                        tradeOrderId: tradeOrderId,
+                        tradeOrderItemId: tradeOrderItemId,
+                        rater:rater,
+                        ratee: ratee,
+                        score:score,
+                        content: content
+                    },
+                    success: function(data){
+                        if(data.code == 200){
+                            App.common.modules.smallnote('评论成功')
+                        }
+                    }
+                })
+
             })
 
             container.on('mouseover','.star',function(){

@@ -11,15 +11,17 @@ block content
         div.box#order-info
             div.title 订单详细信息
             if tradeOrder
-                div.no No. #{tradeOrder.number}
-                table.body
+                div.no
+                    span No.&nbsp
+                    span #{tradeOrder.number}
+                table.body#tradeOrder(number="#{tradeOrder.number}" tradeOrderId="#{tradeOrder.id}")
                     tr
                         td
                             div.desc 预订人:
-                            a #{tradeOrder.buyer}
+                            a#buyer #{tradeOrder.buyer}
                         td
                             div.desc 摄影师:
-                            a #{tradeOrder.seller}
+                            a#seller #{tradeOrder.seller}
                     tr
                         td
                             div.desc 预订日期:
@@ -32,7 +34,8 @@ block content
                             div.desc 预订套系:
                             div
                                 if tradeOrderItems.length > 0
-                                    a(href='/profile/package/#{tradeOrder.seller}') 《#{tradeOrderItems[0].tradeOrderItem.goodsName}》
+                                    - var item = tradeOrderItems[0].tradeOrderItem
+                                    a#tradeOrderItem(href="/profile/package/#{tradeOrder.seller}" orderNumber="#{item.orderNumber}" tradeOrderItemId="#{item.id}") 《#{item.goodsName}》
                         td
                             div.desc 备注:
                             div #{tradeOrder.notes}
@@ -56,7 +59,7 @@ block content
                                 when 'TOPREPAY'
                                     if userType == 'PHOTOGRAPHER'
                                         button.button.button-flat-primary.comfirm-btn 确认订单
-                                    else if userType = 'USER'
+                                    else if userType = 'COMMON'
                                         button.button.button-flat-primary.comfirm-btn 支付定金
                                 when 'TOCONFIRM'
                                     if userType == 'PHOTOGRAPHER'
@@ -67,7 +70,7 @@ block content
                                 when 'TOPAY'
                                     if userType == 'PHOTOGRAPHER'
                                         button.button.button-flat-primary.comfirm-btn 对方已支付
-                                    else if userType = 'USER'
+                                    else if userType = 'COMMON'
                                         button.button.button-flat-primary.comfirm-btn 支付全款
 
 
@@ -92,7 +95,7 @@ block content
         //- if tradeOrder.status == 'FINISHED'
         div.box#order-comments
             div.title 您的评价
-            form.body(method="post" action="")
+            div.body
                 ul
                     li
                         div.desc 满意度:
@@ -115,11 +118,11 @@ block content
                     li
                         div.desc 评论:
                         if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                            textarea #{tradeOrderItems[0].tradeComments[0].content}
+                            textarea#comment-content #{tradeOrderItems[0].tradeComments[0].content}
                         else
-                            textarea
+                            textarea#comment-content
                 div.bar
-                    button.button.button-flat-primary(type="submit" value="提交") 提交
+                    button.button.button-flat-primary#submit-comments 提交
 
         a.button.button-flat.back-btn(href="/personal/order") 返回订单列表
 

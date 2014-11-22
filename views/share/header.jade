@@ -1,59 +1,61 @@
 div.mod-header-wrap#m-header
-    a.header-logo(href="/")
-    a.search-btn.header-search-btn(href="/search")
-    ul.header-nav
-        li
-            if tab == 'travel'
-                a.active#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
-            else
-                a#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
-        li
-            if tab == 'wedding'
-                a.active#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
-            else
-                a#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
-        li
-            if tab == 'portrait'
-                a.active#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
-            else
-                a#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
-        //- li
-            if tab == 'couple'
-                a.active#header-couple(href='') 情侣
-            else
-                a#header-couple(href='') 情侣
-        li
-            if tab == 'activity'
-                a.active#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
-            else
-                a#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
-        //- li
-            if tab == 'free'
-                a.active#header-free(href='') 互免
-            else
-                a#header-free(href='') 互免
-        //- li
-            if tab== 'clothes'
-                a.active#header-clothes(href='') 镁装
-            else
-                a#header-clothes(href='') 镁装
+    div.header-box
+        a.header-logo(href="/")
+        a.search-btn.header-search-btn(href="/search")
+        ul.header-nav
+            li
+                if tab == 'travel'
+                    a.active#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
+                else
+                    a#header-travel(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 旅拍
+            li
+                if tab == 'wedding'
+                    a.active#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
+                else
+                    a#header-wedding(href='/search?type=%E5%A9%9A%E7%BA%B1%E6%91%84%E5%BD%B1') 婚纱
+            li
+                if tab == 'portrait'
+                    a.active#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
+                else
+                    a#header-portrait(href='/search?type=%E8%89%BA%E6%9C%AF%E5%86%99%E7%9C%9F') 写真
+            //- li
+                if tab == 'couple'
+                    a.active#header-couple(href='') 情侣
+                else
+                    a#header-couple(href='') 情侣
+            li
+                if tab == 'activity'
+                    a.active#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
+                else
+                    a#header-activity(href='/search?type=%E6%B4%BB%E5%8A%A8%E8%B7%9F%E6%8B%8D') 活动
+            //- li
+                if tab == 'free'
+                    a.active#header-free(href='') 互免
+                else
+                    a#header-free(href='') 互免
+            //- li
+                if tab== 'clothes'
+                    a.active#header-clothes(href='') 镁装
+                else
+                    a#header-clothes(href='') 镁装
 
-    - var user = _user
-    if !user
-        a.login-btn(href='/login')
-            span 登 录 >
-    else
-        div.header-user
-            a(href="/profile")
-                img.avatar-img(src="#{user.avatar['30']}")
-            div.user-type
-            a.user-name(href="/profile") #{user.nickName}
-            ul.menu-down
-                li
-                    a#link-order(href='/personal/order') 我的订单
-                li
-                    a#link-setting(href='/personal/package') 套系管理
-                li
-                    a#link-setting(href='/personal/setting') 个人设置
-                li
-                    a#link-logout(href='/logout') 退出
+        - var user = _user
+        if !user
+            a.login-btn(href='/login')
+                span 登 录 >
+        else
+            div.header-user
+                a(href="/profile")
+                    img.avatar-img(src="#{user.avatar['30']}")
+                div.user-type
+                a.user-name(href="/profile") #{user.nickName}
+                ul.menu-down
+                    li
+                        a#link-order(href='/personal/order') 我的订单
+                    li
+                        a#link-setting(href='/personal/package') 套系管理
+                    li
+                        a#link-setting(href='/personal/setting') 个人设置
+                    li
+                        a#link-logout(href='/logout') 退出
+    div.tail
