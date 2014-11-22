@@ -1,0 +1,215 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/10/19
+  * Time: 2:03
+  *
+  */
+
+.mod-personal-account {
+    box-sizing: border-box;
+    width: 1000px;
+    padding: 0 50px 100px 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #333;
+}
+
+.mod-personal-account .personal-setting-block {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0px 10px 80px 10px;
+}
+
+.mod-personal-account .personal-setting-block + .block-title {
+    border-top: 1px dotted #ccc;
+}
+
+.mod-personal-account .block-title {
+    position: relative;
+    left: -10px;
+    height: 40px;
+    line-height: 40px;
+    padding: 20px 0 0 55px;
+    margin-right: -20px;
+    font-size: 15px;
+    color: #333;
+}
+
+#personal-info-setting {
+    background: url("./images/setting.png") no-repeat 0px 20px;
+    background-size: 40px 40px;
+}
+
+#personal-pwd-setting {
+    background: url("./images/pwd.png") no-repeat 0px 20px;
+    background-size: 40px 40px;
+}
+
+.mod-personal-account .portrait-wrap {
+    float: left;
+    width: 330px;
+    height: 400px;
+}
+
+.mod-personal-account .portrait-wrap img {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 40px auto 15px auto;
+    border: 1px solid #ccc;
+    padding: 7px;
+}
+
+.mod-personal-account .info-wrap {
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 0;
+}
+
+.mod-personal-account .wrap-type1 {
+    width: 550px;
+}
+
+.mod-personal-account .wrap-type2 {
+    width: 100%;
+}
+
+.mod-personal-account .info-wrap .info-line .error{
+    background: #fffdea;
+    border: 1px solid #ffcf85;
+    color: #f60;
+    padding: 5px;
+    width: 388px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    display: none;
+}
+
+.mod-personal-account .info-wrap .info-line {
+    height: 60px;
+    padding: 5px 0px;
+    margin: 0 auto;
+    line-height: 60px;
+}
+
+.mod-personal-account .info-wrap em{
+    color: red;
+}
+
+.mod-personal-account .info-wrap .info-key {
+    float: left;
+    width: 75px;
+    text-align: left;
+    margin: 0 15px 0 10px;
+}
+
+.mod-personal-account .info-wrap .info-block {
+    float: left;
+    width: 400px;
+}
+
+.mod-personal-account .info-wrap .info-text-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 3px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #222;
+}
+
+.mod-personal-account .info-wrap .info-select-box {
+    box-sizing: border-box;
+    width: 120px;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 3px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #222;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.mod-personal-account button {
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mod-personal-account .save-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.mod-personal-account .upload-btn {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.mod-avatar-dialog-wrap {
+    position: relative;
+}
+
+.mod-avatar-dialog-wrap .close {
+    position: absolute;
+    background: url(images/close.png) no-repeat;
+    width: 15px;
+    height: 15px;
+    top: -17px;
+    right: -17px;
+    cursor: pointer;
+}
+
+.mod-avatar-dialog-wrap .close:hover {
+    background-image: url(images/close-hover.png);
+}
+
+.mod-personal-account .portrait-wrap p {
+    width: 240px;
+    margin: 20px auto 0 auto;
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+}
+
+.personal-setting-block .info-line .info-pwd-note {
+    float: left;
+    margin: 0 0 0 35px;
+    color: #777;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.personal-setting-block .info-line .info-pwd-note p {
+    height: 80px;
+    width: 330px;
+    position: relative;
+    top: -10px;
+    line-height: 20px;
+}
+
+.personal-setting-block .info-line .pwd-strong-bar {
+    width: 170px;
+    height: 15px;
+    margin: 20px 0 0 0;
+    border: 1px solid #ccc;
+}

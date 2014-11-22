@@ -15,10 +15,18 @@ var router = express.Router()
 /* user setting. */
 router.get('/setting', filter.login, function (req, res) {
     var me = res.locals._user
-    var ownerUserName = (me && me.userName) || null
 
     res.render('personal/setting', {
         subTab: 'setting'
+    })
+})
+
+/* user account. */
+router.get('/account', filter.login, function (req, res) {
+    var me = res.locals._user
+
+    res.render('personal/account', {
+        subTab: 'account'
     })
 })
 

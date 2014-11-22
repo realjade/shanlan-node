@@ -25,7 +25,10 @@
 
         __initInfo: function(){
             var self = this
+            var me = self.__options.me
+            var container = self.__container
 
+            container.find('#gender').find('option[value="' + me.gender + '"]').prop('selected', 'selected')
         },
 
         __initBirthday: function(){
@@ -43,9 +46,12 @@
 
         __initProvince: function(){
             var self = this
+            var me = self.__options.me
             var container = self.__container
-            self.__province = container.find('.province-panel').province({
-                nocounty: true
+            self.__address = container.find('.province-panel').province({
+                nocounty: true,
+                province: me.addressBean.province,
+                city: me.addressBean.city
             })
         },
 
@@ -62,11 +68,18 @@
                 var birthdayInput = infoForm.find('.birthday')
                 var mobileInput = infoForm.find('#mobile')
                 var emailInput = infoForm.find('#email')
+                var qqInput = infoForm.find('#qq')
+                var webchartInput = infoForm.find('#webchart')
+                var countryInput = infoForm.find('#country')
                 var nickName = $.trim(nickNameInput.val())
                 var email = $.trim(emailInput.val())
                 var mobile = $.trim(mobileInput.val())
+                var qq = $.trim(qqInput.val())
+                var webchart = $.trim(webchartInput.val())
                 var gender = genderInput.val()
                 var birthday = birthdayInput.val()
+                var country = countryInput.val()
+                var address = self.__address.value()
                 var error = infoForm.find('.error')
                 error.hide()
                 if(!nickName){
@@ -101,65 +114,17 @@
                         nickName: nickName,
                         email: email,
                         mobile: mobile,
+                        qq: qq,
+                        webchart: webchart,
                         gender: gender,
-                        birthday: birthday
+                        birthday: birthday,
+                        country: country,
+                        province: address.province.value,
+                        city: address.city.value
                     },
                     success: function(data){
                         if(data.code === 200){
-
-                        }
-                    }
-                })
-
-                return false
-            })
-
-            //修改密码
-            var pwdForm = container.find('.pwd-form')
-
-            pwdForm.submit(function(){
-                var currentInput = pwdForm.find('#current-pwd')
-                var newInput = pwdForm.find('#new-pwd')
-                var checkInput = pwdForm.find('#new-pwd-check')
-                var current = $.trim(currentInput.val())
-                var newPwd = $.trim(newInput.val())
-                var check = $.trim(checkInput.val())
-                var error = pwdForm.find('.error')
-                error.hide()
-
-                if(!newPwd){
-                    error.html('请输入原始密码').show()
-                    currentInput.select()
-                    return false
-                }else{
-                    currentInput.val(current)
-                }
-
-                if(!newPwd || newPwd.length < 6 || newPwd.length > 32){
-                    error.html('请输入6-32位新密码').show()
-                    newInput.select()
-                    return false
-                }else{
-                    newInput.val(newPwd)
-                }
-
-                if(check != newPwd){
-                    error.html('两次输入密码不一致').show()
-                    checkInput.select()
-                    return false
-                }
-
-                $.ajax({
-                    url: '/s',
-                    type: 'post',
-                    data:{
-                        service: 'User.updatePassword',
-                        oldPassword: current,
-                        newPassword: newPwd
-                    },
-                    success: function(data){
-                        if(data.code === 200){
-
+                            App.common.modules.smallnote('恭喜您，修改信息成功')
                         }
                     }
                 })
