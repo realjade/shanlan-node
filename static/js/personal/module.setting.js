@@ -28,7 +28,7 @@
             var me = self.__options.me
             var container = self.__container
 
-            container.find('#gender').find('option[value="' + me.gender + '"]')
+            container.find('#gender').find('option[value="' + me.gender + '"]').prop('selected', 'selected')
         },
 
         __initBirthday: function(){
