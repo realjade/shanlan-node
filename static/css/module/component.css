@@ -203,6 +203,7 @@
 }
 .ui-pg1 img,
 .ui-pg1-static img{
+    position: relative;
     width: 100%;
     height:100%
 }

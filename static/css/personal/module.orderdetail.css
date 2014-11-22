@@ -78,7 +78,7 @@
 
 .mod-personal-orderdetail #order-info .status{
     float: left;
-    width:500px;
+    width:600px;
     height:40px;
 }
 .mod-personal-orderdetail #order-info #TOPREPAY{
@@ -102,7 +102,7 @@
 
 .mod-personal-orderdetail #order-info .bar button{
     position: relative;
-    left:320px;
+    left:95px;
     width: 170px;
 }
 
