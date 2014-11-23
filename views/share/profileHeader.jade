@@ -12,19 +12,27 @@
                 div.info-item
                     span.info-key 作品集
                     span.info-value#user-collections #{owner.collectionCount}
-                //- if owner.mobile
-                    div.info-item
-                        span.info-value #{owner.mobile}
-                //- else if owner.email
-                    div.info-item
-                        span.info-value #{owner.email}
                 //- div.info-item
                     span.info-key 交易
                     span.info-value#user-trades 138
                 //- div.info-item
                     span.info-key 评价
                     span.info-value#user-score 9.1
-            div.info-signature #{owner.signature}
+            div.user-contacts
+                if owner.mobile
+                    div.contact#mobile
+                    div.value #{owner.mobile}
+                if owner.wechat
+                    div.contact#wechat
+                    div.value #{owner.wechat}
+                if owner.qq
+                    div.contact#qq
+                    div.value #{owner.qq}
+                if owner.email
+                    div.contact#email
+                    div.value #{owner.email}
+
+            //- div.info-signature #{owner.signature}
     div.profile-nav
         ul.nav
             li.avatar-wrap

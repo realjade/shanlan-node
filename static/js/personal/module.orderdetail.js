@@ -71,7 +71,14 @@
                 var content = $('#comment-content').val()
                 var rater = $('#buyer').text()
                 var ratee = $('#seller').text()
-                if(!score) score=''
+                if(!score) {
+                    App.common.modules.smallnote('请您打分后提交评价', {
+                        time:1500,
+                        pattern: 'error',
+                        top: ($(window).height() - 60) / 2
+                    })
+                    return false
+                }
 
                 $.ajax({
                     url:'/s',

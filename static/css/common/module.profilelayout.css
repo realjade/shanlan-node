@@ -64,10 +64,10 @@
 
 .mod-profile-header .user-info .user-detail{
     position:relative;
-    left: 35px;
+    left: 42px;
     top: 60px;
     height: 130px;
-    min-width:370px;
+    min-width:320px;
     background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,rgba(0,0,0,0.65)),color-stop(100%,rgba(0,0,0,0.65)));
     background: -webkit-linear-gradient(top,rgba(0,0,0,0.4),rgba(0,0,0,0.65));
     background: -moz-linear-gradient(top,rgba(0,0,0,0.4),rgba(0,0,0,0.65));
@@ -85,7 +85,7 @@
 }
 .mod-profile-header .user-info .user-title span{
     font-size:14px;
-    margin-right:20px;
+    margin-right:10px;
     display: inline-block;
 }
 .mod-profile-header .user-info #user-name{
@@ -101,13 +101,69 @@
     position: relative;
     top:-13px;
     overflow: hidden;
-    padding:0 0 0 20px;
+    padding:0 0 0 21px;
     width:100%;
 }
 .mod-profile-header .user-info .info-item{
     float:left;
     width:110px;
 }
+
+.mod-profile-header .user-info .user-contacts{
+    position: relative;
+    left:-15px;
+    box-sizing: border-box;
+    width:100%;
+}
+.mod-profile-header .user-info .user-contacts .contact{
+    position: relative;
+    left:35px;
+    display: inline-block;
+    width:35px;
+    height:35px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mod-profile-header .user-info .user-contacts #mobile{
+    background: url(images/contacts-icons.png) 0 0 no-repeat;
+    background-size: cover;
+}
+.mod-profile-header .user-info .user-contacts #wechat{
+    background: url(images/contacts-icons.png) -35px 0 no-repeat;
+    background-size: cover;
+}
+.mod-profile-header .user-info .user-contacts #qq{
+    background: url(images/contacts-icons.png) -70px 0 no-repeat;
+    background-size: cover;
+}
+.mod-profile-header .user-info .user-contacts #email{
+    background: url(images/contacts-icons.png) -105px 0 no-repeat;
+    background-size: cover;
+}
+.mod-profile-header .user-info .user-contacts .value{
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width:35px;
+    max-width:200px;
+    height:35px;
+    line-height: 35px;
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.30);
+    padding:0 0 0 35px;
+    margin-right:10px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.mod-profile-header .user-info .contact:hover + .value,
+.mod-profile-header .user-info .value:hover{
+    min-width:100px;
+    width:auto;
+    padding:0 20px 0 35px;
+}
+
 .mod-profile-header .user-info .info-signature{
     position: relative;
     width: 340px;
