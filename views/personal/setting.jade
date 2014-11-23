@@ -50,6 +50,10 @@ block content
                                     option(value='中国') 中国
                             div.province-panel.f-l
                     li.info-line
+                        div.info-key 个性签名：
+                        div.info-block
+                            textarea.info-text-input#signature(value='#{user.signature}' maxlength="200")
+                    li.info-line
                         div.info-key &nbsp;
                         div.info-block.error 出错啦
                 div.portrait-wrap

@@ -71,6 +71,7 @@
                 var qqInput = infoForm.find('#qq')
                 var wechatInput = infoForm.find('#wechat')
                 var countryInput = infoForm.find('#country')
+                var signatureInput = infoForm.find('#signature')
                 var nickName = $.trim(nickNameInput.val())
                 var email = $.trim(emailInput.val())
                 var mobile = $.trim(mobileInput.val())
@@ -80,6 +81,7 @@
                 var birthday = birthdayInput.val()
                 var country = countryInput.val()
                 var address = self.__address.value()
+                var signature = $.trim(signatureInput.val())
                 var error = infoForm.find('.error')
                 error.hide()
                 if(!nickName){
@@ -115,12 +117,13 @@
                         email: email,
                         mobile: mobile,
                         qq: qq,
-                        webchart: webchart,
+                        wechat: wechat,
                         gender: gender,
                         birthday: birthday,
                         country: country,
                         province: address.province.value,
-                        city: address.city.value
+                        city: address.city.value,
+                        signature: signature
                     },
                     success: function(data){
                         if(data.code === 200){
