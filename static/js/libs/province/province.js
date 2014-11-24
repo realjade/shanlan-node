@@ -45,14 +45,14 @@
                 county = self.options.county;
             if (province) {
                 $('option', self.province).each(function () {
-                    if ($(this).val() == province) {
+                    if ($(this).val() == province || $(this).text() == province) {
                         $(this).attr('selected', 'selected');
                     }
                 });
                 self.province.trigger('change');
                 if (city) {
                     $('option', self.city).each(function () {
-                        if ($(this).val() == city) {
+                        if ($(this).val() == city || $(this).text() == city) {
                             $(this).attr('selected', 'selected');
                         }
                     });
