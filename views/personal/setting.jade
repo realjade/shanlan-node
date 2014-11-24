@@ -12,13 +12,13 @@ block content
             form.info-setting(method="post" action="")
                 ul.info-wrap.wrap-type1
                     li.info-line
+                        div.info-key 邮箱：
+                        div.info-block
+                            input.info-text-input#email(value='#{user.email}' readonly="readonly" disabled="disabled")
+                    li.info-line
                         div.info-key <em>*</em>名称：
                         div.info-block
                             input.info-text-input#nickname(value='#{user.nickName}')
-                    li.info-line
-                        div.info-key <em>*</em>邮箱：
-                        div.info-block
-                            input.info-text-input#email(value='#{user.email}')
                     li.info-line
                         div.info-key 手机号：
                         div.info-block
