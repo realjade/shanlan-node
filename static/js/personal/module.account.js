@@ -67,7 +67,7 @@
                     },
                     success: function (data) {
                         if (data.code === 200) {
-
+                            App.common.modules.smallnote('恭喜您，密码修改成功')
                         }
                     }
                 })

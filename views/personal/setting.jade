@@ -12,13 +12,13 @@ block content
             form.info-setting(method="post" action="")
                 ul.info-wrap.wrap-type1
                     li.info-line
+                        div.info-key 邮箱：
+                        div.info-block
+                            input.info-text-input#email(value='#{user.email}' readonly="readonly" disabled="disabled")
+                    li.info-line
                         div.info-key <em>*</em>名称：
                         div.info-block
                             input.info-text-input#nickname(value='#{user.nickName}')
-                    li.info-line
-                        div.info-key <em>*</em>邮箱：
-                        div.info-block
-                            input.info-text-input#email(value='#{user.email}')
                     li.info-line
                         div.info-key 手机号：
                         div.info-block
@@ -30,7 +30,7 @@ block content
                     li.info-line
                         div.info-key 微信：
                         div.info-block
-                            input.info-text-input#webchart(value='#{user.webchart}')
+                            input.info-text-input#wechat(value='#{user.wechat}')
                     li.info-line
                         div.info-key 性别：
                         div.info-block
@@ -49,6 +49,10 @@ block content
                                 select.info-select-box#country
                                     option(value='中国') 中国
                             div.province-panel.f-l
+                    li.info-line
+                        div.info-key 个性签名：
+                        div.info-block
+                            textarea.info-text-input#signature(maxlength="200") #{user.signature}
                     li.info-line
                         div.info-key &nbsp;
                         div.info-block.error 出错啦
