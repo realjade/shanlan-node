@@ -7,7 +7,7 @@
   */
 .mod-header-wrap {
     height: 50px;
-    padding: 0 80px;
+    padding: 0 150px;
 }
 *{
     transition: 0.3s;
@@ -36,11 +36,10 @@
 
 #m-header .header-logo {
     float: left;
-    height: 47px;
+    height: 50px;
     width: 100px;
-    padding: 0 0 3px 0;
-    background: url("//static.mgcheng.com/static/css/common/images/logo-bw.png") no-repeat;
-    background-size: contain;
+    background: url(../../images/logo-s.png)  0 42% no-repeat;
+    background-size: 90px;
     background-origin: content-box;
 }
 
@@ -49,12 +48,13 @@
     height: 50px;
     width: 60px;
     padding: 0 10px;
-    background: url("//static.mgcheng.com/static/css/common/images/search-bw.png") no-repeat 50% 50%;
+    margin:0 0 0 15px;
+    background: url(images/search-bw.png) no-repeat 50% 50%;
     background-origin: content-box;
 }
 
 #m-header .header-search-btn:hover {
-    background: url("//static.mgcheng.com/static/css/common/images/search-bw-hover.png") no-repeat 50% 50%;
+    background: url(images/search-bw-hover.png) no-repeat 50% 50%;
     background-origin: content-box;
     background-color: #2a2c2e;
 }
@@ -107,7 +107,7 @@
 
 .mod-header-wrap .header-user {
     position: absolute;
-    right: 80px;
+    right: 150px;
     top: 0;
     box-sizing: border-box;
     width: 150px;
@@ -153,13 +153,14 @@
     position: absolute;
     top: 50px;
     width: 150px;
+    height:0;
     background: #363d40;
     list-style: none;
-    display: none;
+    overflow: hidden;
 }
 
 #m-header .header-user:hover .menu-down {
-    display: block;
+    height:204px;
 }
 
 #m-header .menu-down a {
@@ -179,7 +180,7 @@
 }
 
 #m-header #link-order {
-    background: url("//static.mgcheng.com/static/css/common/images/order.png") no-repeat;
+    background: url(images/order.png) no-repeat;
     background-position: 4px 0;
 }
 
@@ -189,7 +190,7 @@
 }
 
 #m-header #link-setting {
-    background: url("//static.mgcheng.com/static/css/common/images/setting.png") no-repeat;
+    background: url(images/setting.png) no-repeat;
     background-position: 5px 0;
 }
 
@@ -198,8 +199,18 @@
     background-color: #2a2c2e;
 }
 
+#m-header #link-account {
+    background: url(images/setting.png) no-repeat;
+    background-position: 5px 0;
+}
+
+#m-header #link-account:hover {
+    color: #fff;
+    background-color: #2a2c2e;
+}
+
 #m-header #link-logout {
-    background: url("//static.mgcheng.com/static/css/common/images/logout.png") no-repeat;
+    background: url(images/logout.png) no-repeat;
     background-position: 5px 0;
 }
 

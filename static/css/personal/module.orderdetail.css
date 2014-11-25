@@ -99,21 +99,30 @@
 .mod-personal-orderdetail #order-info #FINISHED{
     background: url(images/status/finished.png);
 }
-
+.mod-personal-orderdetail #order-info .bar .process-notice{
+    position: absolute;
+    left:55px;
+    width:280px;
+    height:34px;
+    font-size: 12px;
+    color:#999;
+}
 .mod-personal-orderdetail #order-info .bar button{
     position: relative;
-    left:95px;
+    left:310px;
     width: 170px;
+    margin:10px 0;
 }
 
 .mod-personal-orderdetail #order-info .bar a:hover{
     color:#30Acff;
 }
 .mod-personal-orderdetail #order-info .bar a{
-    position: relative;
+    position: absolute;
     left:570px;
-    height:40px;
-    line-height: 40px;
+    height:34px;
+    line-height: 34px;
+    margin:10px 0;
     font-size: 12px;
     color: #999;
 }

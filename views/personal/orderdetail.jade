@@ -39,7 +39,6 @@ block content
                         td
                             div.desc 备注:
                             div #{tradeOrder.notes}
-
                     tr
                         td
                             div.desc 总价格:
@@ -53,25 +52,9 @@ block content
                             div.status(id="#{tradeOrder.status}")
                     tr
                         td(colspan=2).bar
+                            span.process-notice
+                            button.button.button-flat-primary.process-btn(display="none")
                             a(href='') 不熟悉交易流程？去看看详细解释吧 >>
-                            - var userType = _user.type
-                            case tradeOrder.status
-                                when 'TOPREPAY'
-                                    if userType == 'PHOTOGRAPHER'
-                                        button.button.button-flat-primary.confirm-btn 确认订单
-                                    else if userType = 'COMMON'
-                                        button.button.button-flat-primary.confirm-btn 支付定金
-                                when 'TOCONFIRM'
-                                    if userType == 'PHOTOGRAPHER'
-                                        button.button.button-flat-primary.confirm-btn 确认订单
-                                when 'TODEAL'
-                                    if userType == 'PHOTOGRAPHER'
-                                        button.button.button-flat-primary.confirm-btn 完成拍摄
-                                when 'TOPAY'
-                                    if userType == 'PHOTOGRAPHER'
-                                        button.button.button-flat-primary.confirm-btn 对方已支付
-                                    else if userType = 'COMMON'
-                                        button.button.button-flat-primary.confirm-btn 支付全款
 
 
         div.box#order-photo
@@ -92,37 +75,42 @@ block content
                         div.desc 全部删除:
                         a.icon.delete
 
-        //- if tradeOrder.status == 'FINISHED'
-        div.box#order-comments
-            div.title 您的评价
-            div.body
-                ul
-                    li
-                        div.desc 满意度:
-                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                            div.star-line(clicked="true" value="#{tradeOrderItems[0].tradeComments[0].score}")
-                                div.star#score-1
-                                div.star#score-2
-                                div.star#score-3
-                                div.star#score-4
-                                div.star#score-5
-                                div.score
-                        else
-                            div.star-line(clicked="false" )
-                                div.star#score-1
-                                div.star#score-2
-                                div.star#score-3
-                                div.star#score-4
-                                div.star#score-5
-                                div.score
-                    li
-                        div.desc 评论:
-                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                            textarea#comment-content #{tradeOrderItems[0].tradeComments[0].content}
-                        else
-                            textarea#comment-content
-                div.bar
-                    button.button.button-flat-primary#submit-comments 提交
+        - var type = _user.type
+        if tradeOrder.status == 'FINISHED'
+            div.box#order-comments
+                if(type == 'PHOTOGRAPHER')
+                    div.title 对方的评价
+                else if(type == 'COMMON')
+                    div.title 您的评价
+                div.body
+                    ul
+                        li
+                            div.desc 满意度:
+                            if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                                div.star-line(clicked="true" value="#{tradeOrderItems[0].tradeComments[0].score}")
+                                    div.star#score-1
+                                    div.star#score-2
+                                    div.star#score-3
+                                    div.star#score-4
+                                    div.star#score-5
+                                    div.score
+                            else
+                                div.star-line(clicked="false" )
+                                    div.star#score-1
+                                    div.star#score-2
+                                    div.star#score-3
+                                    div.star#score-4
+                                    div.star#score-5
+                                    div.score
+                        li
+                            div.desc 评论:
+                            if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                                textarea#comment-content #{tradeOrderItems[0].tradeComments[0].content}
+                            else
+                                textarea#comment-content
+                    if(type == 'COMMON')
+                        div.bar
+                            button.button.button-flat-primary#submit-comments 提交
 
         a.button.button-flat.back-btn(href="/personal/order") 返回订单列表
 

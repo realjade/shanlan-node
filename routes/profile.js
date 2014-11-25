@@ -135,7 +135,7 @@ router.get(['/trade', '/trade/:userName'], function (req, res) {
                 method: 'get',
                 data: {
                     userName: ownerUserName,
-                    currentPage:'1',
+                    currentPage:'0',
                     pageSize:'10'
                 },
                 req: req,

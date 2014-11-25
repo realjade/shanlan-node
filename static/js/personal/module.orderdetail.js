@@ -11,15 +11,27 @@
 
         __container: null,
 
-        init: function (container) {
+        init: function (container,options) {
             var self = this
             self.__container = container
-            self.__initScore()
+            self.__options = options
+            self.__initComments()
+            self.__updateStatus($('.status').attr('id'))
             self.__bindEvent()
         },
 
-        __initScore: function(){
+        __initComments: function(){
             var self = this
+            var container = self.__container
+            var options = self.__options
+            var userType = options.me.type
+
+            if(userType != 'COMMON') {
+                $('#comment-content').attr('readonly','true')
+                $('.star').css({
+                    cursor:'auto'
+                })
+            }
             var container = self.__container
             var bg = container.find('.star-line')
             var score = bg.attr('value')
@@ -59,10 +71,97 @@
                 }
             }
         },
+        __updateStatus:function(status){
+            var self = this
+            var container = self.__container
+            var options = self.__options
+            var userType = options.me.type
+            var btn = $('.process-btn')
+            var notice = $('.process-notice')
+            $('.status').attr('id',status)
+            notice.text('')
+            switch(status){
+                case 'TOPREPAY':
+                    if(userType=='PHOTOGRAPHER'){
+                        notice.text('提示：如果用户已通过其他方式支付定金，请确认订单。')
+                        btn.text('确认订单')
+                        btn.show()
+                    }
+                    else if(userType =='COMMON'){
+                        btn.text('支付定金')
+                        btn.show()
+                    }
+                    break;
+                case 'TOCONFIRM':
+                    if(userType=='PHOTOGRAPHER'){
+                        btn.text('确认订单')
+                        btn.show()
+                    }
+                    else if(userType =='COMMON'){
+                        btn.hide()
+                    }
+                    break;
+                case 'TODEAL':
+                    if(userType=='PHOTOGRAPHER'){
+                        notice.text('提示：建议先上传照片再确认完成拍摄，方便对方直接在平台上下载并展示。对方支付前不会看到照片。')
+                        btn.text('完成拍摄')
+                        btn.show()
+                    }
+                    else if(userType =='COMMON'){
+                        btn.hide()
+                    }
+                    break;
+                case 'TOPAY':
+                    if(userType=='PHOTOGRAPHER'){
+                        notice.text('提示：如果用户已通过其他方式支付了全款，请点击按钮，完成本次交易。')
+                        btn.text('对方已支付')
+                        btn.show()
+                    }
+                    else if(userType =='COMMON'){
+                        notice.text('提示：照片已上传，您支付后可直接通过平台下载并展示，如果您线下完成了支付，请联系摄影师确认。')
+                        btn.text('支付全款')
+                        btn.show()
+                    }
+                    break;
+                case 'FINISHED':
+                    btn.hide()
+                    break;
+            }
 
+        },
         __bindEvent: function () {
             var self = this
             var container = self.__container
+            var options = self.__options
+            var userType = options.me.type
+
+            $('.process-btn').click(function(){
+                if($(this).attr('disabled') == 'true') return
+                $(this).attr('disabled','true')
+                var tradeOrderNumber = $('#tradeOrder').attr('number')
+                var action = $(this).attr('id')
+                $.ajax({
+                    url:'/s',
+                    type:'put',
+                    data:{
+                        service:'Trade.updateTradeOrderStatus',
+                        tradeOrderNumber:tradeOrderNumber
+                    },
+                    success:function(data){
+                        if(data.code==200){
+                            self.__updateStatus(data.data)
+                            $(this).attr('disabled','false')
+                        }
+                        else{
+                            App.common.modules.smallnote('操作失败，请稍后再试，或者联系我们客服，邮箱地址在网页底端', {
+                                time:3000,
+                                pattern: 'error',
+                                top: ($(window).height() - 60) / 2
+                            })
+                        }
+                    }
+                })
+            })
 
             $('#submit-comments').click(function(){
                 var tradeOrderId = $('#tradeOrder').attr('tradeorderid')
@@ -94,7 +193,9 @@
                     },
                     success: function(data){
                         if(data.code == 200){
-                            App.common.modules.smallnote('评论成功')
+                            App.common.modules.smallnote('评论成功',{
+                                top: ($(window).height() - 60) / 2
+                            })
                         }
                     }
                 })
@@ -102,6 +203,7 @@
             })
 
             container.on('mouseover','.star',function(){
+                if(userType != 'COMMON') return
                 var bg = container.find('.star-line')
                 var scoreId = $(this).attr('id')
                 switch(scoreId){
@@ -133,6 +235,7 @@
                 }
             })
             container.on('mouseout','.star',function(){
+                if(userType != 'COMMON') return
                 var bg = container.find('.star-line')
                 if(bg.attr('clicked') == 'false'){
                     bg.css({
@@ -173,6 +276,7 @@
             })
 
             container.on('click','.star',function(){
+                if(userType != 'COMMON') return
                 container.find('.star-line').attr('clicked','true')
                 var scoreTxt = container.find('.score')
                 var scoreId = $(this).attr('id')
@@ -204,7 +308,7 @@
     }
 
     $(function () {
-        personalOrderDetail.init($('.mod-personal-orderdetail'))
+        personalOrderDetail.init($('.mod-personal-orderdetail'),pageConfig)
         App.common.modules.personalLayout.init($('.mod-personal-header-wrap'))
     })
 
