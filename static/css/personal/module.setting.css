@@ -89,7 +89,7 @@
 }
 
 .mod-personal-setting .info-wrap .info-line {
-    height: 60px;
+    min-height: 60px;
     padding: 5px 0px;
     margin: 0 auto;
     line-height: 60px;
@@ -113,7 +113,8 @@
     width: 400px;
 }
 
-.mod-personal-setting .info-wrap .info-text-input {
+.mod-personal-setting .info-wrap .info-text-input,
+.mod-personal-setting .info-wrap .info-text-area{
     box-sizing: border-box;
     width: 100%;
     padding: 8px 10px;
@@ -124,6 +125,12 @@
     border: none;
     border-bottom: 1px solid #ccc;
     color: #222;
+}
+
+.mod-personal-setting .info-wrap .info-text-area{
+    height:62px;
+    font-size:12px;
+    margin:10px 0 0 0;
 }
 
 .mod-personal-setting .info-wrap .info-select-box {

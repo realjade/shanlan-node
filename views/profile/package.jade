@@ -28,12 +28,36 @@ block content
                 if (packages != undefined)
                     each item, index in packages
                         div.pack-block(data-id="#{item.id}" data-name="#{item.name}" data-price="#{item.price}")
-                            div.pack-no #{index + 1}
-                            div.pack-head-wrap
-                                div.pack-name #{item.name}
-                                div.pack-photo-num #{item.photoCount}张
-                                div.pack-time #{item.days}天
-                            div.pack-price #{item.price}
+                            //- div.pack-no #{index + 1}
+                            ul
+                                li#pack-main-info
+                                    div.pack-name #{item.name}
+                                    //- div.pack-tags
+                                        //- if item.photoType[0]
+                                        //-     div.tag #{item.photoType[0]}
+                                        //- if item.photoStyle[0]
+                                        //-     div.tag #{item.photoStyle[0]}
+                                    div.pack-price
+                                        span #{item.price}
+                                        span.pack-price-unit 元
+                                li#pack-overview
+                                    if item.address
+                                        div.pack-icon.pack-icon-words.pack-location(title="拍摄地") #{item.address.split('--')[2]}
+                                    if item.days
+                                        div.pack-icon.pack-icon-words.pack-time(title="拍摄时长") #{item.days}天
+                                    if item.photoCount > 0
+                                        div.pack-icon.pack-icon-words.pack-photo-num(title="拍摄张数") #{item.photoCount}张
+                                    if item.alterCount > 0
+                                        div.pack-icon.pack-icon-words.pack-ps-yes(title="精修张数") #{item.alterCount}张
+                                    if item.printCount > 0
+                                        div.pack-icon.pack-icon-words.pack-print-yes(title="冲洗照片") #{item.printCount}张
+                                    if item.albumCount > 0
+                                        div.pack-icon.pack-icon-words.pack-album-yes(title="制作相册") #{item.albumCount}本
+                                    if item.clothCount > 0
+                                        div.pack-icon.pack-icon-words.pack-costume-yes(title="提供服装") #{item.clothCount}套
+                                    if item.isMakeup > 0
+                                        div.pack-icon.pack-icon-words.pack-makeup-yes(title="提供化妆")
+
                             div.pack-detail
                                 | !{item.description}
                             div.pack-select-btn.button.button-flat-primary.button-rounded 选择
@@ -51,12 +75,8 @@ block content
                             span.bk-tag 日期：
                             span.bk-date 请在上面和摄影师约定拍摄日期
                         ul
-                            span.bk-tag 备注：
                             div.bk-note-container
-                                textarea.bk-note(placeholder="请写点什么")
-                        ul.date-selected
-                            span.bk-tag 联系方式：
-                            span #{owner.mobile}&nbsp;#{owner.email}
+                                textarea.bk-note(placeholder="备注：")
                 div.bk-btn.button.button-flat-action.button-rounded 预 订
             div.reminding-wrap
                 p.

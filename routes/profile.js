@@ -31,7 +31,7 @@ router.get(['/', '/:userName'], function (req, res) {
         },
         collects: function (callback) {
             utils.ajax({
-                url: 'Photo.getPhotoCollections',
+                url: 'Photo.listPhotoCollections',
                 method: 'get',
                 data: {
                     userName: ownerUserName

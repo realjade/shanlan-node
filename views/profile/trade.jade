@@ -12,7 +12,7 @@ block content
                 div.main-container
                     div.main-block
                         a.trade-user-portrait
-                            img(src= item.photoPath.replace('_X_X', '_120_120'))
+                            img(src= item.photoPath.replace('_X_X', '_200_200'))
                         a.trade-user-name #{item.nickName}
                         div.main-intro
                             - var scoreId = 'score' + item.score
@@ -20,7 +20,7 @@ block content
                             div.trade-info （#{item.createdAt.substr(0,11)} · #{item.packageName} · #{item.price}元）
                         div.main-comment
                             p #{item.content}
-                        div.main-photo-group
+                        div.main-photo-group(data-id="#{item.tradePhotoCollectionId}")
                             each photo,i in item.photos
                                 if (i < 7)
                                     a.item(id='#{item.score}')

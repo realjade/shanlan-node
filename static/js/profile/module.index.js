@@ -34,7 +34,7 @@
                 url: '/s',
                 type: 'get',
                 data:{
-                    service: 'Photo.getPhotos',
+                    service: 'Photo.listCollectionPhotos',
                     photoCollectionId: gid
                 },
                 success: function(data){

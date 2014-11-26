@@ -111,16 +111,15 @@
             var tip = self.__tip
             var offset = $el.offset()
 
-            tip.text('点击今天，即可预订哟')
+            tip.text('可以预订')
 
             if($el.hasClass('fc-past')){
                 //过去的时间
-                tip.text('过往时间，不能预订哟')
+                tip.text('过往时间，不能预订')
             }
 
             if($el.hasClass('fc-selected')){
-                //过去的时间
-                tip.text('今天被预订喽')
+                tip.text('当天已被预订了')
             }
 
             tip.show().css({

@@ -111,18 +111,20 @@
 
 .mod-profile-header .user-info .user-contacts{
     position: relative;
-    left:-15px;
+    left:20px;
     box-sizing: border-box;
     width:100%;
 }
+
 .mod-profile-header .user-info .user-contacts .contact{
     position: relative;
-    left:35px;
+    display: inline-block;
+}
+.mod-profile-header .user-info .user-contacts .icon{
+    position: absolute;
     display: inline-block;
     width:35px;
     height:35px;
-    cursor: pointer;
-    z-index: 10;
 }
 
 .mod-profile-header .user-info .user-contacts #mobile{
@@ -150,18 +152,21 @@
     height:35px;
     line-height: 35px;
     border-radius: 18px;
-    background-color: rgba(0, 0, 0, 0.30);
+    background-color: rgba(0, 0, 0, 0.10);
     padding:0 0 0 35px;
-    margin-right:10px;
+    margin-right:15px;
     font-size: 12px;
     overflow: hidden;
 }
 
-.mod-profile-header .user-info .contact:hover + .value,
-.mod-profile-header .user-info .value:hover{
-    min-width:100px;
+.mod-profile-header .user-info .contact:hover .icon{
+    z-index: 10;
+}
+.mod-profile-header .user-info .contact:hover .value{
+    min-width:120px;
     width:auto;
-    padding:0 20px 0 40px;
+    padding:0 10px 0 40px;
+    background-color: rgba(0, 0, 0, 0.30);
 }
 
 .mod-profile-header .user-info .info-signature{

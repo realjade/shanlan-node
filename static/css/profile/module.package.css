@@ -72,8 +72,9 @@ html body {
     margin: 20px 0 30px 0;
     width: 555px;
     box-shadow: 1px 1px 5px #cbcbcb;
-    padding: 25px 60px 30px 85px;
+    padding: 20px 73px 30px 73px;
     overflow: hidden;
+    border-top: 5px solid #30ACFF;
 }
 
 .pack-focus {
@@ -84,63 +85,134 @@ html body {
 .pack-no {
     position: absolute;
     left: 0px;
-    border: 2px solid #ef4f69;
-    border-radius: 50%;
-    margin: 6px 14px 14px 18px;
-    width: 30px;
-    height: 30px;
+    top: 0px;
+    border: 1px solid #30Acff;
+    width: 18px;
+    height: 13px;
+    line-height: 10px;
     padding: 5px;
     text-align: center;
-    color: #ef4f69;
-    font-size: 20px;
+    color: #fff;/*color: #ef4f69; */
+    background-color: #30acff;
+    font-size: 13px;
 }
 
-.pack-head-wrap {
+
+
+.mod-package .pack-block .pack-type {
+
+}
+
+.mod-package .pack-block .pack-name {
+    max-width: 400px;
+    padding: 0 0 15px 0;
+    font-size: 26px;
+    overflow: hidden;
+}
+
+.mod-package .pack-block .pack-tags {
+    padding: 13px 0 0 13px;
+}
+
+.mod-package .pack-block .pack-tags .tag {
     float: left;
+    padding: 2px 9px 2px 11px;
+    margin: 0 10px 0 0;
+    color: #333;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 2px;
+    border: 1px solid #2ba6fd;
+    border-radius: 12px;
+}
+
+.mod-package .pack-block #pack-main-info {
     position: relative;
-    width: 430px;
-    padding: 0px 0px 10px 0px;
+    width: 570px;
+    padding: 3px 0;
 }
 
-.pack-name {
-    font-size: 22px;
+.mod-package .pack-block .pack-price {
+    position: absolute;
+    top: -2px;
+    right: 25px;
+    background: url('../common/images/RMB.png') no-repeat 2px 12px;
+    padding: 0 0 0 20px;
+    line-height: 50px;
+    font-size: 32px;
 }
 
-.pack-price {
+.mod-package .pack-block .pack-price .pack-price-unit {
+    padding: 0 0 0 5px;
+    font-size: 14px;
+}
+
+.mod-package .pack-block #pack-overview {
+    position: relative;
+    left:-10px;
+    width: 575px;
+    overflow: hidden;
+}
+
+.mod-package .pack-block .pack-icon {
+    display: inline-block;
     float: left;
-    position: relative;
-    font-size: 28px;
-    padding: 10px 0px 30px 20px;
-    width: 90px;
-    background: url(./images/RMB.png) no-repeat 3px 15px;
+    height: 41px;
+    line-height: 35px;
+    padding: 0 0 0 40px;
+    margin: 0 0 0 10px;
+    color: #333;
+    font-size: 14px;
+    background-size: 30px;
 }
 
-.pack-photo-num {
-    float: left;
-    position: relative;
-    padding: 12px 40px 0 35px;
-    height: 30px;
-    background: url(./images/photo.png) no-repeat 0 14px;
-    font-size: 18px;
+.mod-package .pack-block .pack-icon-words {
+    padding: 0 8px 0 40px;
+    min-width:37px;
 }
 
-.pack-time {
-    float: left;
-    position: relative;
-    padding: 12px 0 0 35px;
-    height: 30px;
-    background: url(./images/time.png) no-repeat 0 13px;
-    font-size: 18px;
+.mod-package .pack-block .pack-location {
+    background: url('../common/images/p-location-blue.png') no-repeat;
 }
+
+.mod-package .pack-block .pack-time {
+    background: url('../common/images/p-time-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-photo-num {
+    background: url('../common/images/p-photo-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-ps-yes {
+    background: url('../common/images/p-ps-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-print-yes {
+    background: url('../common/images/p-print-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-album-yes {
+    background: url('../common/images/p-album-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-makeup-yes {
+    background: url('../common/images/p-makeup-blue.png') no-repeat;
+}
+
+.mod-package .pack-block .pack-costume-yes {
+    background: url('../common/images/p-costume-blue.png') no-repeat;
+}
+
+
+
 
 .pack-detail {
-    float: left;
     position: relative;
-    left: -20px;
+    left: -10px;
     width: 100%;
     border-top: 1px solid #333;
-    margin: 5px 0 0px 0px;
-    padding: 5px 0px 0 20px;
+    margin: 15px 0 0 0;
+    padding: 5px 10px 0 10px;
 }
 
 .pack-detail img {
@@ -150,10 +222,8 @@ html body {
 .pack-select-btn {
     float: right;
     position: relative;
-    background-color: #b6b6b6;
     letter-spacing: 25px;
     width: 120px;
-    height: 28px;
     padding: 5px 5px 5px 25px;
     margin: 10px 10px 0 0;
     text-align: center;
@@ -188,28 +258,34 @@ html body {
 }
 
 .bk-pack > ul {
-    padding: 0px 10px 5px 10px;
+    padding: 10px;
     font-size: 14px;
-    overflow: hidden;
 }
 
-.bk-pack-name {
-    float: left;
-    width: 250px;
+.mod-package .booking-box .bk-date,
+.mod-package .booking-box .bk-pack-name{
+    display: inline-block;
+    padding: 5px 20px;
 }
 
+.mod-package .booking-box .date-selected.selected .bk-date,
+.mod-package .booking-box .package-selected.selected .bk-pack-name{
+    color:#fff;
+    background-color: #7db500;
+    border-radius: 15px;
+}
 .bk-tag {
+    display: inline-block;
     font-size: 14px;
     padding: 0 10px 0 10px;
-    float: left;
 }
 
 .bk-note-container {
-    float: left;
-    width: 258px;
-    height: 40px;
-    border-left: 1px solid #cbcbcb;
-    margin: 5px 0 10px 0;
+    display: inline-block;
+    width:323px;
+    height: 60px;
+    border: 1px solid #cbcbcb;
+    margin: 5px 0 10px 10px;
 }
 
 .bk-note {
@@ -217,13 +293,16 @@ html body {
     width: 100%;
     height: 100%;
     font-size: 12px;
+    padding: 3px;
 }
 
 .bk-btn {
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
     width: 370px;
     margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 25px;
+    padding: 7px 5px 5px 25px;
 }
 
 .bk-btn > span {

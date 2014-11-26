@@ -77,18 +77,18 @@ block content
                                     span #{item.photoPackage.price}
                                     span.pack-price-unit 元
                             li#pack-overview
-                                div.pack-icon.pack-icon-words.pack-location #{item.photoPackage.address.split('--')[2]}
-                                div.pack-icon.pack-icon-words.pack-time #{item.photoPackage.days}天
-                                div.pack-icon.pack-icon-words.pack-photo-num #{item.photoPackage.photoCount}张
-                                div.pack-icon.pack-icon-words.pack-ps-yes #{item.photoPackage.alterCount}张
+                                div.pack-icon.pack-icon-words.pack-location(title="拍摄地") #{item.photoPackage.address.split('--')[2]}
+                                div.pack-icon.pack-icon-words.pack-time(title="拍摄时长") #{item.photoPackage.days}天
+                                div.pack-icon.pack-icon-words.pack-photo-num(title="拍摄张数") #{item.photoPackage.photoCount}张
+                                div.pack-icon.pack-icon-words.pack-ps-yes(title="精修张数") #{item.photoPackage.alterCount}张
                                 if item.photoPackage.printCount > 0
-                                    div.pack-icon.pack-print-yes
+                                    div.pack-icon.pack-print-yes(title="冲洗照片")
                                 if item.photoPackage.albumCount > 0
-                                    div.pack-icon.pack-album-yes
+                                    div.pack-icon.pack-album-yes(title="制作相册")
                                 if item.photoPackage.clothCount > 0
-                                    div.pack-icon.pack-costume-yes
+                                    div.pack-icon.pack-costume-yes(title="提供服装")
                                 if item.photoPackage.isMakeup > 0
-                                    div.pack-icon.pack-makeup-yes
+                                    div.pack-icon.pack-makeup-yes(title="提供化妆")
                     div.item-person-wrap
                         a.person-avatar(href="/profile/#{item.photographer.userName}")
                             img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')

@@ -41,6 +41,7 @@
                             selectedDay: timeObj,
                             clickCallback: function (date) {
                                 $('.date-selected .bk-date', container).text(date.year + '-' + date.month + '-' + date.day + '（' + date.weekdayname + '）')
+                                $('.date-selected').addClass('selected')
                             }
                         })
 
@@ -65,6 +66,7 @@
                 var packageSelected = $('.package-selected', container)
                 packageSelected.data('id', id)
                 packageSelected.find('.bk-pack-name').text(name + '（' + price + '）')
+                packageSelected.addClass('selected')
 
             })
 

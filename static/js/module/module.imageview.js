@@ -263,10 +263,9 @@
         '       <div class="group-desc"></div>' +
         '   </div>' +
         '   <div class="image-panel-wrap">' +
-        '       <em class="prev-btn change-icon"></em>' +
         '       <div class="image-panel"></div>' +
+        '       <em class="prev-btn change-icon"></em>' +
         '       <em class="next-btn change-icon"></em>' +
-        '       <a class="realpath-btn" target="_blank">查看原图</a>' +
         '   </div>' +
         '   <div class="thumbnail-panel">' +
         '       <!--em class="t-prev-btn"></em-->' +
@@ -275,6 +274,7 @@
         '        </div>' +
         '       <!--em class="t-next-btn"></em-->' +
         '   </div>' +
+        '   <a class="realpath-btn" target="_blank">查看原图</a>' +
         '   <em class="close"></em>' +
         '</div>'
 

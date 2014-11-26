@@ -61,7 +61,7 @@
 
 .arrow_box {
     position: relative;
-    background: #88b7d5;
+    background: #61c8ff;
     border: 1px solid #c2e1f5;
 }
 .arrow_box:after, .arrow_box:before {
@@ -77,7 +77,7 @@
 
 .arrow_box:after {
     border-color: rgba(136, 183, 213, 0);
-    border-bottom-color: #88b7d5;
+    border-bottom-color: #61c8ff;
     border-width: 5px;
     margin-left: -5px;
 }
