@@ -64,7 +64,7 @@ a {
     background-color: #eee;
 }
 
-.mod-photo .result-rule-bar #rule-item-active {
+.mod-photo .result-rule-bar .rule-item-active {
     border-bottom: 1px solid #ef4f69;
     padding-bottom: 0;
 }

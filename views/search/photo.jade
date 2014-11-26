@@ -9,7 +9,7 @@ block content
 
         div.result-rule-bar
             div.cell-space.rule-desc 显示顺序 >
-            div.cell-space.rule-item#rule-item-active(data-order="2")
+            div.cell-space.rule-item.rule-item-active(data-order="2")
                 a#score-rule 用户评价
             div.cell-space.rule-item(data-order="1")
                 a#compr-rule 综合排序
@@ -19,6 +19,7 @@ block content
                 a#trade-rule 交易次数
             div.cell-space.rule-item(data-order="6")
                 a#photo-rule 作品量
+            div #{searchType}
         if !searchType || searchType == 'photographer'
             if !data.data || data.data.length == 0
                 div.noitem 亲，没有您要的摄影师。我们会尽快安排摄影师入驻的。感谢支持
@@ -92,7 +93,7 @@ block content
                         a.person-avatar(href="/profile/#{item.photographer.userName}")
                             img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
                         a.person-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
-                        div.person-city (广州)
+                        div.person-city (#{item.photographer.addressBean.city})
                         div.person-collections 作品集:#{item.photographer.collectionCount}
                         //- div.person-trade 交易数:135
                         //- div.person-score

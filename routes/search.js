@@ -37,7 +37,9 @@ router.get('/', function (req, res) {
             } else {
                 res.render('search/photo', {
                     data: {
-                    }
+                        data:[]
+                    },
+                    searchType: req.param('searchType')
                 })
             }
         }

@@ -27,7 +27,18 @@
                 })
             }
 
+            self.__initParam()
+
             self.__bindEvent()
+        },
+
+        __initParam: function(){
+            var self = this
+            var param = App.common.modules.common.paramOfUrl()
+            var orderType = param.orderType || '2'
+
+            $('.rule-item').removeClass('rule-item-active')
+            $('.rule-item[data-order="' + orderType + '"]').addClass('rule-item-active')
         },
 
         __bindEvent: function () {
