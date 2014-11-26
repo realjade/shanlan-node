@@ -45,7 +45,7 @@
     padding: 5px 10px 10px 20px;
     height: 75px;
     position: relative;
-    border-top: 5px solid #ef4f69;
+    border-top: 5px solid #30ACFF;
     border-bottom: 1px solid #cbcbcb;
 }
 
@@ -89,7 +89,7 @@
 
 .custom-header .nav span:before {
     font-family: 'fontawesome-selected';
-    color: #ef4f69;
+    color: #30ACFF;
     position: absolute;
     text-align: center;
     width: 100%;
@@ -131,7 +131,7 @@
     width: 20px;
     height: 20px;
     text-align: center;
-    background: #ef4f69;
+    background: #30ACFF;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     line-height: 13px;
@@ -160,7 +160,7 @@
     padding: 20px;
     background: #fff;
     border-bottom: 1px solid #ddd;
-    border-top: 5px solid #ef4f69;
+    border-top: 5px solid #30ACFF;
     box-shadow: 0 1px rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
 }
@@ -170,7 +170,7 @@
 }
 
 .custom-content-reveal a {
-    color: #ef4f69;
+    color: #30ACFF;
 }
 
 .custom-content-reveal a:hover {
@@ -187,7 +187,7 @@
 
 .fc-calendar .fc-head {
     background: transparent;
-    color: #ef4f69;
+    color: #888;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
@@ -216,8 +216,7 @@
 }
 
 .fc-calendar .fc-row > div.fc-today {
-    background: #1a0dab;
-    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .fc-calendar .fc-row > div.fc-past {
@@ -225,20 +224,25 @@
     background: #eee;
 }
 
+.fc-calendar .fc-row > div.fc-past > span.fc-date{
+    color:#aaa;
+}
+
 .fc-calendar .fc-row > div.fc-selected {
-    background: #ef4f69 !important;
-    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+    background: url(images/calendario/slash.png) 50% no-repeat #fff;
+    background-size: 80%;
     cursor: not-allowed;
 }
 
-.fc-calendar .fc-row > div.fc-checked .fc-date{
-    background: url(images/calendario/ok.png) no-repeat 26px 28px;
+.fc-calendar .fc-row > div.fc-selected > span.fc-date{
+    color:#aaa;
 }
 
-.fc-calendar .fc-row > div.fc-today > span.fc-date,
-.fc-calendar .fc-row > div.fc-selected > span.fc-date {
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+.fc-calendar .fc-row > div.fc-checked{
+    background-color: #30Acff;
+}
+.fc-calendar .fc-row > div.fc-checked > span.fc-date{
+    ;color:#fff;
 }
 
 .fc-calendar .fc-row > div.fc-content:after {
@@ -256,11 +260,11 @@
 
 .fc-calendar .fc-row > div.fc-today.fc-content:after,
 .fc-calendar .fc-row > div.fc-selected.fc-content:after {
-    color: #b02c42;
+    color: #30ACFF;
 }
 
 .fc-calendar .fc-row > div.fc-content:hover:after {
-    color: #ef4f69;
+    color: #30ACFF;
 }
 
 .fc-calendar .fc-row > div.fc-today.fc-content:hover:after,

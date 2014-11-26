@@ -20,17 +20,21 @@
                     span.info-value#user-score 9.1
             div.user-contacts
                 if owner.mobile
-                    div.contact#mobile
-                    div.value #{owner.mobile}
+                    div.contact
+                        div.icon#mobile
+                        div.value #{owner.mobile}
                 if owner.wechat
-                    div.contact#wechat
-                    div.value #{owner.wechat}
+                    div.contact
+                        div.icon#wechat
+                        div.value #{owner.wechat}
                 if owner.qq
-                    div.contact#qq
-                    div.value #{owner.qq}
+                    div.contact
+                        div.icon#qq
+                        div.value #{owner.qq}
                 if owner.email
-                    div.contact#email
-                    div.value #{owner.email}
+                    div.contact
+                        div.icon#email
+                        div.value #{owner.email}
 
             //- div.info-signature #{owner.signature}
     div.profile-nav

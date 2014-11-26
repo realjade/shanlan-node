@@ -127,7 +127,7 @@
                     },
                     success: function(data){
                         if(data.code === 200){
-                            App.common.modules.smallnote('恭喜您，修改信息成功')
+                            App.common.modules.smallnote('个人信息修改成功')
                         }
                     }
                 })
