@@ -8,4 +8,12 @@ router.get('/', function (req, res) {
 
     });
 });
+
+/* blog page. */
+router.get(['/blog','/blog/:id'], function (req, res) {
+
+    res.render('main/blog', {
+
+    });
+});
 module.exports = router;
