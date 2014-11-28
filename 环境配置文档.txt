@@ -46,6 +46,18 @@ grunt
 node staticWipeCache.js
 
 
+运行server.js线上用pm2
+pm2 start server.js -i max
+
+现在事情一切顺利,你的进程嗡嗡的运行着,你需要做一次硬重启(hard restart).现在吗?是的,首先,dump掉:
+
+$ pm2 dump
+然后,你可以从文件中恢复它:
+
+$ pm2 kill      //让我们假设一个PM2停掉了
+$ pm2 resurect  //我所有的进程又满血满状态复活了
+
+
 http://tympanus.net/codrops/2010/09/28/polaroid-photobar-gallery/
 
 nginx配置加个参数
