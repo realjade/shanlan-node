@@ -115,7 +115,7 @@
                 url: '/s',
                 type: 'get',
                 data:{
-                    service: 'Photo.getPhotoCollections',
+                    service: 'Photo.listPhotoCollections',
                     userName: options.me.userName
                 },
                 success: function(data){

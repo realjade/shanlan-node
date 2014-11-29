@@ -9,10 +9,50 @@ html body{
     background-color: #f5f5f5;
 }
 .mod-blog{
-    box-sizing: border-box;
-    position: relative;
     width:1000px;
     margin: 40px auto;
+    position: relative;
+    color: #333;
+}
+.mod-blog .nav{
+    position: absolute;
+    top: 0;
+    width:140px;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px #cbcbcb;
+    letter-spacing: 3px;
+}
+.mod-blog .nav a{
+    height:40px;
+    line-height: 40px;
+    padding:5px;
+    border-top: 1px solid #cbcbcb;
+    color: #999;
+    font-size: 13px;
+    display: block;
+}
+
+.mod-blog .nav a:hover{
+    font-size: 16px;
+}
+.mod-blog .nav a.active{
+    font-size: 16px;
+    color: #333;
+}
+.mod-blog .nav a:first-child{
+    border:none;
+}
+
+.mod-blog#nav .content{
+    width:750px;
+    left:195px;
+}
+.mod-blog .content{
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
     padding: 25px 50px 50px 50px;
     background-color: #fff;
     box-shadow: 0 2px 3px #cbcbcb;
@@ -40,7 +80,7 @@ html body{
 }
 .mod-blog .header-wrap .avatar{
     position: absolute;
-    top: 1px;
+    top: 2px;
     width: 120px;
     height: 120px;
     margin: 0 20px 0 0;
@@ -60,7 +100,7 @@ html body{
     padding: 38px 0 38px 180px;
     font-size: 32px;
     letter-spacing: 5px;
-    color:#444;
+    color:#333;
 }
 .mod-blog .body{
     box-sizing: border-box;
@@ -76,12 +116,22 @@ html body{
 }
 
 
-.mod-blog#photographer .type{
+.mod-blog .content#photographer .type{
     background: url(images/tag-p.png);
 }
-.mod-blog#photographer .header-wrap{
+.mod-blog .content#photographer .header-wrap{
     border-bottom: 1px solid #ef4f69;
 }
-.mod-blog#photographer .header-wrap .avatar{
+.mod-blog .content#photographer .header-wrap .avatar{
     border-bottom: 3px solid #ef4f69;
+}
+
+.mod-blog .content#official .type{
+    background: url(images/tag-o.png);
+}
+.mod-blog .content#official .header-wrap{
+    border-bottom: 1px solid #9bb1be;
+}
+.mod-blog .content#official .header-wrap .avatar{
+    border-bottom: 3px solid #64727a;
 }

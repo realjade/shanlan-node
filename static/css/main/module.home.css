@@ -290,13 +290,9 @@ a {
     position: relative;
 }
 
-.c-block.first {
-
-}
-
 .c-img {
-    height: 351px;
-    width: 100%;
+    height: 310px;
+    width: 310px;
     position: relative;
     background-position: 50% 50%;
     -webkit-backface-visibility: hidden;
@@ -325,7 +321,7 @@ a {
 }
 
 .c-bar.bar-bottom {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: rgba(0, 0, 0, 0.3);
     left: 0;
     bottom: -80px;
 }
@@ -352,20 +348,27 @@ a {
 }
 
 .c-name {
+    display: inline-block;
+    width:200px;
+    height:66px;
+    line-height: 66px;
     box-sizing: border-box;
-    padding: 20px;
-    text-align: center;
+    padding:0 0 0 15px;
+    text-align: left;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
 
 }
 
 .c-bar .c-person {
+    position: absolute;
+    right: 0;
+    top:0;
     box-sizing: border-box;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 50%;
+    width: 35%;
 }
 
 .c-person.left {
@@ -444,25 +447,25 @@ a {
 .mod-home .photographer .block{
     display: inline-block;
     position: relative;
-    width:70px;
-    height:70px;
+    width:120px;
+    height:120px;
     margin:5px;
     border-radius: 50%;
     box-shadow: 1px 1px 5px #cbcbcb;
     overflow: hidden;
 }
 .mod-home .photographer img{
-    width:70px;
-    height:70px;
+    width:100%;
+    height:100%;
 }
 .mod-home .photographer .name{
     position: absolute;
     left:0;
-    bottom:-70px;
-    height:70px;
-    line-height: 70px;
-    width:70px;
-    font-size:16px;
+    bottom:-120px;
+    height:120px;
+    line-height: 120px;
+    width:120px;
+    font-size:18px;
     letter-spacing: 2px;
     color:#fff;
     text-align: center;
