@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     if (!searchType || searchType == 'photographer') {
         url = 'User.pageSearchPhotographers'
     }
-    var pageSize = req.param('pageSize') || '1'
+    var pageSize = req.param('pageSize') || '10'
     var pageIndex = req.param('pageIndex') || '0'
     var orderType = req.param('orderType') || '2'
     utils.ajax({
