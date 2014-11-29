@@ -33,12 +33,11 @@ router.route('/login').get(function (req, res) {
                 //session写入
                 var session = req.session
                 session.user = data.data
-
-                if (req.param('next')) {
-                    res.redirect(req.param('next'))
-                } else {
-                    res.redirect('/profile')
+                var next = req.param('next')
+                if(!next || next == 'undefined'){
+                    next = '/'
                 }
+                res.redirect(next)
 
             } else {
                 res.render('account/login', {

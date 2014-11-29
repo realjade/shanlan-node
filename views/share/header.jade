@@ -45,10 +45,17 @@ div.mod-header-wrap#m-header
                 span 登 录 >
         else
             div.header-user
-                a(href="/profile")
-                    img.avatar-img(src="#{user.avatar['120']}")
+                if user.type == 'COMMON'
+                    a(href="/personal/setting")
+                        img.avatar-img(src="#{user.avatar['120']}")
+                else
+                    a(href="/profile")
+                        img.avatar-img(src="#{user.avatar['120']}")
                 div.user-type
-                a.user-name(href="/profile") #{user.nickName}
+                if user.type == 'COMMON'
+                    a.user-name(href="/personal/setting") #{user.nickName}
+                else
+                    a.user-name(href="/profile") #{user.nickName}
                 ul.menu-down
                     li
                         a#link-order(href='/personal/order') 我的订单
