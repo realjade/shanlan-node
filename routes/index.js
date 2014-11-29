@@ -10,7 +10,7 @@ router.route('/login').get(function (req, res) {
     var me = res.locals._user
 
     if (me) {
-        res.redirect('profile')
+        res.redirect('/')
         return false
     }
 
@@ -22,7 +22,7 @@ router.route('/login').get(function (req, res) {
     var me = res.locals._user
 
     if (me) {
-        res.redirect('/profile')
+        res.redirect('/')
         return false
     }
     utils.ajax({
