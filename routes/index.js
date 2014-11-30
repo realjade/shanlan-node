@@ -61,9 +61,7 @@ router.route('/register').get(function (req, res) {
         callback: function (err, data) {
             if (data.code == '200') {
                 //注册成功
-                res.render('account/message', {
-                    message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
-                })
+                res.redirect('/')
             } else {
                 res.render('account/register', {
                     title: '注册',
