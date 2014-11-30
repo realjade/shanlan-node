@@ -72,41 +72,20 @@ block content
         div.title 每日镁光集
         div.collection
             div.c-list
+                each collect, index in data
+                    div.block-wrap.ui-pg1-static
+                        div.c-block(data-id="#{collect.id}")
+                            a.c-img
+                                img(src="#{collect.coverPath}")
+                            //- div.c-bar.bar-top
+                            div.c-bar.bar-bottom
+                                div.c-name #{collect.name}
+                                a.c-person.right(href="profile/yeshu" target="_blank")
+                                    img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
+                                    ul.person-info
+                                        li.person-type 摄影
+                                        li 叶树
 
-                div.block-wrap.ui-pg1-static
-                    div.c-block(data-id="2")
-                        a.c-img
-                            img(src="/img/self/2014/11/3/e7f6b561-f683-4d85-bd2f-85c7509599f1_THUMBNAIL_600_600.jpg")
-                        //- div.c-bar.bar-top
-                        div.c-bar.bar-bottom
-                            div.c-name 《猫样生活》
-                            a.c-person.right(href="profile/yeshu" target="_blank")
-                                img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
-                                ul.person-info
-                                    li.person-type 摄影
-                                    li 叶树
-                div.block-wrap.ui-pg1-static
-                    div.c-block(data-id="3")
-                        a.c-img
-                            img(src="/img/self/2014/11/3/a7518e4b-a592-4761-b257-a75f48de2c3f_THUMBNAIL_600_600.jpg")
-                        div.c-bar.bar-bottom
-                            div.c-name 《望》
-                            a.c-person.right(href="profile/yeshu" target="_blank")
-                                img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
-                                ul.person-info
-                                    li.person-type 摄影
-                                    li 叶树
-                div.block-wrap.ui-pg1-static
-                    div.c-block(data-id="8")
-                        a.c-img
-                            img(src="/img/self/2014/11/14/be7244b6-0ab2-4ed4-832a-c592627df2ce_THUMBNAIL_600_600.jpg")
-                        div.c-bar.bar-bottom
-                            div.c-name 《夏天离不开》
-                            a.c-person.right(href="profile/yeshu" target="_blank")
-                                img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
-                                ul.person-info
-                                    li.person-type 摄影
-                                    li 叶树
 
         div.title 合作摄影师
         div.photographer
