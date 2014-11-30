@@ -1,13 +1,22 @@
 var express = require('express');
+var async = require('async');
+var utils = require('../lib/utils');
 var router = express.Router();
 
 /* main page. */
 router.get('/', function (req, res) {
 
-
-    res.render('main/home', {
-
-    });
+    utils.ajax({
+        url: 'Photo.listPhotoCollections',
+        method: 'get',
+        data: {
+            userName: 'yeshu'
+        },
+        req: req,
+        callback: function (err, data) {
+            res.render('main/home', data)
+        }
+    })
 });
 
 /* blog page. */

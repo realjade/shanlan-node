@@ -8,26 +8,29 @@ block header
 block content
     div.mod-trade
         div.mod-trade-main
-            each item in comments.data
-                div.main-container
-                    div.main-block
-                        a.trade-user-portrait
-                            img(src= item.photoPath.replace('_X_X', '_200_200'))
-                        a.trade-user-name #{item.nickName}
-                        div.main-intro
-                            - var scoreId = 'score' + item.score
-                            div.main-stars(id = "#{scoreId}")
-                            div.trade-info （#{item.createdAt.substr(0,11)} · #{item.packageName} · #{item.price}元）
-                        div.main-comment
-                            p #{item.content}
-                        div.main-photo-group(data-id="#{item.tradePhotoCollectionId}")
-                            each photo,i in item.photos
-                                if (i < 7)
-                                    a.item(id='#{item.score}')
-                                        img(src= photo.photoPath.replace("_X_X","_THUMBNAIL_200_200"))
-                            if( item.photoNum > 7)
-                                a.item#item-number
-                                    span +#{item.photoCount-7} &nbsp
+            if(comments)
+                each item in comments.data
+                    div.main-container
+                        div.main-block
+                            a.trade-user-portrait
+                                img(src= item.photoPath.replace('_X_X', '_200_200'))
+                            a.trade-user-name #{item.nickName}
+                            div.main-intro
+                                - var scoreId = 'score' + item.score
+                                div.main-stars(id = "#{scoreId}")
+                                div.trade-info （#{item.createdAt.substr(0,11)} · #{item.packageName} · #{item.price}元）
+                            div.main-comment
+                                p #{item.content}
+                            div.main-photo-group(data-id="#{item.tradePhotoCollectionId}")
+                                each photo,i in item.photos
+                                    if (i < 7)
+                                        a.item(id='#{item.score}')
+                                            img(src= photo.photoPath.replace("_X_X","_THUMBNAIL_200_200"))
+                                if( item.photoNum > 7)
+                                    a.item#item-number
+                                        span +#{item.photoCount-7} &nbsp
+            else
+                div.alert 目前还没有评价信息
 
 
 block js

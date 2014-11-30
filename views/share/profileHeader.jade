@@ -42,11 +42,11 @@
             li.avatar-wrap
                 img.avatar(src="#{owner.avatar['30']}")
                 div.avatar-name #{owner.nickName}
-            li
-                if subTab == 'about'
-                    a.active(href="/profile/about/#{owner.userName}") 个人介绍
-                else
-                    a(href="/profile/about/#{owner.userName}") 个人介绍
+            //li
+            //    if subTab == 'about'
+            //        a.active(href="/profile/about/#{owner.userName}") 个人介绍
+            //    else
+            //        a(href="/profile/about/#{owner.userName}") 个人介绍
             li
                 if subTab == 'index'
                     a.active(href="/profile/#{owner.userName}") 作品展示
