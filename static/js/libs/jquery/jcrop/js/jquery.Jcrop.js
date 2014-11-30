@@ -1446,20 +1446,26 @@
         var bw = options.boxWidth;
         var bh = options.boxHeight;
         $img.width(iw).height(ih);
-        $img.attr('src', src);
-        $img2.attr('src', src);
-        presize($img, bw, bh);
-        boundx = $img.width();
-        boundy = $img.height();
-        $img2.width(boundx).height(boundy);
-        $trk.width(boundx + (bound * 2)).height(boundy + (bound * 2));
-        $div.width(boundx).height(boundy);
-        Shade.resize(boundx,boundy);
-        enableCrop();
+        $img.prop('src', src);
+        $img2.prop('src', src);
+        $img.load(function(){
+          setTimeout(function(){
+            presize($img, bw, bh);
+            boundx = $img.width();
+            boundy = $img.height();
+            $img2.width(boundx).height(boundy);
+            $trk.width(boundx + (bound * 2)).height(boundy + (bound * 2));
+            $div.width(boundx).height(boundy);
+            Shade.resize(boundx,boundy);
+            enableCrop();
 
-        if (typeof(callback) === 'function') {
-          callback.call(api);
-        }
+            if (typeof(callback) === 'function') {
+              callback.call(api);
+            }
+          },200)
+
+        })
+
       };
       img.src = src;
     }
