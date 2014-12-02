@@ -77,7 +77,7 @@ block content
                         ul
                             div.bk-note-container
                                 textarea.bk-note(placeholder="备注：")
-                if _user.userName != owner.userName
+                if !_user || _user.userName != owner.userName
                     div.bk-btn.button.button-flat-action.button-rounded 预 订
                 else
                     div.bk-btn.button.button-flat-action.button-rounded.disabled 预 订

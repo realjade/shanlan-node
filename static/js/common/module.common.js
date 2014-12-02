@@ -37,7 +37,6 @@ $(function(){
         },
         scrollTo: function(top, callback){
             top = top || 0
-            console.log(top)
             $(document.body).animate({
                 scrollTop: top
             },'fast', function(){
