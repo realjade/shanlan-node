@@ -1,5 +1,8 @@
 ﻿div.mod-profile-header
-    div.profile-bg(style="background-image:url('#{owner.backPath&&owner.backPath.replace('_X_X', '_COMPRESS_')}')")
+    if owner.backPath
+        div.profile-bg(style="background-image:url('#{owner.backPPath.replace('_X_X', '_COMPRESS_')}')")
+    else
+        div.profile-bg(style="background-color:#fff")
     div.user-info.clr
         div.f-l
             img.avatar-img(src="#{owner.avatar['200']}")
