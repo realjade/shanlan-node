@@ -77,7 +77,10 @@ block content
                         ul
                             div.bk-note-container
                                 textarea.bk-note(placeholder="备注：")
-                div.bk-btn.button.button-flat-action.button-rounded 预 订
+                if _user.userName != owner.userName
+                    div.bk-btn.button.button-flat-action.button-rounded 预 订
+                else
+                    div.bk-btn.button.button-flat-action.button-rounded.disabled 预 订
             div.reminding-wrap
                 p.
                     * 建议您预订前先与摄影师沟通，确认具体时间和地点。<br/>
