@@ -122,6 +122,12 @@
     height: 60px;
     border-radius:50% 50%;
     box-shadow: 0 0 2px #51a6ff;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    transition: .3s;
+
 }
 .ui-button-wrap:hover{
     background: #77B9FD;

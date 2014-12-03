@@ -28,28 +28,28 @@ block content
                 a.v2(href="javascript:;")
                 a.v2(href="javascript:;")
 
-        div.title 摄影师推介
-        div.lensman
-            a.block-wrap.left(href="" target="_blank")
-                div.article-head 【大四学姐少女心】· Cecila张泽昕
-                div.article-illus
-                    img(src="//static.mgcheng.com/static/css/main/images/article-illus.jpg")
-                div.article-content
-                    p 如果说男摄影师拍女性人像是站在审美者的立场来将自己的意见进行传达，那么女性摄影事则更倾向于将自己的情感和内心融入到所想拍摄的客体中...
-            a.block-wrap.mid(href="" target="_blank")
-                div.article-head 【记忆不敌时间弥散于光阴】· 弥散
-                div.article-illus
-                    img(src="//static.mgcheng.com/static/css/main/images/article-illus3.jpg")
-                div.article-content
-                    p “胶片替眼睛记录下光影，记忆敌不过时间弥散于光阴。”这与影南忘记录光影的目标不谋而合。弥散军擅长人像和静物摄影...
-            a.block-wrap.right(href="" target="_blank")
-                div.article-head 【天暗下来，你就是光】· Wynn温馨
-                div.article-illus
-                    img(src="//static.mgcheng.com/static/css/main/images/article-illus2.jpg")
-                div.article-content
-                    p 多少惴惴不安地给女友拍照的男生是在这样心塞的经历中，第一次听说了Wynn温馨这个名字。微博上巨大的影响力，让这个看起来微胖而呆萌的摄影师的作品，成了好多女生所想要留下青春画面的衡量标准...
-
-
+        //div.title 摄影师推介
+        //div.lensman
+        //    a.block-wrap.left(href="" target="_blank")
+        //        div.article-head 【大四学姐少女心】· Cecila张泽昕
+        //        div.article-illus
+        //            img(src="//static.mgcheng.com/static/css/main/images/article-illus.jpg")
+        //        div.article-content
+        //            p 如果说男摄影师拍女性人像是站在审美者的立场来将自己的意见进行传达，那么女性摄影事则更倾向于将自己的情感和内心融入到所想拍摄的客体中...
+        //    a.block-wrap.mid(href="" target="_blank")
+        //        div.article-head 【记忆不敌时间弥散于光阴】· 弥散
+        //        div.article-illus
+        //            img(src="//static.mgcheng.com/static/css/main/images/article-illus3.jpg")
+        //        div.article-content
+        //            p “胶片替眼睛记录下光影，记忆敌不过时间弥散于光阴。”这与影南忘记录光影的目标不谋而合。弥散军擅长人像和静物摄影...
+        //    a.block-wrap.right(href="" target="_blank")
+        //        div.article-head 【天暗下来，你就是光】· Wynn温馨
+        //        div.article-illus
+        //            img(src="//static.mgcheng.com/static/css/main/images/article-illus2.jpg")
+        //        div.article-content
+        //            p 多少惴惴不安地给女友拍照的男生是在这样心塞的经历中，第一次听说了Wynn温馨这个名字。微博上巨大的影响力，让这个看起来微胖而呆萌的摄影师的作品，成了好多女生所想要留下青春画面的衡量标准...
+        //
+        //
         //div.title 化妆摆拍心得
         //div.topic
         //    div.topic-type1#topic1
@@ -69,30 +69,34 @@ block content
         //            img(src="//static.mgcheng.com/static/css/main/images/t5.jpg" target="_blank")
 
 
-        div.title 每日镁光集
-        div.collection
-            div.c-list
-                each collect, index in data
-                    div.block-wrap.ui-pg1-static
-                        div.c-block(data-id="#{collect.id}")
-                            a.c-img
-                                img(src="#{collect.coverPath}")
-                            //- div.c-bar.bar-top
-                            div.c-bar.bar-bottom
-                                div.c-name #{collect.name}
-                                a.c-person.right(href="profile/yeshu" target="_blank")
-                                    img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
-                                    ul.person-info
-                                        li.person-type 摄影
-                                        li 叶树
+
 
 
         div.title 合作摄影师
         div.photographer
-            a.block(href="profile/yeshu")
-                img(src="/img/avatar/2014/11/3/353aeb0d-9333-4316-ab35-574f377c8539_120_120.jpg")
-                div.name 叶树
+            if(photographers.data)
+                each item, index in photographers.data
+                    a.block(href="profile/#{item.userName}")
+                        img(src="#{item.photoPath.replace('_X_X','_120_120')}")
+                        div.name #{item.nickName}
 
+        div.title 作品展示
+        div.collection
+            div.c-list
+                if(collections.data)
+                    each collect, index in collections.data
+                        div.block-wrap.ui-pg1-static
+                            div.c-block(data-id="#{collect.id}" data-name="#{collect.name}")
+                                a.c-img
+                                //    img(src="#{collect.coverPath.replace('_X_X','_200_200')}")
+                                //- div.c-bar.bar-top
+                                div.c-bar.bar-bottom
+                                    div.c-name #{collect.name}
+                                    a.c-person.right(href="profile/yeshu" target="_blank")
+                                        //img(src="#{collect.coverPath.replace('_X_X','_200_200')}")
+                                        ul.person-info
+                                            li.person-type 摄影师
+                                            li #{collect.creator}
 block footer
     include ../share/footer
 block js

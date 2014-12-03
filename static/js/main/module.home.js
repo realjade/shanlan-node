@@ -92,20 +92,20 @@
                 }, '#rightArea,#nextCircle2');
 
                 container.on('click', '.c-block', function () {
-                    self.__initImageView($(this).data('id'))
+                    self.__initImageView($(this).data('id'), $(this).data('name'))
                 })
 
         },
 
-        __initImageView: function (gid) {
+        __initImageView: function (gid,name) {
             var self = this
 
             $.ajax({
                 url: '/s',
                 type: 'get',
                 data:{
-                    service: 'Photo.listTradePhotos',
-                    tradePhotoCollectionId: gid
+                    service: 'Photo.listCollectionPhotos',
+                    photoCollectionId: gid
                 },
                 success: function(data){
                     if(data.code === 200){
@@ -118,6 +118,7 @@
                         })
                         App.common.modules.imageView.init(null, {
                             showDialog: true,
+                            groupTitle: name,
                             //groupDescription: '来生再见',
                             imgData: data
                         })

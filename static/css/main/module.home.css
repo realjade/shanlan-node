@@ -258,7 +258,7 @@ a {
     text-align: center;
     color: #333;
     width: 100%;
-    margin: 36px 0px 20px 0px;
+    margin: 25px 0px 20px 0px;
     font-size: 38px;
     padding: 30px 0;
     color: #333;
@@ -441,7 +441,7 @@ a {
 
 /* photographer */
 .mod-home .photographer{
-    width:1000px;
+    width:1050px;
     margin:0 auto;
 }
 .mod-home .photographer .block{
@@ -449,7 +449,7 @@ a {
     position: relative;
     width:120px;
     height:120px;
-    margin:5px;
+    margin:20px;
     border-radius: 50%;
     box-shadow: 1px 1px 5px #cbcbcb;
     overflow: hidden;
