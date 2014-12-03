@@ -540,6 +540,10 @@ a {
     width: 100%;
 }
 
+.mod-photo .collection{
+    cursor: pointer;
+}
+
 #item-number {
     color: #ffffff;
     font-size: 32px;

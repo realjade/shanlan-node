@@ -71,6 +71,13 @@
             })
 
             container.on('click', '.bk-btn', function () {
+                if($(this).hasClass('disabled')){
+                    App.common.modules.smallnote('您不能预订自己的套系', {
+                        pattern: 'error',
+                        top: ($(window).height() - 60) / 2
+                    })
+                    return false
+                }
                 var bookTime = calendar.getCheckedTime()
                 var packageId = $('.package-selected', container).data('id')
                 var desc = $('.bk-note', container).val()
