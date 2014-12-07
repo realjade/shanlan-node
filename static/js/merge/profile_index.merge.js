@@ -9,4 +9,5 @@ document.write('<script src="//static.mgcheng.com/static/js/common/module.common
 document.write('<script src="//static.mgcheng.com/static/js/common/module.profilelayout.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.dialog.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.imageview.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/module/module.collectionphoto.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/profile/module.index.js"></script>')
