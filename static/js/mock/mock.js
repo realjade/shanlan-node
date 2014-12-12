@@ -12,7 +12,7 @@ $(function() {
         // General settings
         runtimes : 'html5,flash,html4',
         url : '/opf/upload/uploadPhotos?collectionId=1',
-        chunk_size: '1mb',
+        //chunk_size: '1mb',
         rename : true,
         dragdrop: true,
 
