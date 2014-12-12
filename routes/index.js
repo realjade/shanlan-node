@@ -82,9 +82,11 @@ router.get('/logout', function (req, res) {
 })
 
 router.get('/mock', function (req, res) {
-    res.render('account/message', {
-        message: '恭喜您注册成功，<a href="/login">登录</a>后，更加精彩'
-    })
+    res.render('mock')
+})
+
+router.get('/upload', function (req, res) {
+    res.render('mock')
 })
 
 /* GET home page. */
