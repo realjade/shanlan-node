@@ -31,7 +31,7 @@ $(function() {
         },*/
 
         // Resize images on clientside if we can
-        resize : {width : 320, height : 240, quality : 90},
+        //resize : {width : 320, height : 240, quality : 90},
 
         flash_swf_url : '//static.mgcheng.com/static/js/libs/jquery/plupload/js/Moxie.swf',
         silverlight_xap_url : '//static.mgcheng.com/static/js/libs/jquery/plupload/js/Moxie.xap'
