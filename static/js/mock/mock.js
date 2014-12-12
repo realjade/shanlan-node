@@ -11,7 +11,7 @@ $(function() {
     $("#uploader").pluploadQueue({
         // General settings
         runtimes : 'html5,flash,silverlight,html4',
-        url : '/opf/upload/uploadTest?collectionId=1',
+        url : '/opf/upload/uploadPhotos?collectionId=1',
         chunk_size: '1mb',
         rename : true,
         dragdrop: true,
