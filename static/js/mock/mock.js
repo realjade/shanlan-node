@@ -26,6 +26,10 @@ $(function() {
             ]
         },
 
+        multipart_params:{
+            collectionId: '1'
+        },
+
         // Resize images on clientside if we can
         resize : {width : 320, height : 240, quality : 90},
 
