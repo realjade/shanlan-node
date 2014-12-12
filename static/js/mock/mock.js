@@ -11,7 +11,7 @@ $(function() {
     $("#uploader").pluploadQueue({
         // General settings
         runtimes : 'html5,flash,silverlight,html4',
-        url : '/opf/upload/uploadTest',
+        url : '/opf/upload/uploadTest?collectionId=1',
         chunk_size: '1mb',
         rename : true,
         dragdrop: true,
@@ -26,9 +26,9 @@ $(function() {
             ]
         },
 
-        multipart_params:{
+        /*multipart_params:{
             collectionId: '1'
-        },
+        },*/
 
         // Resize images on clientside if we can
         resize : {width : 320, height : 240, quality : 90},
