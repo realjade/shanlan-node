@@ -1,6 +1,6 @@
 http://localhost:8080/opf/services?request={"key":"app1","accessToken":"","service":"User.register","formate":"json","v":"1.0","param":"{\"userName\":\"wangwu3\",\"password\":\"888888\",\"nickName\":\"王五\",\"city\":\"BeiJing\",\"email\":\"wangwu@126.com\",\"isValid\":true}","secret":"secret1","sign":"06F6DF0CE299C32C534FBBA308E5365BA4B95F0A"}
 
-http://182.92.159.195:8080/user/login.koala;jsessionid=2E5A176819E01988C6BB7BF26C462113
+http://182.92.159.195:8080/manage
 
 http://182.92.159.195:8080/opf/services?request={"key":"app1","accessToken":"","service":"nl","formate":"json","v":"1.0","param":"{\"userName\":\"wangwu3\",\"password\":\"888888\"}","secret":"secret1","sign":"06F6DF0CE299C32C534FBBA308E5365BA4B95F0A"}
 

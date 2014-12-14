@@ -1,0 +1,21 @@
+extends share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_photo.merge.css")}')
+    link(rel="stylesheet" href="//static.mgcheng.com/static/js/libs/jquery/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css" media="screen")
+    <!-- production -->
+
+block header
+    div.mod-personal-header-wrap
+        include share/header
+block content
+    div.mod-personal-photo
+        div#uploader
+            p Your browser doesn't have Flash, Silverlight or HTML5 support.
+
+block js
+
+    script(type="text/javascript" src="//static.mgcheng.com/static/js/libs/jquery/plupload/plupload.full.min.js")
+    script(type="text/javascript" src="//static.mgcheng.com/static/js/libs/jquery/plupload/jquery.plupload.queue/jquery.plupload.queue.js")
+    script(type="text/javascript" src="//static.mgcheng.com/static/js/libs/jquery/plupload/i18n/zh.js")
+    script(type="text/javascript" src="//static.mgcheng.com/static/js/mock/mock.js")
+

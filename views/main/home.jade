@@ -87,7 +87,7 @@ block content
                     each collect, index in collections.data
                         if(collect.coverPath)
                             div.block-wrap.ui-pg1-static
-                                div.c-block(data-id="#{collect.id}" data-name="#{collect.name}")
+                                div.c-block.collection-photo(data-id="#{collect.id}")
                                     a.c-img
                                         img(src="#{collect.coverPath.replace('_X_X','_THUMBNAIL_600_600')}")
                                     //- div.c-bar.bar-top

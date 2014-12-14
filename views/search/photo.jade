@@ -55,7 +55,7 @@ block content
                         div.item-groups-wrap
                             div.groups-list-a
                                 each collection, colIndex in item.photoCollections
-                                    div.g-block-a.collection(data-id="#{collection.id}" data-name="#{collection.name}")
+                                    div.g-block-a.collection-photo(data-id="#{collection.id}")
                                         if collection.coverPath
                                             img(src="#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}")
         else
@@ -100,7 +100,7 @@ block content
                             img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
                             div (4.9)
                     div.item-groups-wrap
-                        div.main-item-group.collection(data-id="#{item.photoPackage.reCollection}" data-name="#{item.photoPackage.reCollectionName || ''}")
+                        div.main-item-group.collection-photo(data-id="#{item.photoPackage.reCollection}")
                             each photo, pindex in item.photoPackage.photos
                                 a.item
                                     img(src="#{photo.photoPath.replace('_X_X', '_THUMBNAIL_200_200')}")

@@ -9,7 +9,7 @@ block content
     div.mod-profile
         each collect, index in collects
             if(collect.photoCount >= 4)
-                div.photo-group.mod-photo(data-id="#{collect.id}" data-name="#{collect.name}")
+                div.photo-group.collection-photo(data-id="#{collect.id}")
                     each photo, index in collect.photoDTOList
                         div(class="photo-item item#{index+1}" style="background-image:url(#{photo.filePath})")
                     div.title-bottom

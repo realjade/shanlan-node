@@ -223,6 +223,9 @@
     color: #a6a6a6;
     text-align: center;
 }
+.collection-photo{
+    cursor: pointer;
+}
 .baidu{
     display: none;
 }

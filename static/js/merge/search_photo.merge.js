@@ -11,5 +11,6 @@ document.write('<script src="//static.mgcheng.com/static/js/common/module.layout
 document.write('<script src="//static.mgcheng.com/static/js/module/module.dialog.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.page.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/module/module.imageview.js"></script>')
+document.write('<script src="//static.mgcheng.com/static/js/module/module.collectionphoto.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/search/module.photosearch.js"></script>')
 document.write('<script src="//static.mgcheng.com/static/js/search/module.photo.js"></script>')
