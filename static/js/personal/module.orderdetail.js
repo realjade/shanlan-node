@@ -25,7 +25,9 @@
             var container = self.__container
             var options = self.__options
             var userType = options.me.type
+            var status = $('.status').attr('id')
 
+            if(status == 'FINISHED') $('#order-comments').show()
             if(userType != 'COMMON') {
                 $('#comment-content').attr('readonly','true')
                 $('.star').css({
@@ -79,6 +81,7 @@
             var btn = $('.process-btn')
             var notice = $('.process-notice')
             $('.status').attr('id',status)
+            if(status == 'FINISHED') $('#order-comments').show()
             notice.text('')
             switch(status){
                 case 'TOPREPAY':
@@ -136,10 +139,11 @@
             var userType = options.me.type
 
             $('.process-btn').click(function(){
-                if($(this).attr('disabled') == 'true') return
-                $(this).attr('disabled','true')
+                var btn = $(this)
+                if(btn.attr('disabled') == 'true') return
+                btn.attr('disabled','true')
                 var tradeOrderNumber = $('#tradeOrder').attr('number')
-                var action = $(this).attr('id')
+                var action = btn.attr('id')
                 $.ajax({
                     url:'/s',
                     type:'put',
@@ -150,7 +154,7 @@
                     success:function(data){
                         if(data.code==200){
                             self.__updateStatus(data.data)
-                            $(this).attr('disabled','false')
+                            btn.removeAttr('disabled')
                         }
                         else{
                             App.common.modules.smallnote('操作失败，请稍后再试，或者联系我们客服，邮箱地址在网页底端', {

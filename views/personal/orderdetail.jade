@@ -57,7 +57,7 @@ block content
                             a(href='') 不熟悉交易流程？去看看详细解释吧 >>
 
 
-        div.box#order-photo(style="display:none")
+        div.box#order-photo
             div.title 照片
             div.body
                 div.photo-box
@@ -76,41 +76,40 @@ block content
                         a.icon.delete
 
         - var type = _user.type
-        if tradeOrder.status == 'FINISHED'
-            div.box#order-comments
-                if(type == 'PHOTOGRAPHER')
-                    div.title 对方的评价
-                else if(type == 'COMMON')
-                    div.title 您的评价
-                div.body
-                    ul
-                        li
-                            div.desc 满意度:
-                            if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                                div.star-line(clicked="true" value="#{tradeOrderItems[0].tradeComments[0].score}")
-                                    div.star#score-1
-                                    div.star#score-2
-                                    div.star#score-3
-                                    div.star#score-4
-                                    div.star#score-5
-                                    div.score
-                            else
-                                div.star-line(clicked="false" )
-                                    div.star#score-1
-                                    div.star#score-2
-                                    div.star#score-3
-                                    div.star#score-4
-                                    div.star#score-5
-                                    div.score
-                        li
-                            div.desc 评论:
-                            if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
-                                textarea#comment-content #{tradeOrderItems[0].tradeComments[0].content}
-                            else
-                                textarea#comment-content
-                    if(type == 'COMMON')
-                        div.bar
-                            button.button.button-flat-primary#submit-comments 提交
+        div.box#order-comments(style="display:none")
+            if(type == 'PHOTOGRAPHER')
+                div.title 对方的评价
+            else if(type == 'COMMON')
+                div.title 您的评价
+            div.body
+                ul
+                    li
+                        div.desc 满意度:
+                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                            div.star-line(clicked="true" value="#{tradeOrderItems[0].tradeComments[0].score}")
+                                div.star#score-1
+                                div.star#score-2
+                                div.star#score-3
+                                div.star#score-4
+                                div.star#score-5
+                                div.score
+                        else
+                            div.star-line(clicked="false" )
+                                div.star#score-1
+                                div.star#score-2
+                                div.star#score-3
+                                div.star#score-4
+                                div.star#score-5
+                                div.score
+                    li
+                        div.desc 评论:
+                        if tradeOrderItems.length > 0 && tradeOrderItems[0].tradeComments.length > 0
+                            textarea#comment-content #{tradeOrderItems[0].tradeComments[0].content}
+                        else
+                            textarea#comment-content
+                if(type == 'COMMON')
+                    div.bar
+                        button.button.button-flat-primary#submit-comments 提交
 
         a.button.button-flat.back-btn(href="/personal/order") 返回订单列表
 
