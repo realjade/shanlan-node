@@ -24,7 +24,7 @@
     var _templateGroupView = '' +
         '<ul class="group-view-wrap">' +
         '   <li>' +
-        '       <div class="key">名称:</div><input class="name ui-input-minimal">{{name}}</div>' +
+        '       <div class="key">名称:</div><input class="name ui-input-minimal" value="{{name}}"/></div>' +
         '   </li>' +
         '   <li>' +
         '       <div class="key">类型:</div>' +
@@ -38,7 +38,7 @@
         '   </li>' +
         '   <li>' +
         '       <div class="key">描述:</div>' +
-        '       <textarea class="detail"> </textarea>' +
+        '       <textarea class="detail">{{description}} </textarea>' +
         '   </li>' +
         '   <li>' +
         '       <div class="key">照片:</div>' +
@@ -50,16 +50,16 @@
         '           </div>' +
         '       </div>' +
         '   </li>' +
-        '</div>'
+        '</ul>'
 
     var _templatePhotoBox = '' +
         '<div class="wrap">' +
-        '{{#data}}' +
+        '{{#photoDTOList}}' +
         '   <div class="item" id="{{id}}">' +
         '       <img src="{{filePath}}"/>' +
         '       <div class="delete-btn"/>' +
         '   </div>' +
-        '{{/data}}' +
+        '{{/photoDTOList}}' +
         '</div>'
 
     var photoManage = {
@@ -152,28 +152,16 @@
                     url:'/s',
                     type:'get',
                     data:{
-                        service: 'Photo.getPhotoCollection',
+                        service: 'Photo.getPhotoCollectionAndPhotos',
                         photoCollectionId: gid
                     },
                     success:function(data){
                         if(data.code==200){
-                            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data)))
-                        }
-                    }
-                })
-                $.ajax({
-                    url:'/s',
-                    type:'get',
-                    data:{
-                        service: 'Photo.getPhotos',
-                        photoCollectionId: gid
-                    },
-                    success:function(data){
-                        if(data.code==200){
-                            $.each(data.data,function(idx,item){
+                            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
+                            $.each(data.data.photoDTOList, function(idx, item) {
                                 item.filePath = App.common.modules.common.wrapPhotoPath(item.filePath).thumbnall_100
                             })
-                            $('.mod-group-wrap .box').html($.trim(Mustache.render(_templatePhotoBox,data)))
+                            $('.mod-group-wrap .box').html($.trim(Mustache.render(_templatePhotoBox, data.data)))
                         }
                     }
                 })
