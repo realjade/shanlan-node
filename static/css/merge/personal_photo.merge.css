@@ -11,6 +11,7 @@
 @import url("../../js/libs/jquery/jcrop/css/jquery.Jcrop.min.css");
 @import url('../common/module.layout.css');
 @import url('../module/button.css');
+@import url('../module/form.css');
 @import url('../module/component.css');
 @import url('../module/module.dialog.css');
 @import url('../module/module.smallnote.css');

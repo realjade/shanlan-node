@@ -111,9 +111,55 @@ router.get('/photo', filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
-    res.render('personal/photo', {
-        subTab: 'photo'
+    utils.ajax({
+        url: 'Photo.listPhotoCollections',
+        method: 'get',
+        data: {
+            userName: ownerUserName
+        },
+        req: req,
+        callback: function (err, data) {
+            if(data.code == 200){
+                data.subTab = 'photo'
+                res.render('personal/photo',data)
+            }
+            else{
+                res.render('personal/photo', {subTab: 'photo'})
+            }
+        }
     })
+})
+
+
+/* photographer photo/album manage */
+router.get(['/photosetting/','/photosetting/:collectionId'], filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+    var collectionId = req.params.collectionId || null
+
+    if(collectionId){
+        utils.ajax({
+            url: 'Photo.getPhotoCollectionAndPhotos',
+            method: 'get',
+            data: {
+                photoCollectionId: collectionId
+            },
+            req: req,
+            callback: function (err, data) {
+                if(data.code == 200){
+                    data.subTab = 'photo'
+                    res.render('personal/photosetting',data)
+                }
+                else{
+                    res.render('personal/photosetting', {subTab: 'photo'})
+                }
+            }
+        })
+    }
+    else{
+        res.render('personal/photosetting', {subTab: 'photo'})
+    }
+
 })
 
 module.exports = router
