@@ -9,7 +9,7 @@ block content
     div.mod-personal-photo-setting(id="#{data?data.id:''}")
         div.top-wrap
             div.cover
-                if(data)
+                if(data && data.coverPath)
                     img(src="#{data.coverPath.replace('_X_X','_THUMBNAIL_200_200')}")
             input.name(value="#{data?data.name:'<点击输入相册名>'}" type="text" onfocus="if(value=='<点击输入相册名>') {value=''}" onblur="if (value=='') {value='<点输入相册名>'}")
             ul.sum
@@ -23,6 +23,7 @@ block content
             div.action
                 a.modify-coll-btn(title="编辑信息")
                 a.delete-coll-btn(title="删除相册")
+                a.back-btn(href="/personal/photo") 返回相册列表
 
         div.body-wrap
             div.buttons-wrap

@@ -290,16 +290,44 @@
                 }
             })
 
-            $('.top-wrap .name').blur(function() {
+            container.on('blur','.top-wrap .name',function() {
                 var gid = $('.mod-personal-photo-setting').attr('id')
-                var name = $(this).val()
+                var name = $('.top-wrap .name').val()
+                var description = $('.top-wrap .description').val()
                 $.ajax({
                     url: '/s',
                     type: 'post',
                     data: {
                         service: 'Photo.createOrUpdatePhotoCollection',
                         photoCollectionId: gid,
-                        name: name
+                        name: name,
+                        description:description
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                        }
+                        else if (data.code != 200) {
+                            App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                time: 3000,
+                                pattern: 'error',
+                                top: ($(window).height() - 60) / 2
+                            })
+                        }
+                    }
+                })
+            })
+            container.on('blur','.top-wrap .description',function() {
+                var gid = $('.mod-personal-photo-setting').attr('id')
+                var name = $('.top-wrap .name').val()
+                var description = $('.top-wrap .description').val()
+                $.ajax({
+                    url: '/s',
+                    type: 'post',
+                    data: {
+                        service: 'Photo.createOrUpdatePhotoCollection',
+                        photoCollectionId: gid,
+                        name: name,
+                        description:description
                     },
                     success: function (data) {
                         if (data.code == 200) {
