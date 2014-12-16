@@ -1,0 +1,64 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/12/14
+  * Time: 14:11
+  *
+  */
+
+.ui-form{
+    border: 1px solid #88C3FF;
+}
+
+.ui-form-title{
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    background: #f7f8fa;
+    border-top: 3px solid #30ACFF;
+    border-bottom: 1px solid #eeeff2;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.ui-form-body{
+    padding: 20px;
+}
+
+.ui-form-body li{
+    padding:10px 0;
+    display: block;
+    overflow: hidden;
+}
+.ui-form-body li div{
+    display: inline-block;
+}
+.ui-form-body .ui-form-line-desc{
+    float: left;
+    width: 70px;
+    line-height: 36px;
+    padding: 0 15px;
+    font-size: 12px;
+}
+.ui-form-body .ui-form-label{
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #999;
+}
+.ui-form-body .ui-form-line-note{
+    padding: 9px 0 9px 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.ui-form-body label{
+    line-height:35px;
+    padding: 0 10px;
+}
+
+.ui-form-body textarea{
+    padding: 5px;
+}

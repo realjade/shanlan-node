@@ -1,0 +1,58 @@
+extends ../share/layout
+block css
+    link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_photosetting.merge.css")}')
+block header
+    div.mod-personal-header-wrap
+        include ../share/header
+        include ../share/personalHeader
+block content
+    div.mod-personal-photo-setting(id="#{data?data.id:''}")
+        div.top-wrap
+            div.cover
+                if(data)
+                    img(src="#{data.coverPath.replace('_X_X','_THUMBNAIL_200_200')}")
+            input.name(value="#{data?data.name:''}")
+            ul.sum
+                li
+                    div.sum-key 照片数:
+                    div.sum-value#count #{data.photoCount}
+                li
+                    div.sum-key 点赞数:
+                    div.sum-value#like #{data.likeCount? data.likeCount:0}
+            textarea.description #{data?data.description:''}
+            div.action
+                a.modify-coll-btn(title="编辑信息")
+                a.delete-coll-btn(title="删除相册")
+
+        div.body-wrap
+            div.buttons-wrap
+                ul.buttons-box
+                    li
+                        button.button.button-flat-primary.upload-btn 上传新照片
+                        button.button.button-flat-primary 照片库添加
+                        button.button.button-flat-primary.multimanage-btn 批量管理
+                    li
+                        button.button.button-flat-primary.mutilremove-btn 批量移出相册
+                        button.button.button-flat-primary.multidelete-btn 批量删除照片
+                        button.button.button-flat-action.finish-btn 完成
+            div.main-wrap
+            if(data)
+                each item, index in data.photoDTOList
+                    div.photo-wrap(id="#{item.id}")
+                        div.op-wrap
+                            div.icon
+                            ul
+                                li
+                                    a 编辑信息
+                                li
+                                    a.setcoverpath-btn(filePath="#{item.filePath}") 设为封面
+                                li
+                                    a.remove-btn(id="#{item.id}") 移出相册
+                                li
+                                    a.delete-btn(id="#{item.id}") 删除照片
+                        img(src="#{item.filePath.replace('_X_X','_THUMBNAIL_200_200')}")
+                        input(value="#{item.name}")
+
+
+block js
+    script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_photosetting.merge.js")}')
