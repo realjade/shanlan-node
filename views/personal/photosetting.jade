@@ -11,15 +11,15 @@ block content
             div.cover
                 if(data)
                     img(src="#{data.coverPath.replace('_X_X','_THUMBNAIL_200_200')}")
-            input.name(value="#{data?data.name:''}")
+            input.name(value="#{data?data.name:'<点击输入相册名>'}" type="text" onfocus="if(value=='<点击输入相册名>') {value=''}" onblur="if (value=='') {value='<点输入相册名>'}")
             ul.sum
                 li
                     div.sum-key 照片数:
-                    div.sum-value#count #{data.photoCount}
+                    div.sum-value#count #{data?data.photoCount:0}
                 li
                     div.sum-key 点赞数:
-                    div.sum-value#like #{data.likeCount? data.likeCount:0}
-            textarea.description #{data?data.description:''}
+                    div.sum-value#like #{data? data.likeCount:0}
+            textarea.description #{data?data.description:'<请输入相册描述>'}
             div.action
                 a.modify-coll-btn(title="编辑信息")
                 a.delete-coll-btn(title="删除相册")
@@ -32,13 +32,19 @@ block content
                         button.button.button-flat-primary 照片库添加
                         button.button.button-flat-primary.multimanage-btn 批量管理
                     li
-                        button.button.button-flat-primary.mutilremove-btn 批量移出相册
+                        div.selectall-box(flag="f")
+                            div.arrow-box
+                                div.arrow
+                            div.word 全选
+                        button.button.button-flat-primary.multiremove-btn 批量移出相册
                         button.button.button-flat-primary.multidelete-btn 批量删除照片
-                        button.button.button-flat-action.finish-btn 完成
+                        button.button.button-flat-action.finish-btn 完成管理
             div.main-wrap
             if(data)
                 each item, index in data.photoDTOList
-                    div.photo-wrap(id="#{item.id}")
+                    div.photo-wrap(id="#{item.id}" flag="f")
+                        div.select-box
+                            div.select-arrow
                         div.op-wrap
                             div.icon
                             ul

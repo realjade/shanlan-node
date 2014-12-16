@@ -30,6 +30,7 @@
         '   </li>' +
         '</ul>'
 
+    var _idArray = ''
 
     var personalPhotoSetting = {
         __container: null,
@@ -39,7 +40,12 @@
             self.__container = container
 
             self.__bindEvent();
+
+            if($('.mod-personal-photo-setting').attr('id') == ''){
+                //$('.modify-coll-btn').trigger('click')
+            }
         },
+
 
         __bindEvent: function(){
             var self = this
@@ -87,6 +93,43 @@
                     }
                 })
             })
+
+            container.on('click','.multiremove-btn',function(){
+                if(_idArray == ''){
+                    App.common.modules.smallnote('没有选择照片', {
+                        time:1500,
+                        pattern: 'error',
+                        top: ($(window).height() - 60) / 2
+                    })
+                }
+                else{
+                    _idArray = _idArray.substr(0,_idArray.length-1)
+                    $.ajax({
+                        url:'/s',
+                        type:'delete',
+                        data:{
+                            service: 'Photo.removePhotoCollectionPhotos',
+                            photoCollectionId: gid,
+                            idArray:'['+_idArray +']'
+                        },
+                        success:function(data){
+                            if(data.code==200){
+                                $('.photo-wrap[flag="t"]').remove()
+                                _idArray = ''
+                            }
+                            else{
+                                App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                    time:3000,
+                                    pattern: 'error',
+                                    top: ($(window).height() - 60) / 2
+                                })
+                            }
+                        }
+                    })
+                }
+
+            })
+
             container.on('click','.remove-btn',function(){
                 var pid = $(this).attr('id')
                 $.ajax({
@@ -142,22 +185,178 @@
                             }
                         })
                     },
-                    cancelCallback:function(){
-
-                    }
+                    cancelCallback:function(){}
                 })
+            })
 
+            container.on('click','.multidelete-btn',function(){
+                if(_idArray == ''){
+                    App.common.modules.smallnote('没有选择照片', {
+                        time:1500,
+                        pattern: 'error',
+                        top: ($(window).height() - 60) / 2
+                    })
+                }
+                else {
+                    _idArray = _idArray.substr(0, _idArray.length - 1)
+                    var dialog = self.__deleteDialog = new App.common.modules.Dialog({
+                        width:300,
+                        height:165,
+                        showTitle:false,
+                        message:'<div style="width:100%; line-height:60px; text-align: center">删除后无法恢复，确认删除吗？</div>',
+                        okCallback:function(){
+                            $.ajax({
+                                url:'/s',
+                                type:'delete',
+                                data:{
+                                    service: 'Photo.deletePhotoCollectionPhotos',
+                                    photoCollectionId: gid,
+                                    idArray:'['+_idArray +']'
+                                },
+                                success:function(data){
+                                    if(data.code==200){
+                                        $('.photo-wrap[flag="t"]').remove()
+                                        _idArray = ''
+                                    }
+                                    else{
+                                        App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                            time:3000,
+                                            pattern: 'error',
+                                            top: ($(window).height() - 60) / 2
+                                        })
+                                    }
+                                }
+                            })
+                        },
+                        cancelCallback:function(){}
+                    })
+                }
             })
 
             container.on('click','.multimanage-btn',function(){
                 $('.buttons-box').css('top','-50px')
+                $('.select-box').show()
+                self.__bindSelectEvent()
             })
 
             container.on('click','.finish-btn',function(){
                 $('.buttons-box').css('top','0px')
+                $('.select-box').hide()
+                $('.select-box').attr('flag','f')
+                $('.select-box').find('.select-box').css({
+                    'background-color':'#fff',
+                    'border':'1px solid #bbb'
+                })
+                _idArray = ''
+                self.__unbindSelectEvent()
+            })
+
+            container.on('click','.op-wrap .icon',function(){
+                $(this).parent().find('ul').show()
+            })
+            container.on('mouseout','.photo-wrap img',function(){
+                $(this).parent().find('ul').hide()
+            })
+
+            container.on('click','.selectall-box',function(){
+                if($(this).attr('flag') == 'f'){
+                    $(this).attr('flag','t')
+                    $(this).find('.arrow-box').css('background-color','#66c2ff')
+                    _idArray = ''
+                    $('.photo-wrap').each(function(){
+                        var photoWrap = $(this)
+                        var id = photoWrap.attr('id')
+                        var idStr = '"'+id + '",'
+                        photoWrap.attr('flag','t')
+                        photoWrap.find('.select-box').css({
+                            'background-color':'#66C2FF',
+                            'border':'1px solid #66C2FF'
+                        })
+                        _idArray += idStr
+                    })
+                }
+                else{
+                    $(this).attr('flag','f')
+                    $(this).find('.arrow-box').css('background-color','#fff')
+                    _idArray = ''
+                    $('.photo-wrap').each(function(){
+                        var photoWrap = $(this)
+                        photoWrap.attr('flag','f')
+                        photoWrap.find('.select-box').css({
+                            'background-color':'#fff',
+                            'border':'1px solid #bbb'
+                        })
+                    })
+                }
+            })
+
+            $('.top-wrap .name').blur(function() {
+                var gid = $('.mod-personal-photo-setting').attr('id')
+                var name = $(this).val()
+                $.ajax({
+                    url: '/s',
+                    type: 'post',
+                    data: {
+                        service: 'Photo.createOrUpdatePhotoCollection',
+                        photoCollectionId: gid,
+                        name: name
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                        }
+                        else if (data.code != 200) {
+                            App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                time: 3000,
+                                pattern: 'error',
+                                top: ($(window).height() - 60) / 2
+                            })
+                        }
+                    }
+                })
             })
 
 
+        },
+        __unbindSelectEvent:function() {
+            var self = this
+            var container = self.__container
+            container.off('click','.photo-wrap img')
+            container.off('mouseover mouseout','.photo-wrap')
+        },
+
+        __bindSelectEvent:function(){
+            var self = this
+            var container = self.__container
+
+            container.on('mouseover','.photo-wrap',function(){
+                $(this).css('border','2px solid #66C2FF')
+            })
+
+            container.on('mouseout','.photo-wrap',function(){
+                $(this).css('border','2px solid #dcf1f5')
+            })
+
+            container.on('click','.photo-wrap img',function(){
+                var photoWrap = $(this).parent()
+                var id = photoWrap.attr('id')
+                var idStr = '"'+id + '",'
+                if(photoWrap.attr('flag') == 'f'){
+                    photoWrap.attr('flag','t')
+                    photoWrap.find('.select-box').css({
+                        'background-color':'#66C2FF',
+                        'border':'1px solid #66C2FF'
+                    })
+                    _idArray += idStr
+                }
+                else{
+                    photoWrap.attr('flag','f')
+                    photoWrap.find('.select-box').css({
+                        'background-color':'#fff',
+                        'border':'1px solid #bbb'
+                    })
+                    _idArray = _idArray.replace(idStr,'')
+                }
+            })
         },
 
         __initUploadView:function(gid){
@@ -167,7 +366,7 @@
             var dialog = self.__uploadDialog = new App.common.modules.Dialog({
                 width:850,
                 height:505,
-                title: title,
+                showTitle:false,
                 message:'<div class="mod-upload-wrap" id="uploader"></div>',
                 okCallback:function(){
                     location.href='/personal/photosetting/'+gid
@@ -198,33 +397,63 @@
         __initCollInfoView: function(gid){
             var self = this
             var container = self.__container
-            var title = '修改相册信息'
+            var title = '相册信息'
             var dialog = self.__groupDialog = new App.common.modules.Dialog({
                 width:850,
                 height:505,
                 title: title,
-                message:'<div class="mod-group-wrap"></div>',
+                message:'<div class="mod-group-wrap"  id="'+gid+'"></div>',
                 okCallback:function(){
-
+                    var gid = $('.mod-group-wrap').attr('id')
+                    var name = $('.mod-group-wrap .name').val()
+                    var detail = $('.mod-group-wrap textarea').val()
+                    $.ajax({
+                        url:'/s',
+                        type:'post',
+                        data:{
+                            service: 'Photo.createOrUpdatePhotoCollection',
+                            photoCollectionId:gid,
+                            name:name,
+                            description:detail
+                        },
+                        success:function(data){
+                            if(data.code==200){
+                                $('.top-wrap .name').val(name)
+                                $('.top-wrap .description').val(detail)
+                            }
+                            else if(data.code!=200){
+                                App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                    time:3000,
+                                    pattern: 'error',
+                                    top: ($(window).height() - 60) / 2
+                                })
+                            }
+                        }
+                    })
                 },
                 cancelCallback:function(){
 
                 }
             })
-            $.ajax({
-                url:'/s',
-                type:'get',
-                data:{
-                    service: 'Photo.getPhotoCollection',
-                    photoCollectionId: gid
-                },
-                success:function(data){
-                    if(data.code==200){
-                        $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
-
+            if(gid){
+                $.ajax({
+                    url:'/s',
+                    type:'get',
+                    data:{
+                        service: 'Photo.getPhotoCollection',
+                        photoCollectionId: gid
+                    },
+                    success:function(data){
+                        if(data.code==200){
+                            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
+                        }
                     }
-                }
-            })
+                })
+            }
+            else{
+                $('.mod-group-wrap').html($.trim(_templateGroupView))
+            }
+
         }
 
     }
