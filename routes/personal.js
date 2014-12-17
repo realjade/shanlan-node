@@ -106,7 +106,7 @@ module.exports = router
 
 
 
-/* photographer photo/album manage */
+/* photographer album manage */
 router.get('/photo', filter.login, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
@@ -160,6 +160,32 @@ router.get(['/photosetting/','/photosetting/:collectionId'], filter.login, funct
         res.render('personal/photosetting', {subTab: 'photo'})
     }
 
+})
+
+
+/* photographer photos manage */
+router.get('/photoall', filter.login, function (req, res) {
+    var me = res.locals._user
+    var ownerUserName = (me && me.userName) || null
+
+    utils.ajax({
+        url: 'Photo.pageUserPhotos',
+        method: 'get',
+        data: {
+            pageIndex:'0',
+            pageSize:'50'
+        },
+        req: req,
+        callback: function (err, data) {
+            if(data.code == 200){
+                data.subTab = 'photo'
+                res.render('personal/photoall',data)
+            }
+            else{
+                res.render('personal/photoall', {subTab: 'photo'})
+            }
+        }
+    })
 })
 
 module.exports = router

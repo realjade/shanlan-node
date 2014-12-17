@@ -11,14 +11,14 @@ block content
             div.cover
                 if(data && data.coverPath)
                     img(src="#{data.coverPath.replace('_X_X','_THUMBNAIL_200_200')}")
-            input.name(value="#{data?data.name:'<点击输入相册名>'}" type="text" onfocus="if(value=='<点击输入相册名>') {value=''}" onblur="if (value=='') {value='<点输入相册名>'}")
+            input.name(value="#{data?data.name:'未命名相册'}" type="text" onfocus="if(value=='未命名相册') {value=''}" onblur="if (value=='') {value='未命名相册'}")
             ul.sum
                 li
                     div.sum-key 照片数:
                     div.sum-value#count #{data?data.photoCount:0}
-                li
-                    div.sum-key 点赞数:
-                    div.sum-value#like #{data? data.likeCount:0}
+                //li
+                //    div.sum-key 点赞数:
+                //    div.sum-value#like #{data? data.likeCount:0}
             textarea.description #{data?data.description:'<请输入相册描述>'}
             div.action
                 a.modify-coll-btn(title="编辑信息")
@@ -29,7 +29,7 @@ block content
             div.buttons-wrap
                 ul.buttons-box
                     li
-                        button.button.button-flat-primary.upload-btn 上传新照片
+                        button.button.button-flat-primary.upload-btn 上传照片
                         button.button.button-flat-primary 照片库添加
                         button.button.button-flat-primary.multimanage-btn 批量管理
                     li

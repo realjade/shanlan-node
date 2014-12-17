@@ -31,7 +31,7 @@
         '   </li>' +
         '</ul>'
 
-    var photoManage = {
+    var photoallManage = {
         __container: null,
 
         init: function(container,options){
@@ -45,17 +45,6 @@
         __bindEvent: function(){
             var self = this
             var container = self.__container
-
-            container.on('click','.photo-wrap',function(){
-                var collectionId = $(this).attr('id')
-                location.href = '/personal/photosetting/'+collectionId
-            })
-
-            container.on('click','.modify-btn',function(){
-                var gid = $(this).attr('id')
-                self.__initGroupView(gid,false)
-
-            })
 
             container.on('click','#newalbum-btn',function(){
                 self.__initGroupView('',true)
@@ -98,37 +87,19 @@
                             }
                         }
                     })
-
                 },
                 cancelCallback:function(){
 
                 }
             })
-            if(gid){
-                $.ajax({
-                    url:'/s',
-                    type:'get',
-                    data:{
-                        service: 'Photo.getPhotoCollection',
-                        photoCollectionId: gid
-                    },
-                    success:function(data){
-                        if(data.code==200){
-                            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
-                        }
-                    }
-                })
-            }
-            else{
-                $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,JSON.parse('{}'))))
-            }
+            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,JSON.parse('{}'))))
 
         }
 
     }
 
     $(function(){
-        photoManage.init($('.mod-personal-photo'),pageConfig)
+        photoallManage.init($('.mod-personal-photoall'),pageConfig)
     })
 
 })(jQuery)

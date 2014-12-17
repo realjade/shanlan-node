@@ -293,7 +293,6 @@
             container.on('blur','.top-wrap .name',function() {
                 var gid = $('.mod-personal-photo-setting').attr('id')
                 var name = $('.top-wrap .name').val()
-                var description = $('.top-wrap .description').val()
                 $.ajax({
                     url: '/s',
                     type: 'post',
@@ -301,7 +300,6 @@
                         service: 'Photo.createOrUpdatePhotoCollection',
                         photoCollectionId: gid,
                         name: name,
-                        description:description
                     },
                     success: function (data) {
                         if (data.code == 200) {
@@ -318,7 +316,6 @@
             })
             container.on('blur','.top-wrap .description',function() {
                 var gid = $('.mod-personal-photo-setting').attr('id')
-                var name = $('.top-wrap .name').val()
                 var description = $('.top-wrap .description').val()
                 $.ajax({
                     url: '/s',
@@ -326,7 +323,6 @@
                     data: {
                         service: 'Photo.createOrUpdatePhotoCollection',
                         photoCollectionId: gid,
-                        name: name,
                         description:description
                     },
                     success: function (data) {

@@ -1,0 +1,56 @@
+/**
+  * @name Edwin
+  * @description 
+  * Date: 2014/12/17
+  * Time: 9:47
+  *
+  */
+
+
+.photo-layout .header{
+    padding: 0 30px;
+}
+.photo-layout .header .tag{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 200px;
+    height:50px;
+    background-color: #f7f8fa;
+    border:1px solid #eeeff2;
+    color: #999;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+
+.photo-layout .header .tag:hover{
+    background-color: #fff;
+}
+
+.photo-layout .header .active{
+    position: relative;
+    top:2px;
+    border-top:3px solid #30ACFF;
+    background-color: #fff;
+    color: #666;
+    cursor: text;
+}
+
+.photo-layout .header button{
+    width:120px;
+    font-size: 13px;
+}
+
+.photo-layout .header #uploadphoto-btn{
+    position: absolute;
+    right: 170px;
+    top:5px;
+}
+
+.photo-layout .header #newalbum-btn{
+    position: absolute;
+    right: 30px;
+    top:5px;
+}

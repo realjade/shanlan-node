@@ -8,7 +8,7 @@
 
 .mod-personal-photo{
     position: relative;
-    width:900px;
+    width:1000px;
     margin:20px auto;
     overflow: hidden;
     color: #666;
@@ -17,53 +17,6 @@
 .mod-personal-photo button{
     outline: none;
 }
-.mod-personal-photo .header{
-}
-.mod-personal-photo .header .tag{
-    box-sizing: border-box;
-    display: inline-block;
-    width: 200px;
-    height:50px;
-    background-color: #f7f8fa;
-    border:1px solid #eeeff2;
-    color: #999;
-    line-height: 50px;
-    text-align: center;
-    letter-spacing: 3px;
-    cursor: pointer;
-}
-
-
-.mod-personal-photo .header .tag:hover{
-    background-color: #fff;
-}
-
-.mod-personal-photo .header .active{
-    position: relative;
-    top:2px;
-    border-top:3px solid #30ACFF;
-    background-color: #fff;
-    color: #666;
-    cursor: text;
-}
-
-.mod-personal-photo .header button{
-    width:120px;
-    font-size: 13px;
-}
-
-.mod-personal-photo .header #uploadphoto-btn{
-    position: absolute;
-    right: 150px;
-    top:5px;
-}
-
-.mod-personal-photo .header #newalbum-btn{
-    position: absolute;
-    right: 10px;
-    top:5px;
-}
-
 .mod-personal-photo .block-p{
     width:100%;
     overflow: hidden;
@@ -74,7 +27,7 @@
 .mod-personal-photo .block-p .title{
     position: relative;
     left: -2px;
-    padding: 0 25px 5px 0;
+    padding: 0 30px 5px 0;
     margin: 0 0 5px 0;
     border-bottom: 1px solid #ddd;
     text-align: right;
@@ -146,14 +99,14 @@
 .mod-personal-photo .block-g .item{
     position: relative;
     display: inline-block;
-    width:255px;
-    height:310px;
-    margin:15px 20px;
+    width:265px;
+    height:320px;
+    margin:15px 32px;
 }
 
 .mod-personal-photo .block-g .photo-wrap{
-    width:255px;
-    height:255px;
+    width:265px;
+    height:265px;
 }
 .mod-personal-photo .block-g a.name{
     display: block;
