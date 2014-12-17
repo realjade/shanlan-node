@@ -69,42 +69,76 @@
 
             container.on('click','.modify-btn',function(){
                 var gid = $(this).attr('id')
-                self.__initGroupView(gid)
+                self.__initGroupView(gid,false)
 
+            })
+
+            container.on('click','#newalbum-btn',function(){
+                self.__initGroupView('',true)
             })
 
         },
 
-        __initGroupView: function(gid){
+        __initGroupView: function(gid,isNew){
             var self = this
             var container = self.__container
-            var title = '修改相册信息'
+            var title = '相册信息'
             var dialog = self.__groupDialog = new App.common.modules.Dialog({
                 width:850,
                 height:505,
                 title: title,
-                message:'<div class="mod-group-wrap"></div>',
+                message:'<div class="mod-group-wrap" id="'+gid+'"></div>',
                 okCallback:function(){
+                    var gid = $('.mod-group-wrap').attr('id')
+                    var name = $('.mod-group-wrap .name').val()
+                    var detail = $('.mod-group-wrap textarea').val()
+                    $.ajax({
+                        url:'/s',
+                        type:'post',
+                        data:{
+                            service: 'Photo.createOrUpdatePhotoCollection',
+                            photoCollectionId:gid,
+                            name:name,
+                            description:detail
+                        },
+                        success:function(data){
+                            if(data.code==200 && isNew){
+                                location.href = '/personal/photosetting/'+data.data.id
+                            }
+                            else if(data.code!=200){
+                                App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                    time:3000,
+                                    pattern: 'error',
+                                    top: ($(window).height() - 60) / 2
+                                })
+                            }
+                        }
+                    })
 
                 },
                 cancelCallback:function(){
 
                 }
             })
-            $.ajax({
-                url:'/s',
-                type:'get',
-                data:{
-                    service: 'Photo.getPhotoCollection',
-                    photoCollectionId: gid
-                },
-                success:function(data){
-                    if(data.code==200){
-                        $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
-
+            if(gid){
+                $.ajax({
+                    url:'/s',
+                    type:'get',
+                    data:{
+                        service: 'Photo.getPhotoCollection',
+                        photoCollectionId: gid
+                    },
+                    success:function(data){
+                        if(data.code==200){
+                            $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,data.data)))
+                        }
                     }
-                }
-            })
+                })
+            }
+            else{
+                $('.mod-group-wrap').html($.trim(Mustache.render(_templateGroupView,JSON.parse('{}'))))
+            }
+
         }
 
     }

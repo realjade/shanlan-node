@@ -8,13 +8,13 @@
 
 .mod-personal-photo-setting{
     width:1000px;
-    margin:20px auto;
+    margin:0 auto;
     overflow: hidden;
 }
 .mod-personal-photo-setting .top-wrap{
     position: relative;
     height:160px;
-    padding:25px;
+    margin:15px 25px 25px 25px;
 }
 
 .mod-personal-photo-setting .body-wrap{
@@ -45,9 +45,9 @@
 }
 .mod-personal-photo-setting input.name{
     position: absolute;
-    top: 20px;
-    left: 230px;
-    width:480px;
+    top: -10px;
+    left: 195px;
+    width:450px;
     height:50px;
     font-size: 30px;
     letter-spacing: 5px;
@@ -61,8 +61,8 @@
 }
 .mod-personal-photo-setting textarea.description{
     position: absolute;
-    top: 115px;
-    left: 230px;
+    top: 87px;
+    left: 195px;
     width:730px;
     height:55px;
     padding:5px;
@@ -75,13 +75,13 @@
     background-color: #fff;
 }
 .mod-personal-photo-setting button{
-    display: inline-block;
+    float: left;
     margin: 0 20px 0 10px;
 }
 .mod-personal-photo-setting .top-wrap ul{
     position: absolute;
-    top: 85px;
-    left: 230px;
+    top: 56px;
+    left: 195px;
 }
 .mod-personal-photo-setting .top-wrap li{
     padding: 0 10px 0 5px;
@@ -96,16 +96,37 @@
 }
 .mod-personal-photo-setting .top-wrap .action{
     position: absolute;
-    top:45px;
-    right:35px;
+    top:5px;
+    right:5px;
 }
 .mod-personal-photo-setting .top-wrap .action a{
-    display: inline-block;
+    float: left;
     width:35px;
     height:35px;
     margin: 0 10px;
 }
+.mod-personal-photo-setting .top-wrap .action .back-btn{
+    width:120px;
+    line-height: 35px;
+    border-radius:17px;
+    padding:0 15px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #9b9b9b;
+    background-color: #eeeff2;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+}
 
+.mod-personal-photo-setting .top-wrap .action .back-btn:hover{
+    background-color: #30acff;
+    color: #fff;
+}
 .mod-personal-photo-setting .top-wrap .action .modify-coll-btn{
     background:url(images/operation-icons-l.png) no-repeat;
 }
@@ -121,18 +142,22 @@
 .mod-personal-photo-setting .photo-wrap{
     position: relative;
     display: inline-block;
+    box-sizing: border-box;
     width: 170px;
+    height:200px;
     margin: 10px;
+    border:2px solid #dcf1f5;
+    overflow: hidden;
 }
 
 .mod-personal-photo-setting .photo-wrap img{
-    width:170px;
-    height:170px;
+    width:166px;
+    height:166px;
     cursor: pointer;
 }
 .mod-personal-photo-setting .photo-wrap input{
     position: relative;
-    top: -5px;
+    top: -7px;
     width:100%;
     box-sizing: border-box;
     border:none;
@@ -147,17 +172,17 @@
 
 .mod-personal-photo-setting .op-wrap{
     position: absolute;
-    top:0px;
-    right:0px;
+    top:3px;
+    right:3px;
     padding: 23px;
 }
 .mod-personal-photo-setting .photo-wrap .icon{
     position: absolute;
     top:5px;
     right:5px;
-    width:23px;
-    height:23px;
-    background: url(images/arrow.png) no-repeat;
+    width:30px;
+    height:30px;
+    background: url(images/operation-icons-l.png) no-repeat 0 -35px;
     border-radius: 2px;
     display: none;
     cursor: pointer;
@@ -168,15 +193,11 @@
 }
 .mod-personal-photo-setting .photo-wrap .op-wrap ul{
     position: absolute;
-    top:27px;
+    top:35px;
     right:5px;
     background-color: #fff;
     width:90px;
     display: none;
-}
-
-.mod-personal-photo-setting .op-wrap:hover ul{
-    display: inherit;
 }
 
 .mod-personal-photo-setting .photo-wrap .op-wrap li:hover{
@@ -204,7 +225,7 @@
     overflow: auto;
 }
 
-.mod-personal-photo-setting .body-wrap .buttons-wrap{
+.mod-personal-photo-setting .buttons-wrap{
     position: absolute;
     top:0;
     right:0;
@@ -215,7 +236,7 @@
     overflow: hidden;
     background-color: #66C2FF;
 }
-.mod-personal-photo-setting .body-wrap .buttons-wrap ul{
+.mod-personal-photo-setting .buttons-wrap ul{
     position: relative;
     top:0;
     transition: 0.3s;
@@ -224,12 +245,60 @@
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
 }
-.mod-personal-photo-setting .body-wrap .buttons-wrap li{
+.mod-personal-photo-setting .buttons-wrap li{
     height:50px;
     padding:0 25px;
 }
-.mod-personal-photo-setting .body-wrap .buttons-wrap .finish-btn{
+.mod-personal-photo-setting .buttons-wrap .finish-btn{
     position: relative;
     right:-10px;
     float: right;
+}
+.mod-personal-photo-setting .select-box{
+    position: absolute;
+    top:0;
+    left:0;
+    width:35px;
+    height:35px;
+    border:1px solid #bbb;
+    background-color: #fff;
+}
+.mod-personal-photo-setting .select-box{
+    display: none;
+}
+.mod-personal-photo-setting .select-box .select-arrow{
+    width:35px;
+    height:35px;
+    background: url(images/operation-icons-l.png) no-repeat -35px -35px;
+}
+
+.mod-personal-photo-setting .selectall-box{
+    float: left;
+    width:80px;
+    margin:6px 5px 0 0;
+    cursor: pointer;
+}
+.mod-personal-photo-setting .selectall-box .arrow-box{
+    width:21px;
+    height:21px;
+    border:2px solid #fff;
+    background-color: #fff;
+}
+
+.mod-personal-photo-setting .selectall-box div{
+    float: left;
+}
+.mod-personal-photo-setting .selectall-box .arrow{
+    width:21px;
+    height:21px;
+    background: url(images/operation-icons-l.png) no-repeat -41px -42px;
+}
+.mod-personal-photo-setting .selectall-box .word{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 0 0 10px;
+    height:25px;
+    line-height: 25px;
+    color: #fff;
+    letter-spacing: 3px;
 }
