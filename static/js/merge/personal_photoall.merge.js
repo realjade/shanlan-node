@@ -6,7 +6,6 @@
  *
  */
 document.write('<script src="//static.mgcheng.com/static/js/common/module.common.js"></script>')
-document.write('<script src="//static.mgcheng.com/static/js/common/module.photo.js"></script>')
 document.write("<script src='//static.mgcheng.com/static/js/libs/jquery/jcrop/js/jquery.Jcrop.js'></script>")
 document.write("<script src='//static.mgcheng.com/static/js/libs/jquery/jqueryui/js/jquery.ui.core.js'></script>")
 document.write("<script src='//static.mgcheng.com/static/js/libs/jquery/jqueryui/js/jquery.ui.datepicker.js'></script>")

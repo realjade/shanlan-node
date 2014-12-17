@@ -98,7 +98,7 @@
 
         },
 
-        __initUploadView:function(gid){
+        __initUploadView:function(){
             var self = this
             var container = self.__container
             var title = '上传新照片'
@@ -115,7 +115,7 @@
                 url: '/upload'
             })
 
-            upload.setUrl('/opf/upload/uploadPhotos?collectionId='+gid)
+            upload.setUrl('/opf/upload/uploadPhotos?collectionId=')
 
         },
 
