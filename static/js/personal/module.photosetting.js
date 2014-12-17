@@ -57,6 +57,38 @@
 
             })
 
+            container.on('click','.delete-coll-btn',function(){
+                var dialog = self.__deleteDialog = new App.common.modules.Dialog({
+                    width:300,
+                    height:165,
+                    showTitle:false,
+                    message:'<div style="width:100%; line-height:60px; text-align: center">删除后无法恢复，确认删除吗？</div>',
+                    okCallback:function(){
+                        $.ajax({
+                            url:'/s',
+                            type:'delete',
+                            data:{
+                                service: 'Photo.removePhotoCollection',
+                                photoCollectionId:gid
+                            },
+                            success:function(data){
+                                if(data.code==200){
+                                    location.href = '/personal/photo'
+                                }
+                                else{
+                                    App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                        time:3000,
+                                        pattern: 'error',
+                                        top: ($(window).height() - 60) / 2
+                                    })
+                                }
+                            }
+                        })
+                    },
+                    cancelCallback:function(){}
+                })
+            })
+
             container.on('click','.upload-btn',function(){
                 self.__initUploadView(gid);
 
@@ -155,40 +187,6 @@
                 })
             })
 
-            container.on('click','.delete-btn',function(){
-                var pid = $(this).attr('id')
-                var dialog = self.__deleteDialog = new App.common.modules.Dialog({
-                    width:300,
-                    height:165,
-                    showTitle:false,
-                    message:'<div style="width:100%; line-height:60px; text-align: center">删除后无法恢复，确认删除吗？</div>',
-                    okCallback:function(){
-                        $.ajax({
-                            url:'/s',
-                            type:'delete',
-                            data:{
-                                service: 'Photo.deletePhotoCollectionPhotos',
-                                photoCollectionId: gid,
-                                idArray:'["'+pid +'"]'
-                            },
-                            success:function(data){
-                                if(data.code==200){
-                                    $('.photo-wrap[id='+pid+']').remove()
-                                }
-                                else{
-                                    App.common.modules.smallnote('操作失败，请您稍后再试', {
-                                        time:3000,
-                                        pattern: 'error',
-                                        top: ($(window).height() - 60) / 2
-                                    })
-                                }
-                            }
-                        })
-                    },
-                    cancelCallback:function(){}
-                })
-            })
-
             container.on('click','.multidelete-btn',function(){
                 if(_idArray == ''){
                     App.common.modules.smallnote('没有选择照片', {
@@ -256,7 +254,7 @@
             })
             container.on('mouseout','.photo-wrap img',function(){
                 $(this).parent().find('ul').hide()
-            })
+                })
 
             container.on('click','.selectall-box',function(){
                 if($(this).attr('flag') == 'f'){
@@ -299,7 +297,7 @@
                     data: {
                         service: 'Photo.createOrUpdatePhotoCollection',
                         photoCollectionId: gid,
-                        name: name,
+                        name: name
                     },
                     success: function (data) {
                         if (data.code == 200) {
@@ -396,26 +394,11 @@
                     location.href='/personal/photosetting/'+gid
                 }
             })
-            $("#uploader").pluploadQueue({
-                // General settings
-                runtimes : 'html5,flash,html4',
-                url : '/opf/upload/uploadPhotos?collectionId='+gid,
-                //chunk_size: '1mb',
-                rename : true,
-                dragdrop: true,
+            var upload = new App.common.modules.upload($("#uploader"), {
+                url: '/upload'
+            })
 
-                filters : {
-                    // Maximum file size
-                    max_file_size : '20mb',
-                    // Specify what files to browse for
-                    mime_types: [
-                        {title : "Image files", extensions : "jpg,gif,png"},
-                        {title : "Zip files", extensions : "zip"}
-                    ]
-                },
-
-                flash_swf_url : '//static.mgcheng.com/static/js/libs/jquery/plupload/js/Moxie.swf'
-            });
+            upload.setUrl('/opf/upload/uploadPhotos?collectionId='+gid)
         },
 
         __initCollInfoView: function(gid){

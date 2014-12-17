@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     async.parallel({
         photographers: function (callback) {
             utils.ajax({
-                url: 'User.pagePhotographers',
+                url: 'User.pagePhotographersOrderByActiveness',
                 method: 'get',
                 data: {
                     pageSize:'10',

@@ -46,9 +46,76 @@
             var self = this
             var container = self.__container
 
-            container.on('click','#newalbum-btn',function(){
+            container.on('click','.upload-btn',function(){
+                self.__initUploadView();
+
+            })
+
+            container.on('click','.newalbum-btn',function(){
                 self.__initGroupView('',true)
             })
+
+
+            $('.op-wrap .icon').click(function(){
+                $(this).parent().find('ul').show()
+            })
+            $('.photo-wrap img').mouseover(function(){
+                $(this).parent().find('ul').hide()
+            })
+
+            container.on('click','.delete-btn',function(){
+                var pid = $(this).attr('id')
+                var dialog = self.__deleteDialog = new App.common.modules.Dialog({
+                    width:300,
+                    height:165,
+                    showTitle:false,
+                    message:'<div style="width:100%; line-height:60px; text-align: center">删除后无法恢复，确认删除吗？</div>',
+                    okCallback:function(){
+                        $.ajax({
+                            url:'/s',
+                            type:'delete',
+                            data:{
+                                service: 'Photo.deletePhotoCollectionPhotos',
+                                idArray:'["'+pid +'"]'
+                            },
+                            success:function(data){
+                                if(data.code==200){
+                                    $('.photo-wrap[id='+pid+']').remove()
+                                }
+                                else{
+                                    App.common.modules.smallnote('操作失败，请您稍后再试', {
+                                        time:3000,
+                                        pattern: 'error',
+                                        top: ($(window).height() - 60) / 2
+                                    })
+                                }
+                            }
+                        })
+                    },
+                    cancelCallback:function(){}
+                })
+            })
+
+        },
+
+        __initUploadView:function(gid){
+            var self = this
+            var container = self.__container
+            var title = '上传新照片'
+            var dialog = self.__uploadDialog = new App.common.modules.Dialog({
+                width:850,
+                height:440,
+                showTitle:false,
+                message:'<div class="mod-upload-wrap" id="uploader"></div>',
+                okCallback:function(){
+                    location.href='/personal/photoall/'
+                }
+            })
+            var upload = new App.common.modules.upload($("#uploader"), {
+                url: '/upload'
+            })
+
+            upload.setUrl('/opf/upload/uploadPhotos?collectionId='+gid)
 
         },
 

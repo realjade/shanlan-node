@@ -6,13 +6,30 @@ block header
         include ../share/header
         include ../share/personalHeader
 block content
-    div.mod-personal-photoall.photo-layout
+    div.mod-personal-photoall.photo-layout.mod-photomanage
         div.header
             a.tag#album(href="/personal/photo") 相册
             a.tag.active#photo 照片库
-            button#uploadphoto-btn.button.button-flat-primary 上传照片
-            button#newalbum-btn.button.button-flat.button-flat-primary 新建相册
+            button.upload-btn.button.button-flat-primary 上传照片
+            button.newalbum-btn.button.button-flat.button-flat-primary 新建相册
         div.body
+            each block, index in data.data
+                div.block-p
+                    div.title #{block.yearMonth}
+                    each item, index in block.data
+                        div.photo-wrap(id="#{item.id}" flag="f")
+                            div.select-box
+                                div.select-arrow
+                            div.op-wrap
+                                div.icon
+                                ul
+                                    li
+                                        a.modify-btn(id="#{item.id}") 编辑信息
+                                    li
+                                        a.delete-btn(id="#{item.id}") 删除照片
+                            img(src="#{item.photoPath.replace('_X_X','_THUMBNAIL_200_200')}")
+                            input(value="#{item.title? item.title:''}")
+
 
 
 block js

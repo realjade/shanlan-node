@@ -6,7 +6,7 @@ block header
         include ../share/header
         include ../share/personalHeader
 block content
-    div.mod-personal-photo-setting(id="#{data?data.id:''}")
+    div.mod-personal-photo-setting.mod-photomanage(id="#{data?data.id:''}")
         div.top-wrap
             div.cover
                 if(data && data.coverPath)
@@ -30,7 +30,7 @@ block content
                 ul.buttons-box
                     li
                         button.button.button-flat-primary.upload-btn 上传照片
-                        button.button.button-flat-primary 照片库添加
+                        button.button.button-flat-primary(style="display:none") 照片库添加
                         button.button.button-flat-primary.multimanage-btn 批量管理
                     li
                         div.selectall-box(flag="f")
@@ -50,7 +50,7 @@ block content
                             div.icon
                             ul
                                 li
-                                    a 编辑信息
+                                    a.modify-btn(id="#{item.id}") 编辑信息
                                 li
                                     a.setcoverpath-btn(filePath="#{item.filePath}") 设为封面
                                 li
@@ -58,7 +58,7 @@ block content
                                 li
                                     a.delete-btn(id="#{item.id}") 删除照片
                         img(src="#{item.filePath.replace('_X_X','_THUMBNAIL_200_200')}")
-                        input(value="#{item.name}")
+                        input(value="#{item.title}")
 
 
 block js

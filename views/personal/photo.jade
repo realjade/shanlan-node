@@ -10,20 +10,20 @@ block content
         div.header
             a.tag.active#album 相册
             a.tag#photo(href="/personal/photoall") 照片库
-            button#uploadphoto-btn.button.button-flat-primary 上传照片
-            button#newalbum-btn.button.button-flat.button-flat-primary 新建相册
+            button.upload-btn.button.button-flat-primary 上传照片
+            button.newalbum-btn.button.button-flat.button-flat-primary 新建相册
         div.body
             div.block-g
                 div.title 自建作品集
                 if(data)
                     each collect, index in data
-                        div.item
+                        div.item(id="#{collect.id}")
                             div.photo-wrap.ui-pg1(id="#{collect.id}")
                                 if(collect.coverPath)
                                     img(src="#{collect.coverPath.replace('_X_X','_THUMBNAIL_600_600')}")
                             a.name 《#{collect.name}》
-                            div.modify-btn(id="#{collect.id}")
-                            div.delete-btn
+                            div.modify-coll-btn
+                            div.delete-coll-btn
 
 
 

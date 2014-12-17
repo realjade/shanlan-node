@@ -128,86 +128,20 @@
     color: #fff;
 }
 .mod-personal-photo-setting .top-wrap .action .modify-coll-btn{
-    background:url(images/operation-icons-l.png) no-repeat;
+    background:url(../module/images/photo/operation-icons-l.png) no-repeat;
 }
 .mod-personal-photo-setting .top-wrap .action .modify-coll-btn:hover{
-    background:url(images/operation-icons-l.png) no-repeat -35px 0px;
+    background:url(../module/images/photo/operation-icons-l.png) no-repeat -35px 0px;
 }
 .mod-personal-photo-setting .top-wrap .action .delete-coll-btn{
-    background:url(images/operation-icons-l.png) no-repeat -70px 0px;
+    background:url(../module/images/photo/operation-icons-l.png) no-repeat -70px 0px;
 }
 .mod-personal-photo-setting .top-wrap .action .delete-coll-btn:hover{
-    background:url(images/operation-icons-l.png) no-repeat -105px 0px;
+    background:url(../module/images/photo/operation-icons-l.png) no-repeat -105px 0px;
 }
+
 .mod-personal-photo-setting .photo-wrap{
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 170px;
-    height:200px;
-    margin: 10px;
     border:2px solid #dcf1f5;
-    overflow: hidden;
-}
-
-.mod-personal-photo-setting .photo-wrap img{
-    width:166px;
-    height:166px;
-    cursor: pointer;
-}
-.mod-personal-photo-setting .photo-wrap input{
-    position: relative;
-    top: -7px;
-    width:100%;
-    box-sizing: border-box;
-    border:none;
-    font-size: 12px;
-    padding:7px 12px;
-    background-color: #f2fdff;
-}
-
-.mod-personal-photo-setting .photo-wrap input:focus{
-    background-color: #fff;
-}
-
-.mod-personal-photo-setting .op-wrap{
-    position: absolute;
-    top:3px;
-    right:3px;
-    padding: 23px;
-}
-.mod-personal-photo-setting .photo-wrap .icon{
-    position: absolute;
-    top:5px;
-    right:5px;
-    width:30px;
-    height:30px;
-    background: url(images/operation-icons-l.png) no-repeat 0 -35px;
-    border-radius: 2px;
-    display: none;
-    cursor: pointer;
-}
-
-.mod-personal-photo-setting .photo-wrap:hover .icon{
-    display: inherit;
-}
-.mod-personal-photo-setting .photo-wrap .op-wrap ul{
-    position: absolute;
-    top:35px;
-    right:5px;
-    background-color: #fff;
-    width:90px;
-    display: none;
-}
-
-.mod-personal-photo-setting .photo-wrap .op-wrap li:hover{
-    background-color: #e4e4e4;
-}
-.mod-personal-photo-setting .photo-wrap .op-wrap li a{
-    color: #666;
-    padding: 5px 20px;
-    line-height: 30px;
-    font-size: 12px;
 }
 
 .mod-group-wrap .name{
@@ -253,52 +187,4 @@
     position: relative;
     right:-10px;
     float: right;
-}
-.mod-personal-photo-setting .select-box{
-    position: absolute;
-    top:0;
-    left:0;
-    width:35px;
-    height:35px;
-    border:1px solid #bbb;
-    background-color: #fff;
-}
-.mod-personal-photo-setting .select-box{
-    display: none;
-}
-.mod-personal-photo-setting .select-box .select-arrow{
-    width:35px;
-    height:35px;
-    background: url(images/operation-icons-l.png) no-repeat -35px -35px;
-}
-
-.mod-personal-photo-setting .selectall-box{
-    float: left;
-    width:80px;
-    margin:6px 5px 0 0;
-    cursor: pointer;
-}
-.mod-personal-photo-setting .selectall-box .arrow-box{
-    width:21px;
-    height:21px;
-    border:2px solid #fff;
-    background-color: #fff;
-}
-
-.mod-personal-photo-setting .selectall-box div{
-    float: left;
-}
-.mod-personal-photo-setting .selectall-box .arrow{
-    width:21px;
-    height:21px;
-    background: url(images/operation-icons-l.png) no-repeat -41px -42px;
-}
-.mod-personal-photo-setting .selectall-box .word{
-    font-size: 14px;
-    font-weight: bold;
-    padding: 0 0 0 10px;
-    height:25px;
-    line-height: 25px;
-    color: #fff;
-    letter-spacing: 3px;
 }

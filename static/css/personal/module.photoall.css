@@ -14,3 +14,15 @@
     overflow: hidden;
     color: #666;
 }
+
+
+.mod-personal-photoall .block-p{
+    width:100%;
+    overflow: hidden;
+    margin:0 0 15px 0 ;
+    padding: 0 16px;
+}
+
+.mod-personal-photoall .block-p .photo-wrap{
+    margin:12px;
+}

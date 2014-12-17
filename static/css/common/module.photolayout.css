@@ -43,14 +43,40 @@
     font-size: 13px;
 }
 
-.photo-layout .header #uploadphoto-btn{
+.photo-layout .header .upload-btn{
     position: absolute;
     right: 170px;
     top:5px;
 }
 
-.photo-layout .header #newalbum-btn{
+.photo-layout .header .newalbum-btn{
     position: absolute;
     right: 30px;
     top:5px;
+}
+
+.photo-layout .title{
+    position: relative;
+    left: -2px;
+    padding: 0 42px 5px 0;
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    color: #30ACFF;
+    font-size: 12px;
+}
+
+.mod-group-wrap .name{
+    width: 400px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.mod-group-wrap textarea{
+    display: inline-block;
+    width: 650px;
+    height: 100px;
+    margin: 0 0 5px 0;
+    border: 1px solid #ccc;
+    overflow: auto;
 }
