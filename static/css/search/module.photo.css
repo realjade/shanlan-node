@@ -254,6 +254,9 @@ a {
     font-size: 12px;
     text-align: center;
     overflow: hidden;
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .mod-photo .result-item-box-person .item-package .pack-photo-num {

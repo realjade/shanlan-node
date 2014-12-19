@@ -47,7 +47,7 @@ block content
                         ul.item-packages-wrap
                             each pkg, packageIndex in item.photoPackages
                                 li.item-package
-                                    div.pack-name
+                                    div.pack-name(title="#{pkg.name}")
                                         a(href="/profile/package/#{item.photographer.userName}") #{pkg.name}:
                                     div.pack-photo-num #{pkg.photoCount}张
                                     div.pack-time #{pkg.days}天
