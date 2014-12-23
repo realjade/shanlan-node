@@ -53,11 +53,10 @@ block content
                                     div.pack-time #{pkg.days}天
                                     div.pack-price #{pkg.price}
                         div.item-groups-wrap
-                            div.groups-list-a
+                            div.groups-list-a.clr
                                 each collection, colIndex in item.photoCollections
-                                    div.g-block-a.collection-photo(data-id="#{collection.id}")
-                                        if collection.coverPath
-                                            img(src="#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}")
+                                    if collection.coverPath
+                                        div.g-block-a.collection-photo(data-id="#{collection.id}" style="background-image:url('#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}')")
         else
             if !data.data || data.data.length == 0
                 div.noitem 很遗憾，没有找到您需要的服务套系。请试试其他搜索条件
