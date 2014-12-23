@@ -83,21 +83,21 @@ router.get('/orderdetail/:orderNum', filter.login, function (req, res) {
 })
 
 /* photographer package */
-router.get('/package', filter.login, function (req, res) {
+router.get('/package', filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
-    res.render('personal/package', {
+    res.render('personal/package/package', {
         subTab: 'package'
     })
 })
 
 /* photographer create/modify package */
-router.get('/packagesetting', filter.login, function (req, res) {
+router.get('/package/setting', filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
-    res.render('personal/packagesetting', {
+    res.render('personal/package/setting', {
         subTab: 'package'
     })
 })
@@ -107,7 +107,7 @@ module.exports = router
 
 
 /* photographer album manage */
-router.get('/photo', filter.login, function (req, res) {
+router.get('/photo', filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
@@ -132,7 +132,7 @@ router.get('/photo', filter.login, function (req, res) {
 
 
 /* photographer photo/album manage */
-router.get(['/photosetting/','/photosetting/:collectionId'], filter.login, function (req, res) {
+router.get(['/photosetting/','/photosetting/:collectionId'], filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
     var collectionId = req.params.collectionId || null
@@ -164,7 +164,7 @@ router.get(['/photosetting/','/photosetting/:collectionId'], filter.login, funct
 
 
 /* photographer photos manage */
-router.get('/photoall', filter.login, function (req, res) {
+router.get('/photoall', filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 

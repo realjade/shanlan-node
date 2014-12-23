@@ -1,10 +1,10 @@
-extends ../share/layout
+extends ../../share/layout
 block css
     link(rel='stylesheet', href='#{staticFilter("//static.mgcheng.com/static/css/merge/personal_package.merge.css")}')
 block header
     div.mod-personal-header-wrap
-        include ../share/header
-        include ../share/personalHeader
+        include ../../share/header
+        include ../../share/personalHeader
 block content
     div.mod-personal-package
         div.pack-type-wrap
@@ -24,7 +24,7 @@ block content
             a.type-item.type-level-2 - 产品静物
             a.type-item.type-level-2 - 宠物
             a.type-item.type-level-2 - 其他
-        a.pack-create-btn.button.button-flat-primary#add-pack(href='/personal/packagesetting/') 新建套系
+        a.pack-create-btn.button.button-flat-primary#add-pack(href='/personal/package/setting') 新建套系
         div.pack-list-wrap
             div.pack-wrap
                 div.pack-title-bar

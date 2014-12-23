@@ -172,9 +172,12 @@
     transition: .3s;
 }
 
+.mod-header-wrap .header-user:hover .menu-down.photographer {
+    height:304px;
+}
+
 .mod-header-wrap .header-user:hover .menu-down {
-    display: block;
-    height:306px;
+    height:208px;
 }
 
 .mod-header-wrap .header-user .menu-down a {

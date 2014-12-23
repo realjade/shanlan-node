@@ -56,17 +56,28 @@ div.mod-header-wrap#m-header
                     a.user-name(href="/personal/setting") #{user.nickName}
                 else
                     a.user-name(href="/profile") #{user.nickName}
-                ul.menu-down
-                    li
-                        a#link-order(href='/personal/photo') 照片管理
-                    li
-                        a#link-order(href='/personal/package') 套系管理
-                    li
-                        a#link-order(href='/personal/order') 我的订单
-                    li
-                        a#link-setting(href='/personal/setting') 个人信息
-                    li
-                        a#link-account(href='/personal/account') 账号设置
-                    li
-                        a#link-logout(href='/logout') 退出
+                if user.type == 'PHOTOGRAPHER'
+                    ul.menu-down.photographer
+                        li
+                            a#link-order(href='/personal/photo') 照片管理
+                        li
+                            a#link-order(href='/personal/package') 套系管理
+                        li
+                            a#link-order(href='/personal/order') 我的订单
+                        li
+                            a#link-setting(href='/personal/setting') 个人信息
+                        li
+                            a#link-account(href='/personal/account') 账号设置
+                        li
+                            a#link-logout(href='/logout') 退出
+                else
+                    ul.menu-down
+                        li
+                            a#link-order(href='/personal/order') 我的订单
+                        li
+                            a#link-setting(href='/personal/setting') 个人信息
+                        li
+                            a#link-account(href='/personal/account') 账号设置
+                        li
+                            a#link-logout(href='/logout') 退出
     div.tail

@@ -153,8 +153,12 @@
     overflow: hidden;
 }
 
-#m-header .header-user:hover .menu-down {
+#m-header .header-user:hover .menu-down.photographer {
     height:304px;
+}
+
+#m-header .header-user:hover .menu-down {
+    height:208px;
 }
 
 #m-header .menu-down a {

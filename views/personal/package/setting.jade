@@ -1,10 +1,10 @@
-extends ../share/layout
+extends ../../share/layout
 block css
     link(rel="stylesheet", href="#{staticFilter('//static.mgcheng.com/static/css/merge/personal_packagesetting.merge.css')}")
 block header
     div.mod-personal-header-wrap
-        include ../share/header
-        include ../share/personalHeader
+        include ../../share/header
+        include ../../share/personalHeader
 block content
     div.mod-personal-package-setting
         form.ui-form
@@ -100,7 +100,7 @@ block content
                     div.blank-group-block#group-block 关联相册
                 li.pack-submit-line
                     button.btn-submit.button.button-flat.button-flat-primary 确定并发布
-                    button.btn-back.button.button-flat 取消并返回
+                    a.btn-back.button.button-flat(href="/personal/package") 取消并返回
 
 block js
     script(src="#{staticFilter('//static.mgcheng.com/static/js/merge/personal_packagesetting.merge.js')}")
