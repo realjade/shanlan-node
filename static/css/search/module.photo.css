@@ -533,14 +533,14 @@ a {
     height: 180px;
     margin: 0 1px 0px 0;
     background-color: #7cdfff;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .mod-photo .result-item-box-service .main-item-group:hover .item {
     background-color: #64d3ff;
-}
-
-.mod-photo .result-item-box-service .main-item-group .item img {
-    width: 100%;
 }
 
 .mod-photo .collection{
