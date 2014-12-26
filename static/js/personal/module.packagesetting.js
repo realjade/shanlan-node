@@ -40,7 +40,7 @@
                 $('input[name="city"]', container).val(address.city.value)
                 $('input[name="photoType"]', container).val($('input[name="pack-type-unit"]:checked', container).val())
                 $('input[name="style"]', container).val(_.map($('input[name="pack-style-unit"]:checked', container), function(item){
-                    return item.val()
+                    return $(item).val()
                 }).join(','))
             })
 
