@@ -15,13 +15,34 @@
             self.__container = container
             self.__options = options
 
-            self.__bindEvent();
+            self.__initProvince()
+            self.__bindEvent()
+        },
+
+        __initProvince: function(){
+            var self = this
+            var container = self.__container
+            self.__address = container.find('.province-panel').province({
+                nocounty: true,
+                province: '',
+                city: ''
+            })
         },
 
         __bindEvent: function(){
             var self = this
             var options = self.__options
             var container = self.__container
+
+            $('.ui-form', container).submit(function(){
+                var address = self.__address.value()
+                $('input[name="province"]', container).val(address.province.value)
+                $('input[name="city"]', container).val(address.city.value)
+                $('input[name="photoType"]', container).val($('input[name="pack-type-unit"]:checked', container).val())
+                $('input[name="style"]', container).val(_.map($('input[name="pack-style-unit"]:checked', container), function(item){
+                    return item.val()
+                }).join(','))
+            })
 
             container.on('click','#group-block',function(){
                 var dialog = self.__associateDialog = new App.common.modules.Dialog({

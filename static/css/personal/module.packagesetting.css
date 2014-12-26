@@ -63,13 +63,17 @@
 
 .mod-personal-package-setting .box-body-wrap .pack-location-block {
     background: url('//static.mgcheng.com/static/css/common/images/p-location-blue.png') no-repeat;
+    width: 400px;
 }
 
 .mod-personal-package-setting .box-body-wrap .pack-items-line .ui-select-minimal{
-    display: inline;
-    width: 140px;
+    display: inline-block;
+    width: 300px;
 }
 
+.pack-location-block select{
+    margin-right: 10px;
+}
 .mod-personal-package-setting .box-body-wrap .pack-time-block {
     background: url('//static.mgcheng.com/static/css/common/images/p-time-blue.png') no-repeat;
 }
