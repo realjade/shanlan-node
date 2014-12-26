@@ -7,95 +7,140 @@ block header
         include ../../share/personalHeader
 block content
     div.mod-personal-package-setting
-        form.ui-form
+        form.ui-form(action="" method="post")
             div.ui-form-title 新建套系
             ul.box-body-wrap.ui-form-body
                 li.pack-name-line
                     div.ui-form-line-desc 套系名称：
-                    input.ui-input-minimal#pack-name
+                    input.ui-input-minimal#pack-name(name="name" value="#{viewFilter.isNull(package.name)}")
                     div.ui-form-line-note *为了显示效果，建议名称在10个字以内
                 li.pack-price-line
                     div.ui-form-line-desc 套系价格：
-                    input.ui-input-minimal#pack-price
+                    input.ui-input-minimal#pack-price(name="price" value="#{viewFilter.isNull(package.price)}")
                     div.ui-form-label 元
                 li.pack-items-line
                     div.ui-form-line-desc.service-line-desc 服务条目：
                     div.pack-item-block.pack-location-block
                         div.pack-item-desc 拍摄地
-                        select.ui-select-minimal#pack-location
-                            option(value="0") 省份 - 城市
+                        input(name="province" type="hidden")
+                        input(name="city" type="hidden")
+                        div.ui-select-minimal.clr#pack-location
+                            div.f-l
+                                select.info-select-box#country
+                                    option(value='中国') 中国
+                            div.province-panel.f-l
                     div.pack-item-block.pack-time-block
                         div.pack-item-desc 拍摄时长
-                        input.ui-input-minimal#pack-time
-                        div.pack-time-unit-block
-                            input.pack-unit-radio(type="radio", name="pack-time-unit", value="day", checked)
-                            span 天
-                        div.pack-time-unit-block
-                            input.pack-unit-radio(type="radio", name="pack-time-unit", value="hour")
-                            span 小时
+                        input.ui-input-minimal#pack-time(name="days", value="#{viewFilter.isNull(package.days)}")
+                        span 天
                     div.pack-item-block.pack-photo-block
                         div.pack-item-desc 拍摄张数
-                        input.ui-input-minimal#pack-photo
+                        input.ui-input-minimal#pack-photo(name="photoCount" value="#{viewFilter.isNull(package.photoCount)}")
                         div.ui-form-label 张
                     div.pack-item-block.pack-ps-block
                         div.pack-item-desc 精修张数
-                        input.ui-input-minimal#pack-ps
+                        input.ui-input-minimal#pack-ps(name="alterCount" value="#{viewFilter.isNull(package.alterCount)}")
                         div.ui-form-label 张
                     div.pack-item-block.pack-print-block
                         div.pack-item-desc 冲洗张数
-                        input.ui-input-minimal#pack-print
+                        input.ui-input-minimal#pack-print(name="printCount" value="#{viewFilter.isNull(package.printCount)}")
                         div.ui-form-label 张
                     div.pack-item-block.pack-album-block
                         div.pack-item-desc 实体相册
-                        input.ui-input-minimal#pack-album
+                        input.ui-input-minimal#pack-album(name="albumCount" value="#{viewFilter.isNull(package.albumCount)}")
                         div.ui-form-label 本
-                    div.pack-item-block.pack-scene-block
+                    //-div.pack-item-block.pack-scene-block
                         div.pack-item-desc 场景
                         input.ui-input-minimal#pack-scene
                         div.ui-form-label 套
                     div.pack-item-block.pack-costume-block
                         div.pack-item-desc 提供服装
-                        input.ui-input-minimal#pack-costume
+                        input.ui-input-minimal#pack-costume(name="clothCount" value="#{viewFilter.isNull(package.clothCount)}")
                         div.ui-form-label 套
                     div.pack-item-block.pack-makeup-block
                         div.pack-item-desc 化妆
-                        select.ui-select-minimal#pack-makeup
-                            option(value="0") 不包含
-                            option(value="1") 包含
+                        select.ui-select-minimal#pack-makeup(name="isMakeup")
+                            if(viewFilter.isNull(package.isMakeup, 0) > 0)
+                                option(value=0 selected="selected") 不包含
+                                option(value=1) 包含
+                            else
+                                option(value=0) 不包含
+                                option(value=1 selected="selected") 包含
 
                 li.pack-type-line
                     div.ui-form-line-desc 摄影类型：
+                    input(type="hidden" name="photoType" value="#{package.photoType}")
                     label.pack-type-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="10")
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="婚纱摄影")
                         span 婚纱摄影
                     label.pack-type-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="20")
-                        span 写真类
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="艺术写真")
+                        span 艺术写真
                     label.pack-type-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="21")
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="个人写真")
                         span 个人写真
                     label.pack-type-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="22")
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="情侣写真")
                         span 情侣写真
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="好友写真")
+                        span 好友写真
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="亲子家庭")
+                        span 亲子家庭
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="活动跟拍")
+                        span 活动跟拍
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="婚礼纪实")
+                        span 婚礼纪实
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="婚礼纪实")
+                        span 婚礼纪实
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="旅行拍摄")
+                        span 旅行拍摄
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="聚会庆生")
+                        span 聚会庆生
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="毕业留念")
+                        span 毕业留念
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="其他")
+                        span 其他
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-type-unit", value="宠物")
+                        span 宠物
+                    label.pack-type-unit-block
+                        input.pack-unit-checkbox(type="radio", name="pack-type-unit", value="产品静物")
+                        span 产品静物
+
+
                 li.pack-style-line
                     div.ui-form-line-desc 摄影风格：
+                    input(type="hidden" name="style" value="#{package.style}")
                     label.pack-style-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="10")
-                        span 清新
+                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="清新/甜美")
+                        span 清新/甜美
                     label.pack-style-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="20")
-                        span 复古
+                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="性感/艳妆")
+                        span 性感/艳妆
                     label.pack-style-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="21")
-                        span 胶片
+                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="唯美/意境")
+                        span 唯美/意境
                     label.pack-style-unit-block
-                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="22")
-                        span 黑白
+                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="胶片/黑白")
+                        span 胶片/黑白
+                    label.pack-style-unit-block
+                        input.pack-unit-checkbox(type="checkbox", name="pack-style-unit", value="个性/概念")
+                        span 个性/概念
                 li.pack-detail-line
                     div.ui-form-line-desc 详细说明：
                     textarea.pack-detail
                 li.pack-photo-group-line
                     div.ui-form-line-desc 样片展示：
+                    input(type="hidden" name="rePhotoCollectioinId" value="#{package.rePhotoCollectioinId}")
                     div#group-id(style="none")
                     div.blank-group-block#group-block 关联相册
                 li.pack-submit-line

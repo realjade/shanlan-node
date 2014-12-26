@@ -9,6 +9,7 @@ var RedisStore = require('connect-redis')(session);
 //self
 var staticFilter = require('./lib/staticFilter');
 var filter = require('./lib/filter');
+var viewFilter = require('./lib/viewFilter');
 var utils = require('./lib/utils')
 var config = require('./config');
 
@@ -51,6 +52,7 @@ app.use(function(req, res, next) {
         res.locals._user = null
     }
     res.locals.staticFilter = staticFilter.staticFilter
+    res.locals.viewFilter = viewFilter
     res.locals.title = '高质量独立摄影平台'
     if(filter.isMobile(req) && req.path.indexOf('/m/') !== 0){
         res.redirect('/m/')

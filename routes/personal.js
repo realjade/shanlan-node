@@ -93,12 +93,32 @@ router.get('/package', filter.photographerLogin, function (req, res) {
 })
 
 /* photographer create/modify package */
-router.get('/package/setting', filter.photographerLogin, function (req, res) {
+router.route('/package/setting').get(filter.photographerLogin, function (req, res) {
     var me = res.locals._user
     var ownerUserName = (me && me.userName) || null
 
     res.render('personal/package/setting', {
-        subTab: 'package'
+        subTab: 'package',
+        package: {}
+    })
+}).post(filter.photographerLogin, function(req, res){
+    utils.ajax({
+        url: 'Photo.createOrUpdatePhotoPackage',
+        req: req,
+        callback: function (err, data) {
+            if (data.code == '200') {
+                res.render('personal/package/setting', {
+                    subTab: 'package',
+                    package: data.data
+                })
+            } else {
+                res.render('personal/package/setting', {
+                    subTab: 'package',
+                    package: req,
+                    error: data.message
+                })
+            }
+        }
     })
 })
 

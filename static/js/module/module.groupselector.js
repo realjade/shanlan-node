@@ -36,7 +36,7 @@ $(function(){
                 url: '/s',
                 type: 'get',
                 data:{
-                    service: 'Photo.getPhotoCollections',
+                    service: 'Photo.listPhotoCollections',
                     userName: self.options.userName
                 },
                 success: function(data){
