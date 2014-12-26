@@ -103,7 +103,7 @@ router.route('/package/setting').get(filter.photographerLogin, function (req, re
     })
 }).post(filter.photographerLogin, function(req, res){
     utils.ajax({
-        url: 'Photo.createOrUpdatePhotoPackage',
+        url: 'Trade.createOrUpdatePhotoPackage',
         req: req,
         callback: function (err, data) {
             if (data.code == '200') {
