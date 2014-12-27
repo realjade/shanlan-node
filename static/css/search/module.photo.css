@@ -14,6 +14,13 @@ a {
     color: #444;
 }
 
+.openapi-dianping {
+    background: url('../common/images/log-dianping.png') no-repeat;
+    background-size: 13px 15px;
+    background-origin: border-box;
+    font-size: 13px;
+}
+
 .mod-photo {
 }
 
@@ -350,7 +357,7 @@ a {
 .mod-photo .result-item-box-service .pack-name {
     max-width: 400px;
     padding: 0 0 0 20px;
-    font-size: 26px;
+    font-size: 20px;
     overflow: hidden;
 }
 
