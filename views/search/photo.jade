@@ -6,105 +6,140 @@ block header
 block content
     div.mod-photo
         include photosearch
-
-        div.result-rule-bar
-            div.cell-space.rule-desc 显示顺序 >
-            div.cell-space.rule-item.rule-item-active(data-order="2")
-                a#score-rule 用户评价
-            div.cell-space.rule-item(data-order="1")
-                a#compr-rule 综合排序
-            div.cell-space.rule-item(data-order="3")
-                a#price-rule 服务价格
-            div.cell-space.rule-item(data-order="5")
-                a#trade-rule 交易次数
-            div.cell-space.rule-item(data-order="6")
-                a#photo-rule 作品量
+            div.result-rule-bar
+        div.cell-space.rule-desc 显示顺序 >
+        div.cell-space.rule-item.rule-item-active(data-order="2")
+            a#score-rule 用户评价
+        div.cell-space.rule-item(data-order="1")
+            a#compr-rule 综合排序
+        div.cell-space.rule-item(data-order="3")
+            a#price-rule 服务价格
+        div.cell-space.rule-item(data-order="5")
+            a#trade-rule 交易次数
+        div.cell-space.rule-item(data-order="6")
+            a#photo-rule 作品量
         if !searchType || searchType == 'photographer'
             if !data.data || data.data.length == 0
                 div.noitem 亲，没有您要的摄影师。我们会尽快安排摄影师入驻的。感谢支持
             else
-                each item, index in data.data
-                    div.result-item-box.result-item-box-person
-                        div.item-info-wrap
-                            a.item-avatar(href="/profile/#{item.photographer.userName}")
-                                img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
-                            a.item-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
-                            div.item-city #{item.photographer.addressBean.city}
-                            // -div.item-score
-                                img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
-                                div (4.9)
-                            div.item-collections 作品集: #{item.photographer.collectionCount}
-                            //- div.item-trades 交易数: 135
-                            div.item-tags
-                                if item.photoType[0]
-                                    div.tag #{item.photoType[0]}
-                                if item.photoStyle[0]
-                                    div.tag #{item.photoStyle[0]}
-                            div.item-description
-                                div.quote-left-icon
-                                span.detail(title="#{item.photographer.signature}") #{item.photographer.signature}
-                                div.quote-right-icon
-                        ul.item-packages-wrap
-                            each pkg, packageIndex in item.photoPackages
-                                li.item-package
-                                    div.pack-name(title="#{pkg.name}")
-                                        a(href="/profile/package/#{item.photographer.userName}") #{pkg.name}:
-                                    div.pack-photo-num #{pkg.photoCount}张
-                                    div.pack-time #{pkg.days}天
-                                    div.pack-price #{pkg.price}
-                        div.item-groups-wrap
-                            div.groups-list-a.clr
-                                each collection, colIndex in item.photoCollections
-                                    if collection.coverPath
-                                        div.g-block-a.collection-photo(data-id="#{collection.id}" style="background-image:url('#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}')")
+            each item, index in data.data
+            div.result-item-box.result-item-box-person
+                if item.photographer.url
+                    a.openapi-dianping(href="http://www.dianping.com" target="blank") 数据来源:大众点评
+                div.item-info-wrap
+                    if item.photographer.url
+                        a.item-avatar(href="#{item.photographer.url}" target="blank")
+                            img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
+                    else
+                        a.item-avatar(href="/profile/#{item.photographer.userName}")
+                            img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
+                    if item.photographer.url
+                        a.item-name(href="#{item.photographer.url}" target="blank") #{item.photographer.nickName}
+                    else
+                        a.item-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
+                    div.item-city #{item.photographer.addressBean.city}
+                    // -div.item-score
+                        img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
+                        div (4.9)
+                    div.item-collections 作品集: #{item.photographer.collectionCount}
+                    //- div.item-trades 交易数: 135
+                    div.item-tags
+                        if item.photoType[0]
+                            div.tag #{item.photoType[0]}
+                        if item.photoStyle[0]
+                            div.tag #{item.photoStyle[0]}
+                    div.item-description
+                        div.quote-left-icon
+                        span.detail(title="#{item.photographer.signature}") #{item.photographer.signature}
+                        div.quote-right-icon
+                ul.item-packages-wrap
+            each pkg, packageIndex in item.photoPackages
+                li.item-package
+                    if pkg.url
+                        div.pack-name(title="#{pkg.name}")
+                            a(href="#{pkg.url}" target="blank") #{pkg.name}:
+                    else
+                        div.pack-name(title="#{pkg.name}")
+                            a(href="/profile/package/#{item.photographer.userName}") #{pkg.name}:
+                    div.pack-photo-num #{pkg.photoCount}张
+                    div.pack-time #{pkg.days}天
+                    div.pack-price #{pkg.price}
+                div.item-groups-wrap
+                    div.groups-list-a.clr
+                each collection, colIndex in item.photoCollections
+                    if collection.url
+                        a.g-block-a(style="background-image:url('#{collection.coverPath}')" href="#{collection.url}" target="blank")
+                    else
+                        div.g-block-a.collection-photo(data-id="#{collection.id}" style="background-image:url('#{collection.coverPath.replace('_X_X', '_THUMBNAIL_600_600')}')")
         else
             if !data.data || data.data.length == 0
                 div.noitem 很遗憾，没有找到您需要的服务套系。请试试其他搜索条件
             else
-            each item, index in data.data
-                div.result-item-box.result-item-box-service
-                    div.item-package-wrap
-                        ul
-                            li#pack-main-info
-                                div.pack-name #{item.photoPackage.name}
-                                div.pack-tags
-                                    if item.photoType[0]
-                                        div.tag #{item.photoType[0]}
-                                    if item.photoStyle[0]
-                                        div.tag #{item.photoStyle[0]}
-                                div.pack-price
-                                    span #{item.photoPackage.price}
-                                    span.pack-price-unit 元
-                            li#pack-overview
-                                div.pack-icon.pack-icon-words.pack-location(title="拍摄地") #{item.photoPackage.addressBean.city}
-                                div.pack-icon.pack-icon-words.pack-time(title="拍摄时长") #{item.photoPackage.days}天
-                                div.pack-icon.pack-icon-words.pack-photo-num(title="拍摄张数") #{item.photoPackage.photoCount}张
-                                div.pack-icon.pack-icon-words.pack-ps-yes(title="精修张数") #{item.photoPackage.alterCount}张
-                                if item.photoPackage.printCount > 0
-                                    div.pack-icon.pack-print-yes(title="冲洗照片")
-                                if item.photoPackage.albumCount > 0
-                                    div.pack-icon.pack-album-yes(title="制作相册")
-                                if item.photoPackage.clothCount > 0
-                                    div.pack-icon.pack-costume-yes(title="提供服装")
-                                if item.photoPackage.isMakeup > 0
-                                    div.pack-icon.pack-makeup-yes(title="提供化妆")
-                    div.item-person-wrap
-                        a.person-avatar(href="/profile/#{item.photographer.userName}")
-                            img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
-                        a.person-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
-                        div.person-city (#{item.photographer.addressBean.city})
-                        div.person-collections 作品集:#{item.photographer.collectionCount}
-                        //- div.person-trade 交易数:135
-                        //- div.person-score
-                            img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
-                            div (4.9)
-                    div.item-groups-wrap
-                        div.main-item-group.collection-photo(data-id="#{item.photoPackage.reCollection}")
-                            each photo, pindex in item.photoPackage.photos
-                                a.item(style="background-image:url('#{photo.photoPath.replace('_X_X', '_THUMBNAIL_200_200')}')")
-        div.page-wrap
-
-block footer
+    each item, index in data.data
+        div.result-item-box.result-item-box-service
+            if item.photoPackage.url
+                a.openapi-dianping(href="http://www.dianping.com" target="blank") 数据来源:大众点评
+            div.item-package-wrap
+                ul
+                    li#pack-main-info
+                        if item.photoPackage.url
+                            a.pack-name(href="#{item.photoPackage.url}" target="blank") #{item.photoPackage.name}
+                        else
+                            div.pack-name #{item.photoPackage.name}
+                        div.pack-tags
+                            if item.photoType[0]
+                                div.tag #{item.photoType[0]}
+                            if item.photoStyle[0]
+                                div.tag #{item.photoStyle[0]}
+                        div.pack-price
+                            span #{item.photoPackage.price}
+                            span.pack-price-unit 元
+                    li#pack-overview
+                        div.pack-icon.pack-icon-words.pack-location(title="拍摄地") #{item.photoPackage.addressBean.city}
+                        if item.photoPackage.days
+                            div.pack-icon.pack-icon-words.pack-time(title="拍摄时长") #{item.photoPackage.days}天
+                        if item.photoPackage.photoCount
+                            div.pack-icon.pack-icon-words.pack-photo-num(title="拍摄张数") #{item.photoPackage.photoCount}张
+                        if item.photoPackage.alertCount
+                            div.pack-icon.pack-icon-words.pack-ps-yes(title="精修张数") #{item.photoPackage.alterCount}张
+                        if item.photoPackage.printCount > 0
+                            div.pack-icon.pack-print-yes(title="冲洗照片")
+                        if item.photoPackage.albumCount > 0
+                            div.pack-icon.pack-album-yes(title="制作相册")
+                        if item.photoPackage.clothCount > 0
+                            div.pack-icon.pack-costume-yes(title="提供服装")
+                        if item.photoPackage.isMakeup > 0
+                            div.pack-icon.pack-makeup-yes(title="提供化妆")
+            div.item-person-wrap
+                //如果url不为空，说明是调用是API数据，此时需要跳转到API来源页面
+                if item.photographer.url
+                    a.person-avatar(href="#{item.photographer.url}" target="blank")
+                        img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
+                else
+                    a.person-avatar(href="/profile/#{item.photographer.userName}")
+                        img(src='#{item.photographer.photoPath.replace("X_X", "120_120")}')
+                            if item.photographer.url
+                    a.person-name(href="#{item.photographer.url}" target="blank") #{item.photographer.nickName}
+        else
+            a.person-name(href="/profile/#{item.photographer.userName}") #{item.photographer.nickName}
+                div.person-city (#{item.photographer.addressBean.city})
+            if item.photographer.collectionCount && item.photographer.collectionCount > 0
+                div.person-collections 作品集:#{item.photographer.collectionCount}
+            //- div.person-trade 交易数:135
+            //- div.person-score
+                img(src="//static.mgcheng.com/static/css/profile/images/5stars.png")
+                div (4.9)
+            div.item-groups-wrap
+                if item.photoPackage.reCollection
+                    div.main-item-group.collection-photo(data-id="#{item.photoPackage.reCollection}")
+                    each photo, pindex in item.photoPackage.photos
+                    a.item(style="background-image:url('#{photo.photoPath.replace('_X_X', '_THUMBNAIL_200_200')}')")
+                else
+                    div.main-item-group
+                each photo, pindex in item.photoPackage.photos
+                    a.item(style="background-image:url('#{photo.photoPath}')" href="#{item.photoPackage.url}" target="blank")
+                        div.page-wrap
+                    block footer
     include ../share/footer
 block js
     if !!data.pageCount
