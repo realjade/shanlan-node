@@ -78,7 +78,16 @@ block content
                                 img(src='//static.mgcheng.com/static/css/profile/images/trade-1-5.png')
                             a.item
                                 img(src='//static.mgcheng.com/static/css/profile/images/trade-1-6.png')
-
+            div.page-wrap
 
 block js
+    if !!packages.pageCount
+        script.
+            window.pageConfig.page = {
+                pageCount: #{packages.pageCount},
+                pageIndex: #{packages.pageIndex},
+                pageSize: #{packages.pageSize},
+                resultCount: #{packages.resultCount},
+                start: #{packages.start}
+            }
     script(src='#{staticFilter("//static.mgcheng.com/static/js/merge/personal_package.merge.js")}')

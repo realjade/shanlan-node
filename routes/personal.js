@@ -85,11 +85,37 @@ router.get('/orderdetail/:orderNum', filter.login, function (req, res) {
 /* photographer package */
 router.get('/package', filter.photographerLogin, function (req, res) {
     var me = res.locals._user
-    var ownerUserName = (me && me.userName) || null
+    var pageSize = req.param('pageSize') || '10'
+    //var pageIndex = req.param('pageIndex') || '1'
+    var currentPage = req.param('currentPage') || '1'
 
-    res.render('personal/package/package', {
-        subTab: 'package'
+    utils.ajax({
+        url: 'Trade.listPackages',
+        method: 'get',
+        req: req,
+        data: {
+            pageSize: pageSize,
+            //pageIndex: pageIndex,
+            currentPage: currentPage,
+            type: 'ALL',
+            userName: me.userName
+        },
+        callback: function (err, data) {
+            if (data.code == '200') {
+                res.render('personal/package/package', {
+                    subTab: 'package',
+                    packages: data.data
+                })
+            }else{
+                res.render('personal/package/package', {
+                    subTab: 'package',
+                    packages: []
+                })
+            }
+        }
     })
+
+
 })
 
 /* photographer create/modify package */
